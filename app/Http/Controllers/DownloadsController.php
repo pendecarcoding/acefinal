@@ -65,6 +65,7 @@ class DownloadsController extends Controller
                             $media = new Download;
                             $media->namefile = $request->name;
                             $media->file = $rename;
+                            $media->date = $request->date;
                             $media->count = 0;
                             $media->save();
                             flash(translate('Downloads has been save successfully'))->success();
@@ -136,6 +137,7 @@ class DownloadsController extends Controller
                             $media = Download::find(base64_decode($id));
                             $media->namefile = $request->name;
                             $media->file = $rename;
+                            $media->date = $request->date;
                             $media->save();
                             flash(translate('Downloads has been update successfully'))->success();
                             return redirect()->route('downloads.index');
@@ -143,6 +145,7 @@ class DownloadsController extends Controller
                         }else{
                             $media = Download::find(base64_decode($id));
                             $media->namefile = $request->name;
+                            $media->date = $request->date;
                             $media->save();
                             flash(translate('Downloads has been update successfully'))->success();
                             return redirect()->route('downloads.index');

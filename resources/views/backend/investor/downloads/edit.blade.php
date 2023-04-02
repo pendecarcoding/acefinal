@@ -24,6 +24,16 @@
                     </div>
 
                     <div class="form-group row">
+                        <label class="col-md-3 col-form-label">
+                            {{translate('Date')}}
+                            <span class="text-danger">*</span>
+                        </label>
+                        <div class="col-md-9">
+                            <input id="datepicker" value="{{$data->date}}" type="date" placeholder="{{translate('Date')}}"   name="date" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label class="col-md-3 col-from-label">
                             {{translate('File')}}
 
