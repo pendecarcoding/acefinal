@@ -1712,12 +1712,12 @@ footer img {
 }
 
 .img-phone1 {
-    left: 20px;
+    left: 50px;
     position: absolute;
     top: -125px;
     right: px;
     object-fit: cover;
-    max-width: 80%;
+    max-width: 75%;
     height: auto;
     z-index: 2;
     vertical-align: middle;
@@ -1752,10 +1752,10 @@ footer img {
 .img-phone2 {
     position: absolute;
     top: 200px;
-    right: -29px;
+    right: 20px;
     z-index: 0;
     object-fit: cover;
-    max-width: 100%;
+    max-width: 79%;
     height: auto;
     vertical-align: middle;
 }
@@ -2195,6 +2195,7 @@ footer img {
 .ace-isi {
     padding-top: 5%;
     padding-bottom: 7%;
+    position: relative;
 }
 
 .ace-card-company {
