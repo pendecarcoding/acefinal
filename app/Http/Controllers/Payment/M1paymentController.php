@@ -65,10 +65,10 @@ class M1paymentController extends Controller
 
 
 
-        $signdata = $description.'|'.$amount.'|'.$order['code'].'|'.$order['code'].'|MYR|'.$detail->email.'|41012618';
+        $signdata = $description.'|'.format_priceback(convert_price($amount)).'|'.$order['code'].'|'.$order['code'].'|MYR|'.$detail->email.'|41012618';
         $sign = str_replace(' ','',getsignm1payment($signdata));
         $body =[
-                "transactionAmount"=>$amount,
+                "transactionAmount"=>format_priceback(convert_price($amount)),
                 "merchantId"=>env('M1_CLIENT_ID'),
                 "transactionCurrency"=>"MYR",
                 "merchantOrderNo"=>$order['code'],

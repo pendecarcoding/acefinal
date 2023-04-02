@@ -56,6 +56,7 @@ class CheckoutController extends Controller
                 // If block for Online payment, wallet and cash on delivery. Else block for Offline payment
                 $decorator = __NAMESPACE__ . '\\Payment\\' . str_replace(' ', '', ucwords(str_replace('_', ' ', $request->payment_option))) . "Controller";
                 if (class_exists($decorator)) {
+                    // print "okw";
                     return (new $decorator)->pay($request);
                 }
                 else {
