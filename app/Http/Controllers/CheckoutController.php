@@ -38,7 +38,7 @@ class CheckoutController extends Controller
             }
             if ($subtotal < get_setting('minimum_order_amount')) {
                 flash(translate('You order amount is less then the minimum order amount'))->warning();
-                return redirect()->route('home');
+                return back();
             }
         }
         // Minumum order amount check end
