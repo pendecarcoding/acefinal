@@ -50,8 +50,9 @@
                         <tr>
                             <td>{{ $i + 1 }}</td>
                             <td>{{ $v->namefile }}</td>
-                            <td>{{ $v->date }}</td>
                             <td>{{ $v->file }}</td>
+                            <td>{{ $v->date }}</td>
+
                             <td>{{ $v->count }} Downloads</td>
                             <td>
                                 @can('edit_downloads')
