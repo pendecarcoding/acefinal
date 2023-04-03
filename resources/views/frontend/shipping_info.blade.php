@@ -244,7 +244,7 @@
                                             required>
                                             <p style="font-style: italic;line-height: 0px;color:red">* {{ translate('please provide correct email') }} </p>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="row">
                                     <div class="col-md-2">
@@ -252,7 +252,7 @@
                                     </div>
                                     <div class="col-md-10">
                                         <input type="text" class="form-control mb-3"
-                                            placeholder="{{ translate('+880') }}" name="phone" value=""
+                                            placeholder="{{ translate('+60') }}" name="phone" value=""
                                             required>
                                     </div>
                                 </div>
