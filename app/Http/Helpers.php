@@ -153,7 +153,8 @@ function callm1payment($id,$token){
 
         $response = curl_exec($crl);
         if(!$response){
-           die('Error: "' . curl_error($crl) . '" - Code: ' . curl_errno($crl));
+            return callm1payment($id,$token);
+        //    die('Error: "' . curl_error($crl) . '" - Code: ' . curl_errno($crl));
         }else{
             return json_decode($response);
 
