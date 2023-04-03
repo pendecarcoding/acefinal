@@ -72,12 +72,13 @@ class AceController extends Controller
                     if (get_setting('m1_sandbox') == 1) {
                         $url    = 'https://keycloak.m1pay.com.my/auth/realms/master/protocol/openid-connect/token';
                         $token  = gettokenm1payment($url)->access_token;
-                        $data   = callm1payment($id,$token);
-                        $status = $data->transactionStatus;
-                        if($status=='APPROVED'){
-                            $merchantno = $data->merchantOrderNo;
-                            $email      = $data->emailAddress;
-                            return updateorderm1($merchantno,$email);
+                        // $data   = callm1payment($id,$token);
+                        // $status = $data->transactionStatus;
+                        if($_POST['status']=='APPROVED'){
+                            print "oke";
+                            // $merchantno = $data->merchantOrderNo;
+                            // $email      = $data->emailAddress;
+                            // return updateorderm1($merchantno,$email);
                         }
                     }
                     else {
