@@ -96,7 +96,17 @@ class M1paymentController extends Controller
             $response = transactionm1($link,$token,$body);
             // If call returns body in response, you can get the deserialized version from the result attribute of the response
             //print $sign;
-            return Redirect::to($response);
+            // print $response['detail'];
+            // return Redirect::to($response);
+            $json = json_decode($response);
+
+            // Check if the decoding was successful and if the response was valid JSON
+            if ($json === null && json_last_error() !== JSON_ERROR_NONE) {
+                return Redirect::to($response);
+            } else {
+                print $json->detail;
+
+            }
         }catch (\Exception $ex) {
             flash(translate($ex->getmessage()))->error();
             //return back();
