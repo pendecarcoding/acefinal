@@ -219,7 +219,7 @@
                             @endphp
 
 
-                            <a href="{{ asset('public/download').'/'.$v['file'] }}" class="ace-button-blue"
+                            <a href="{{ asset('public/download').'/'.$v['file'] }}" target="_blank" class="ace-button-blue"
                               ><i class="fa fa-download"></i> {{ $v['namefile'] }}</a
                             >
                             @php

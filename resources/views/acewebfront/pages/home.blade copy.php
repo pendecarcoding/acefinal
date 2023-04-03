@@ -290,21 +290,22 @@
         <div class="content-ace">
           <div class="wrap-content">
             <div class="ace-isi about">
-
-
+              <div class="col-md-12">
+                <div data-aos="fade-up" data-aos-delay="100" class="title-ace">
+                  GOLD TRADING MADE EASY
+                  <span class="h-dash" style="font-weight: bold">—</span>
+                </div>
+              </div>
+              <div class="row">
+                <div data-aos="fade-up" data-aos-delay="200" class="col-md-6 col-sm-6">
+                  <h1>GTP Solutions The All in One Platform</h1>
+                </div>
+                <div class="col-md-6 col-sm-6"></div>
+              </div>
               <div class="sticky-content">
-                <div class="col-md-12">
-                    <div data-aos="fade-up" data-aos-delay="100" class="title-ace">
-                      GOLD TRADING MADE EASY
-                      <span class="h-dash" style="font-weight: bold">—</span>
-                    </div>
-                  </div>
                 <div id="gpt0"></div>
                 <div class="row">
-                    <div data-aos="fade-up" data-aos-delay="200" class="col-md-6 col-sm-6">
-                        <h1>GTP Solutions The All in One Platform</h1>
-                      </div>
-
+                  <div class="col-md-6 col-sm-6"></div>
                   <div data-aos="fade-down" class="col-md-6 col-sm-6 text-content-gtp">
                     <div class="vl" style="color: #6db0da">
                       <table>
@@ -351,12 +352,12 @@
                   </div>
                  </div>
               </div>
-               <div id="gtp" style="height:3000px">
-                <div style="height:600px" id="gpt1"></div>
-                <div style="height:600px" id="gpt2"></div>
-                <div style="height:600px" id="gpt3"></div>
-                <div style="height:600px" id="gpt4"></div>
-                <div style="height:600px" id="gpt5"></div>
+               <div id="gtp" style="height:4000px">
+                <div style="height:800px" id="gpt1"></div>
+                <div style="height:800px" id="gpt2"></div>
+                <div style="height:800px" id="gpt3"></div>
+                <div style="height:800px" id="gpt4"></div>
+                <div style="height:800px" id="gpt5"></div>
 
               </div>
 
