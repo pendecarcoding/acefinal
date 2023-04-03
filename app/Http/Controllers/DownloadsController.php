@@ -24,7 +24,7 @@ class DownloadsController extends Controller
      */
     public function index()
     {
-        $data = Download::all();
+        $data = Download::orderby('date','desc')->get();
         return view('backend.investor.downloads.index', compact('data'));
     }
 

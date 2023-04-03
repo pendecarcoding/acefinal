@@ -95,6 +95,44 @@ footer a{
     margin-left: 15%;
     list-style: none;
 }
+
+
+.gtp-download .carousel-indicators #btn-slider {
+    background: #1D5189;
+    /* width: 10px; */
+    border: 1px solid #1D5189;
+    border-radius: 50px;
+    padding: 1px;
+    border-radius: 40px;
+}
+
+.gtp-download .carousel-indicators .btn-slide {
+    width: 2%;
+    height: 8px;
+}
+
+  .gtp-download .carousel-indicators .active {
+    opacity: 1;
+    height: 8px;
+    width: 50px;
+  }
+
+
+.gtp-download .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 0rem;
+    margin-left: 15%;
+    list-style: none;
+}
+
 .read-now-ach{
     margin-top: 50px;
 }

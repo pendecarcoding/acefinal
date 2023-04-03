@@ -178,37 +178,85 @@
                       class="carousel slide"
                       data-bs-ride="carousel"
                     >
+                    <div class="carousel-indicators">
+                        @php
+                            $countac = count($download);
+                            $banyak  = $countac/8;
+                            $achievements = $download->toArray();
+                            $no = -1;
+                            for ($n=0; $n < $banyak; $n++) {
+                                $no++;
+                                @endphp
+                                <button id="btn-slider" type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{ $no }}" class="btn-slide @if($no == 1)active @endif" aria-label="Slide {{ $no }}" fdprocessedid="io38s9" aria-current="true"></button>
+                                @php
+                            }
+                                @endphp
+
+
+
+                         </div>
+
                     <div class="investor-download">
                       <div class="carousel-inner">
-                        <div data-aos="fade-up" class="carousel-item active">
-                        @foreach($download as $i => $v)
-                            <a href="{{ asset('public/download').'/'.$v->file }}" class="ace-button-blue"
-                              ><i class="fa fa-download"></i> {{ $v->namefile }}</a
+                        @php
+                        $countac = count($download);
+                        $banyak  = $countac/8;
+                        $downloads = $download->toArray();
+                        $no = 0;
+                        for ($n=0; $n < $banyak; $n++) {
+                            $no++;
+                            @endphp
+
+                <div class="carousel-item @if($no=1) active @endif">
+                    @php
+                    foreach (array_slice($downloads, $n) as $i => $v){
+                        $last = $i-1;
+
+
+
+                        if($i < 8){
+
+                            @endphp
+
+
+                            <a href="{{ asset('public/download').'/'.$v['file'] }}" class="ace-button-blue"
+                              ><i class="fa fa-download"></i> {{ $v['namefile'] }}</a
                             >
-                        @endforeach
+                            @php
+                        }else{
+                            $no=0;
+                        }
+
+                    }
+                    @endphp
 
 
                         </div>
+                        @php
+                    }
+                    @endphp
+                    @foreach (array_slice($downloads, 0) as $i => $v)
+
+                    @php
+
+                    @endphp
+
+                     @endforeach
 
                       </div>
                     </div>
 
-                    <button class="acecarousel-control-prev" type="button" data-bs-target="#myCarouseltesti" data-bs-slide="prev">
+                    <button class="acecarousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                       <span style="color:#1D5189;font-size: 250%;margin-left:20px;font-weight:bold;" aria-hidden="true"><i class="fa fa-angle-left"></i></span>
                       <span class="visually-hidden">Previous</span>
                       </button>
 
-                      <button class="acecarousel-control-next" type="button" data-bs-target="#myCarouseltesti" data-bs-slide="next">
+                      <button class="acecarousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
                         <span style="color:#1D5189;font-size: 250%;margin-right:20px;font-weight:bold;" aria-hidden="true"><i class="fa fa-angle-right"></i></span>
                         <span class="visually-hidden">Next</span>
                         </button>
 
-                        <div class="indicator-providers">
 
-                            <button id="btn-slider" type="button" data-bs-target="#myCarouselprovider" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1" style="background-color: #264e77;width:50px" class="btn-slider-active"></button>
-                            <button id="btn-slider" type="button" data-bs-target="#myCarouselprovider" data-bs-slide-to="1" aria-label="Slide 2" style="background-color: #264e77;width:5px" class="btn-slider"></button>
-
-                        </div>
 
                     </div>
 

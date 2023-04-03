@@ -152,7 +152,7 @@ class AceController extends Controller
                         ->first();
                 $announcement    = Announcement::orderby('created_at','DESC')->get();
                 $announcementnew = Announcement::orderby('created_at','DESC')->first();
-                $download     = Download::orderby('created_at','DESC')->get();
+                $download     = Download::orderby('date','DESC')->get();
                 return view('acewebfront.pages.investor',compact('irkey','announcement','download','shareholder','page','announcementnew'));
                 break;
             case 'our_products':
