@@ -32,7 +32,7 @@ class CheckoutController extends Controller
         // Minumum order amount check
         if(get_setting('minimum_order_amount_check') == 1){
             $subtotal = 0;
-            foreach (Cart::where('user_id', Auth::user()->id)->get() as $key => $cartItem){
+            foreach (Cart::where('temp_user_id', $request->session()->get('temp_user_id'))->get() as $key => $cartItem){
                 $product = Product::find($cartItem['product_id']);
                 $subtotal += cart_product_price($cartItem, $product, false, false) * $cartItem['quantity'];
             }
