@@ -1152,7 +1152,7 @@
                     @endcanany
                 @endif
 
-                <!-- Website Setup -->
+                <!-- Website Setup
                 @canany(['header_setup', 'footer_setup', 'view_all_website_pages', 'website_appearance'])
                     <li class="aiz-side-nav-item">
                         <a href="#"
@@ -1194,7 +1194,7 @@
                             @endcan
                         </ul>
                     </li>
-                @endcanany
+                @endcanany -->
 
                 <!-- Setup & Configurations -->
                 @canany(['general_settings', 'features_activation', 'language_setup', 'currency_setup',
