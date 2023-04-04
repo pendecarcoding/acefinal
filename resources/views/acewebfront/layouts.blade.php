@@ -76,7 +76,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        const html = document.getElementById("gtp");
+
         const canvas = document.getElementById("hero-lightpass");
 
 
@@ -122,12 +122,16 @@
     </script>
 
     <script type="text/javascript">
+
         function progressBarScroll() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
                 height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
                 scrolled = (winScroll / height) * 165;
             if(scrolled <= 100){
                 document.getElementById("progressBar").style.height = scrolled + "%";
+            }
+            if (scrolled == 90){
+                alert("dah 90 dah");
             }
 
         }
@@ -200,6 +204,26 @@
         $(document).ready(function() {
 
             $(window).on("scroll", function() {
+
+                if (
+                    $(window).scrollTop() >=
+                    $(".company-ace").offset().top +
+                    $(".company-ace").outerHeight() -
+                    window.innerHeight
+                ) {
+                    document.getElementById("gtp").style.display = "block";
+                    document.getElementById("gpt1").style.height = "600px";
+                    document.getElementById("gpt2").style.height = "600px";
+                    document.getElementById("gpt3").style.height = "600px";
+                    document.getElementById("gpt4").style.height = "600px";
+                    document.getElementById("gpt5").style.height = "600px";
+
+
+                }
+
+
+
+
 
                 if (
                     $(window).scrollTop() >=
@@ -343,9 +367,18 @@
                     $("#gpt5").offset().top +
                     $("#gpt5").outerHeight() -
                     window.innerHeight) {
-                    fadeingtp('gtp5', 'img-wrap-gpt alert-is-shown');
-                    document.getElementById("swinganimate").className = "gtp-animation";
+
+                        const myDiv = document.getElementById("gtp-patner-focused");
+            // myDiv.scrollIntoView();
+
+                } if ($(window).scrollTop() >=
+                    $("#gpt6").offset().top +
+                    $("#gpt6").outerHeight() -
+                    window.innerHeight) {
+                        // document.getElementById("gtp").style.display = "none";
+
                 }
+
             });
         });
     </script>

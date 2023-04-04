@@ -1,13 +1,13 @@
 var images = [
-    "https://aceweb.kanalapps.web.id/public/uploads/all/rjD3x1HdHsxgeGh4bLKuo8CNEMbcc5GWxDfWBOme.png",
-    "https://aceweb.kanalapps.web.id/public/uploads/all/1lLknWCjWbhLmnXunJjdSbKGXiTJk53OV2yqrSk3.png",
-    "https://aceweb.kanalapps.web.id/public/uploads/all/IKCrd0wlwZrG8HiBJc8Hyw6WhXokCNonis7QawAa.png",
+    "https://dev.ace2u.com/public/uploads/all/rjD3x1HdHsxgeGh4bLKuo8CNEMbcc5GWxDfWBOme.png",
+    "https://dev.ace2u.com/public/uploads/all/1lLknWCjWbhLmnXunJjdSbKGXiTJk53OV2yqrSk3.png",
+    "https://dev.ace2u.com/public/uploads/all/IKCrd0wlwZrG8HiBJc8Hyw6WhXokCNonis7QawAa.png",
 
-    "https://aceweb.kanalapps.web.id/public/uploads/all/4su51XgI2N89PilSig0FnS5Xn0pEDvMbAkCuAkgz.png",
+    "https://dev.ace2u.com/public/uploads/all/4su51XgI2N89PilSig0FnS5Xn0pEDvMbAkCuAkgz.png",
 
-    "https://aceweb.kanalapps.web.id/public/uploads/all/RKV5vTJO7jQAXN27Jigs2tWcZ7Cs4NFpP9sAIFjA.png",
-    "https://aceweb.kanalapps.web.id/public/uploads/all/AzEFLQDFA7kxtp3pATb6KBXlRkGIKkR1wge9cjce.png",
-    "https://aceweb.kanalapps.web.id/public/uploads/all/tveT9mPzpuGCGcy67iAJKOj4kTfTO8j0zqhrBpNf.png",
+    "https://dev.ace2u.com/public/uploads/all/RKV5vTJO7jQAXN27Jigs2tWcZ7Cs4NFpP9sAIFjA.png",
+    "https://dev.ace2u.com/public/uploads/all/AzEFLQDFA7kxtp3pATb6KBXlRkGIKkR1wge9cjce.png",
+    "https://dev.ace2u.com/public/uploads/all/tveT9mPzpuGCGcy67iAJKOj4kTfTO8j0zqhrBpNf.png",
   ];
 
   console.log(images);

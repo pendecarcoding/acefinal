@@ -96,13 +96,13 @@
                     <div class="col-md-3 col-sm-3">
                       <div class="number-ace-center">
                         <h1><span class="decimal">{{ env('ABOUT_COUNT_ANNUAL_TRUNOVER') }}</span></h1>
-                        <p>BILLION (myR) 2018 - ANNUAL TURNOVER</p>
+                        <p>BILLION (MYR) 2018 - ANNUAL TURNOVER</p>
                       </div>
                     </div>
                     <div class="col-md-3 col-sm-3">
                       <div class="number-ace-center">
                         <h1><span class="decimal">{{ env('ABOUT_COUNT_ANNUAL_REVENEUE') }}</span></h1>
-                        <p>BILLION (myR) 2021 - ANNUAL REVENUE</p>
+                        <p>BILLION (MYR) 2021 - ANNUAL REVENUE</p>
                       </div>
                     </div>
                   </div>
@@ -286,7 +286,7 @@
           </div>
         </div>
       </section>
-      <section id="nonmansory2" class="gtp-solution">
+    <section id="nonmansory2" class="gtp-solution">
         <div class="content-ace">
           <div class="wrap-content">
             <div class="ace-isi about">
@@ -344,6 +344,7 @@
 
                    </div>
                  </center>
+
                  <div class="gtp-po-button">
                   <center>
                       <a href="https://aceweb.kanalapps.web.id/newsroom" class="ace-button">Find Out More</a>
@@ -351,12 +352,13 @@
                   </div>
                  </div>
               </div>
-               <div id="gtp" style="height:3000px">
-                <div style="height:600px" id="gpt1"></div>
-                <div style="height:600px" id="gpt2"></div>
-                <div style="height:600px" id="gpt3"></div>
-                <div style="height:600px" id="gpt4"></div>
-                <div style="height:600px" id="gpt5"></div>
+               <div id="gtp">
+                <div id="gpt1"></div>
+                <div id="gpt2"></div>
+                <div id="gpt3"></div>
+                <div id="gpt4"></div>
+                <div id="gpt5"></div>
+                <div id="gpt6"></div>
 
               </div>
 
@@ -368,8 +370,8 @@
             </div>
           </div>
         </div>
-      </section>
-      <section class="gtp-patner">
+    </section>
+      <section id="gtp-patner-focused" class="gtp-patner">
         <div class="content-ace">
           <div class="wrap-content">
             <div style="padding-top: 0px" class="about">

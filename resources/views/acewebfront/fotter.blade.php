@@ -14,7 +14,7 @@
         <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <img src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/ace.png" alt="">
+            <img src="{{static_asset('aceweb')}}/assets/img/ace.png" alt="">
           </h6>
           <p>
             <b style="font-weight:bold;color:black">Address</b><br>
