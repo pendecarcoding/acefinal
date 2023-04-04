@@ -22,7 +22,7 @@
                             </div>
                             <div class="row">
                                 <label>Price Override To </label>
-                                <input  style="font-size:20px;font-weight:bold" class="form-control"
+                                <input id="override" style="font-size:20px;font-weight:bold" class="form-control"
                                     oninput="validateoverride(this)">
                             </div>
 
