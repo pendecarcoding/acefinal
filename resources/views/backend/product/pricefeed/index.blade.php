@@ -22,7 +22,7 @@
                             </div>
                             <div class="row">
                                 <label>Price Override To </label>
-                                <input id="override" style="font-size:20px;font-weight:bold" class="form-control"
+                                <input id="overrides" style="font-size:20px;font-weight:bold" class="form-control"
                                     oninput="validateoverride(this)">
                             </div>
 
@@ -115,7 +115,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     var pricecurrent = document.getElementById("pricecurrent").value;
-                    var override = document.getElementById("override").value;
+                    var override = document.getElementById("overrides").value;
                     if (override === "" || pricecurrent === "") {
                         alert("Current price feed or Price Override To it's required value");
                     } else {
