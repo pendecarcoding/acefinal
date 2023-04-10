@@ -175,6 +175,13 @@
                 </div>
 
                 <div class="col-md-7 col-sm-7">
+                    <!-- <div class="line-container">
+                        <div class="horizontal-line"></div>
+                        <div class="vertical-line"></div>
+                        <div class="vertical-line"></div>
+                        <div class="vertical-line"></div>
+                        <div class="vertical-line"></div>
+                      </div> -->
                     <!-- <div class="line-str"></div> -->
                   <div class="line-structure">
                     <img
@@ -188,7 +195,7 @@
                   <div class="child-company">
                     <div class="row">
                    <div data-aos="zoom-in-down"
-                   data-aos-delay="1500" class="wrap-card-company" style="left: -3%;">
+                   data-aos-delay="1500" class="wrap-card-company" style="left: -1%;">
                         <div  class="card ace-card-company">
                           <img class="pulse" src="{{ static_asset('aceweb') }}/assets/img/acecapital1.png" alt="" />
 
@@ -198,7 +205,7 @@
 
 
                     <div data-aos="zoom-in-down"
-                    data-aos-delay="2000" class="wrap-card-company" style="left: 4%;">
+                    data-aos-delay="2000" class="wrap-card-company" style="left: 3%;">
                         <div  class="card ace-card-company">
                           <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceikhlas1.png" alt="" />
 
@@ -208,7 +215,7 @@
 
 
                     <div data-aos="zoom-in-down"
-                    data-aos-delay="2500" class="wrap-card-company" style="left: 11%;">
+                    data-aos-delay="2500" class="wrap-card-company" style="left: 7%;">
                         <div  class="card ace-card-company">
                           <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceeasy1.png" alt="" />
 
@@ -216,7 +223,7 @@
                       <p style="font-size: 12px;">ACE Assay (M) Sdn Bhd (ACE Assay) </p>
                       </div>
                       <div data-aos="zoom-in-down"
-                      data-aos-delay="3000" class="wrap-card-company" style="left: 18%;">
+                      data-aos-delay="3000" class="wrap-card-company" style="left: 10%;">
                         <div  class="card ace-card-company">
                               <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceihsan1.png" alt="" />
 
