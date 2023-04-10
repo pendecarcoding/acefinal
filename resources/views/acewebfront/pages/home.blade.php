@@ -345,8 +345,7 @@
                 </div>
                 <div class="col-md-12">
                   <center>
-                     <div data-aos="fade-up"
-                     data-aos-anchor-placement="bottom-center" id="myDIV" class="img-wrap-gpt">
+                     <div  id="myDIV" class="img-wrap-gpt">
                      <!----<div class="alert">-->
                         <!--<figure class="swing">-->
                           <img id="imggpt1" />
