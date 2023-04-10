@@ -389,7 +389,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
 
     Route::resource('requestpatner',RequestPatner::class);
     Route::controller(RequestPatner::class)->group(function () {
-        Route::post('/about/change-status', 'updater')->name('about.change-status');
+        // Route::post('/about/change-status', 'updater')->name('about.change-status');
         Route::get('/requestpatner/viewmessage/{id}', 'viewmessage')->name('requestpatner.viewmessage');
 
     });
