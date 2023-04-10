@@ -22,61 +22,63 @@
 
           <div class="col-md-3 col-sm-12 col-lg-3">
             <div id="desktop-pricefeed" onload="WebSocketTest()" class="allprice">
+                <div class="prc-buy">
+                    <table class="table-price-buy">
+                        <thead>
+                         <tr>
+                            <th colspan="3" class="center"><h4>ACE Gold Price 999.9</h4></th>
+                         </tr>
+                        </thead>
+                        <tbody>
+                         <tr>
+                            <td colspan="2">
+                                <div style="color: #1ac69c">
+                                    <i class="fa fa-circle" aria-hidden="true"></i> <span id="statuslive">LIVE.</span> <span id="tradeopen"></span>
+                               </div>
+                            </td>
 
-                <table class="table-price-buy">
-                <thead>
-                 <tr>
-                    <th colspan="3" class="center"><h4>ACE Gold Price 999.9</h4></th>
-                 </tr>
-                </thead>
-                <tbody>
-                 <tr>
-                    <td colspan="2">
-                        <div style="color: #1ac69c">
-                            <i class="fa fa-circle" aria-hidden="true"></i> <span id="statuslive">LIVE.</span> <span id="tradeopen"></span>
-                       </div>
-                    </td>
+                            <td style="text-align: right;padding-right: 20px;"><div id="datepricefeed"></div></td>
+                         </tr>
 
-                    <td style="text-align: right;padding-right: 20px;"><div id="datepricefeed"></div></td>
-                 </tr>
+                         <tr>
+                            <td class="center" colspan="3"><div style="font-weight: bold;">Buy</div>
+        </td>
+                         </tr>
 
-                 <tr>
-                    <td class="center" colspan="3"><div style="font-weight: bold;">Buy</div>
-</td>
-                 </tr>
-
-                 <tr>
-                    <td class="center" colspan="3">
-                        <div class="flex-number-row">
-                             <div class="number-feed"><h2 id="gp_livebuyprice_gm">00.00</h2></div>
-                             <div class="icon-arrow-pricefeed"><i id="iconlivebuy"   aria-hidden="true"></i></div>
-                        </div>
-                    </td>
-
-
-                 </tr>
-                 <tr>
-                    <td class="center" colspan="3"><div>RM/GM</div></td>
-                 </tr>
+                         <tr>
+                            <td class="center" colspan="3">
+                                <div class="flex-number-row">
+                                     <div class="number-feed"><h2 id="gp_livebuyprice_gm">00.00</h2></div>
+                                     <div class="icon-arrow-pricefeed"><i id="iconlivebuy"   aria-hidden="true"></i></div>
+                                </div>
+                            </td>
 
 
-                 <tr>
-                    <td class="center" colspan="3">
-                       <div class="flex-number-row">
-                           <div class="number-feed"><h2 id="gp_livebuyprice_tael">00.00</h2></div>
-                            <div class="icon-arrow-pricefeed">
-                                <i id="iconlivebuytael"  aria-hidden="true"></i>
-                            </div>
-                       </div>
-                    </td>
-                 </tr>
-                 <tr>
-                    <td class="center" colspan="3"><div>RM/TAEL</div><br></td>
-                 </tr>
+                         </tr>
+                         <tr>
+                            <td class="center" colspan="3"><div>RM/GM</div></td>
+                         </tr>
 
 
-                </tbody>
-                </table>
+                         <tr>
+                            <td class="center" colspan="3">
+                               <div class="flex-number-row">
+                                   <div class="number-feed"><h2 id="gp_livebuyprice_tael">00.00</h2></div>
+                                    <div class="icon-arrow-pricefeed">
+                                        <i id="iconlivebuytael"  aria-hidden="true"></i>
+                                    </div>
+                               </div>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td class="center" colspan="3"><div>RM/TAEL</div><br></td>
+                         </tr>
+
+
+                        </tbody>
+                        </table>
+                </div>
+                <div class="prc-sell">
                <table class="table-price-sell">
                 <thead>
                  <tr>
@@ -127,6 +129,7 @@
 
                 </tbody>
                </table>
+                </div>
 
 
             </div>
@@ -651,7 +654,7 @@
                       src="{{ asset('public/'.$v->file_name) }}"
                       alt=""
                     />
-                     <p>
+                     <p class="p-title-news">
                           {{$v->title}}
                         </p>
                          </a>
@@ -678,7 +681,7 @@
                     src="{{ asset('public/'.$v->file_name) }}"
                     alt=""
                   />
-                   <p>
+                   <p class="p-title-news">
                         {{$v->title}}
                       </p>
                   </a>
@@ -709,7 +712,7 @@
                           src="{{ asset('public/'.$v->file_name) }}"
                           alt=""
                         />
-                      <p>
+                      <p class="p-title-news">
                         {{$v->title}}
                       </p>
                     </div>
