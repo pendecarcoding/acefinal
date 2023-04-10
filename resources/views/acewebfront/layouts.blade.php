@@ -123,16 +123,28 @@
 
     <script type="text/javascript">
 
+       var scrollnum = 200;
+
         function progressBarScroll() {
+
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
                 height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
-                scrolled = (winScroll / height) * 165;
-            if(scrolled <= 100){
+                scrolled = (winScroll / height) * scrollnum;
+             console.log("Hasil "+scrolled);
+            // if(scrolled >= 30 && scrolled <= 100){
+            //     scrollnum = 250;
+            //     document.getElementById("progressBar").style.height = scrolled + "%";
+            // }
+            // if(scrolled >= 90 && scrolled <= 100){
+            //     scrollnum = 200;
+            //     document.getElementById("progressBar").style.height = "30%";
+            // }
+            if(scrolled <= 100 && scrolled >= 56){
                 document.getElementById("progressBar").style.height = scrolled + "%";
             }
-            if (scrolled == 90){
-                alert("dah 90 dah");
-            }
+            // if (scrolled == 90){
+            //     alert("dah 90 dah");
+            // }
 
         }
 

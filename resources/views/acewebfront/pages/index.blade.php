@@ -12,13 +12,13 @@
             <div class="flex-home">
 
                 <div class="card-corporate">
-                   <a href="{{ url('forcorporate') }}"> <center><img class="img-icon-corporate" src="{{ asset('public/aceweb/assets/img/usertie.png') }}"></center>
-                    <b>CORPORATE</b>
+                   <a href="{{ url('forcorporate') }}"> <center><img class="img-icon-corporate" src="{{ asset('public/aceweb/assets/img/corporate.png') }}"></center>
+                    <!-- <b>CORPORATE</b> -->
                    </a>
                 </div>
                  <div class="card-personal">
-                   <a href="{{ url('forpersonal') }}"> <center><img class="img-icon-personal" src="{{ asset('public/aceweb/assets/img/usertie2.png') }}"></center>
-                    <b>PERSONAL</b>
+                   <a href="{{ url('forpersonal') }}"> <center><img class="img-icon-personal" src="{{ asset('public/aceweb/assets/img/personal.png') }}"></center>
+                    <!-- <b>PERSONAL</b> -->
                    </a>
                 </div>
 

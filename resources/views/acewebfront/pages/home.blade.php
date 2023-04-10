@@ -157,7 +157,7 @@
               >
                 <h1>Company structure</h1>
               </div>
-              <div class="row">
+              <div class="row img-strc">
                 <div class="col-md-5 col-sm-5">
                   <div
                     data-aos="zoom-in-down"
@@ -195,9 +195,9 @@
                   <div class="child-company">
                     <div class="row">
                    <div data-aos="zoom-in-down"
-                   data-aos-delay="1500" class="wrap-card-company" style="left: -1%;">
+                   data-aos-delay="1500" class="wrap-card-company" style="left: 26%;">
                         <div  class="card ace-card-company">
-                          <img class="pulse" src="{{ static_asset('aceweb') }}/assets/img/acecapital1.png" alt="" />
+                          <img  src="{{ static_asset('aceweb') }}/assets/img/acecapital1.png" alt="" />
 
                         </div>
                         <p style="font-size: 12px;">ACE Capital Growth Sdn Bhd(ACE Capital)</p>
@@ -205,9 +205,9 @@
 
 
                     <div data-aos="zoom-in-down"
-                    data-aos-delay="2000" class="wrap-card-company" style="left: 3%;">
+                    data-aos-delay="2000" class="wrap-card-company" style="left: 29%;">
                         <div  class="card ace-card-company">
-                          <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceikhlas1.png" alt="" />
+                          <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/aceikhlas1.png" alt="" />
 
                         </div>
                         <p style="font-size: 12px;">ACE Ikhlas Gold Sdn Bhd (ACE Ikhlas)</p>
@@ -215,17 +215,17 @@
 
 
                     <div data-aos="zoom-in-down"
-                    data-aos-delay="2500" class="wrap-card-company" style="left: 7%;">
+                    data-aos-delay="2500" class="wrap-card-company" style="left: 31%;">
                         <div  class="card ace-card-company">
-                          <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceeasy1.png" alt="" />
+                          <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceeasy1.png" alt="" />
 
                       </div>
                       <p style="font-size: 12px;">ACE Assay (M) Sdn Bhd (ACE Assay) </p>
                       </div>
                       <div data-aos="zoom-in-down"
-                      data-aos-delay="3000" class="wrap-card-company" style="left: 10%;">
+                      data-aos-delay="3000" class="wrap-card-company" style="left: 33%;">
                         <div  class="card ace-card-company">
-                              <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceihsan1.png" alt="" />
+                              <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceihsan1.png" alt="" />
 
                             </div>
                             <p style="font-size: 12px;">ACE Ihsan Gold Sdn Bhd (ACE Ihsan) </p>
@@ -298,25 +298,26 @@
           </div>
         </div>
       </section>
-    <section id="nonmansory2" class="gtp-solution">
+      <section id="nonmansory2" class="gtp-solution">
         <div class="content-ace">
           <div class="wrap-content">
             <div class="ace-isi about">
-
-
+              <div class="col-md-12">
+                <div data-aos="fade-up" data-aos-delay="100" class="title-ace">
+                  GOLD TRADING MADE EASY
+                  <span class="h-dash" style="font-weight: bold">—</span>
+                </div>
+              </div>
+              <div class="row">
+                <div data-aos="fade-up" data-aos-delay="200" class="col-md-6 col-sm-6">
+                  <h1>GTP Solutions The All in One Platform</h1>
+                </div>
+                <div class="col-md-6 col-sm-6"></div>
+              </div>
               <div class="sticky-content">
-                <div class="col-md-12">
-                    <div data-aos="fade-up" data-aos-delay="100" class="title-ace">
-                      GOLD TRADING MADE EASY
-                      <span class="h-dash" style="font-weight: bold">—</span>
-                    </div>
-                  </div>
                 <div id="gpt0"></div>
                 <div class="row">
-                    <div data-aos="fade-up" data-aos-delay="200" class="col-md-6 col-sm-6">
-                        <h1>GTP Solutions The All in One Platform</h1>
-                      </div>
-
+                  <div class="col-md-6 col-sm-6"></div>
                   <div data-aos="fade-down" class="col-md-6 col-sm-6 text-content-gtp">
                     <div class="vl" style="color: #6db0da">
                       <table>
@@ -344,7 +345,8 @@
                 </div>
                 <div class="col-md-12">
                   <center>
-                     <div  id="myDIV" class="img-wrap-gpt">
+                     <div data-aos="fade-up"
+                     data-aos-anchor-placement="bottom-center" id="myDIV" class="img-wrap-gpt">
                      <!----<div class="alert">-->
                         <!--<figure class="swing">-->
                           <img id="imggpt1" />
@@ -355,7 +357,6 @@
 
                    </div>
                  </center>
-
                  <div class="gtp-po-button">
                   <center>
                       <a href="https://aceweb.kanalapps.web.id/newsroom" class="ace-button">Find Out More</a>
@@ -363,7 +364,7 @@
                   </div>
                  </div>
               </div>
-               <div id="gtp">
+              <div id="gtp">
                 <div id="gpt1"></div>
                 <div id="gpt2"></div>
                 <div id="gpt3"></div>
@@ -381,7 +382,7 @@
             </div>
           </div>
         </div>
-    </section>
+      </section>
       <section id="gtp-patner-focused" class="gtp-patner">
         <div class="content-ace">
           <div class="wrap-content">
@@ -459,49 +460,52 @@
                 </div>
               </div>
             <div class="row">
-              <div id="carouselservice" class="carousel slide pointer-event" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                                          <button id="btn-slider" type="button" data-bs-target="#carouselservice" data-bs-slide-to="0" class="btn-slide active" aria-label="Slide 0" fdprocessedid="io38s9" aria-current="true"></button>
+              <div class="wrap-caraouselservice">
+                <div id="carouselservice" class="carousel slide pointer-event" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                                              <button id="btn-slider" type="button" data-bs-target="#carouselservice" data-bs-slide-to="0" class="btn-slide active" aria-label="Slide 0" fdprocessedid="io38s9" aria-current="true"></button>
 
-                              <button id="btn-slider" type="button" data-bs-target="#carouselservice" data-bs-slide-to="1" class="btn-slide" aria-label="Slide 1" fdprocessedid="ddvw"></button>
-                            </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="mansory-horizontal">
-                      <div data-aos="fade-up" class="item1">
-                        <img src="https://dev.ace2u.com/public/uploads/all/hNO6xJ5V4iECiplUM5MEVjJ2Fc29n9Lw0obvkNqS.png" alt="" />
+                                  <button id="btn-slider" type="button" data-bs-target="#carouselservice" data-bs-slide-to="1" class="btn-slide" aria-label="Slide 1" fdprocessedid="ddvw"></button>
+                                </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <div class="mansory-horizontal">
+                          <div data-aos="fade-up" class="item1">
+                            <img src="https://dev.ace2u.com/public/uploads/all/hNO6xJ5V4iECiplUM5MEVjJ2Fc29n9Lw0obvkNqS.png" alt="" />
+                          </div>
+                          <div data-aos="fade-up" class="item1">
+                            <img src="https://dev.ace2u.com/public/uploads/all/Q2kqRA0ebVzgKLLJWQHmktdNY1fw5veYHHUOH2KQ.png" alt="" />
+                          </div>
+                          <div data-aos="fade-up" class="item1">
+                            <img src="https://dev.ace2u.com/public/uploads/all/i89ehQuUUm5vPz2ekbNnhtyMnG1k7xLWLyleARL7.png" alt="" />
+                          </div>
+                          <div data-aos="fade-up" class="item1">
+                            <img src="https://dev.ace2u.com/public/uploads/all/om862enRsT8azqy8iCDEpwmlnQWXm3nOvuiY8SZ9.png" alt="" />
+                          </div>
+                        </div>
                       </div>
-                      <div data-aos="fade-up" class="item1">
-                        <img src="https://dev.ace2u.com/public/uploads/all/Q2kqRA0ebVzgKLLJWQHmktdNY1fw5veYHHUOH2KQ.png" alt="" />
+                      <div class="carousel-item">
+                        <div class="mansory-horizontal">
+                          <div data-aos="fade-up" class="item1">
+                            <img src="https://dev.ace2u.com/public/uploads/all/om862enRsT8azqy8iCDEpwmlnQWXm3nOvuiY8SZ9.png" alt="" />
+                          </div>
+                          <div data-aos="fade-up" class="item1">
+                            <img src="https://dev.ace2u.com/public/uploads/all/d2GQlkSyDYw0ezYLqnrlCNAks1Al6YPCxpT7Rn4t.png" alt="" />
+                          </div>
+                          <div data-aos="fade-up" class="item1">
+                            <img src="https://dev.ace2u.com/public/uploads/all/Q2kqRA0ebVzgKLLJWQHmktdNY1fw5veYHHUOH2KQ.png" alt="" />
+                          </div>
+                          <div data-aos="fade-up" class="item1">
+                            <img src="https://dev.ace2u.com/public/uploads/all/i89ehQuUUm5vPz2ekbNnhtyMnG1k7xLWLyleARL7.png" alt="" />
+                          </div>
+                        </div>
                       </div>
-                      <div data-aos="fade-up" class="item1">
-                        <img src="https://dev.ace2u.com/public/uploads/all/i89ehQuUUm5vPz2ekbNnhtyMnG1k7xLWLyleARL7.png" alt="" />
-                      </div>
-                      <div data-aos="fade-up" class="item1">
-                        <img src="https://dev.ace2u.com/public/uploads/all/om862enRsT8azqy8iCDEpwmlnQWXm3nOvuiY8SZ9.png" alt="" />
-                      </div>
-                    </div>
+
+
                   </div>
-                  <div class="carousel-item">
-                    <div class="mansory-horizontal">
-                      <div data-aos="fade-up" class="item1">
-                        <img src="https://dev.ace2u.com/public/uploads/all/om862enRsT8azqy8iCDEpwmlnQWXm3nOvuiY8SZ9.png" alt="" />
-                      </div>
-                      <div data-aos="fade-up" class="item1">
-                        <img src="https://dev.ace2u.com/public/uploads/all/d2GQlkSyDYw0ezYLqnrlCNAks1Al6YPCxpT7Rn4t.png" alt="" />
-                      </div>
-                      <div data-aos="fade-up" class="item1">
-                        <img src="https://dev.ace2u.com/public/uploads/all/Q2kqRA0ebVzgKLLJWQHmktdNY1fw5veYHHUOH2KQ.png" alt="" />
-                      </div>
-                      <div data-aos="fade-up" class="item1">
-                        <img src="https://dev.ace2u.com/public/uploads/all/i89ehQuUUm5vPz2ekbNnhtyMnG1k7xLWLyleARL7.png" alt="" />
-                      </div>
-                    </div>
                   </div>
-
-
               </div>
-              </div>
+
             </div>
             </div>
           </div>
