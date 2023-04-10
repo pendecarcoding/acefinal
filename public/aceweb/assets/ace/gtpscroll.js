@@ -20,10 +20,10 @@ var observer = new MutationObserver(function(mutations) {
               } else {
                 imggpt.className = "classone";
                 // imgdivgtp.classList.remove("aos-animate");
-                txtgtp.classList.remove("aos-animate");
+                // txtgtp.classList.remove("aos-animate");
               }
             //   imgdivgtp.classList.remove("aos-animate");
-                txtgtp.classList.remove("aos-animate");
+                // txtgtp.classList.remove("aos-animate");
 
 
 
@@ -52,14 +52,14 @@ var observer = new MutationObserver(function(mutations) {
                     imggpt.classList.remove("classone");
                     imggpt.classList.add("classtwo");
                     // imgdivgtp.classList.remove("aos-animate");
-                    txtgtp.classList.remove("aos-animate");
+                    // txtgtp.classList.remove("aos-animate");
                 } else {
 
                 }
 
 
                 // imgdivgtp.classList.remove("aos-animate");
-                txtgtp.classList.remove("aos-animate");
+                // txtgtp.classList.remove("aos-animate");
 
 
 
@@ -92,7 +92,7 @@ var observer = new MutationObserver(function(mutations) {
             if (imggpt.classList.contains('classtwo')) {
 
                 // imgdivgtp.classList.remove("aos-animate");
-                txtgtp.classList.remove("aos-animate");
+                // txtgtp.classList.remove("aos-animate");
                 imggpt.classList.remove("classtwo");
                 imggpt.classList.add("classthree");
 
@@ -101,7 +101,7 @@ var observer = new MutationObserver(function(mutations) {
 
             }
             // imgdivgtp.classList.remove("aos-animate");
-                txtgtp.classList.remove("aos-animate");
+                // txtgtp.classList.remove("aos-animate");
 
 
 
@@ -122,13 +122,13 @@ var observer = new MutationObserver(function(mutations) {
                 imggpt.classList.remove("classthree");
                 imggpt.classList.add("classfour");
                 // imgdivgtp.classList.remove("aos-animate");
-                txtgtp.classList.remove("aos-animate");
-            } else {
+            //     txtgtp.classList.remove("aos-animate");
+            // } else {
 
             }
 
                 // imgdivgtp.classList.remove("aos-animate");
-                txtgtp.classList.remove("aos-animate");
+                // txtgtp.classList.remove("aos-animate");
 
             setTimeout(function() {
                 hasRunempat = true;
