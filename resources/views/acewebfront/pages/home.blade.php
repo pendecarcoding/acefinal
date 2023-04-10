@@ -462,32 +462,32 @@
                   <div class="carousel-item active">
                     <div class="mansory-horizontal">
                       <div data-aos="fade-up" class="item1">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/igr.png" alt="" />
+                        <img src="https://dev.ace2u.com/public/uploads/all/hNO6xJ5V4iECiplUM5MEVjJ2Fc29n9Lw0obvkNqS.png" alt="" />
                       </div>
                       <div data-aos="fade-up" class="item1">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/metalor.png" alt="" />
+                        <img src="https://dev.ace2u.com/public/uploads/all/Q2kqRA0ebVzgKLLJWQHmktdNY1fw5veYHHUOH2KQ.png" alt="" />
                       </div>
                       <div data-aos="fade-up" class="item1">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/mobility.png" alt="" />
+                        <img src="https://dev.ace2u.com/public/uploads/all/i89ehQuUUm5vPz2ekbNnhtyMnG1k7xLWLyleARL7.png" alt="" />
                       </div>
                       <div data-aos="fade-up" class="item1">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/gas.png" alt="" />
+                        <img src="https://dev.ace2u.com/public/uploads/all/om862enRsT8azqy8iCDEpwmlnQWXm3nOvuiY8SZ9.png" alt="" />
                       </div>
                     </div>
                   </div>
                   <div class="carousel-item">
                     <div class="mansory-horizontal">
                       <div data-aos="fade-up" class="item1">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/gas.png" alt="" />
+                        <img src="https://dev.ace2u.com/public/uploads/all/om862enRsT8azqy8iCDEpwmlnQWXm3nOvuiY8SZ9.png" alt="" />
                       </div>
                       <div data-aos="fade-up" class="item1">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/salihin.png" alt="" />
+                        <img src="https://dev.ace2u.com/public/uploads/all/d2GQlkSyDYw0ezYLqnrlCNAks1Al6YPCxpT7Rn4t.png" alt="" />
                       </div>
                       <div data-aos="fade-up" class="item1">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/metalor.png" alt="" />
+                        <img src="https://dev.ace2u.com/public/uploads/all/Q2kqRA0ebVzgKLLJWQHmktdNY1fw5veYHHUOH2KQ.png" alt="" />
                       </div>
                       <div data-aos="fade-up" class="item1">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/mobility.png" alt="" />
+                        <img src="https://dev.ace2u.com/public/uploads/all/i89ehQuUUm5vPz2ekbNnhtyMnG1k7xLWLyleARL7.png" alt="" />
                       </div>
                     </div>
                   </div>
