@@ -132,7 +132,13 @@
                       style="margin: 20px"
                       class="item_direction row-personals"
                     >
-                      <div style="margin-right: 50px">{{ $v->created_at }}</div>
+                      @php
+                      $datean = explode(' ',$v->created_at)
+                      @endphp
+                      <div class="row">
+
+                      </div>
+                      <div style="margin-right: 50px">{{ $datean[0] }}</div>
                       <div>
                         {{ $v->title }}
                       </div>
@@ -296,7 +302,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r1.png"
                           alt=""
                         />
-                        <p>Message from the CEO</p>
+                        <p class="p-title-news">Message from the CEO</p>
                       </div>
                     </a>
                   </div>
@@ -308,7 +314,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r2.png"
                           alt=""
                         />
-                        <p>{{ $irkey->title }}</p>
+                        <p class="p-title-news">{{ $irkey->title }}</p>
                       </div>
                     </a>
                   </div>
@@ -320,7 +326,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r3.png"
                           alt=""
                         />
-                        <p>{{ $shareholder->title }}</p>
+                        <p class="p-title-news">{{ $shareholder->title }}</p>
                       </div>
                     </a>
                   </div>
@@ -332,7 +338,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r4.png"
                           alt=""
                         />
-                        <p>IR Events: Presentations</p>
+                        <p class="p-title-news">IR Events: Presentations</p>
                       </div>
                     </a>
                   </div>
@@ -344,7 +350,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r5.png"
                           alt=""
                         />
-                        <p>IR Presentations</p>
+                        <p class="p-title-news">IR Presentations</p>
                       </div>
                     </a>
                   </div>

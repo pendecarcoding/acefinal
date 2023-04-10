@@ -54,14 +54,17 @@
                     <div style="margin: auto">Sort by:</div>
                     <div style="margin-left: 20px">
                       <select class="form-control">
-                        <option value="">Price: Low to Heigh</option>
+                        <option value="">Price: Low to Height</option>
                         <option value="">Price: Heigh to Low</option>
                       </select>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row" style="
+              margin-top: 80px;
+              margin-bottom: 80px;
+          ">
                 @foreach($data as $i => $v)
                 <div class="col-md-4 col-sm-2">
                   <div data-aos="fade-up" class="cards">

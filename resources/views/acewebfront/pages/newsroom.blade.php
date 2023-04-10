@@ -59,7 +59,7 @@
                       src="{{ getimage($v->banner) }}"
                       alt=""
                     />
-                    <p>{{ $v->title }}</p>
+                    <p style="margin-top:18px;margin-bottom: 18px;">{{ $v->title }}</p>
                   </a>
                 </div>
             @endforeach

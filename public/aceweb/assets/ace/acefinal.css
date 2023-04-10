@@ -1417,7 +1417,7 @@
 
     .stock-price-investor {
         height: 32.5vh;
-        margin-top: 10vh;
+        margin-top: 13vh;
         width: 100%;
     }
 
@@ -1495,6 +1495,7 @@
 
     .ace-button-blue {
         font-size: 1.2em;
+        margin: 10px;
     }
 
     .gtp-download .wrap-content {
