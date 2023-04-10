@@ -3,6 +3,29 @@ html {
 }
 
 
+.line-str{
+    height: 1px;
+    width: 68%;
+    top: 70%;
+    left: 25%;
+    background: #cfcfcf;
+    border-radius: 23%;
+    position: absolute;
+
+}
+.line-str::after{
+    height: 5px;
+    width: 2%;
+    top: 70%;
+    background: #cfcfcf;
+    border-radius: 23%;
+    position: absolute;
+
+}
+
+
+
+
 .footer-medsos{
     padding: 20px;
     text-align: center;
@@ -2237,13 +2260,24 @@ footer img {
     position: relative;
 }
 
+.wrap-card-company{
+    text-align: -webkit-center;
+    width: 170px;
+    height: 200px;
+    position: relative;
+
+    /* height: auto;
+    /* align-items: center; */
+}
+
 .ace-card-company {
+    position: relative;
     padding-top: 15px;
     border-radius: 100px;
     width: 100px;
     height: 100px;
-
-    margin-left: 55px;
+    margin: 20px;
+    /* margin-left: 55px; */
     border: none;
     box-shadow: 1px 1px 1px rgb(221 218 218);
 }
@@ -2256,8 +2290,8 @@ footer img {
 
 .child-company {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 46%;
+    left: 45%;
 }
 
 .carousel-indicators button .active {
@@ -2287,9 +2321,9 @@ footer img {
 
 
 .line-structure {
-    top: 72%;
-    left: 37%;
-    width: 65%;
+    top: 70%;
+    left: 20%;
+    width: 85%;
     position: absolute;
 }
 
@@ -5989,9 +6023,9 @@ footer img {
     .gtp-solution .ace-isi{
         padding-bottom: 0%;
     }
-    .ace-card-company {
+    /* .ace-card-company {
         margin-left: 65px;
-    }
+    } */
 
     .hover-1-title {
         font-size: 1.3vw;

@@ -165,7 +165,7 @@
                     class="img-structure"
                   >
                    <center> <img
-                      class="img-responsive circle-img-ace pulse"
+                      class="img-responsive circle-img-ace "
                       src="{{ static_asset('aceweb') }}/assets/img/circle.png"
                       alt=""
                     />
@@ -175,6 +175,7 @@
                 </div>
 
                 <div class="col-md-7 col-sm-7">
+                    <!-- <div class="line-str"></div> -->
                   <div class="line-structure">
                     <img
                       data-aos="zoom-in-down"
@@ -186,40 +187,44 @@
                   </div>
                   <div class="child-company">
                     <div class="row">
-                      <div class="col-md-3 col-sm-2">
-                        <div data-aos="zoom-in-down"
-                    data-aos-delay="1500" class="card ace-card-company">
+                   <div data-aos="zoom-in-down"
+                   data-aos-delay="1500" class="wrap-card-company" style="left: -3%;">
+                        <div  class="card ace-card-company">
                           <img class="pulse" src="{{ static_asset('aceweb') }}/assets/img/acecapital1.png" alt="" />
-                          <p>ACE Capital Growth Sdn Bhd(ACE Capital)</p>
+
                         </div>
-                      </div>
-                      <div class="col-md-3 col-sm-2">
-                        <div data-aos="zoom-in-down"
-                    data-aos-delay="2000" class="card ace-card-company">
+                        <p style="font-size: 12px;">ACE Capital Growth Sdn Bhd(ACE Capital)</p>
+                    </div>
+
+
+                    <div data-aos="zoom-in-down"
+                    data-aos-delay="2000" class="wrap-card-company" style="left: 4%;">
+                        <div  class="card ace-card-company">
                           <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceikhlas1.png" alt="" />
-                          <p>ACE Ikhlas Gold Sdn Bhd
-(ACE Ikhlas)
-</p>
+
                         </div>
-                      </div>
-                      <div class="col-md-3 col-sm-2">
-                        <div data-aos="zoom-in-down"
-                    data-aos-delay="2500" class="card ace-card-company">
+                        <p style="font-size: 12px;">ACE Ikhlas Gold Sdn Bhd (ACE Ikhlas)</p>
+                    </div>
+
+
+                    <div data-aos="zoom-in-down"
+                    data-aos-delay="2500" class="wrap-card-company" style="left: 11%;">
+                        <div  class="card ace-card-company">
                           <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceeasy1.png" alt="" />
-                          <p>ACE Assay (M) Sdn Bhd
-(ACE Assay)
-</p>
-                        </div>
+
                       </div>
-                      <div class="col-md-3 col-sm-2">
-                        <div data-aos="zoom-in-down"
-                    data-aos-delay="3000" class="card ace-card-company">
-                          <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceihsan1.png" alt="" />
-                          <p>ACE Ihsan Gold Sdn Bhd
-(ACE Ihsan)
-</p>
-                        </div>
+                      <p style="font-size: 12px;">ACE Assay (M) Sdn Bhd (ACE Assay) </p>
                       </div>
+                      <div data-aos="zoom-in-down"
+                      data-aos-delay="3000" class="wrap-card-company" style="left: 18%;">
+                        <div  class="card ace-card-company">
+                              <img class="img-responsive pulse" src="{{ static_asset('aceweb') }}/assets/img/aceihsan1.png" alt="" />
+
+                            </div>
+                            <p style="font-size: 12px;">ACE Ihsan Gold Sdn Bhd (ACE Ihsan) </p>
+                      </div>
+
+
                     </div>
                   </div>
                 </div>
