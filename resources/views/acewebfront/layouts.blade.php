@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="{{ static_asset('aceweb') }}/assets/vendor/aos/aos.css" rel="stylesheet" />
     <link href="{{ static_asset('aceweb') }}/assets/ace/mansoryscroll.css" rel="stylesheet" />
+    <link href="{{ static_asset('aceweb') }}/assets/ace/company.css" rel="stylesheet" />
     <script src="{{ static_asset('aceweb') }}/assets/mansory/mansory.js"></script>
 
 

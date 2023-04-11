@@ -195,7 +195,7 @@
                   <div class="child-company">
                     <div class="row">
                    <div data-aos="zoom-in-down"
-                   data-aos-delay="1500" class="wrap-card-company" style="left: 26%;">
+                   data-aos-delay="1500" class="wrap-card-company" id="acecapital">
                         <div  class="card ace-card-company">
                           <img  src="{{ static_asset('aceweb') }}/assets/img/acecapital1.png" alt="" />
 
@@ -205,7 +205,7 @@
 
 
                     <div data-aos="zoom-in-down"
-                    data-aos-delay="2000" class="wrap-card-company" style="left: 29%;">
+                    data-aos-delay="2000" class="wrap-card-company" id="aceikhlas">
                         <div  class="card ace-card-company">
                           <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/aceikhlas1.png" alt="" />
 
@@ -215,7 +215,7 @@
 
 
                     <div data-aos="zoom-in-down"
-                    data-aos-delay="2500" class="wrap-card-company" style="left: 31%;">
+                    data-aos-delay="2500" class="wrap-card-company" id="aceassay">
                         <div  class="card ace-card-company">
                           <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceeasy1.png" alt="" />
 
@@ -223,7 +223,7 @@
                       <p style="font-size: 12px;">ACE Assay (M) Sdn Bhd (ACE Assay) </p>
                       </div>
                       <div data-aos="zoom-in-down"
-                      data-aos-delay="3000" class="wrap-card-company" style="left: 33%;">
+                      data-aos-delay="3000" class="wrap-card-company" id="aceihsan">
                         <div  class="card ace-card-company">
                               <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceihsan1.png" alt="" />
 
