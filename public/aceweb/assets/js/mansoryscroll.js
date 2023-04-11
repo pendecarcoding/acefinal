@@ -7,7 +7,7 @@ var images = [
 
     "https://dev.ace2u.com/public/uploads/all/RKV5vTJO7jQAXN27Jigs2tWcZ7Cs4NFpP9sAIFjA.png",
     "https://dev.ace2u.com/public/uploads/all/AzEFLQDFA7kxtp3pATb6KBXlRkGIKkR1wge9cjce.png",
-    "https://dev.ace2u.com/public/uploads/all/ILgTvXEeN6EI7G2yfC6wysw6GB4uv4QXvwzopYAV.png",
+    "https://dev.ace2u.com/public/uploads/all/dPlMkvVOKpkFN5d2KLauhMAWbuwTJv1cMERF0uK9.png",
   ];
 
   console.log(images);
