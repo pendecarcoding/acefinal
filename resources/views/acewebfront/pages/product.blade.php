@@ -17,21 +17,7 @@
       <section class="gtp-anouncements">
         <div class="content-ace">
           <div class="wrap-content">
-            <div class="modal fade modaldiscount" id="discountbanner" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-                <div class="modal-dialog modal-md">
-                  <div  style="background-color: transparent;border:none;" class="modal-content">
 
-
-
-                    <div class="modal-body">
-                        <button style="position: absolute;
-                        left: 90%;" type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">X</button>
-                        <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/discounts.gif">
-                    </div>
-
-                  </div>
-                </div>
-              </div>
             <div style="padding-top: 0px" class="ace-isi about">
               <div class="col-md-12" style="margin-top: 5%">
                 <div data-aos="fade-up" class="title-ace">
@@ -98,8 +84,28 @@
             </div>
           </div>
         </div>
+
       </section>
+
+      <div class="modal fade modaldiscount" id="discountbanner" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-md">
+          <div  style="background-color: transparent;border:none;" class="modal-content">
+
+
+
+            <div class="modal-body">
+                <button style="position: absolute;
+                left: 90%;" type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">X</button>
+                <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/discounts.gif">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </main>
+
+
 
     <script type="text/javascript">
         $(window).on('load', function() {
