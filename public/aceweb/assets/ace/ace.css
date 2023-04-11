@@ -1351,8 +1351,9 @@ hr.gold {
 }
 
 .banner-static {
-    height: max-content;
+    height: 53vh;
     position: relative;
+
 }
 
 .sticky-content {
@@ -1797,8 +1798,8 @@ footer img {
 
 .img-responsive-banner {
     object-fit: cover;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: inherit;
     vertical-align: middle;
 }
 
