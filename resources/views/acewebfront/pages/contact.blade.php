@@ -30,25 +30,24 @@
                          <div style="margin-top: 50px" class="row">
                              <div class="col-md-6">
                                  <div class="contact-wrap">
-                                     <img class="img-responsive"
-                                         src="{{ asset('public/aceweb') }}/assets/img/AIAB signboard 1.png"
+                                     <img class="img-responsive" src="{{ asset('public/aceweb') }}/assets/img/ACE.jpg"
                                          alt="" />
                                  </div>
                              </div>
                              <div class="col-md-6">
                                  <div class="contact-wrap">
                                      <div class="list-contact">
-                                         <h5>ACE INNOVATE ASIA BERHAD</h5>
-
+                                         <h5 class="title-corporate">ACE INNOVATE ASIA BERHAD</h5>
+                                         <br>
                                          <p style="font-weight: bold">Address</p>
-
+                                        <br>
                                          <p>
                                              No. 19-1, Jalan USJ 10/1D, 47620 Subang Jaya, Selangor,
                                              Malaysia
                                          </p>
-
+                                         <br>
                                          <p style="font-weight: bold">Tel</p>
-
+                                         <br>
                                          <p>+603 – 8081 7198</p>
                                          <p style="font-weight: bold">Email</p>
 
@@ -61,20 +60,21 @@
                              <div class="col-md-6">
                                  <div class="contact-wrap">
                                      <img class="img-responsive"
-                                         src="{{ asset('public/aceweb') }}/assets/img/ace-capital.png" alt="" />
+                                         src="{{ asset('public/aceweb') }}/assets/img/ACECapital.jpg" alt="" />
                                      <div class="list-contact">
-                                         <h5>ACE Capital Growth Sdn Bhd</h5>
-
+                                         <h5 class="title-corporate">ACE Capital Growth Sdn Bhd</h5>
+                                        <br>
                                          <p style="font-weight: bold">Address</p>
 
                                          <p>
                                              No. 19-1, Jalan USJ 10/1D, 47620 Subang Jaya, Selangor,
                                              Malaysia
                                          </p>
-
+                                         <br>
                                          <p style="font-weight: bold">Tel</p>
 
                                          <p>+603 – 8081 7198</p>
+                                         <br>
                                          <p style="font-weight: bold">Email</p>
 
                                          <p>enquiry@ace2u.com</p>
@@ -83,18 +83,18 @@
                              </div>
                              <div class="col-md-6">
                                  <div class="contact-wrap">
-                                     <img class="img-responsive" src="{{ asset('public/aceweb') }}/assets/img/ASSAY.png"
+                                     <img class="img-responsive" src="{{ asset('public/aceweb') }}/assets/img/ACEAssay.jpg"
                                          alt="" />
                                      <div class="list-contact">
-                                         <h5>ACE Assay (M) Sdn Bhd</h5>
-
+                                         <h5 class="title-corporate">ACE Assay (M) Sdn Bhd</h5>
+                                        <br>
                                          <p style="font-weight: bold">Address</p>
 
                                          <p>
                                              No. 19, Jalan 2/131A, Project Jaya Industrial Estate,
                                              Batu 6, Jalan Klang Lama, 58200 Kuala Lumpur
                                          </p>
-
+                                         <br>
                                          <p style="font-weight: bold">Tel</p>
 
                                          <p>+603 – 7772 0164</p>
@@ -109,15 +109,15 @@
                                      <img class="img-responsive"
                                          src="{{ asset('public/aceweb') }}/assets/img/ace-ikhlas.png" alt="" />
                                      <div class="list-contact">
-                                         <h5>ACE Ikhlas Gold Sdn Bhd</h5>
-
+                                         <h5 class="title-corporate">ACE Ikhlas Gold Sdn Bhd</h5>
+                                        <br>
                                          <p style="font-weight: bold">Address</p>
 
                                          <p>
                                              No. 11A-2, Jalan USJ 10/1D, 47620 Subang Jaya, Selangor
                                              Malaysia
                                          </p>
-
+                                         <br>
                                          <p style="font-weight: bold">Tel</p>
 
                                          <p>+603 – 8081 7205</p>
@@ -129,15 +129,15 @@
                                      <img class="img-responsive"
                                          src="{{ asset('public/aceweb') }}/assets/img/ACE IHSAN (2) 1.png" alt="" />
                                      <div class="list-contact">
-                                         <h5>ACE Ihsan Gold Sdn Bhd</h5>
-
+                                         <h5 class="title-corporate">ACE Ihsan Gold Sdn Bhd</h5>
+                                            <br>
                                          <p style="font-weight: bold">Address</p>
 
                                          <p>
                                              No. 11A-2, Jalan USJ 10/1D, 47620 Subang Jaya, Selangor
                                              Malaysia
                                          </p>
-
+<br>
                                          <p style="font-weight: bold">Tel</p>
 
                                          <p>+603 – 8081 7205</p>
