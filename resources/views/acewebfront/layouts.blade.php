@@ -124,13 +124,13 @@
 
     <script type="text/javascript">
 
-       var scrollnum = 200;
+       var scrollnum = 300;
 
         function progressBarScroll() {
 
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
                 height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
-                scrolled = (winScroll / height) * scrollnum;
+                scrolled = (winScroll / height) * 300;
              console.log("Hasil "+scrolled);
             // if(scrolled >= 30 && scrolled <= 100){
             //     scrollnum = 250;
