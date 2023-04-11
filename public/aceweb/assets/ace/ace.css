@@ -1834,8 +1834,8 @@ footer img {
 
 .gtp-solution {
     background-repeat: no-repeat, repeat;
-    background-image: url("https://aceweb.kanalapps.web.id/public/aceweb/assets/img/gptmix.png");
-    background-color: #031430;
+    background-image: url("https://dev.ace2u.com/public/aceweb/assets/img/Ipad_bg_gtp.jpg");
+    /* background-color: #031430; */
     background-attachment: fixed;
     background-blend-mode: soft-light;
 }
