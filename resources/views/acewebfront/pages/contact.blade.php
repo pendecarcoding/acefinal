@@ -40,15 +40,16 @@
                                          <h5 class="title-corporate">ACE INNOVATE ASIA BERHAD</h5>
                                          <br>
                                          <p style="font-weight: bold">Address</p>
-                                        <br>
+
                                          <p>
                                              No. 19-1, Jalan USJ 10/1D, 47620 Subang Jaya, Selangor,
                                              Malaysia
                                          </p>
                                          <br>
                                          <p style="font-weight: bold">Tel</p>
-                                         <br>
+
                                          <p>+603 – 8081 7198</p>
+                                         <br>
                                          <p style="font-weight: bold">Email</p>
 
                                          <p>enquiry@ace2u.com</p>
