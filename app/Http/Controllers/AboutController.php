@@ -46,9 +46,9 @@ class AboutController extends Controller
         flash(translate('Slider has been updated successfully'))->success();
         return redirect()->route('about.index');
        } catch (\Throwable $th) {
-
-        flash(translate('Slider has been updated successfully'))->success();
-        return redirect()->route('about.index');
+        print $th->getmessage();
+        // flash(translate('Slider has been updated successfully'))->success();
+        // return redirect()->route('about.index');
        }
 
     }
