@@ -7,7 +7,7 @@
             <div class="banner-static">
               <img
               class="img-responsive-banner"
-                src="{{ asset('public/uploads/') }}all/FpVKDYGvy71eGKR9vYekjE9fmg8Hf5N4GAFOwrxa.jpg"
+                src="{{ asset('public/uploads') }}/all/FpVKDYGvy71eGKR9vYekjE9fmg8Hf5N4GAFOwrxa.jpg"
                 alt=""
               />
             </div>
