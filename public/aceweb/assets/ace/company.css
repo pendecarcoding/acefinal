@@ -30,7 +30,7 @@
   }
 
   /* styles for screens larger than 1200px */
-  @media (min-width: 1200px) and (max-width: 1535px) {
+  @media (min-width: 1200px) and (max-width: 1366px) {
     #acecapital{
         left: 26%;
     }
@@ -45,7 +45,22 @@
     }
   }
 
-  @media (min-width: 1535px) {
+  @media (min-width: 1366px) and (max-width: 1535px) {
+    #acecapital{
+        left: 25%;
+    }
+    #aceikhlas{
+        left: 26%;
+    }
+    #aceassay{
+        left: 26%;
+    }
+    #aceihsan{
+        left: 26%;
+    }
+  }
+
+  @media (min-width: 1535px) and (max-width: 1600px) {
     #acecapital{
         left: 26%;
     }
@@ -57,6 +72,21 @@
     }
     #aceihsan{
         left: 33%;
+    }
+  }
+
+  @media (min-width: 1600px){
+    #acecapital{
+        left: 27%;
+    }
+    #aceikhlas{
+        left: 30%;
+    }
+    #aceassay{
+        left: 33%;
+    }
+    #aceihsan{
+        left: 36%;
     }
   }
 
