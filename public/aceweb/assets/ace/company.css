@@ -50,13 +50,13 @@
         left: 25%;
     }
     #aceikhlas{
-        left: 26%;
+        left: 27%;
     }
     #aceassay{
-        left: 26%;
+        left: 29%;
     }
     #aceihsan{
-        left: 26%;
+        left: 29%;
     }
   }
 
@@ -75,7 +75,7 @@
     }
   }
 
-  /* @media (min-width: 1600px){
+  @media (min-width: 1600px){
     #acecapital{
         left: 27%;
     }
@@ -88,5 +88,5 @@
     #aceihsan{
         left: 36%;
     }
-  } */
+  }
 
