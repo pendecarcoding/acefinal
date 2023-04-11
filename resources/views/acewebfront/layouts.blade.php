@@ -130,12 +130,12 @@
 
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
                 height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
-                scrolled = (winScroll / height) * 300;
+                scrolled = (winScroll / height) * 150;
              console.log("Hasil "+scrolled);
-            // if(scrolled >= 30 && scrolled <= 100){
-            //     scrollnum = 250;
-            //     document.getElementById("progressBar").style.height = scrolled + "%";
-            // }
+            if(scrolled >= 30 && scrolled <= 100){
+                scrollnum = 250;
+                document.getElementById("progressBar").style.height = scrolled + "%";
+            }
             // if(scrolled >= 90 && scrolled <= 100){
             //     scrollnum = 200;
             //     document.getElementById("progressBar").style.height = "30%";
