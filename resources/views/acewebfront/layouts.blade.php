@@ -55,6 +55,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
 
+    <style>
+        #myBtn {
+  display: none;
+  position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #1d5189;
+    color: white;
+    cursor: pointer;
+    /* padding: 15px; */
+    border-radius: 50%;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+    </style>
 
 
 </head>
@@ -126,12 +147,26 @@
 
        var scrollnum = 300;
 
+        // Get the button
+            let mybutton = document.getElementById("myBtn");
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            }
+
         function progressBarScroll() {
 
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
                 height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
                 scrolled = (winScroll / height) * 190;
              console.log("Hasil "+scrolled);
+                        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
             if(scrolled >= 30 && scrolled <= 100){
                 scrollnum = 250;
                 document.getElementById("progressBar").style.height = scrolled + "%";
@@ -496,6 +531,11 @@
 
             }
         }
+    </script>
+
+
+<script>
+
     </script>
 
 

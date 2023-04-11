@@ -2,6 +2,7 @@
 
 @section('content')
 <!--CONTENT-->
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
  <main>
 
       <section class="ace-sliders">
@@ -908,6 +909,8 @@ Message *</textarea
       </section>
     </main>
     <!--END CONTENT-->
+
+
 
 
 
