@@ -151,12 +151,12 @@ footer a{
 
 .about-provider .carousel-indicators .btn-slide {
     width: 1%;
-    height: 8px;
+    height: 6px;
 }
 
   .about-provider .carousel-indicators .active {
     opacity: 1;
-    height: 8px;
+    height: 6px;
     width: 50px;
   }
 
