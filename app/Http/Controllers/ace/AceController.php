@@ -156,7 +156,7 @@ class AceController extends Controller
                 return view('acewebfront.pages.investor',compact('irkey','announcement','download','shareholder','page','announcementnew'));
                 break;
             case 'our_products':
-                $data = Product::where('published','1')->paginate(6);
+                $data = Product::where('published','1')->orderby('shortby','ASC')->paginate(6);
                 return view('acewebfront.pages.product',compact('data','page'));
             break;
             case 'newsroom':
