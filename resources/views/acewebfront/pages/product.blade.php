@@ -7,8 +7,8 @@
             <div class="banner-static">
               <img
               class="img-responsive-banner"
-                src="{{ asset('public/uploads') }}/all/FpVKDYGvy71eGKR9vYekjE9fmg8Hf5N4GAFOwrxa.jpg"
-                alt=""
+                src="{{ asset('public/uploads') }}/all/ySFIbEbUUtgi6okRteLoDLH71K9faQfB3X5nKqCZ.jpg"
+                alt="ACE-BANNER-PRODUCT"
               />
             </div>
         </div>

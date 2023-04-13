@@ -7,8 +7,8 @@
             <div class="banner-static">
               <img
                 class="img-responsive-banner newsroom-banner"
-                src="https://dev.ace2u.com/public/uploads/all/KHBClZ44puEc2d0r0KQM7yePVBm1OeGK31rmQPnx.jpg"
-                alt=""
+                src="{{ asset('public/uploads') }}/all/ysKodK19ejJOKzx63Sh6v9OkCvcL6fSacjDRl4S7.jpg"
+                alt="ACE-BANNER-NEWSROOM"
               />
             </div>
           </div>
