@@ -203,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Product Variation')}}</h5>
                     </div>
@@ -270,16 +270,16 @@
                             @endforeach
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Product price + stock')}}</h5>
                     </div>
                     <div class="card-body">
                         <div class="form-group row">
-                            <label class="col-lg-3 col-from-label">{{translate('Unit price')}}</label>
+                            <!-- <label class="col-lg-3 col-from-label">{{translate('Unit price')}}</label> -->
                             <div class="col-lg-6">
-                                <input type="text" placeholder="{{translate('Unit price')}}" name="unit_price" class="form-control" value="{{$product->unit_price}}" required>
+                                <input type="hidden" placeholder="{{translate('Unit price')}}" name="unit_price" class="form-control" value="{{$product->unit_price}}" required>
                             </div>
                         </div>
 
@@ -588,7 +588,7 @@
                         @endif
                     </div>
                 </div>-->
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Featured')}}</h5>
                     </div>
@@ -607,9 +607,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Todays Deal')}}</h5>
                     </div>
@@ -628,7 +628,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="card">
                     <div class="card-header">

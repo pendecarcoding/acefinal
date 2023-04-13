@@ -103,12 +103,12 @@
                         @endif
                         <th data-breakpoints="sm">{{translate('Info')}}</th>
                         <th data-breakpoints="md">{{translate('Total Stock')}}</th>
-                        <th data-breakpoints="lg">{{translate('Todays Deal')}}</th>
+                        <!-- <th data-breakpoints="lg">{{translate('Todays Deal')}}</th> -->
                         <th data-breakpoints="lg">{{translate('Published')}}</th>
                         @if(get_setting('product_approve_by_admin') == 1 && $type == 'Seller')
                             <th data-breakpoints="lg">{{translate('Approved')}}</th>
                         @endif
-                        <th data-breakpoints="lg">{{translate('Featured')}}</th>
+                        <!-- <th data-breakpoints="lg">{{translate('Featured')}}</th> -->
                         <th data-breakpoints="sm" class="text-right">{{translate('Options')}}</th>
                     </tr>
                 </thead>
@@ -164,12 +164,12 @@
                                 <span class="badge badge-inline badge-danger">Low</span>
                             @endif
                         </td>
-                        <td>
+                        <!-- <td>
                             <label class="aiz-switch aiz-switch-success mb-0">
                                 <input onchange="update_todays_deal(this)" value="{{ $product->id }}" type="checkbox" <?php if ($product->todays_deal == 1) echo "checked"; ?> >
                                 <span class="slider round"></span>
                             </label>
-                        </td>
+                        </td> -->
                         <td>
                             <label class="aiz-switch aiz-switch-success mb-0">
                                 <input onchange="update_published(this)" value="{{ $product->id }}" type="checkbox" <?php if ($product->published == 1) echo "checked"; ?> >
@@ -184,14 +184,14 @@
                                 </label>
                             </td>
                         @endif
-                        <td>
+                        <!-- <td>
                             <label class="aiz-switch aiz-switch-success mb-0">
                                 <input onchange="update_featured(this)" value="{{ $product->id }}" type="checkbox" <?php if ($product->featured == 1) echo "checked"; ?> >
                                 <span class="slider round"></span>
                             </label>
-                        </td>
+                        </td> -->
                         <td class="text-right">
-                            <a class="btn btn-soft-success btn-icon btn-circle btn-sm"  href="{{ route('product', $product->slug) }}" target="_blank" title="{{ translate('View') }}">
+                            <a class="btn btn-soft-success btn-icon btn-circle btn-sm"  href="{{ url('our_products'.'/'.$product->slug) }}" target="_blank" title="{{ translate('View') }}">
                                 <i class="las la-eye"></i>
                             </a>
                             @can('product_edit')
@@ -205,16 +205,16 @@
                                     </a>
                                 @endif
                             @endcan
-                            @can('product_duplicate')
+                            <!-- @can('product_duplicate')
                                 <a class="btn btn-soft-warning btn-icon btn-circle btn-sm" href="{{route('products.duplicate', ['id'=>$product->id, 'type'=>$type]  )}}" title="{{ translate('Duplicate') }}">
                                     <i class="las la-copy"></i>
                                 </a>
-                            @endcan
-                            @can('product_delete')
+                            @endcan -->
+                            <!-- @can('product_delete')
                                 <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('products.destroy', $product->id)}}" title="{{ translate('Delete') }}">
                                     <i class="las la-trash"></i>
                                 </a>
-                            @endcan
+                            @endcan -->
                         </td>
                     </tr>
                     @endforeach

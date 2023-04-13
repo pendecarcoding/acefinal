@@ -84,6 +84,13 @@
                                     </a>
                                 </li>
                             @endcan
+                            @can('setting_margin')
+                            <li class="aiz-side-nav-item">
+                                <a class="aiz-side-nav-link" href="{{ route('margin.set') }}">
+                                    <span class="aiz-side-nav-text">{{ translate('Margin Set') }}</span>
+                                </a>
+                            </li>
+                            @endcan
                             {{-- @can('add_new_product')
                                 <li class="aiz-side-nav-item">
                                     <a class="aiz-side-nav-link" href="{{route('products.create')}}">

@@ -8,7 +8,9 @@
               <img class="img-responsive-investor" src="{{ getimage(env('INVESTOR_BANNER')) }}" alt="">
               <div class="container">
                 <div class="carousel-caption text-start">
-                  <h1 class="h1-investor-banner">Half Yearly Results as at @php $created = explode(' ',$announcementnew->created_at); print $created[0] @endphp </h1>
+                  <h1 class="h1-investor-banner">Half Yearly Results
+                    <!-- @php $created = explode(' ',$announcementnew->created_at); print $created[0] @endphp  -->
+                </h1>
                   <a href="{{url('announcements/'.$announcementnew->slug)}}" class="btn btn-lg btn-read-now-banner-investor">Read Now</a>
                 </div>
               </div>
@@ -138,7 +140,7 @@
                       <div class="row">
 
                       </div>
-                      <div style="margin-right: 50px">{{ $datean[0] }}</div>
+                      <!-- <div style="margin-right: 50px">{{ $datean[0] }}</div> -->
                       <div>
                         {{ $v->title }}
                       </div>

@@ -101,6 +101,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
         Route::get('/products/all', 'all_products')->name('products.all');
         Route::get('/products/create', 'create')->name('products.create');
         Route::get('/products/pricefeed', 'pricefeed')->name('pricefeed.set');
+        Route::get('/products/marginset', 'marginset')->name('margin.set');
+        Route::post('/products/marginupdate', 'marginupdate')->name('margin.update');
         Route::get('/products/pricefeedjson', 'pricefeedjson')->name('pricefeed.json');
         Route::post('/products/updatepricefeed', 'pricefeedupdate')->name('pricefeed.update');
         Route::post('/products/store/', 'store')->name('products.store');

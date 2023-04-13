@@ -50,6 +50,28 @@ class ProductController extends Controller
         $this->middleware(['permission:product_duplicate'])->only('duplicate');
         $this->middleware(['permission:product_delete'])->only('destroy');
     }
+
+    public function marginset(){
+        $data = Product::join('marginprice','products.id','marginprice.id_product')->orderby('denominations','ASC')->get();
+        return view('backend.product.pricefeed.margin',compact('data'));
+    }
+
+    public function marginupdate(Request $r){
+        $data=[
+            'margin'=>$r->margin
+        ];
+        try {
+            $act = DB::table('marginprice')->where('id',$r->id)->update($data);
+            flash(translate('Margin has been updated successfully'))->success();
+            return back();
+        } catch (\Throwable $th) {
+            flash(translate($th->getMessage()))->warning();
+            return back();
+        }
+
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -158,14 +180,14 @@ class ProductController extends Controller
 
     public function pricefeed()
     {
-        $data = Pricefeed::orderby('id','desc')->get();
+        $data = Pricefeed::orderby('id','desc')->take(20);
         $last = Pricefeed::latest()->first();
         return view('backend.product.pricefeed.index',compact('data','last'));
     }
 
     public function pricefeedjson()
     {
-        $data = Pricefeed::select('updateby','name','systemprice','overrideprice','created_at')->orderby('id','desc')->get();
+        $data = Pricefeed::select('updateby','name','systemprice','overrideprice','created_at')->take(20)->orderby('id','desc')->get();
         header("Content-Type: application/json");
         echo json_encode($data);
     }
