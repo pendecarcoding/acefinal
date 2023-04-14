@@ -596,8 +596,8 @@
                                                 <a href="{{ url('newsroom/'.$v['slug']) }}">
                                                     <div class="hover hover-1 text-white rounded"><img src="{{ asset('public/'.$v['file_name']) }}" alt="">
                                                         <div class="hover-overlay"></div>
-                                                        <div class="hover-1-content px-3 py-3">
-                                                            <h3 class="hover-1-title font-weight-bold mb-0"> <span class="font-weight-light">{{ $v['title'] }}</span></h3>
+                                                        <div class="hover-1-content px-3 py-1">
+                                                            <h3 class="hover-1-title font-weight-bold mb-0 py-3"> <span class="font-weight-light">{{ $v['title'] }}</span></h3>
                                                             <p style="font-size: 1em;" class="hover-1-description font-weight-light mb-0">{{substr($description, 0, 70) . '...' }}<span><br><button onclick="window.location.href='{{url('news'.$v['slug'])}}';" class="btn-readnow-white">Read More</button></span></p>
 
                                                         </div>
