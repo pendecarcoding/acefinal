@@ -37,10 +37,12 @@
                   <div class="row-personals">
                     <div style="margin: auto">Sort by:</div>
                     <div style="margin-left: 20px">
-                      <select class="form-control">
-                        <option value="">Latest</option>
-                        <option value="">Oldest</option>
-                        <option value="">Popular</option>
+                      <select class="form-control" id="category"  onchange="window.location = jQuery('#category option:selected').val();">
+                        <option value="">--SELECT CATEGORY--</option>
+                        <option value="{{url('newsroom?category=ALL')}}" @if(isset($_GET['category'])) @if($_GET['category']=='ALL') selected @endif @endif>ALL NEWS</option>
+                        <option value="{{url('newsroom?category=CORPORATE')}}" @if(isset($_GET['category'])) @if($_GET['category']=='CORPORATE') selected @endif @endif>CORPORATE</option>
+                        <option value="{{url('newsroom?category=PERSONAL')}}" @if(isset($_GET['category'])) @if($_GET['category']=='PERSONAL') selected @endif @endif>PERSONAL</option>
+                        <option value="{{url('newsroom?category=AIAB')}}" @if(isset($_GET['category'])) @if($_GET['category']=='AIAB') selected @endif @endif>AIAB</option>
                       </select>
                     </div>
                   </div>

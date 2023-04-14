@@ -114,7 +114,7 @@ class AceController extends Controller
                 $newest_products = Cache::remember('newest_products', 3600, function () {
                     return filter_products(Product::latest())->limit(12)->get();
                 });
-                $achievement = Blog::join('uploads','uploads.id','blogs.banner')->where('status','1')->orderby('blogs.created_at','DESC')->get();
+                $achievement = Blog::select('blogs.id as id','blogs.title as title','blogs.slug as slug','blogs.short_description as short_description','blogs.description as description','blogs.banner as banner','uploads.file_name as file_name')->join('uploads','uploads.id','blogs.banner')->join('blog_categories','blog_categories.id','blogs.category_id')->where('status','1')->where('category_name','CORPORATE')->orderby('blogs.created_at','DESC')->get();
                 $slider      =  Slider::select('sliders.id as id','sliders.caption as caption','sliders.sub_caption','uploads.file_name as file_name')->join('uploads','uploads.id','sliders.image')->get();
                 $testimonial =  Testimonial::select('testimonials.id as id','testimonials.person as person','testimonials.position as position','testimonials.content as content','uploads.file_name as file_name','testimonials.type as type')->join('uploads','uploads.id','testimonials.image')->where('testimonials.type','CO')->get();
                 $patner      =  Patner::select('patners.id as id','patners.company as company','uploads.file_name as file_name')->join('uploads','uploads.id','patners.image')->groupby('id')->get();
@@ -139,7 +139,7 @@ class AceController extends Controller
                     return view('acewebfront.pages.homeedit', compact('achievement','featured_categories', 'todays_deal_products', 'newest_products','slider','testimonial','patner','page'));
                     break;
             case 'forpersonal':
-                $blog = Blog::join('uploads','uploads.id','blogs.banner')->where('status','1')->orderby('blogs.created_at','DESC')->take(6)->get();
+                $blog = Blog::select('blogs.id as id','blogs.title as title','blogs.slug as slug','blogs.short_description as short_description','blogs.description as description','blogs.banner as banner','uploads.file_name as file_name')->join('uploads','uploads.id','blogs.banner')->join('blog_categories','blog_categories.id','blogs.category_id')->where('status','1')->where('category_name','PERSONAL')->orderby('blogs.created_at','DESC')->take(6)->get();
                 $testimonial = Testimonial::where('type','PO')->orderby('id','desc')->get();
                 return view('acewebfront.pages.personal',compact('blog','page','testimonial'));
                 break;
@@ -160,7 +160,13 @@ class AceController extends Controller
                 return view('acewebfront.pages.product',compact('data','page'));
             break;
             case 'newsroom':
-                $data = Blog::select('blogs.title as title','blogs.banner as banner','blogs.slug as slug')->join('blog_categories','blog_categories.id','blogs.category_id')->orderby('blogs.created_at','DESC')->where('category_name','NEWS')->paginate(6);
+                $category = (isset($_GET['category'])) ? $_GET['category']:'ALL';
+                if($category=='ALL'){
+                    $data = Blog::select('blogs.title as title','blogs.banner as banner','blogs.slug as slug')->join('blog_categories','blog_categories.id','blogs.category_id')->orderby('blogs.created_at','DESC')->where('category_name','CORPORATE')->OrWHERE('category_name','PERSONAL')->OrWhere('category_name','AIAB')->paginate(6);
+                }else{
+                    $data = Blog::select('blogs.title as title','blogs.banner as banner','blogs.slug as slug')->join('blog_categories','blog_categories.id','blogs.category_id')->orderby('blogs.created_at','DESC')->where('category_name',$_GET['category'])->paginate(6);
+                }
+                // $data = Blog::select('blogs.title as title','blogs.banner as banner','blogs.slug as slug')->join('blog_categories','blog_categories.id','blogs.category_id')->orderby('blogs.created_at','DESC')->where('category_name','CORPORATE')->OrWHERE('category_name','PERSONAL')->OrWhere('category_name','AIAB')->paginate(6);
                 return view('acewebfront.pages.newsroom',compact('data','page'));
                 break;
             case 'contact':
