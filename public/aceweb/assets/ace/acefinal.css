@@ -17,9 +17,6 @@
 
 
 
-.ace-sliders .carousel-indicators{
-    margin-bottom: 3.5rem;
-}
 
 @keyframes fadeIn {
     from {
@@ -234,7 +231,7 @@
 
     .img-ace-about {
         width: 100%;
-        height: 30vh;
+
     }
 
     .caption-banner {
@@ -789,6 +786,10 @@
 }
 
 @media only screen and (max-width: 768px) and (min-height:1024px) {
+    .ace-sliders .carousel-indicators{
+        margin-bottom: 3.5rem;
+    }
+
     .gtp-po-button {
         position: absolute;
         right: 0;
@@ -1375,6 +1376,10 @@
 
 /* Extra Large Devices (Large Screens) */
 @media only screen and (min-width: 1200px) and (max-width: 1920px) {
+    .ace-sliders .carousel-indicators{
+        margin-bottom: 3.5rem;
+    }
+
 
     /*BANNER INVESTOR RELATIONS*/
     .ace-investor-banner {
@@ -1529,6 +1534,10 @@
 
 /*1024*/
 @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    .ace-sliders .carousel-indicators{
+        margin-bottom: 3.5rem;
+    }
+
     .acetopbar {
         left: 10px;
         top: 10px;
@@ -1868,6 +1877,10 @@
 
 /*MONITOR*/
 @media only screen and (min-width: 1920px) {
+    .ace-sliders .carousel-indicators{
+        margin-bottom: 3.5rem;
+    }
+
     .h1-investor-banner {
         right: 20%;
         text-shadow: 0 3px 10px rgb(0 0 0 / 52%);

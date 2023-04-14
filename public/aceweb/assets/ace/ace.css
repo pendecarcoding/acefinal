@@ -5833,10 +5833,13 @@ footer img {
 
     }
     .img-icon-corporate{
-        width: 50%;
+        width: 100%;
+    }
+    .ace-sliders .carousel-indicators {
+        margin-bottom: 0.9rem;
     }
     .img-icon-personal{
-        width: 50%;
+        width: 100%;
     }
     .card-corporate {
         width: 50%;
