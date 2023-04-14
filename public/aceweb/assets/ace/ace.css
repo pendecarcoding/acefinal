@@ -411,6 +411,7 @@ nav {
 
 .hover-1 img {
     width: 105%;
+    object-fit: cover;
     position: absolute;
     top: 0;
     height: 300px;
