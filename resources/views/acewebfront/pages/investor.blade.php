@@ -8,7 +8,9 @@
               <img class="img-responsive-investor" src="{{ getimage(env('INVESTOR_BANNER')) }}" alt="">
               <div class="container">
                 <div class="carousel-caption text-start">
-                  <h1 class="h1-investor-banner">Half Yearly Results </h1>
+                  <h1 class="h1-investor-banner">Half Yearly Results
+                    <!-- @php $created = explode(' ',$announcementnew->created_at); print $created[0] @endphp  -->
+                </h1>
                   <a href="{{url('announcements/'.$announcementnew->slug)}}" class="btn btn-lg btn-read-now-banner-investor">Read Now</a>
                 </div>
               </div>
@@ -132,7 +134,13 @@
                       style="margin: 20px"
                       class="item_direction row-personals"
                     >
-                      <div style="margin-right: 50px"></div>
+                      @php
+                      $datean = explode(' ',$v->created_at)
+                      @endphp
+                      <div class="row">
+
+                      </div>
+                      <!-- <div style="margin-right: 50px">{{ $datean[0] }}</div> -->
                       <div>
                         {{ $v->title }}
                       </div>
@@ -174,81 +182,89 @@
                   <div class="col-md-12 col-sm-12">
                     <div
                       style="position: sticky"
-                      id="myCarouseltesti"
+                      id="myCarousel"
                       class="carousel slide"
                       data-bs-ride="carousel"
                     >
+                    <div class="carousel-indicators">
+                        @php
+                            $countac = count($download);
+                            $banyak  = $countac/8;
+                            $achievements = $download->toArray();
+                            $no = -1;
+                            for ($n=0; $n < $banyak; $n++) {
+                                $no++;
+                                @endphp
+                                <button id="btn-slider" type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{ $no }}" class="btn-slide @if($no == 1)active @endif" aria-label="Slide {{ $no }}" fdprocessedid="io38s9" aria-current="true"></button>
+                                @php
+                            }
+                                @endphp
+
+
+
+                         </div>
+
                     <div class="investor-download">
                       <div class="carousel-inner">
                         @php
-                                $countac = count($download);
-                                $banyak  = $countac/8;
-                                $achievements = $download->toArray();
-                                $no = 0;
-                                for ($n=0; $n < $banyak; $n++) {
-                                    $no++;
-                                    @endphp
-                        <div data-aos="fade-up" class="carousel-item @if($no=1) active @endif">
-                            @php
-                                    foreach (array_slice($achievements, $n) as $i => $v){
-                                        if($i < 4){
+                        $countac = count($download);
+                        $banyak  = $countac/8;
+                        $downloads = $download->toArray();
+                        $no = 0;
+                        for ($n=0; $n < $banyak; $n++) {
+                            $no++;
+                            @endphp
+
+                <div class="carousel-item @if($no=1) active @endif">
+                    @php
+                    foreach (array_slice($downloads, $n) as $i => $v){
+                        $last = $i-1;
+
+
+
+                        if($i < 8){
 
                             @endphp
-                            <a href="{{ asset('public/download').'/'.$v['file'] }}" class="ace-button-blue"
-                              ><i class="fa fa-download"></i> {{ $v['namefile'] }}</a>
+
+
+                            <a href="{{ asset('public/download').'/'.$v['file'] }}" target="_blank" class="ace-button-blue"
+                              ><i class="fa fa-download"></i> {{ $v['namefile'] }}</a
+                            >
                             @php
-                                        }else{
-                                            $no=0;
-                                        }
+                        }else{
+                            $no=0;
+                        }
 
-                                    }
-                                    @endphp
-                                    </div>
-
-                                    @php
-                                }
-                                @endphp
-                                @foreach (array_slice($achievements, 0) as $i => $v)
-
-                                @php
-
-                                @endphp
-
-                                 @endforeach
+                    }
+                    @endphp
 
 
                         </div>
+                        @php
+                    }
+                    @endphp
+                    @foreach (array_slice($downloads, 0) as $i => $v)
+
+                    @php
+
+                    @endphp
+
+                     @endforeach
 
                       </div>
                     </div>
 
-                    <button class="acecarousel-control-prev" type="button" data-bs-target="#myCarouseltesti" data-bs-slide="prev">
+                    <button class="acecarousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                       <span style="color:#1D5189;font-size: 250%;margin-left:20px;font-weight:bold;" aria-hidden="true"><i class="fa fa-angle-left"></i></span>
                       <span class="visually-hidden">Previous</span>
                       </button>
 
-                      <button class="acecarousel-control-next" type="button" data-bs-target="#myCarouseltesti" data-bs-slide="next">
+                      <button class="acecarousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
                         <span style="color:#1D5189;font-size: 250%;margin-right:20px;font-weight:bold;" aria-hidden="true"><i class="fa fa-angle-right"></i></span>
                         <span class="visually-hidden">Next</span>
                         </button>
 
-                        <div class="carousel-indicators">
-                            @php
-                                $countac = count($download);
-                                $banyak  = $countac/8;
-                                $downloads = $download->toArray();
-                                $no = -1;
-                                for ($n=0; $n < $banyak; $n++) {
-                                    $no++;
-                                    @endphp
-                                    <button id="btn-slider" type="button" data-bs-target="#myCarouseltesti" data-bs-slide-to="{{ $no }}" class="btn-slide @if($no == 1)active @endif" aria-label="Slide {{ $no }}" fdprocessedid="io38s9" aria-current="true"></button>
-                                    @php
-                                }
-                                    @endphp
 
-
-
-                             </div>
 
                     </div>
 
@@ -288,7 +304,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r1.png"
                           alt=""
                         />
-                        <p>Message from the CEO</p>
+                        <p class="p-title-news">Message from the CEO</p>
                       </div>
                     </a>
                   </div>
@@ -300,7 +316,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r2.png"
                           alt=""
                         />
-                        <p>{{ $irkey->title }}</p>
+                        <p class="p-title-news">{{ $irkey->title }}</p>
                       </div>
                     </a>
                   </div>
@@ -312,7 +328,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r3.png"
                           alt=""
                         />
-                        <p>{{ $shareholder->title }}</p>
+                        <p class="p-title-news">{{ $shareholder->title }}</p>
                       </div>
                     </a>
                   </div>
@@ -324,7 +340,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r4.png"
                           alt=""
                         />
-                        <p>IR Events: Presentations</p>
+                        <p class="p-title-news">IR Events: Presentations</p>
                       </div>
                     </a>
                   </div>
@@ -336,7 +352,7 @@
                           src="{{ static_asset('aceweb') }}/assets/img/r5.png"
                           alt=""
                         />
-                        <p>IR Presentations</p>
+                        <p class="p-title-news">IR Presentations</p>
                       </div>
                     </a>
                   </div>
