@@ -215,7 +215,7 @@
                             $no++;
                             @endphp
 
-                <div class="carousel-item @if($no=1) active @else  @endif ">
+                <div class="carousel-item @if($n=0) active @else  @endif ">
                     @php
                     foreach (array_slice($downloads, $n) as $i => $v){
                         $last = $i-1;
