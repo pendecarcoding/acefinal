@@ -210,12 +210,12 @@
                         $countac = count($download);
                         $banyak  = $countac/8;
                         $downloads = $download->toArray();
-                        $no = 0;
+                        $no = -1;
                         for ($n=0; $n < $banyak; $n++) {
                             $no++;
                             @endphp
 
-                <div class="carousel-item @if($no==1) active @endif">
+                <div class="carousel-item @if($no=1) active  @endif">
                     @php
                     foreach (array_slice($downloads, $n) as $i => $v){
                         $last = $i-1;
