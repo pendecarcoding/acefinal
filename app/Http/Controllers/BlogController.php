@@ -160,7 +160,7 @@ class BlogController extends Controller
     {
         try {
             Blog::find($id)->delete();
-            flash(translate('Blog post has been updated successfully'))->success();
+            flash(translate('Blog post has been deleted successfully'))->success();
             return redirect('admin/blog');
 
         } catch (\Throwable $th) {
