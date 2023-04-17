@@ -37,7 +37,7 @@
                                </div>
                             </td>
 
-                            <td style="text-align: right;padding-right: 20px;"><div id="datepricefeed"></div></td>
+                            <td style="text-align: right;padding-right: 15px;"><div id="datepricefeed"></div></td>
                          </tr>
 
                          <tr>
