@@ -627,7 +627,38 @@
 
                 <!--Blog System-->
                 @canany(['view_blogs', 'view_blog_categories'])
+                <li class="aiz-side-nav-item">
+
+                    <a href="#"
+                        class="aiz-side-nav-link {{ areActiveRoutes(['blog.create', 'blog.edit']) }}">
+                        <i class="las la-globe aiz-side-nav-icon"></i>
+                        <span class="aiz-side-nav-text">{{ translate('Posts') }}</span>
+                        <span class="aiz-side-nav-arrow"></span>
+                    </a>
+                    <ul class="aiz-side-nav-list level-2">
+                        @can('view_slider')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('blog.index') }}"
+                                    class="aiz-side-nav-link {{ areActiveRoutes(['blog.create', 'blog.edit']) }}">
+
+                                    <span class="aiz-side-nav-text">{{ translate('All Posts') }}</span>
+                                </a>
+                                </li>
+                        @endcan
+                        @can('view_blog_categories')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('blog-category.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['blog-category.create', 'blog-category.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                    </ul>
+                </li>
+                @endcan
+                @canany(['view_slider', 'view_about'])
                     <li class="aiz-side-nav-item">
+
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-building aiz-side-nav-icon"></i>
                             <span class="aiz-side-nav-text">{{ translate('Corporate Page') }}</span>
@@ -682,22 +713,22 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('view_blogs')
+                            <!-- @can('view_blogs')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('blog.index') }}"
                                         class="aiz-side-nav-link {{ areActiveRoutes(['blog.create', 'blog.edit']) }}">
                                         <span class="aiz-side-nav-text">{{ translate('All Posts') }}</span>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('view_blog_categories')
+                            @endcan -->
+                            <!-- @can('view_blog_categories')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('blog-category.index') }}"
                                         class="aiz-side-nav-link {{ areActiveRoutes(['blog-category.create', 'blog-category.edit']) }}">
                                         <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan -->
                         </ul>
                     </li>
                 @endcanany
