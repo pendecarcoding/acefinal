@@ -158,9 +158,17 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        Blog::find($id)->delete();
+        try {
+            Blog::find($id)->delete();
+            flash(translate('Blog post has been updated successfully'))->success();
+            return redirect('admin/blog');
 
-        return redirect('admin/blog');
+        } catch (\Throwable $th) {
+            flash(translate($th->getMessage()))->success();
+            return redirect('admin/blog');
+
+        }
+
     }
 
 
