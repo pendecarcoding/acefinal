@@ -12,16 +12,17 @@
             $noslide = 0;
             @endphp
             @foreach($slider as $is => $v)
-            <button
-              id="btn-slider"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="{{ $is }}"
-              class="btn-slide @if($is== 0) active @endif"
-              @if($is== 0) aria-current="true" @endif
-              aria-label="Slide {{ $is }}"
-            ></button>
-
+              @if(count($slider) > 1)
+              <button
+                id="btn-slider"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="{{ $is }}"
+                class="btn-slide @if($is== 0) active @endif"
+                @if($is== 0) aria-current="true" @endif
+                aria-label="Slide {{ $is }}"
+              ></button>
+              @endif
             @endforeach
           </div>
           <div class="carousel-inner">
