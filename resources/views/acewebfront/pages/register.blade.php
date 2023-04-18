@@ -37,7 +37,7 @@
                             <img src="{{ uploaded_asset(get_setting('site_icon')) }}"
                                 class="mw-100 mb-4" height="100">
                             <h1 class="h3 mb-0" style="color:#1D5189;font-weight: bold;">Create an account</h1>
-
+                            @include('acewebfront.pages.alert')
                         </div>
                         <form class="pad-hor" method="POST" role="form" action="{{route('stuff.register')}}">
                             {{csrf_field()}}

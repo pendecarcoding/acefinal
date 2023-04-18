@@ -63,7 +63,7 @@ class AceController extends Controller
             'stuffid' => 'required',
             'password_confirmation'=>'required',
             'password' => 'required|confirmed',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email|unique:stuffs,email',
 
         ]);
 
@@ -85,7 +85,7 @@ class AceController extends Controller
 
 
                 Mail::to($r->email)->queue(new SecondEmailVerifyMailManager($array));
-                return redirect('investor_relations');
+                return back()->with('success','To activate the account, please check the account activation in your email');
 
             // }
 
