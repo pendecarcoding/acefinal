@@ -27,15 +27,15 @@
                 <div class="well" style="margin-top:50px;height: 100vh;">
                     <h2 style="font-weight: bold;color:#1D5189">Employee handbook Download</h2>
                     <br>
-                    @foreach ($announce as $i => $v)
+
                     <a style="text-decoration: none;" href="{{route('staff.detailhandbook')}}">
                         <div class="list-content">
-                            <p><span><img src="{{ static_asset('aceweb') }}/assets/img/pdficon.png"></span> {{ $v->title }}</p>
+                            <p><span><img src="{{ static_asset('aceweb') }}/assets/img/pdficon.png"></span>AIAB Employee Handbook 30.03.2023</p>
 
 
                         </div>
                     </a>
-                    @endforeach
+
 
                 </div>
 

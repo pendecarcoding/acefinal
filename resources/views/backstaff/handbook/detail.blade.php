@@ -25,7 +25,8 @@
                 </div>
 
                 <div class="well" style="margin-top:50px">
-                    <embed src="http://infolab.stanford.edu/pub/papers/google.pdf" style="width:100%;height: 85vh;" type="application/pdf">
+                    <embed src="https://dev.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf"
+                        style="width:100%;height: 85vh;" type="application/pdf">
 
 
                 </div>
