@@ -16,8 +16,8 @@
     <title>@if (!empty($page))
         ACE INOVATE ASIA BERHARD |{{ strtoupper($page) }}
 
-            @else
-            @yield('title')
+    @else
+        @yield('title')
         @endif
     </title>
 
@@ -55,26 +55,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
 
+
     <style>
         #myBtn {
-  display: none;
-  position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: #1d5189;
-    color: white;
-    cursor: pointer;
-    /* padding: 15px; */
-    border-radius: 50%;
-}
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #1d5189;
+            color: white;
+            cursor: pointer;
+            /* padding: 15px; */
+            border-radius: 50%;
+        }
 
-#myBtn:hover {
-  background-color: #555;
-}
+        #myBtn:hover {
+            background-color: #555;
+        }
+
     </style>
 
 
@@ -93,40 +95,106 @@
 
     @yield('content')
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <div class="card text-left">
+                    <div class="card-body" style="
+                    padding: 50px;
+                ">
+                        <div class="mb-5 text-center">
+                            <img src="{{ uploaded_asset(get_setting('site_icon')) }}"
+                                class="mw-100 mb-4" height="100">
+                            <h1 style="color: #6d6d6d;font-size: 20px;" class="h3  mb-0">Stuff Login</h1>
+
+                        </div>
+                        <form class="pad-hor" method="POST" role="form" action="{{route('staff.login')}}">
+                            {{csrf_field()}}
+                            <div style="margin-left: 20px;margin-right: 20px;">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span style="height: 40px;
+                                      border-radius: 0px;" class="input-group-text" id="basic-addon1"><i
+                                                class="fa fa-user"></i></span>
+                                    </div>
+                                    <input required name="username" type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                        aria-describedby="basic-addon1">
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span style="height: 40px;
+                                      border-radius: 0px;" class="input-group-text" id="basic-addon1"><i
+                                                class="fa fa-lock"></i></span>
+                                    </div>
+                                    <input id="password" type="password" class="form-control" name="password" required=""
+                                        placeholder="Password">
+                                </div>
+                            </div>
+
+                            <div class="row mb-2">
+
+                            </div>
+                            <div class="form-group">
+                                <button style="width:100%;background-color: #264e77;border: #264e77;" type="submit"
+                                    class="btn btn-primary btn-lg btn-block">
+                                    LOGIN
+                                </button>
+                                <br>
+                                <center>
+                                    <p style="margin-top: 5px;color:#959595">Don't have an account? <span><a style="color:#959595;text-decoration: none;"
+                                                href="{{ url('registerstuff') }}">Create
+                                                account</a></span></p>
+
+                                    <p><span><a style="color:#959595;text-decoration: none;"
+                                        href="{{ url('forgotpass') }}">Forgot Password</a></span></p>
+                                </center>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
     @include('acewebfront.fotter')
     <!--</div>-->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-
         const canvas = document.getElementById("hero-lightpass");
 
 
 
 
 
-        $('#requestpatnerform').submit(function(event) {
+        $('#requestpatnerform').submit(function (event) {
             event.preventDefault();
             $("#loading").show();
             $.ajax({
                 url: '{{ route('forcorporate.addrequest') }}',
                 type: 'POST',
                 data: $('#requestpatnerform').serialize(),
-                success: function(response) {
+                success: function (response) {
                     if (response == "success") {
 
                         $("#alertpatner").show();
                         $("#requestpatnerform")[0].reset();
                     }
                 },
-                complete: function() {
+                complete: function () {
                     $("#loading").hide();
                 }
             });
         });
-
-
-
 
     </script>
     <script>
@@ -141,33 +209,33 @@
             document.getElementById("loader").style.display = "none";
             document.getElementById("divbody").style.display = "block";
         }
+
     </script>
 
     <script type="text/javascript">
-
-       var scrollnum = 300;
+        var scrollnum = 300;
 
         // Get the button
-            let mybutton = document.getElementById("myBtn");
+        let mybutton = document.getElementById("myBtn");
 
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
-            }
+        }
 
         function progressBarScroll() {
 
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
                 height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
                 scrolled = (winScroll / height) * 190;
-             console.log("Hasil "+scrolled);
-                        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            console.log("Hasil " + scrolled);
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 mybutton.style.display = "block";
             } else {
                 mybutton.style.display = "none";
             }
-            if(scrolled >= 30 && scrolled <= 100){
+            if (scrolled >= 30 && scrolled <= 100) {
                 scrollnum = 250;
                 document.getElementById("progressBar").style.height = scrolled + "%";
             }
@@ -175,7 +243,7 @@
             //     scrollnum = 200;
             //     document.getElementById("progressBar").style.height = "30%";
             // }
-            if(scrolled <= 100 && scrolled >= 56){
+            if (scrolled <= 100 && scrolled >= 56) {
                 document.getElementById("progressBar").style.height = scrolled + "%";
             }
             // if (scrolled == 90){
@@ -184,12 +252,13 @@
 
         }
 
-        window.onscroll = function() {
+        window.onscroll = function () {
 
-                progressBarScroll();
+            progressBarScroll();
 
 
         };
+
     </script>
     <script type="text/javascript">
         function fadeingtp(section, classname) {
@@ -201,7 +270,7 @@
 
         }
 
-        $(window).on("scroll", function() {
+        $(window).on("scroll", function () {
 
             //document.getElementById("progressBar").style.height =  window.innerHeight;
 
@@ -215,7 +284,7 @@
                 window.innerHeight
             ) {
                 if (!localStorage.getItem("visited")) {
-                    $(".number").each(function() {
+                    $(".number").each(function () {
                         $(this)
                             .prop("Counter", 0)
                             .animate({
@@ -223,12 +292,12 @@
                             }, {
                                 duration: 2000,
                                 easing: "swing",
-                                step: function(now) {
+                                step: function (now) {
                                     $(this).text(Math.ceil(now));
                                 },
                             });
                     });
-                    $(".decimal").each(function() {
+                    $(".decimal").each(function () {
                         $(this)
                             .prop("Counter", 0)
                             .animate({
@@ -236,7 +305,7 @@
                             }, {
                                 duration: 2000,
                                 easing: "swing",
-                                step: function(now) {
+                                step: function (now) {
                                     $(this).text(parseFloat(now).toFixed(1));
                                 },
                             });
@@ -249,9 +318,9 @@
         });
 
 
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-            $(window).on("scroll", function() {
+            $(window).on("scroll", function () {
 
                 if (
                     $(window).scrollTop() >=
@@ -280,8 +349,8 @@
                     window.innerHeight
                 ) {
 
-                    $(".grid-item").each(function(i) {
-                        setTimeout(function() {
+                    $(".grid-item").each(function (i) {
+                        setTimeout(function () {
                             $(".grid-item").eq(i).addClass("is-visible");
                         }, 200 * i);
                     });
@@ -296,8 +365,8 @@
                     window.innerHeight
                 ) {
 
-                    $(".grid-item").each(function(i) {
-                        setTimeout(function() {
+                    $(".grid-item").each(function (i) {
+                        setTimeout(function () {
                             $(".grid-item").eq(i).removeClass("is-visible");
                         }, 200 * i);
                     });
@@ -401,8 +470,8 @@
                     var contentprogress = document.getElementById("content-progress");
                     //$("#imggpt1").fadeIn(3000);
                     //document.getElementById("imggpt1").src =
-                     //   "{{ static_asset('aceweb') }}/assets/img/gtp4.png";
-                     //changeimage("{{ static_asset('aceweb') }}/assets/img/gtp4.png");
+                    //   "{{ static_asset('aceweb') }}/assets/img/gtp4.png";
+                    //changeimage("{{ static_asset('aceweb') }}/assets/img/gtp4.png");
                     var height = $("#gpt4").outerHeight() - window.innerHeight + "vh";
                     to.innerHTML = "5/5";
                     titleprogress.innerHTML =
@@ -416,19 +485,21 @@
                     $("#gpt5").outerHeight() -
                     window.innerHeight) {
 
-                        const myDiv = document.getElementById("gtp-patner-focused");
-            // myDiv.scrollIntoView();
+                    const myDiv = document.getElementById("gtp-patner-focused");
+                    // myDiv.scrollIntoView();
 
-                } if ($(window).scrollTop() >=
+                }
+                if ($(window).scrollTop() >=
                     $("#gpt6").offset().top +
                     $("#gpt6").outerHeight() -
                     window.innerHeight) {
-                        // document.getElementById("gtp").style.display = "none";
+                    // document.getElementById("gtp").style.display = "none";
 
                 }
 
             });
         });
+
     </script>
 
     <script>
@@ -444,15 +515,18 @@
                 y.style.display = "block";
             }
         }
+
     </script>
 
     <script src="{{ static_asset('aceweb') }}/assets/vendor/aos/aos.js"></script>
     <script src="{{ static_asset('aceweb') }}/assets/js/mansoryscroll.js"></script>
-    <script src="{{ static_asset('aceweb') }}/assets/ace/gtpscroll.js" type="text/javascript"></script>
+    <script src="{{ static_asset('aceweb') }}/assets/ace/gtpscroll.js" type="text/javascript">
+    </script>
     <script src="{{ static_asset('aceweb') }}/assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <script>
         if (!window.Cypress) AOS.init();
+
     </script>
     <script type="text/javascript">
         $(".slider-service").slick({
@@ -461,6 +535,7 @@
             autoplay: true,
             autoplaySpeed: 2000,
         });
+
     </script>
     <script>
         let magicGrid = new MagicGrid({
@@ -472,12 +547,13 @@
         });
 
         magicGrid.listen();
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             // Masonry Grid
             $(".grid").masonry({
                 itemSelector: ".grid-item",
@@ -502,6 +578,7 @@
                 }
             });
         });
+
     </script>
 
 
@@ -531,10 +608,11 @@
 
             }
         }
+
     </script>
 
 
-<script>
+    <script>
 
     </script>
 

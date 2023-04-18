@@ -5,6 +5,7 @@ namespace App\Http;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsSeller;
 use App\Http\Middleware\IsCustomer;
+use App\Http\Middleware\CekStatus;
 use App\Http\Middleware\IsUser;
 use App\Http\Middleware\CheckoutMiddleware;
 use App\Http\Middleware\IsUnbanned;
@@ -83,6 +84,7 @@ class Kernel extends HttpKernel
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
+        'cekstatus' => CekStatus::class,
     ];
 
     /**

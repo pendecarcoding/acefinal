@@ -28,6 +28,7 @@ use App\Models\FlashDeal;
 use App\Models\Messageceo;
 use App\Models\Patnerrequest;
 use App\Models\PickupPoint;
+use App\Models\Stuff;
 use Illuminate\Support\Str;
 use App\Models\ProductQuery;
 use Illuminate\Http\Request;
@@ -39,6 +40,8 @@ use Illuminate\Auth\Events\PasswordReset;
 use App\Mail\SecondEmailVerifyMailManager;
 use Session;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Faker\Provider\Uuid;
+
 
 class AceController extends Controller
 {
@@ -54,8 +57,62 @@ class AceController extends Controller
 
     }
 
+    public function registerstuff(Request $r){
+        $r->validate([
+            'username' => 'required|string|max:255',
+            'stuffid' => 'required',
+            'password_confirmation'=>'required',
+            'password' => 'required|confirmed',
+            'email' => 'required|email|unique:users,email',
+
+        ]);
+
+        try {
+            // if($r->stuffid=='19961210'){
+                $kode = Str::uuid()->toString();
+                $data=[
+                    'password'=>md5($r->password),
+                    'username'=>$r->username,
+                    'stuff_id'=>$r->stuffid,
+                    'email'=>$r->email,
+                    'verify_code'=>$kode,
+                ];
+                Stuff::insert($data);
+                $array['subject'] = translate('registration confirmation');
+                $array['from'] = env('MAIL_FROM_ADDRESS');
+                $array['content']="congratulations your registration is almost complete then you need to verify your email address. for verification click the link below";
+                $array['link'] = 'https://dev.ace2u.com/comfirregister?kode='.base64_encode($kode);
+
+
+                Mail::to($r->email)->queue(new SecondEmailVerifyMailManager($array));
+                return redirect('investor_relations');
+
+            // }
+
+        } catch (\Throwable $th) {
+            print $th->getmessage();
+        }
+
+    }
+
     public function page($page){
         switch ($page) {
+
+            case 'comfirregister':
+                try {
+                    $data=[
+                        'status'=>'A'
+                    ];
+                    Stuff::where('verify_code',base64_decode($_GET['kode']))->update($data);
+                    $info = Stuff::where('verify_code',base64_decode($_GET['kode']))->first();
+                    Session::put("loginstaff",true);
+                    Session::put('id_staff',$info->id);
+
+                    return redirect(route('staff.announcements'));
+                } catch (\Throwable $th) {
+                    print $th->getmessage();
+                }
+                break;
 
             case 'updatecronjob':
                 updatecronjob();
@@ -143,6 +200,12 @@ class AceController extends Controller
                 $testimonial = Testimonial::where('type','PO')->orderby('id','desc')->get();
                 return view('acewebfront.pages.personal',compact('blog','page','testimonial'));
                 break;
+            case 'registerstuff':
+                return view('acewebfront.pages.register');
+                break;
+            case 'forgotpass':
+                    return view('acewebfront.pages.forgotpass');
+                    break;
             case 'investor_relations':
                 $irkey = Blog::join('blog_categories','blog_categories.id','blogs.category_id')
                         ->where('category_name','Financial Results : Key Points')

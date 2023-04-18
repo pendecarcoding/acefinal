@@ -28,6 +28,11 @@ html {
     margin-bottom: 18px;
 }
 
+.dropdown-menu a:active{
+    color: black;
+    background-color: white;
+}
+
 
 .wrap-caraouselservice{
     position: relative;
