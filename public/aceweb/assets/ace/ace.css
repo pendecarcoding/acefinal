@@ -6106,7 +6106,7 @@ footer img {
     .topnav {
         box-shadow: 0 0.0625rem 0.375rem 0 rgb(0 0 0 / 10%);
         z-index: 10;
-        position: fixed;
+        /* position: fixed; */
         /* overflow: hidden; */
         right: 0;
         left: 19%;
