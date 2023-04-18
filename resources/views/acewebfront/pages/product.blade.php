@@ -54,7 +54,7 @@
                 @foreach($data as $i => $v)
                 <div class="col-md-4 col-sm-2">
                   <div data-aos="fade-up" class="cards">
-                    <a href="{{ url('our_products/'.$v->slug) }}">
+                    <!-- <a href="{{ url('our_products/'.$v->slug) }}"> -->
                       <center><img
                         class="img-responsive-product"
                         src="{{ getimage($v->thumbnail_img) }}"
@@ -63,7 +63,7 @@
                       <p>{{ $v->name }}</p>
                       <div style="display:none" class="gram">{{$v->weight}}</div>
                       <h5 class="price">{{format_price($v->unit_price)}}</h5>
-                    </a>
+                    <!-- </a> -->
                   </div>
                 </div>
                 @endforeach
