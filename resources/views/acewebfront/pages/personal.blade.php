@@ -4,8 +4,50 @@
       <section  class="ace-personal">
         <div class="personal-banner">
         <div class="row-personal">
+
           <div id="desktop-banner" class="col-md-9 col-sm-12 col-lg-9">
-            <img
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  @php
+                  $noslide = 0;
+                  @endphp
+                  @foreach($slider as $is => $v)
+                    @if(count($slider) > 1)
+                    <button
+                      id="btn-slider"
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="{{ $is }}"
+                      class="btn-slide @if($is== 0) active @endif"
+                      @if($is== 0) aria-current="true" @endif
+                      aria-label="Slide {{ $is }}"
+                    ></button>
+                    @endif
+                  @endforeach
+                </div>
+                <div class="carousel-inner">
+                  @foreach($slider as $is => $v)
+                  <div class="carousel-item @if($is== 0) active @endif">
+                    <img class="slider-banner" src="{{ asset('public/'.$v->file_name) }}" />
+                    <div class="col-md-6">
+                    <div class="container">
+
+                      <div data-aos="fade-up" class="carousel-caption text-start">
+                        <h1>
+                          {{ $v->caption }}
+                        </h1>
+                        <p class="ace-banner-p" >{{ $v->sub_caption }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                </div>
+                  </div>
+                  @endforeach
+
+              </div>
+              </div>
+            <!-- <img
               class="img-responsive"
               src="{{ getimage(env('PERSONAL_IMAGE')) }}"
               alt=""
@@ -17,8 +59,11 @@
                   <p class="ace-banner-p">{{ env('PERSONAL_SUB_TITLE_CAPTION') }}</p>
                 </div>
               </div>
-            </div>
+            </div>-->
           </div>
+
+
+
 
           <div class="col-md-3 col-sm-12 col-lg-3">
             <div id="desktop-pricefeed" onload="WebSocketTest()" class="allprice">

@@ -108,7 +108,7 @@
                         <div class="mb-5 text-center">
                             <img src="{{ uploaded_asset(get_setting('site_icon')) }}"
                                 class="mw-100 mb-4" height="100">
-                            <h1 style="color: #6d6d6d;font-size: 20px;" class="h3  mb-0">Stuff Login</h1>
+                            <h1 style="color: #6d6d6d;font-size: 20px;" class="h3  mb-0">Staff Login</h1>
 
                         </div>
                         <form class="pad-hor" method="POST" role="form" action="{{route('staff.login')}}">
@@ -146,7 +146,7 @@
                                 <br>
                                 <center>
                                     <p style="margin-top: 5px;color:#959595">Don't have an account? <span><a style="color:#959595;text-decoration: none;"
-                                                href="{{ url('registerstuff') }}">Create
+                                                href="{{ url('registerstaff') }}">Create
                                                 account</a></span></p>
 
                                     <p><span><a style="color:#959595;text-decoration: none;"

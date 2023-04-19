@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>STAFF|FORGOT PASSWORD</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
@@ -23,7 +23,6 @@
             font-size: 18px;
             color: #ccc;
         }
-
     </style>
     <script src="https://use.fontawesome.com/87a11cdc5f.js"></script>
 </head>
@@ -37,8 +36,8 @@
                 <div class="text-left">
                     <div class="card-body">
                         <div class="mb-5 text-center">
-                            <img src="{{ uploaded_asset(get_setting('site_icon')) }}"
-                                class="mw-100 mb-4" height="100">
+                            <img src="{{ uploaded_asset(get_setting('site_icon')) }}" class="mw-100 mb-4"
+                                height="100">
                             <h1 class="h3 mb-0" style="color:#1D5189;font-weight: bold;">Forgot Password</h1>
 
                         </div>
@@ -56,10 +55,11 @@
 
                             <button style="background-color:#1D5189;border-color:#1D5189 ;" type="submit"
                                 class="btn btn-primary btn-lg btn-block">
-                               CONFIRM
+                                CONFIRM
                             </button>
                             <br>
-                            <center><a style="font-weight:bold;text-decoration: none;color:#1d1d1d" href="{{url('investor_relations')}}">GO BACK</a></center>
+                            <center><a style="font-weight:bold;text-decoration: none;color:#1d1d1d"
+                                    href="{{ url('investor_relations') }}">GO BACK</a></center>
 
                         </form>
 

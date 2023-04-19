@@ -25,7 +25,7 @@
      </ul><br>
      <div style="position: fixed;bottom: 0;">
         <ul class="nav nav-pills nav-stacked" style="margin-top: 50px;">
-            <li><a href="{{route('staff.setting')}}"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
+            <li><a href="{{route('staff.setting')}}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
             <li><a href="#" onclick="logoutFunction()"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a></li>
 
         </ul>

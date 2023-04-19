@@ -46,7 +46,7 @@ class StuffController extends Controller
 
     public function announcement(){
         if(Session::get('loginstaff')==true){
-            $announce = Announcement::orderby('created_at','DESC')->get();
+            $announce = Announcement::where('type','PRIVATE')->orderby('created_at','DESC')->get();
             return view('backstaff.announcements.index',compact('announce'));
         }else{
             return redirect('investor_relations');
@@ -104,6 +104,34 @@ class StuffController extends Controller
         }else{
             return redirect('investor_relations');
         }
+      }
+
+      public function nextannouncement($date){
+        if(Session::get('loginstaff')==true){
+            $data = Announcement::where('type','PRIVATE')->where('created_at','>',base64_decode($date))->first();
+            if($data != null){
+                return view('backstaff.announcements.detail',compact('data'));
+
+            }else{
+                return back();
+            }
+
+            }else{
+                return redirect('investor_relations');
+            }
+      }
+
+      public function backannouncement($date){
+        if(Session::get('loginstaff')==true){
+            $data = Announcement::where('type','PRIVATE')->where('created_at','<',base64_decode($date))->first();
+            if($data != null){
+                return view('backstaff.announcements.detail',compact('data'));
+            }else{
+                return back();
+            }
+            }else{
+                return redirect('investor_relations');
+            }
       }
 
       public function login(Request $r){

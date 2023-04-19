@@ -23,7 +23,7 @@
             </div>
 
             <div class="well" style="margin-top:50px">
-                @if($data->image != null)
+                @if(!empty($data->image))
                 <img style="width:100%;height: 300px;object-fit: cover;" src="{{ getimage($data->image) }}">
                 @endif
                 <br>
@@ -37,8 +37,8 @@
                     {!! $data->description !!}
                 </div>
                 <div class="fotter-announcement">
-                    <a class="btn btn-primary"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-                    <a class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="{{route('staff.back.announcement',base64_encode($data->created_at))}}" class="btn btn-primary"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                    <a href="{{route('staff.next.announcement',base64_encode($data->created_at))}}" class="btn btn-primary"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
 
 

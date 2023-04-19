@@ -9,6 +9,8 @@ Route::controller(StuffController::class)->group(function () {
     Route::get('/back/detailhandbook', 'detailhandbook')->name('staff.detailhandbook');
     Route::get('/back/setting', 'setting')->name('staff.setting');
     Route::get('/back/logoutstuff', 'logoutstuff')->name('staff.logoutstuff');
+    Route::get('/back/nextannouncement/{date}', 'nextannouncement')->name('staff.next.announcement');
+    Route::get('/back/backannouncement/{date}', 'backannouncement')->name('staff.back.announcement');
 
 });
 

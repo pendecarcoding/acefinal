@@ -429,6 +429,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
      Route::resource('announcements',AnnouncementsController::class);
      Route::controller(AnnouncementsController::class)->group(function () {
          Route::get('/announcements/destroy/{id}', 'destroy')->name('announcements.destroy');
+         Route::get('/announcements/destroyadmin/{id}', 'destroyadmin')->name('announcementsadmin.destroy');
+         Route::get('/announcementstaff', 'announcementstaff')->name('announcements.staff');
+         Route::post('/announcementstaff/store', 'storeadmin')->name('announcements.storeadmin');
+         Route::get('/announcementstaff/create', 'announcementstaffcreate')->name('announcementsadmin.create');
+         Route::patch('/announcementstaff/updateadmin/{id}', 'updateadmin')->name('announcements.updateadmin');
+         Route::get('/announcementstaff/edit/{id}', 'announcementstaffedit')->name('announcementsadmin.edit');
          Route::post('/announcements/change-status', 'change_status')->name('announcements.change-status');
     });
 

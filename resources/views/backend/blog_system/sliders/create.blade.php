@@ -17,7 +17,7 @@
                             <span class="text-danger">*</span>
                         </label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="{{translate('Caption Slider')}}" onkeyup="makeSlug(this.value)" id="caption" name="caption" class="form-control" required>
+                            <input type="text" placeholder="{{translate('Caption Slider')}}" onkeyup="makeSlug(this.value)" id="caption" name="caption" class="form-control">
                         </div>
                     </div>
 
@@ -27,7 +27,18 @@
                         <label class="col-md-3 col-form-label">{{translate('Sub Caption')}}
                             <span class="text-danger">*</span></label>
                         <div class="col-md-9">
-                            <input type="text" placeholder="{{translate('Sub caption')}}" name="sub_caption" id="sub_caption" class="form-control" required>
+                            <input type="text" placeholder="{{translate('Sub caption')}}" name="sub_caption" id="sub_caption" class="form-control" >
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">{{translate('Banner For')}}
+                            <span class="text-danger">*</span></label>
+                        <div class="col-md-9">
+                            <select name="for" id="" class="form-control" required>
+                                <option value="CORPORATE">CORPORATE</option>
+                                <option value="PERSONAL">PERSONAL</option>
+                            </select>
                         </div>
                     </div>
 

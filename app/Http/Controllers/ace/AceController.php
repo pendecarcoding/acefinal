@@ -172,7 +172,7 @@ class AceController extends Controller
                     return filter_products(Product::latest())->limit(12)->get();
                 });
                 $achievement = Blog::select('blogs.id as id','blogs.title as title','blogs.slug as slug','blogs.short_description as short_description','blogs.description as description','blogs.banner as banner','uploads.file_name as file_name')->join('uploads','uploads.id','blogs.banner')->join('blog_categories','blog_categories.id','blogs.category_id')->where('status','1')->where('category_name','CORPORATE')->orderby('blogs.created_at','DESC')->get();
-                $slider      =  Slider::select('sliders.id as id','sliders.caption as caption','sliders.sub_caption','uploads.file_name as file_name')->join('uploads','uploads.id','sliders.image')->get();
+                $slider      =  Slider::select('sliders.id as id','sliders.caption as caption','sliders.sub_caption','uploads.file_name as file_name')->join('uploads','uploads.id','sliders.image')->where('sliders.type','CORPORATE')->get();
                 $testimonial =  Testimonial::select('testimonials.id as id','testimonials.person as person','testimonials.position as position','testimonials.content as content','uploads.file_name as file_name','testimonials.type as type')->join('uploads','uploads.id','testimonials.image')->where('testimonials.type','CO')->get();
                 $patner      =  Patner::select('patners.id as id','patners.company as company','uploads.file_name as file_name')->join('uploads','uploads.id','patners.image')->groupby('id')->get();
                 return view('acewebfront.pages.home', compact('achievement','featured_categories', 'todays_deal_products', 'newest_products','slider','testimonial','patner','page'));
@@ -196,11 +196,12 @@ class AceController extends Controller
                     return view('acewebfront.pages.homeedit', compact('achievement','featured_categories', 'todays_deal_products', 'newest_products','slider','testimonial','patner','page'));
                     break;
             case 'forpersonal':
+                $slider      =  Slider::select('sliders.id as id','sliders.caption as caption','sliders.sub_caption','uploads.file_name as file_name')->join('uploads','uploads.id','sliders.image')->where('sliders.type','PERSONAL')->get();
                 $blog = Blog::select('blogs.id as id','blogs.title as title','blogs.slug as slug','blogs.short_description as short_description','blogs.description as description','blogs.banner as banner','uploads.file_name as file_name')->join('uploads','uploads.id','blogs.banner')->join('blog_categories','blog_categories.id','blogs.category_id')->where('status','1')->where('category_name','PERSONAL')->orderby('blogs.created_at','DESC')->take(6)->get();
                 $testimonial = Testimonial::where('type','PO')->orderby('id','desc')->get();
-                return view('acewebfront.pages.personal',compact('blog','page','testimonial'));
+                return view('acewebfront.pages.personal',compact('blog','page','testimonial','slider'));
                 break;
-            case 'registerstuff':
+            case 'registerstaff':
                 return view('acewebfront.pages.register');
                 break;
             case 'forgotpass':
