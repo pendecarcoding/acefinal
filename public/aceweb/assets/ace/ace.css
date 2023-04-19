@@ -6212,7 +6212,7 @@ footer img {
 .ace-personal h1 {
     -webkit-text-stroke: 2px;
     overflow: hidden;
-    font-size: 6.31vw;
+    font-size: 5.31vw;
 }
 
 }
@@ -6653,12 +6653,17 @@ footer img {
         position: absolute;
         top: -20px
     }
-    .ace-personal .caption-banner {
+    /* .ace-personal .caption-banner {
+        position: absolute;
+        right: 20%;
+        top: 35%;
+    } */
+    .ace-personal .carousel-inner .caption-banner {
         position: absolute;
         right: 20%;
         top: 35%;
     }
-    .ace-personal h1 {
+    .ace-personal .carousel-inner h1 {
         overflow: hidden;
         font-size: 2.5rem;
     }

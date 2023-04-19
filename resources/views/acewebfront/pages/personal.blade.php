@@ -30,15 +30,14 @@
                   <div class="carousel-item @if($is== 0) active @endif">
                     <img class="slider-banner" src="{{ asset('public/'.$v->file_name) }}" />
                     <div class="col-md-6">
-                    <div class="container">
-
-                      <div data-aos="fade-up" class="carousel-caption text-start">
-                        <h1>
-                          {{ $v->caption }}
-                        </h1>
-                        <p class="ace-banner-p" >{{ $v->sub_caption }}</p>
-                      </div>
-                    </div>
+                        <div class="container">
+                            <div data-aos="fade-up" class="carousel-caption text-start caption-banner" style="right: 24%;left: 13%;">
+                              <div class="caption-banner">
+                                <h1>{{ $v->caption }}</h1>
+                                <p class="ace-banner-p">{{ $v->sub_caption }}</p>
+                              </div>
+                            </div>
+                          </div>
                   </div>
                   <div class="col-md-6">
                 </div>

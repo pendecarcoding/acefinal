@@ -39,8 +39,8 @@
                             <span class="text-danger">*</span></label>
                         <div class="col-md-9">
                             <select name="for" id="" class="form-control" required>
-                                <option value="CORPORATE" @if($slider->tyepe=='CORPORATE') selected @endif>CORPORATE</option>
-                                <option value="PERSONAL" @if($slider->tyepe=='PERSONAL') selected @endif>PERSONAL</option>
+                                <option value="CORPORATE" @if($slider->type=='CORPORATE') selected @endif>CORPORATE</option>
+                                <option value="PERSONAL" @if($slider->type=='PERSONAL') selected @endif>PERSONAL</option>
                             </select>
                         </div>
                     </div>
