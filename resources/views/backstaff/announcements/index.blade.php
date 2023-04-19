@@ -27,7 +27,7 @@
                 <br>
                 @foreach($announce as $i =>$v)
                 <div class="list-content">
-                  <a style="text-decoration: none;" href="{{route('staff.detailannouncements')}}">
+                  <a style="text-decoration: none;" href="{{route('staff.detailannouncements',base64_encode($v->id))}}">
                     <p>{{$v->title}}</p>
                     <p style="color:#1D5189">{{$v->created_at}}</p>
                     <hr style="border: 1px solid #b1b0b0;">

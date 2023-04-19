@@ -50,6 +50,7 @@ class AnnouncementsController extends Controller
                 $d = new Announcement;
                 $d->title = $request->title;
                 $d->slug = $slug;
+                $d->image = $request->banner;
                 $d->description = $request->description;
                 $d->save();
                 flash(translate('Announcements has been inserted successfully'))->success();
@@ -95,6 +96,7 @@ class AnnouncementsController extends Controller
         $slug2 = str_replace('/','-',$slug);
         $d = Announcement::find(base64_decode($id));
         $d->title = $request->title;
+        $d->image = $request->banner;
         $d->slug = $slug2;
         $d->description = $request->description;
         $d->save();

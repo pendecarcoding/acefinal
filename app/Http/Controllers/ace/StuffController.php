@@ -53,10 +53,10 @@ class StuffController extends Controller
         }
 
       }
-      public function detailannouncement(){
+      public function detailannouncement($id){
         if(Session::get('loginstaff')==true){
-        $announce = Announcement::orderby('created_at','DESC')->get();
-        return view('backstaff.announcements.detail',compact('announce'));
+        $data = Announcement::where('id',base64_decode($id))->first();
+        return view('backstaff.announcements.detail',compact('data'));
         }else{
             return redirect('investor_relations');
         }
