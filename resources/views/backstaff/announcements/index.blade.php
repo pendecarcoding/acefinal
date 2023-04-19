@@ -22,7 +22,7 @@
 
             </div>
 
-            <div class="well" style="margin-top:50px;height: 100vh;">
+            <div class="well" style="margin-top:50px;height: 100vh;overflow: auto;">
                 <h2 style="font-weight: bold;color:#1D5189">Announcement</h2>
                 <br>
                 @foreach($announce as $i =>$v)
