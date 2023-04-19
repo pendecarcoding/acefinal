@@ -2458,6 +2458,9 @@ footer img {
 }
 
 .ace-button {
+
+
+
         background-color: transparent;
         color: #fff;
         border: 2px solid #fff;
@@ -2465,7 +2468,10 @@ footer img {
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
-        padding: 7px;
+        padding-left: 26px;
+        padding-right: 26px;
+        padding-top: 2px;
+        padding-bottom: 2px;
         margin: 4px 2px;
         cursor: pointer;
         border-radius: 20px;

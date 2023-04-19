@@ -4,11 +4,7 @@
             <a href="{{ url($v['link']) }}"
                 @if (Request::is($v['link'] . '*')) class="active" @endif>{{ $v['name'] }}</a>
         @endforeach
-        <a style="padding-left: 26px;
-        padding-right: 26px;
-        padding-top: 2px;
-        padding-bottom: 2px;"
-            class="ace-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+        <a class="ace-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             Login
         </a>
