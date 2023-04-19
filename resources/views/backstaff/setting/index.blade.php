@@ -45,7 +45,7 @@
 
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="STUFF ID" value="{{$data->stuff_id}}" name="stuff_id" required>
+                        <input type="text" class="form-control" placeholder="STAFF ID" value="{{$data->stuff_id}}" name="stuff_id" required>
 
                       </div>
                       <div class="form-group">

@@ -51,7 +51,7 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon1"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="STUFF ID" aria-label="STUFF ID" aria-describedby="basic-addon1" name="stuffid" required>
+                                <input type="text" class="form-control" placeholder="STAFF ID" aria-label="STAFF ID" aria-describedby="basic-addon1" name="stuffid" required>
                               </div>
                               <div class="input-group mb-3">
                                 <div class="input-group-prepend">
