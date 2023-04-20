@@ -2791,7 +2791,7 @@ footer img {
 
     #mobile-pricefeed{
         width: 100%;
-        height: 35vh;
+        height: 27vh;
         display: flex;
         justify-content: space-between;
     }
@@ -2915,9 +2915,9 @@ footer img {
     }
 
     .ace-personal img {
-        height: auto;
+        height: 250px;
         width: 100%;
-        object-fit: cover;
+        object-fit: fill;
     }
 
     .img-phone1 {
