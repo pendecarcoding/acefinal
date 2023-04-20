@@ -271,7 +271,7 @@ function getnewnews(){
    return $data = Blog::select('blogs.title as title','blogs.slug as slug','blogs.created_at as created_at',
    'blogs.short_description as short_description',
    'blogs.description as description','blogs.banner as banner')
-   ->where('status','1')
+   ->where('blogs.status','1')
    ->where('category_name','CORPORATE')->OrWHERE('category_name','PERSONAL')->OrWhere('category_name','AIAB')->join('blog_categories','blog_categories.id','blogs.category_id')
             ->orderby('blogs.created_at','DESC')
             ->take('10')->get();
