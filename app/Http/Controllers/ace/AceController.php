@@ -81,7 +81,7 @@ class AceController extends Controller
                 $array['subject'] = translate('registration confirmation');
                 $array['from'] = env('MAIL_FROM_ADDRESS');
                 $array['content']="congratulations your registration is almost complete then you need to verify your email address. for verification click the link below";
-                $array['link'] = 'https://dev.ace2u.com/comfirregister?kode='.base64_encode($kode);
+                $array['link'] = env('URL_WEB').'/comfirregister?kode='.base64_encode($kode);
 
 
                 Mail::to($r->email)->queue(new SecondEmailVerifyMailManager($array));
