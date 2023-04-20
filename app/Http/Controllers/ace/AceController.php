@@ -104,11 +104,12 @@ class AceController extends Controller
                         'status'=>'A'
                     ];
                     Stuff::where('verify_code',base64_decode($_GET['kode']))->update($data);
-                    $info = Stuff::where('verify_code',base64_decode($_GET['kode']))->first();
-                    Session::put("loginstaff",true);
-                    Session::put('id_staff',$info->id);
+                    // $info = Stuff::where('verify_code',base64_decode($_GET['kode']))->first();
+                    // Session::put("loginstaff",true);
+                    // Session::put('id_staff',$info->id);
 
-                    return redirect(route('staff.announcements'));
+                    return redirect(route('staff.loginback'))->with('success','
+                    congratulations successful activation');
                 } catch (\Throwable $th) {
                     print $th->getmessage();
                 }

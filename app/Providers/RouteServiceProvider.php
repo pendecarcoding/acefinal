@@ -85,7 +85,7 @@ class RouteServiceProvider extends ServiceProvider
 
   protected function mapStuffRoutes()
   {
-    Route::middleware('web')->prefix('stuff')
+    Route::middleware('web')->prefix('staff')
             ->namespace($this->namespace)
             ->group(base_path('routes/stuff.php'));
   }

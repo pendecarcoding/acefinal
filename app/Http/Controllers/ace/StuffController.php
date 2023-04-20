@@ -151,6 +151,9 @@ class StuffController extends Controller
         }
 
       }
+      public function loginview(){
+        return view('acewebfront.pages.loginstaff');
+      }
       public function logoutstuff(){
         Session::forget('loginstaff');
         Session::forget('id_staff');
