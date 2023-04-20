@@ -9,6 +9,7 @@
                       @foreach(getnewnews() as $i => $v)
                       @php
                       $day = date('l', strtotime($v->created_at));
+                      if($v->status=='1'){
                       @endphp
                       <div class="widget-post clearfix">
                         <div class="dlab-post-media">
@@ -37,6 +38,9 @@
                           </div>
                         </div>
                       </div>
+                      @php
+                      }
+                      @endphp
                       @endforeach
 
 
@@ -53,5 +57,5 @@
                     </div>
                   </div>
 
-                  
+
 

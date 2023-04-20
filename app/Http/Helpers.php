@@ -268,7 +268,7 @@ return $jsonArrayResponse;
 }
 
 function getnewnews(){
-   return $data = Blog::select('blogs.title as title','blogs.slug as slug','blogs.created_at as created_at',
+   return $data = Blog::select('blogs.status as status','blogs.title as title','blogs.slug as slug','blogs.created_at as created_at',
    'blogs.short_description as short_description',
    'blogs.description as description','blogs.banner as banner')
    ->where('blogs.status','1')
