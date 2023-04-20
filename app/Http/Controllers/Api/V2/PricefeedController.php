@@ -13,6 +13,7 @@ class PricefeedController extends Controller
     public function update(Request $r)
     {
 
+        if($r->time=="08:30" || $r->time=="14:00" || $r->time=="2:35"){
             $data =[
                 'updateby'=>'SYSTEM',
                 'name'=>'CRONJOB',
@@ -33,6 +34,9 @@ class PricefeedController extends Controller
                     ];
                     $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
                 }
+        }
+
+
 
 
 
