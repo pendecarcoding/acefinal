@@ -67,10 +67,10 @@ enquiry@ace2u.com
         <!-- Grid column -->
         <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-md-0 mb-4 footer-medsos">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px" src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/Vector.png" alt=""></h6>
-          <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px" src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/fb.png" alt=""></h6>
-          <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px" src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/ig.png" alt=""></h6>
-          <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px" src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/yt.png" alt=""></h6>
+          <a target="_blank" href="https://twitter.com/acesocialgroup"><h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px" src="{{ static_asset('aceweb') }}/assets/img/Vector.png" alt=""></h6></a>
+          <a target="_blank" href="https://www.facebook.com/acgagm"><h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px" src="{{ static_asset('aceweb') }}/assets/img/fb.png" alt=""></h6></a>
+          <a target="_blank" href="https://www.instagram.com/acecsocialgroup/"><h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px" src="{{ static_asset('aceweb') }}/assets/img/ig.png" alt=""></h6></a>
+          <a target="_blank" href="https://www.youtube.com/channel/UCBoSXibkrvZo78yyc8pVj5A?view_as=subscriber"><h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px" src="{{ static_asset('aceweb') }}/assets/img/yt.png" alt=""></h6></a>
         </div>
         <!-- Grid column -->
       </div>
