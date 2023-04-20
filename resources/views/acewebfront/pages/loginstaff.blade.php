@@ -36,7 +36,7 @@
                         <img src="{{ uploaded_asset(get_setting('site_icon')) }}"
                             class="mw-100 mb-4" height="100">
                         <h1 style="color: #6d6d6d;font-size: 20px;" class="h3  mb-0">Staff Login</h1>
-
+                        @include('acewebfront.pages.alert')
                     </div>
                     <form class="pad-hor" method="POST" role="form" action="{{route('staff.login')}}">
                         {{csrf_field()}}
