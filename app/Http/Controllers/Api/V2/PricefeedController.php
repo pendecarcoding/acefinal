@@ -13,7 +13,7 @@ class PricefeedController extends Controller
     public function update(Request $r)
     {
 
-        if($r->time=="08:30" || $r->time=="14:00" || $r->time=="2:35"){
+        if($r->time=="08:30" || $r->time=="14:00" || $r->time=="02:45"){
             $data =[
                 'updateby'=>'SYSTEM',
                 'name'=>'CRONJOB',
