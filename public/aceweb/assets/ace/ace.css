@@ -5976,10 +5976,12 @@ footer img {
         font-size: 1em;
     }
     .img-icon-corporate{
-        width: 50%;
+        margin-top: 10px;
+        width: 100%;
     }
     .img-icon-personal{
-        width: 50%;
+        margin-top: 10px;
+        width: 100%;
     }
     .card-corporate {
         width: 40%;
