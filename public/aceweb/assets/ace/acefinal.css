@@ -16,6 +16,33 @@
 }
 
 
+.fotter-announcement{
+    display: flex;
+    justify-content: space-between;
+}
+.gtp-ann {
+    background-color: #ffffff;
+    height: 100vh;
+    /* overflow-y: auto; */
+}
+.swal2-confirm{
+    margin-left: 10px;
+}
+.title-announcement{
+    font-size: 1.5rem;
+    color: #264e77;
+    font-weight: bold;
+}
+.date-announcement{
+    font-size: 0.9rem;
+}
+
+.nav-pills i,a{
+    text-decoration: none;
+    color: #1D5189;
+}
+
+
 
 
 @keyframes fadeIn {

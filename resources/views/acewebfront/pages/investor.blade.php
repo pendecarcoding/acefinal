@@ -332,7 +332,7 @@
                       </div>
                     </a>
                   </div>
-                  <div class="col-md-4">
+                  <!-- <div class="col-md-4">
                     <a href="detailinvestor.html">
                       <div>
                         <img
@@ -355,7 +355,7 @@
                         <p class="p-title-news">IR Presentations</p>
                       </div>
                     </a>
-                  </div>
+                  </div> -->
 
                 </div>
 

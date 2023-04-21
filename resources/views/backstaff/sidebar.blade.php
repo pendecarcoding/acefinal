@@ -3,9 +3,8 @@
  $data = Stuff::where('id',session()->get('id_staff'))->first();
 
  ?>
- <div class="col-sm-3 sidenav hidden-xs"
-     style="background-color: #FFFFFF80;position: fixed!important;
-             z-index: 1;
+ <div class="col-md-3"
+     style="background-color: #FFFFFF80;
              width: 19%;;
              padding: 36px;
              overflow: auto;">
@@ -22,17 +21,12 @@
     </center>
      </div>
      <ul class="nav nav-pills nav-stacked" style="margin-top: 50px;">
-         <li class="active"><a href="{{route('staff.announcements')}}"><i class="fa fa-bell" aria-hidden="true"></i> Announcement</a></li>
-         <li><a href="{{route('staff.handbook')}}"><i class="fa fa-book" aria-hidden="true"></i> Employee Handbook</a></li>
-
+         <li style="margin-top: 5px;" class="active"><a href="{{route('staff.announcements')}}"><i class="fa fa-bell" aria-hidden="true"></i> Announcement</a></li>
+         <li style="margin-top: 10px;"><a href="{{route('staff.handbook')}}"><i class="fa fa-book" aria-hidden="true"></i> Employee Handbook</a></li>
+         <li style="margin-top: 10px;"><a href="{{route('staff.setting')}}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+            <!-- <li><a href="#" onclick="logoutFunction()"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a></li> -->
      </ul><br>
-     <div style="position: fixed;bottom: 0;">
-        <ul class="nav nav-pills nav-stacked" style="margin-top: 50px;">
-            <li><a href="{{route('staff.setting')}}"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
-            <li><a href="#" onclick="logoutFunction()"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a></li>
 
-        </ul>
-     </div>
  </div>
 
 
