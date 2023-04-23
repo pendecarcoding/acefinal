@@ -1,6 +1,9 @@
 html {
     scroll-behavior: smooth;
 }
+.img-line-structure{
+    width: 98%;
+}
 
 .circle-img-ace{
     width: 85%;
@@ -1842,7 +1845,7 @@ footer img {
 
 .gtp-solution {
     background-repeat: no-repeat, repeat;
-    background-image: url("https://dev.ace2u.com/public/aceweb/assets/img/Ipad_bg_gtp.jpg");
+    background-image: url("/public/aceweb/assets/img/Ipad_bg_gtp.jpg");
     /* background-color: #031430; */
     background-attachment: fixed;
     /* background-blend-mode: soft-light; */
@@ -2761,7 +2764,7 @@ footer img {
     .anouncements-gpt {
         background-color: #ffffff;
         height: 100vh;
-        margin-bottom: 25px;
+        /* margin-bottom: 25px; */
     }
     #imggpt1 {
         width: 100%;
@@ -2791,7 +2794,7 @@ footer img {
 
     #mobile-pricefeed{
         width: 100%;
-        height: 27vh;
+        height: max-content;
         display: flex;
         justify-content: space-between;
     }
@@ -2949,6 +2952,10 @@ footer img {
     .slider-banner {
         width: 100%;
         height: auto;
+    }
+    .carousel-indicators .btn-slide {
+        width: 0.6%;
+        height: 1px;
     }
 
     .ace-sliders {
@@ -3358,9 +3365,14 @@ footer img {
         position: relative;
         display: inline-flex;
         flex-wrap: wrap;
-        height: 70vh;
+        height: max-content;
+    }
+    .stock-change-investor {
+        padding: 10px;
+        background-color: #F5F5F7;
     }
     .title-price-investor {
+        margin-top: 20px;
         text-align: center;
         -webkit-text-stroke: 0.5px;
         font-size: 1.1em;
@@ -3370,6 +3382,7 @@ footer img {
     }
     .stock-code-market{
         font-size: 3vw;
+        margin-bottom: 25px;
     }
     .last-title-price,.last-title-price{
         font-weight: bold;
@@ -3377,7 +3390,7 @@ footer img {
     .value-last-investor {
         font-size: 3em;
         font-weight: bold;
-        /* margin: 20px; */
+        margin: 20px;
         color: #1D5189;
         -webkit-text-stroke: 1px;
     }
@@ -3407,7 +3420,14 @@ footer img {
         font-size: 3.3vw;
     }
     .gtp-download{
-        height: auto;
+        height: 63vh;
+    }
+    .gtp-download .carousel-indicators .btn-slide {
+        width: 2%;
+        height: 4px;
+    }
+    .gtp-download .carousel-indicators {
+        margin-bottom: -3rem;
     }
 
     .acecarousel-control-prev {
@@ -3417,7 +3437,7 @@ footer img {
         position: absolute;
         right: 15%;
         left: 6%;
-        padding-top: 15%;
+        padding-top: 19%;
 
     }
 
@@ -3436,7 +3456,7 @@ footer img {
         min-width: 60px;
     }
     .topnav {
-        height: 6vh;
+        height: 6.5vh;
         position: fixed;
         left: 0%;
         z-index: 50;
@@ -3521,8 +3541,8 @@ footer img {
 
     .acetopbar {
         border-radius: 2px;
-        left: 10px;
-        top: 2px;
+        left: 2%;
+        top: 0.9%;
         z-index: 998;
         position: fixed;
         width: 35px;
@@ -3577,7 +3597,7 @@ footer img {
         position: relative;
         overflow-y: scroll;
         margin-bottom: 20px;
-        height: 34vh;
+        height: 46vh;
         width: 100%;
     }
     #imggpt1 {
@@ -3602,7 +3622,9 @@ footer img {
         font-size: 14px;
     }
     .gtp-download{
-        height: auto;
+
+        height: 72vh;
+
     }
     .company-ace{
         height: auto;
@@ -3631,7 +3653,7 @@ footer img {
     }
     #mobile-pricefeed{
         width: 100%;
-        height: 30vh;
+        height: max-content;
         display: flex;
         justify-content: space-between;
     }
@@ -3781,7 +3803,7 @@ footer img {
     }
 
     .ace-personal img {
-        height: auto;
+        height: 278px;
         width: 100%;
         object-fit: cover;
     }
@@ -3832,7 +3854,7 @@ footer img {
     }
 
     section.ace-sliders img {
-        height: 250px;
+        height: 278px;
     }
 
     .carousel-caption {
@@ -3950,14 +3972,26 @@ footer img {
     /* END */
     /*GPT SOLUTION*/
     .gtp-solution .vl {
-        font-size: 3vw;
+        font-size: 4.6vw;
+    }
+    #content-progress{
+        font-size: 3.4vw;
     }
 
     .img-wrap-gpt {
         padding-top: 5px;
+        bottom: -7px;
         position: relative;
         align-items: center;
         display: inline-flex;
+    }
+    .carousel-indicators .btn-slide {
+        width: 0.6%;
+        height: 1px;
+    }
+
+    .ace-sliders .carousel-caption {
+        padding-top: 38px;
     }
 
     .img-wrap-gpt button {
@@ -4096,7 +4130,8 @@ footer img {
     /*END SECTION */
     /*NAVBAR*/
     .topnav {
-        height: 5vh;
+
+        height: 7vh;
         position: fixed;
         left: 0%;
     }
@@ -4127,7 +4162,7 @@ footer img {
     .img-responsive-investor {
         object-fit: cover;
         max-width: 100%;
-        height: 30vh;
+        height: 42vh;
         vertical-align: middle;
     }
     #ace-investor-banner-mobile .carousel-caption {
@@ -4227,10 +4262,13 @@ footer img {
     }
 
     .topnav a.icon {
-        float: right;
-        display: block;
-        border: none;
-        right: 20px;
+
+            margin-right: 20px;
+            float: right;
+            display: block;
+            border: none;
+
+
     }
 
     .acetopbar {
@@ -4270,6 +4308,39 @@ footer img {
 }
 
 @media screen and (min-width: 500px) and (max-width: 570px) {
+    .stock-change-investor {
+        padding: 10px;
+        background-color: #F5F5F7;
+    }
+    .stock-price-investor {
+        width: 100%;
+        height: 30vh;
+        /* padding: 300px; */
+    }
+    .stock-change-investor {
+        padding: 10px;
+        height: 30vh;
+        background-color: #F5F5F7;
+    }
+    .title-price-investor {
+        margin-top: 20px;
+    }
+    .gtp-download .carousel-indicators {
+        margin-bottom: -3rem;
+    }
+    .gtp-download {
+        height: 78vh;
+    }
+    .gtp-download .carousel-indicators .btn-slide {
+        height: 5px;
+    }
+    .last-title-price, .last-title-price {
+        margin-top: 20px;
+    }
+    .stock-code-market {
+        font-size: 3vw;
+        margin-bottom: 25px;
+    }
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
@@ -4354,7 +4425,7 @@ footer img {
     .ace-sliders {
         display: flex;
         flex-flow: row nowrap;
-        height: 40vh;
+        height: 51vh;
     }
 
     .ace-sliders .carousel {
@@ -4365,7 +4436,7 @@ footer img {
     }
 
     section.ace-sliders img {
-        height: auto;
+        height: 350px;
     }
 
     .carousel-caption {
@@ -4379,7 +4450,7 @@ footer img {
     }
 
     .carousel-caption h1 {
-        font-size: 5vw;
+        font-size: 6vw;
         text-shadow: 1px 1px #515151;
     }
 
@@ -4467,10 +4538,15 @@ footer img {
     }
 
     .img-wrap-gpt {
+        bottom: -1.4em;
         padding-top: 5px;
         position: relative;
         align-items: center;
         display: inline-flex;
+    }
+    .about-provider .carousel-indicators .btn-slide {
+        width: 1%;
+        height: 4px;
     }
 
     .img-wrap-gpt button {
@@ -4616,7 +4692,7 @@ footer img {
     /*END SECTION */
     /*NAVBAR*/
     .topnav {
-        height: 5vh;
+        height: 7vh;
         position: fixed;
         left: 0%;
     }
@@ -4644,13 +4720,12 @@ footer img {
 
     .acetopbar {
         border-radius: 2px;
-        left: 15px;
-        top: 10px;
+        left: 3px;
+        top: 3px;
         z-index: 998;
         position: fixed;
-        width: 45px;
-        height: 50px;
-        background-color: white;
+        width: 35px;
+        height: 40px;
     }
 
     .topnav.responsive {
@@ -4772,7 +4847,7 @@ footer img {
     }
 
     section.ace-sliders img {
-        height: auto;
+        height: 52vh;
     }
 
     .carousel-caption {
@@ -4786,9 +4861,14 @@ footer img {
     }
 
     .carousel-caption h1 {
-        font-size: 5vw;
+        font-size: 7vw;
         text-shadow: 1px 1px #515151;
     }
+    .carousel-indicators .btn-slide {
+        width: 0.6%;
+        height: 3px;
+    }
+
 
     .carousel-caption p {
         font-size: 3vw;
@@ -4990,9 +5070,9 @@ footer img {
     /*END SECTION */
     /*NAVBAR*/
     .topnav {
-        height: 5vh;
-        position: fixed;
-        left: 0%;
+        height: 7vh;
+    position: fixed;
+    left: 0%;
     }
 
     .wrap-content {
@@ -5018,13 +5098,12 @@ footer img {
 
     .acetopbar {
         border-radius: 2px;
-        left: 15px;
-        top: 10px;
-        z-index: 998;
-        position: fixed;
-        width: 45px;
-        height: 50px;
-        background-color: white;
+    left: 3px;
+    top: 3px;
+    z-index: 998;
+    position: fixed;
+    width: 35px;
+    height: 40px;
     }
 
     .topnav.responsive {
@@ -5070,8 +5149,19 @@ footer img {
     }
 
     .about h1 {
-        font-weight: bold;
-        font-size: 3vw;
+        font-weight: 100;
+        font-size: 4.7vw;
+    }
+    .sticky-mansory {
+        height: 69vh;
+    }
+    .gtp-patner {
+        height: auto;
+    }
+    #slider .selfie-img {
+
+        width: 113px;
+        height: 113px;
     }
 
     /*PAGE PERSONAL*/
@@ -5165,7 +5255,7 @@ footer img {
     }
 
     section.ace-sliders img {
-        height: auto;
+        height: 52vh;
     }
 
     .carousel-caption {
@@ -5190,15 +5280,18 @@ footer img {
     }
 
     .number-ace-center h1 {
-        font-size: 9vw;
+        font-size: 7vw;
     }
 
     .number-ace-center p {
         text-align: center;
         color: #999999;
-        font-size: 2vw;
+        font-size: 1.7vw;
     }
 
+    .img-line-structure{
+        width: 90%;
+    }
     /*END ABOUT*/
 
     /* STRUCTURE */
@@ -5229,7 +5322,7 @@ footer img {
 
     .line-structure {
         position: absolute;
-        top: 60%;
+        top: 71%;
         left: 30%;
         z-index: 1;
     }
@@ -5387,7 +5480,7 @@ footer img {
     /*END SECTION */
     /*NAVBAR*/
     .topnav {
-        height: 5vh;
+        height: 7vh;
         position: fixed;
         left: 0%;
     }
@@ -5415,13 +5508,12 @@ footer img {
 
     .acetopbar {
         border-radius: 2px;
-        left: 15px;
-        top: 10px;
+        left: 3px;
+        top: 3px;
         z-index: 998;
         position: fixed;
-        width: 45px;
-        height: 50px;
-        background-color: white;
+        width: 35px;
+        height: 40px;
     }
 
     .topnav.responsive {
@@ -5848,17 +5940,19 @@ footer img {
         border: none;
         height: 100vh;
         width: 100%;
-        top: 0;
-        padding-top: 50%;
+        top: 10%;
+        /* padding-top: 50%; */
 
     }
     .img-icon-corporate{
+        margin-top: 10px;
         width: 100%;
     }
     .ace-sliders .carousel-indicators {
         margin-bottom: 0.9rem;
     }
     .img-icon-personal{
+        margin-top: 10px;
         width: 100%;
     }
     .card-corporate {
@@ -6233,7 +6327,7 @@ footer img {
 
 
 
-@media screen and (min-width: 700px) and (max-width: 800px) {
+@media screen and (min-width: 700px) and (max-width: 900px) {
 
     /*for caption craousel*/
     .topnav a {
@@ -6254,6 +6348,10 @@ footer img {
         position: absolute;
         width: 100%;
         /* margin-bottom: 4rem; */
+    }
+
+    section.ace-sliders img {
+        height: 58vh;
     }
 
     .carousel-caption {
@@ -6295,7 +6393,7 @@ footer img {
     /*wrap-content*/
     /*SECTION ABOUT ACE*/
     .about-ace {
-        margin-top: 15%;
+        /* margin-top: 15%; */
         background-color: white;
     }
 
@@ -6497,16 +6595,16 @@ footer img {
     /*for image*/
     .acetopbar {
         border-radius: 2px;
-        left: 15px;
-        top: 10px;
+        left: 3px;
+        top: 3px;
         z-index: 998;
         position: fixed;
-        width: 45px;
-        height: 50px;
-        background-color: white;
+        width: 35px;
+        height: 40px;
     }
 
     .topnav {
+        height: 7vh;
         position: fixed;
         left: 0%;
     }

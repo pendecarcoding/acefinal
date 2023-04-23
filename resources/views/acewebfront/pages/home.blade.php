@@ -187,9 +187,10 @@
                     <!-- <div class="line-str"></div> -->
                   <div class="line-structure">
                     <img
+                      class="img-line-structure"
                       data-aos="zoom-in-down"
                       data-aos-delay="400"
-                      style="width: 98%"
+
                       src="{{ static_asset('aceweb') }}/assets/img/line.png"
                       alt=""
                     />

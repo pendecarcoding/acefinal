@@ -105,7 +105,7 @@
     width: 250px;
     height: 250px;
     margin: 15px 0px;
-    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 19%);
+    /* box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 19%); */
     background: rgb(247, 247, 247);
     border-radius: 10px;
     background: no-repeat;

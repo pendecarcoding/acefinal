@@ -520,7 +520,50 @@
     </script>
 
     <script src="{{ static_asset('aceweb') }}/assets/vendor/aos/aos.js"></script>
-    <script src="{{ static_asset('aceweb') }}/assets/js/mansoryscroll.js"></script>
+    <!-- <script src="{{ static_asset('aceweb') }}/assets/js/mansoryscroll.js"></script> -->
+
+    <!--Mansory Scroll-->
+    @php
+    $datapatner = getPatner();
+    @endphp
+    <script>
+        var images = [
+            @foreach($datapatner as $i => $p)
+           "{{getimage($p->image)}}",
+            @endforeach
+    ];
+
+  console.log(images);
+
+  var lists = document.getElementsByClassName("selfie-img");
+  var list = lists;
+  console.log(lists);
+  console.log(list);
+  // Var or Let works in the for loop
+  let counter = 0;
+  let counter2 = 0;
+  for (let i = 0; i < lists.length; i++) {
+    // console.log(list[i]);
+    if (i < images.length) {
+      list[i].style.backgroundImage = "url(" + images[i] + ")";
+    } else if (i < 2 * images.length) {
+      list[i].style.backgroundImage = "url(" + images[counter] + ")";
+      counter = counter + 1;
+    } else {
+      list[i].style.backgroundImage = "url(" + images[counter2] + ")";
+      counter2 = counter2 + 1;
+    }
+  }
+
+  var clone1 = $(".col1 ul li").clone();
+  clone1.appendTo(".col1 ul");
+  var clone2 = $(".col2 ul li").clone();
+  clone2.appendTo(".col2 ul");
+  var clone3 = $(".col3 ul li").clone();
+  clone3.appendTo(".col3 ul");
+
+    </script>
+    <!--END MAnsory-->
     <script src="{{ static_asset('aceweb') }}/assets/ace/gtpscroll.js" type="text/javascript">
     </script>
     <script src="{{ static_asset('aceweb') }}/assets/dist/js/bootstrap.bundle.min.js"></script>

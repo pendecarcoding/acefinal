@@ -38,6 +38,7 @@ use App\Mail\InvoiceEmailManager;
 use App\Utility\SmsUtility;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Models\Patner;
 
 
 
@@ -275,6 +276,11 @@ function getnewnews(){
    ->where('category_name','CORPORATE')->OrWHERE('category_name','PERSONAL')->OrWhere('category_name','AIAB')->join('blog_categories','blog_categories.id','blogs.category_id')
             ->orderby('blogs.created_at','DESC')
             ->take('10')->get();
+}
+
+
+function getPatner(){
+    return $data = Patner::all();
 }
 
 //ACE WEB NAV
