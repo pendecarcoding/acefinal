@@ -6938,6 +6938,10 @@ footer img {
     .card-home {
         top: 21%;
     }
+    .banner-static {
+        height: 34vh;
+        position: relative;
+    }
 }
 @media (min-width: 1366px) and (max-width: 1535px) {
     .ace-personal h1 {
