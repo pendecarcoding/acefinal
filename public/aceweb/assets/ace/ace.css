@@ -6933,16 +6933,7 @@ footer img {
 
 }
 
-@media screen and (min-width: 1024px) and (min-height: 800px) {
 
-    .card-home {
-        top: 21%;
-    }
-    .banner-static {
-        height: 34vh;
-        position: relative;
-    }
-}
 @media (min-width: 1366px) and (max-width: 1535px) {
     .ace-personal h1 {
         -webkit-text-stroke: 2px;
@@ -7062,5 +7053,17 @@ footer img {
         position: relative;
     }
 
+}
+
+
+@media screen and (min-width: 1024px) and (min-height: 800px) {
+
+    .card-home {
+        top: 21%;
+    }
+    .banner-static {
+        height: 34vh;
+        position: relative;
+    }
 }
 
