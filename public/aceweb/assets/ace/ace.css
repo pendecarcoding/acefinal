@@ -6992,12 +6992,7 @@ footer img {
 
 
   @media screen and (min-width: 1680px) {
-    .ace-sliders .carousel-caption {
-        position: absolute;
-        right: 40%;
-        bottom: 1.25rem;
-        left: 10%;
-    }
+
     .card-home {
         top: 0%;
     }

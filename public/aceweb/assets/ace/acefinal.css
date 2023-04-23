@@ -2305,7 +2305,9 @@
     }
     .ace-sliders .carousel-caption {
         position: absolute;
-        right: 33%;
+        right: 40%;
+        bottom: 1.25rem;
+        left: 10%;
     }
     .topnav {
         left: 14%;
