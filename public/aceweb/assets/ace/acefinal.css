@@ -1570,7 +1570,7 @@
         top: 10px;
         z-index: 998;
         position: absolute;
-        width: 90px;
+        width: 86px;
         height: 94px;
     }
 
@@ -1629,7 +1629,15 @@
     }
 
     .about h1 {
-        font-size: 4rem;
+        font-size: 2.5rem;
+    }
+    .about p {
+        font-size: 15px;
+    }
+    .company-ace {
+        position: relative;
+        background-color: #f2f5f9;
+        height: 100vh;
     }
 
     #slider .selfie-img {
@@ -1704,6 +1712,7 @@
     }
 
     .investor-download {
+        margin-top: 3%;
         margin-right: 10%;
         margin-left: 10%;
     }
@@ -1755,9 +1764,12 @@
 
     .ace-personal h1 {
         overflow: hidden;
-        font-size: 4.7rem;
+        font-size: 3.8rem;
         font-weight: bold;
         text-shadow: 2px 2px 4px #848181;
+    }
+    .list-features {
+        height: 57vh;
     }
 
 
@@ -1789,11 +1801,23 @@
         height: 200px;
         vertical-align: middle;
     }
+    #tradeopen{
+        font-size: smaller;
+    }
+    #statuslive{
+        font-size: smaller;
+    }
+    #datepricefeed{
+        font-size: smaller;
+    }
+    .gtp-download .carousel-indicators {
+        margin-bottom: -7rem;
+    }
 
     .img-phone1 {
         left: 20px;
         position: absolute;
-        top: -100px;
+        top: -52px;
         right: px;
         object-fit: cover;
         max-width: 70%;
@@ -1804,7 +1828,7 @@
 
     .img-phone2 {
         position: absolute;
-        top: 100px;
+        top: 131px;
         right: 40px;
         z-index: 0;
         object-fit: cover;
@@ -1836,7 +1860,7 @@
 
     .ace-sliders .carousel-caption {
         position: absolute;
-        top: 25%;
+        top: 22%;
         right: 20%;
         bottom: 9.25rem;
         left: 10%;
@@ -1848,9 +1872,12 @@
     }
 
     .line-structure {
-        top: 78%;
+        /* top: 78%;
         left: 33%;
-        width: 70%;
+        width: 70%; */
+        top: 76%;
+        left: 20%;
+        width: 82%;
         position: absolute;
     }
 
@@ -1895,7 +1922,7 @@
 
     .child-company {
         position: absolute;
-        top: 50%;
+        top: 43%;
         left: 40%;
     }
 
@@ -2150,3 +2177,244 @@
     /*END PAGE INVESTOR*/
 
 }
+
+@media screen and (min-width: 1024px) and (min-height: 800px) {
+    .value-last-investor {
+        font-size: 3em;
+        margin: 21px;
+    }
+    .card-home {
+        top: 21%;
+    }
+    .ace-sliders {
+        height: 75vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .slider-banner {
+        width: 100%;
+        height: 75vh;
+    }
+    .company-ace {
+        height: 69vh;
+    }
+    #imggpt1 {
+        width: 88%;
+    }
+    .gtp-solution .vl {
+        padding-left: 0px;
+    }
+    #title-progress{
+        font-size: 1.2rem;
+    }
+    #to-progress{
+        font-size: 1.2rem;
+    }
+    .ace-testimonials {
+        position: relative;
+        overflow: hidden;
+        height: 74vh;
+    }
+    .gtp-anouncements .content-ace .wrap-content{
+        position: relative;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .anouncements-gpt {
+        background-color: #ffffff;
+        height: auto;
+        position: relative;
+    }
+    .gtp-download {
+        background-color: #badbff3d;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+
+    }
+    #st-1.st-has-labels .st-btn {
+        min-width: 114px;
+    }
+    .ace-personal {
+        height: 75vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .ace-personal img {
+        height: 75vh;
+    }
+    .allprice {
+        height: 75vh;
+        padding-top: 9vh;
+    }
+    .table-price-buy {
+        height: 31.5vh;
+    }
+    .table-price-sell {
+        height: 37.5vh;
+    }
+    .list-features {
+        height: 39vh;
+    }
+  }
+
+  @media (min-width: 1366px) and (max-width: 1535px) {
+    .about h1 {
+        /* font-size: 4.6rem; */
+        font-size: 3.6rem;
+    }
+}
+@media screen and (min-width: 1440px) {
+    #imggpt1 {
+        width: 60%;
+    }
+    .card-home {
+        top: 12%;
+    }
+    .company-ace {
+        height: 100vh;
+    }
+    .child-company {
+        width: 73%;
+    }
+  }
+
+  @media screen and (min-height: 900px) {
+    .ace-sliders {
+        height: 100vh;
+    }
+    .slider-banner {
+        height: 100vh;
+    }
+  }
+  @media screen and (min-width: 1680px) {
+    .topnav a {
+        font-size: 1.8em;
+    }
+    .acetopbar {
+        height: 150px;
+    }
+    .ace-sliders {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .slider-banner {
+        width: 100%;
+        height: 100vh;
+    }
+    .ace-sliders .carousel-caption {
+        position: absolute;
+        right: 33%;
+    }
+    .topnav {
+        left: 14%;
+        height: 92px;
+    }
+    .about h1 {
+        /* font-size: 4.6rem; */
+        font-size: 4.5rem;
+    }
+    #title-progress {
+        font-size: 2rem;
+    }
+    #to-progress {
+        font-size: 2rem;
+    }
+    #imggpt1 {
+        width: 64%;
+    }
+    .line-structure {
+        top: 73%;
+        left: 20%;
+        width: 76%;
+    }
+    .child-company {
+        width: 50%;
+        top: 55%;
+    }
+    .hover {
+        height: 400px;
+    }
+    .about-provider {
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+    }
+    .achievements-arrow {
+        top: 50%;
+    }
+    .carousel-item {
+        width: 100%;
+        height: auto;
+    }
+
+    .ace-personal h1 {
+        overflow: hidden;
+        font-size: 6rem;
+    }
+    .caption-banner {
+        left: 0%;
+    }
+    .ace-personal {
+        height: 100vh;
+    }
+    .ace-personal img {
+        height: 100vh;
+    }
+    .allprice {
+        height: 100vh;
+        padding-top: 5vh;
+    }
+    .allprice h4 {
+        font-size: 27px;
+    }
+
+    .table-price-sell {
+        height: 47.5vh;
+    }
+    .allprice h2 {
+        font-size: 3.6rem;
+    }
+    .img-phone1 {
+        left: 20px;
+        position: absolute;
+        top: -134px;
+    }
+    .img-phone2 {
+        position: absolute;
+        top: 200px;
+        right: 183px;
+    }
+    .wrap-content {
+        position: relative;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .table-price-buy {
+        height: 47.5vh;
+        margin-top: 16%;
+    }
+    .title-price-investor {
+        -webkit-text-stroke: 0.5px;
+        font-size: 1.7em;
+    }
+    .value-last-investor {
+        font-size: 4em;
+    }
+
+  }
+  @media only screen and (min-width: 1920px) {
+    .topnav a {
+        font-size: 1.6em;
+    }
+    .acetopbar {
+        width: 131px;
+    }
+    .ace-card-company {
+        width: 150px;
+        height: 150px;
+        padding-top: 15px;
+        margin-left: 3px;
+    }
+  }

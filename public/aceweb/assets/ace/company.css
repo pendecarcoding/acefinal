@@ -15,17 +15,35 @@
 
   /* styles for screens between 992px and 1200px */
   @media (min-width: 992px) and (max-width: 1199px) {
+    .wrap-content {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+
     #acecapital{
-        left: 26%;
+        left: 2%;
+    }
+    #acecapital p{
+        font-size: 10px;;
     }
     #aceikhlas{
-        left: 29%;
+        left: 4%;
+    }
+    #aceikhlas p{
+        font-size: 10px;;
     }
     #aceassay{
-        left: 31%;
+        left: 6%;
+    }
+    #aceassay p{
+        font-size: 10px;;
     }
     #aceihsan{
-        left: 33%;
+        left: 6%;
+    }
+    #aceihsan p{
+        font-size: 10px;;
     }
   }
 
@@ -46,19 +64,27 @@
   }
 
   @media (min-width: 1366px) and (max-width: 1535px) {
+    #imggpt1 {
+        width: 65%;
+    }
     #acecapital{
-        left: 25%;
+        left: 30%;
     }
     #aceikhlas{
-        left: 27%;
+        left: 35%;
     }
     #aceassay{
-        left: 29%;
+        left: 40%;
     }
     #aceihsan{
-        left: 29%;
+        left: 45%;
     }
   }
+  @media screen and (min-width: 1440px) {
+    #acecapital {
+        left: 28%;
+    }
+}
 
   @media (min-width: 1535px) and (max-width: 1600px) {
     #acecapital{
@@ -89,4 +115,21 @@
         left: 36%;
     }
   }
+
+  @media (min-width: 1680px){
+    #acecapital {
+        left: -7%;
+    }
+    #aceikhlas {
+        left: -1%;
+    }
+    #aceassay {
+        left: 6%;
+    }
+    #aceihsan {
+        left: 12%;
+    }
+
+  }
+
 

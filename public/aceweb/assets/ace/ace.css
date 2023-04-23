@@ -3986,8 +3986,8 @@ footer img {
         display: inline-flex;
     }
     .carousel-indicators .btn-slide {
-        width: 0.6%;
-        height: 1px;
+        width: 1.6%;
+        height: 4px;
     }
 
     .ace-sliders .carousel-caption {
@@ -4066,7 +4066,7 @@ footer img {
     }
 
     .about-provider {
-        height: auto;
+        height: 396px;
     }
 
     .about-provider .carousel {
@@ -4083,16 +4083,31 @@ footer img {
         position: relative;
         height: auto;
     }
-
+    #carouselachivements .slide {
+        position: relative;
+    }
     .ace-achievements .carousel {
-        position: absolute;
+        /* position: absolute; */
         width: 100%;
-        height: 75vh;
-        margin-bottom: 4rem;
+        /* height: 75vh; */
+        margin-bottom: 2rem;
+    }
+    .read-now-ach {
+        margin-top: 3vh;
+    }
+    .ace-achievements .carousel-indicators {
+        /* bottom: 15%; */
+        bottom: -2%;
     }
 
-    .ace-achievements .carousel-indicators {
-        bottom: 15%;
+    .about-provider .carousel-indicators .btn-slide {
+        width: 1%;
+        height: 4px;
+    }
+    .about-provider .carousel-indicators .active {
+        opacity: 1;
+        height: 3px;
+        width: 50px;
     }
 
     .slider-achivements .effect-1 {
@@ -4168,8 +4183,8 @@ footer img {
     #ace-investor-banner-mobile .carousel-caption {
         position: absolute;
         right: 15%;
-        left: 15%;
-        padding-top: 10%;
+        left: 9%;
+        padding-top: 13%;
     }
     .carousel-caption {
         top: 5%;
@@ -4194,7 +4209,7 @@ footer img {
     .title-price-investor {
         text-align: center;
         -webkit-text-stroke: 0.5px;
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
     .last-title-price, .last-title-price {
         font-weight: bold;
@@ -4307,7 +4322,7 @@ footer img {
     /*END*/
 }
 
-@media screen and (min-width: 500px) and (max-width: 570px) {
+@media screen and (min-width: 500px) and (max-width: 600px) {
     .stock-change-investor {
         padding: 10px;
         background-color: #F5F5F7;
@@ -4452,6 +4467,10 @@ footer img {
     .carousel-caption h1 {
         font-size: 6vw;
         text-shadow: 1px 1px #515151;
+    }
+    .about h1 {
+        font-weight: 100;
+        font-size: 1.6rem;
     }
 
     .carousel-caption p {
@@ -4634,10 +4653,10 @@ footer img {
     }
 
     .ace-achievements .carousel {
-        position: absolute;
-        width: 100%;
-        height: 75vh;
-        margin-bottom: 4rem;
+           /* position: absolute; */
+    width: 100%;
+    /* height: 75vh; */
+    margin-bottom: 4rem;
     }
 
     .ace-achievements .carousel-indicators {
@@ -6059,6 +6078,26 @@ footer img {
 
   /* Large Devices (Desktops) */
   @media only screen and (min-width: 992px) and (max-width: 1440px) {
+    .wrap-card-company {
+        text-align: -webkit-center;
+        width: 134px;
+        height: 200px;
+        position: relative;
+    }
+    .child-company {
+        width: 68%;
+    }
+    .ace-card-company {
+        position: relative;
+    padding-top: 15px;
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+    margin: 20px;
+    /* margin-left: 55px; */
+    border: none;
+    box-shadow: 1px 1px 1px rgb(221 218 218);
+    }
     .topnav a {
         float: left;
         display: block;
@@ -6093,7 +6132,7 @@ footer img {
         font-size: 0.7em;
     }
     .card-home{
-        top: 7%;
+        top: 11%;
     }
     .card-home h3 {
         font-size: 26px;
@@ -6893,4 +6932,124 @@ footer img {
 
 
 }
+
+@media screen and (min-width: 1024px) and (min-height: 800px) {
+
+    .card-home {
+        top: 21%;
+    }
+}
+@media (min-width: 1366px) and (max-width: 1535px) {
+    .ace-personal h1 {
+        -webkit-text-stroke: 2px;
+        overflow: hidden;
+        font-size: 4.5rem;
+    }
+    #statuslive{
+        font-size: small;
+    }
+    #tradeopen{
+        font-size: small;
+    }
+    #datepricefeed{
+        font-size: small;
+    }
+    .ace-personal {
+        overflow: hidden;
+        position: relative;
+    }
+    .img-phone1 {
+        top: -55px;
+    }
+    .img-phone2 {
+        top: 230px;
+    }
+    .allprice {
+        height: auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .about h1 {
+        /* font-size: 4.6rem; */
+        font-size: 3.6rem;
+    }
+    #imggpt1 {
+        width: 65%;
+    }
+    #title-progress{
+        font-size: 1.2rem;
+    }
+    #to-progress{
+        font-size: 1.2rem;
+    }
+
+
+}
+
+@media screen and (min-width: 1440px) {
+    .card-home {
+        top: 12%;
+    }
+    .company-ace {
+        height: 100vh;
+    }
+  }
+
+
+  @media screen and (min-width: 1680px) {
+    .card-home {
+        top: 0%;
+    }
+    .card-corporate {
+        width: 41%;
+    }
+    .card-personal {
+        width: 41%;
+    }
+    .topnav a {
+        font-size: 1.8em;
+    }
+    .title-ace {
+        font-size: 1.8em;
+    }
+    #content-progress {
+
+        font-size: 1.6rem;
+
+    }
+    .sticky-content {
+        padding-top: 0rem;
+    }
+    .ace-achievements {
+        height: 100vh;
+    }
+    .hover-1 img {
+        height: 400px;
+    }
+    .about p {
+        font-size: 25px;
+    }
+
+
+.step1 {
+    margin-left: 20px;
+    font-size: 29px;
+
+  }
+  .easigold {
+    height: 100vh
+  }
+  .ace-personal-powered {
+    /* position: absolute; */
+    bottom: 0;
+    text-align: center;
+    padding: 25px;
+}
+}
+@media only screen and (min-width: 1920px) {
+    .card-home {
+        top: 8%;
+    }
+
+  }
 
