@@ -7068,3 +7068,10 @@ footer img {
     }
 }
 
+
+@media screen and (min-height: 1366px) {
+    .card-home {
+        top: 32%;
+    }
+}
+

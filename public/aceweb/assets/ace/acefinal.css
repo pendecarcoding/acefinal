@@ -2420,3 +2420,73 @@
         margin-left: 3px;
     }
   }
+
+  /*HEIGHT ALL CSS*/
+@media screen and (min-height: 1366px) {
+    .ace-sliders {
+        height: 40vh;
+    }
+    .slider-banner {
+        height: 40vh;
+    }
+    .company-ace {
+        height: 40vh;
+    }
+    .ace-sliders .carousel-caption {
+        top: 19%;
+    }
+    .sticky-mansory {
+        height: 44vh;
+    }
+    .ace-testimonials {
+        height: 40vh;
+    }
+    .ace-personal img {
+        height: 40vh;
+    }
+    .ace-personal {
+        height: 40vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .allprice {
+        height: 35vh;
+        padding-top: 5vh;
+    }
+    .table-price-buy {
+        height: 17.5vh;
+    }
+    .table-price-sell {
+        height: 17.5vh;
+    }
+    .about h1 {
+        -webkit-text-stroke: 1px;
+    }
+    .list-features {
+        height: 24vh;
+    }
+    .ace-investor-banner {
+        width: 100%;
+        height: 40vh;
+    }
+    .img-responsive-investor {
+        height: 40vh;
+    }
+    .stock-price-investor {
+        height: 17.5vh;
+        margin-top: 5vh;
+        width: 100%;
+    }
+    .investor-number{
+        height: 40vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .banner-static {
+        height: 18vh;
+        position: relative;
+    }
+    .card-home {
+        top: 32%;
+    }
+  }
