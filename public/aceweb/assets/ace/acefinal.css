@@ -2289,7 +2289,11 @@
   }
   @media screen and (min-width: 1680px) {
     .topnav a {
-        font-size: 1.8em;
+        font-size: 1.5em;
+        margin-right: 20px;
+    }
+    #datepricefeed {
+        font-size: 0.9em;
     }
     .acetopbar {
         height: 150px;
@@ -2310,7 +2314,7 @@
         left: 10%;
     }
     .topnav {
-        left: 14%;
+        left: 20%;
         height: 92px;
     }
     .about h1 {
@@ -2357,6 +2361,7 @@
     }
     .caption-banner {
         left: 0%;
+        top: 18%;
     }
     .ace-personal {
         height: 100vh;
@@ -2395,7 +2400,7 @@
     }
     .table-price-buy {
         height: 47.5vh;
-        margin-top: 16%;
+        margin-top: 10%;
     }
     .title-price-investor {
         -webkit-text-stroke: 0.5px;
@@ -2406,9 +2411,60 @@
     }
 
   }
+  @media only screen and (min-width:1920px){
+    .table-price-buy {
+        height: 47.5vh;
+        margin-top: 2%;
+    }
+    .allprice {
+        height: 100vh;
+        padding-top: 10vh;
+        font-size: 23px;
+    }
+  }
+  @media only screen and (min-width:1440px) {
+    .ace-personal {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .ace-personal img {
+        height: 100vh;
+    }
+    .allprice {
+        height: 100vh;
+        padding-top: 10vh;
+    }
+    .table-price-buy {
+        height: 45vh;
+    }
+    .table-price-sell {
+        height: 45vh;
+    }
+  }
+  @media only screen and (min-width: 1600px) {
+    .ace-personal {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .ace-personal img {
+        height: 100vh;
+    }
+    .allprice {
+        height: 100vh;
+        padding-top: 10vh;
+    }
+    .table-price-buy {
+        height: 45vh;
+    }
+    .table-price-sell {
+        height: 45vh;
+    }
+  }
   @media only screen and (min-width: 1920px) {
     .topnav a {
-        font-size: 1.6em;
+        font-size: 1.8em;
     }
     .acetopbar {
         width: 131px;
@@ -2488,5 +2544,8 @@
     }
     .card-home {
         top: 32%;
+    }
+    .acetopbar {
+        height: 99px;
     }
   }
