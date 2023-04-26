@@ -85,7 +85,7 @@
                          </tr>
 
                          <tr>
-                            <td class="center" colspan="3"><div style="font-weight: bold;">Buy</div>
+                            <td class="center" colspan="3"><div class="ttprice" style="font-weight: bold;">Buy</div>
         </td>
                          </tr>
 
@@ -100,7 +100,7 @@
 
                          </tr>
                          <tr>
-                            <td class="center" colspan="3"><div>RM/GM</div></td>
+                            <td class="center" colspan="3"><div class="ttprice">RM/GM</div></td>
                          </tr>
 
 
@@ -115,7 +115,7 @@
                             </td>
                          </tr>
                          <tr>
-                            <td class="center" colspan="3"><div>RM/TAEL</div><br></td>
+                            <td class="center" colspan="3"><div class="ttprice">RM/TAEL</div><br></td>
                          </tr>
 
 
@@ -126,7 +126,7 @@
                <table class="table-price-sell">
                 <thead>
                  <tr>
-                    <th colspan="3" class="center th-sell"><div style="font-weight: bold">Sell</div></th>
+                    <th colspan="3" class="center th-sell"><div class="ttprice" style="font-weight: bold">Sell</div></th>
                  </tr>
                 </thead>
                 <tbody>
@@ -144,7 +144,7 @@
 
                  </tr>
                  <tr>
-                    <td class="center" colspan="3"><div>RM/GM</div></td>
+                    <td class="center" colspan="3"><div class="ttprice">RM/GM</div></td>
                  </tr>
 
 
@@ -159,7 +159,7 @@
                     </td>
                  </tr>
                  <tr>
-                    <td class="center" colspan="3"><div>RM/TAEL</div></td>
+                    <td class="center" colspan="3"><div class="ttprice">RM/TAEL</div></td>
                  </tr>
                  <tr>
                     <td colspan="3">

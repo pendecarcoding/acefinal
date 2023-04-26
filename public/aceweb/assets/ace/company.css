@@ -132,4 +132,20 @@
 
   }
 
+  @media (min-width: 1920px){
+    #acecapital {
+        left: -7%;
+    }
+    #aceikhlas {
+        left: 3%;
+    }
+    #aceassay {
+        left: 13%;
+    }
+    #aceihsan {
+        left: 22%;
+    }
+
+  }
+
 
