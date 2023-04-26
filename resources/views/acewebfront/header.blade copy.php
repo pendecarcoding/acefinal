@@ -20,11 +20,10 @@
         aria-expanded="false">
         Login
     </a>
-
         <div style="overflow: hidden;padding-right: 20px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a style="color:black;" class="dropdown-item" href="https://gtp.ace2u.com/"
+            <a style="color:black;font-size: 1.38vw;" class="dropdown-item" href="https://gtp.ace2u.com/"
                 target="_blank">GTP Login</a>
-            <a style="color:black;" class="dropdown-item" href="#" style="width:100%;"
+            <a style="color:black;font-size: 1.38vw;" class="dropdown-item" href="#" style="width:100%;"
                 data-bs-toggle="modal" data-bs-target="#exampleModal"> Staff Login</a>
 
         </div>
