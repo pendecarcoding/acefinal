@@ -2765,7 +2765,7 @@ footer img {
     }
     .anouncements-gpt {
         background-color: #ffffff;
-        height: 100vh;
+        height: auto;
         /* margin-bottom: 25px; */
     }
     #imggpt1 {
@@ -3544,12 +3544,20 @@ footer img {
     .acetopbar {
         border-radius: 2px;
         left: 2%;
-        top: 0.9%;
+        top: 0.6%;
         z-index: 998;
         position: fixed;
-        width: 35px;
-        height: 40px;
+        width: 33px;
+        height: 37px;
         /* background-color: white; */
+    }
+    .list-features {
+        direction: rtl;
+        position: relative;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+        height: 48vh;
+        width: 100%;
     }
 
     .topnav.responsive {

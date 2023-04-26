@@ -238,7 +238,7 @@
     .ace-sliders {
 
         position: relative;
-        overflow: auto;
+        overflow: hidden;
         display: flex;
         flex-flow: row nowrap;
         height: 35vh;
