@@ -214,8 +214,6 @@
               </div>
               <div class="row">
                 <div
-                  data-aos="fade-up"
-                  data-aos-delay="200"
                   class="col-md-6 col-sm-6"
                 >
                   <h1>EasiGold, your trusted companion</h1>
