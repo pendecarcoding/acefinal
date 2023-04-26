@@ -215,8 +215,8 @@ class AceController extends Controller
                 $shareholder =  Blog::join('blog_categories','blog_categories.id','blogs.category_id')
                         ->where('category_name','shareholder')
                         ->first();
-                $announcement    = Announcement::orderby('created_at','DESC')->get();
-                $announcementnew = Announcement::orderby('created_at','DESC')->first();
+                $announcement    = Announcement::orderby('created_at','DESC')->where('type','PUBLIC')->get();
+                $announcementnew = Announcement::orderby('created_at','DESC')->where('type','PUBLIC')->first();
                 $download     = Download::orderby('date','DESC')->get();
                 return view('acewebfront.pages.investor',compact('irkey','announcement','download','shareholder','page','announcementnew'));
                 break;
