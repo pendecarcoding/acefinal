@@ -1,5 +1,5 @@
 <header>
-    <nav id="myTopnav" class="topnav" @if(Session::get('loginstaff')==true) style="left: 19%;" @endif>
+    <nav id="myTopnav" class="topnav">
         @foreach (getnav() as $v)
             <a href="{{ url($v['link']) }}"
                 @if (Request::is($v['link'] . '*')) class="active" @endif>{{ $v['name'] }}</a>
