@@ -160,7 +160,7 @@
                 <h1>Company structure</h1>
               </div>
               <div class="row img-strc">
-                <div class="col-md-5 col-sm-5">
+                <div class="col-md-5 col-sm-12">
                   <div
                     data-aos="zoom-in-down"
                     data-aos-delay="300"

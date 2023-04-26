@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="
     https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <meta name="mobile-web-app-capable" content="yes" />
@@ -659,6 +659,14 @@
     <script>
 
     </script>
+
+<script>
+    window.addEventListener('wheel', function(event) {
+      if (event.ctrlKey == true) {
+        event.preventDefault();
+      }
+    });
+  </script>
 
 
 

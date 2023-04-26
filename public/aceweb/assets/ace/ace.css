@@ -1607,6 +1607,8 @@ footer img {
 
 .ace-personal {
     height: 100vh;
+    position: relative;
+    overflow: hidden;
     background-color: #f5f5f7;
 }
 
@@ -6935,6 +6937,10 @@ footer img {
 
 
 @media (min-width: 1366px) and (max-width: 1535px) {
+    .caption-banner{
+        position: absolute;
+        top: -9%;
+    }
     .ace-personal h1 {
         -webkit-text-stroke: 2px;
         overflow: hidden;
@@ -7073,5 +7079,6 @@ footer img {
     .card-home {
         top: 32%;
     }
+
 }
 
