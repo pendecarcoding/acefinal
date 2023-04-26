@@ -2064,7 +2064,7 @@
     }
 
     .carousel-caption {
-        top: 12%;
+        top: 28%;
         bottom: 12rem;
         left: 10%;
         right: 50rem;
@@ -2266,7 +2266,7 @@
 }
 @media screen and (min-width: 1440px) {
     #imggpt1 {
-        width: 60%;
+        width: 71%;
     }
     .card-home {
         top: 12%;
@@ -2324,7 +2324,7 @@
         font-size: 2rem;
     }
     #imggpt1 {
-        width: 64%;
+     width: 72%;
     }
     .line-structure {
         top: 73%;
@@ -2467,7 +2467,7 @@
     }
     .caption-banner{
         position: absolute;
-        top: 22%;
+        top: 18%;
     }
   }
   @media only screen and (min-width: 1920px) {
