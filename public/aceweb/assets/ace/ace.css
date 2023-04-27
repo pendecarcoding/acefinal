@@ -2389,7 +2389,7 @@ footer img {
 .child-company {
     position: absolute;
     top: 49%;
-    /* left: 20%; */
+    left: 20%;
     width: 75%;
 }
 
