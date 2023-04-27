@@ -7076,7 +7076,7 @@ footer img {
 
 @media screen and (min-width:1024px) {
     .banner-static {
-        height: auto;
+        height: 40vh;
         position: relative;
     }
 
