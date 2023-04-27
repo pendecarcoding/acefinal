@@ -203,7 +203,7 @@
                           <img  src="{{ static_asset('aceweb') }}/assets/img/acecapital1.png" alt="" />
 
                         </div>
-                        <p>ACE Capital Growth Sdn Bhd(ACE Capital)</p>
+                        <p class="name-company">ACE Capital Growth Sdn Bhd(ACE Capital)</p>
                     </div>
 
 
@@ -213,7 +213,7 @@
                           <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/aceikhlas1.png" alt="" />
 
                         </div>
-                        <p>ACE Ikhlas Gold Sdn Bhd (ACE Ikhlas)</p>
+                        <p class="name-company">ACE Ikhlas Gold Sdn Bhd (ACE Ikhlas)</p>
                     </div>
 
 
@@ -223,7 +223,7 @@
                           <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceeasy1.png" alt="" />
 
                       </div>
-                      <p>ACE Assay (M) Sdn Bhd (ACE Assay) </p>
+                      <p class="name-company">ACE Assay (M) Sdn Bhd (ACE Assay) </p>
                       </div>
                       <div data-aos="zoom-in-down"
                       data-aos-delay="3000" class="wrap-card-company" id="aceihsan">
@@ -231,7 +231,7 @@
                               <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceihsan1.png" alt="" />
 
                             </div>
-                            <p>ACE Ihsan Gold Sdn Bhd (ACE Ihsan) </p>
+                            <p class="name-company">ACE Ihsan Gold Sdn Bhd (ACE Ihsan) </p>
                       </div>
 
 
