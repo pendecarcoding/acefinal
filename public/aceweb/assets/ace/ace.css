@@ -6154,7 +6154,7 @@ footer img {
         font-size: 0.7em;
     }
     .card-home{
-        top: 11%;
+        top: 6%;
     }
     .card-home h3 {
         font-size: 26px;
@@ -6795,11 +6795,17 @@ footer img {
 @media screen and (min-width: 1024px) and (min-height: 800px) {
 
     .card-home {
-        top: 21%;
+        top: 9%;
     }
     .banner-static {
         height: auto;
         position: relative;
+    }
+}
+
+@media screen and (width:1024px) and (height:800px) {
+    .card-home {
+        top: 16%;
     }
 }
 
