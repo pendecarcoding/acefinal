@@ -1771,6 +1771,10 @@ footer img {
     color: #999999;
     font-size: 20px;
 }
+.wrap-card-company p{
+    font-size: 12px;
+}
+
 
 .content-about {
     align-items: center;
@@ -4157,7 +4161,7 @@ footer img {
     /*NAVBAR*/
     .topnav {
 
-        height: 7vh;
+        height: 6vh;
         position: fixed;
         left: 0%;
     }
@@ -4298,9 +4302,9 @@ footer img {
     }
 
     .acetopbar {
-    border-radius: 2px;
+        border-radius: 2px;
     left: 3px;
-    top: 3px;
+    top: 7px;
     z-index: 998;
     position: fixed;
     width: 35px;
@@ -6095,6 +6099,9 @@ footer img {
         height: 200px;
         position: relative;
     }
+    .wrap-card-company p{
+        font-size: 12px;
+    }
     .child-company {
         width: 68%;
     }
@@ -6377,304 +6384,7 @@ footer img {
 
 
 
-@media screen and (min-width: 700px) and (max-width: 900px) {
-
-    /*for caption craousel*/
-    .topnav a {
-        display: none;
-    }
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
-
-    .carousel {
-        position: absolute;
-        width: 100%;
-        /* margin-bottom: 4rem; */
-    }
-
-    section.ace-sliders img {
-        height: 58vh;
-    }
-
-    .carousel-caption {
-        position: absolute;
-        right: 15%;
-        left: 15%;
-        padding-top: 5rem;
-        padding-bottom: 1.25rem;
-        color: #fff;
-        text-align: center;
-    }
-
-    .carousel-caption h1 {
-        font-size: 5vw;
-        text-shadow: 1px 1px #515151;
-    }
-
-    .carousel-caption p {
-        font-size: 2vw;
-        text-shadow: 1px 1px #515151;
-    }
-
-    .ace-sliders {
-        height: 60vh;
-    }
-
-    .slider {
-        height: 25vh;
-    }
-
-    /*END Craousel*/
-    /*wrap-content*/
-    .wrap-content {
-        position: relative;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    /*wrap-content*/
-    /*SECTION ABOUT ACE*/
-    .about-ace {
-        /* margin-top: 15%; */
-        background-color: white;
-    }
-
-    .about-ace h1 {
-        font-size: 5vw;
-    }
-
-    .number-ace-center p {
-        color: #999999;
-        font-size: 1.5vw;
-    }
-
-    /*END SECTION*/
-    /*SECTION COMPANY-ACE*/
-    .company-ace h1 {
-        font-size: 5vw;
-    }
-
-    .ace-card-company {
-        padding-top: 8px;
-        margin: 30px;
-        border-radius: 100px;
-        width: 60px;
-        height: 60px;
-        border: none;
-        box-shadow: 1px 1px 1px rgb(221 218 218);
-    }
-
-    .child-company {
-        position: absolute;
-        flex-flow: row;
-        display: flex;
-        justify-content: space-between;
-        top: 45%;
-    }
-
-    /*END SECTION COMPANY*/
-
-    /*SECTION GPT*/
-    .gtp-solution h1 {
-        font-size: 5vw;
-    }
-
-    .vl {
-        height: 300px;
-        padding-left: 36px;
-        text-align: justify;
-        font-size: 3vw;
-    }
-
-    .img-wrap-gpt {
-        padding-top: 10px;
-        position: relative;
-        align-items: center;
-        display: inline-flex;
-    }
-
-    .ace-button {
-        background-color: transparent;
-        color: white;
-        border: 2px solid #ffffff;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        padding: 10px;
-        width: 30%;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 20px;
-    }
-
-    .readmore-gtp {
-        top: 95%;
-        left: 34%;
-        right: 34%;
-        position: absolute;
-    }
-
-    /*END SECTION GPT*/
-
-    /*SECTION gtp-patner*/
-    .gtp-patner h1 {
-        font-size: 5vw;
-    }
-
-    .mansory {
-        position: relative;
-        height: 400px;
-    }
-
-    .mansory div {
-        width: 30%;
-        flex-wrap: wrap;
-        background-color: white;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 8px;
-    }
-
-    .mansory .item1 {
-        padding: 5px;
-        flex-wrap: wrap;
-        height: 100px;
-    }
-
-    .mansory .item1 img {
-        width: 100%;
-    }
-
-    .mansory .end img {
-        max-height: fit-content;
-        width: 100%;
-    }
-
-    .mansory .item2 {
-        height: 50px;
-        background-color: transparent;
-        box-shadow: none;
-    }
-
-    .mansory .end {
-        flex-wrap: wrap;
-        height: 95px;
-    }
-
-    /*END SECTION gtp-patner*/
-
-    /*SECTION about-provider */
-    .about-provider h1 {
-        font-size: 5vw;
-    }
-
-    .about-provider {
-        height: 550px;
-    }
-
-    .about-provider .carousel {
-        width: 100%;
-        margin-bottom: 4rem;
-        height: 25vh;
-    }
-
-    /*END SECTION about-provider */
-    /* SECTION ace-achievements */
-    .ace-achievements {
-        height: 95vh;
-    }
-
-    .ace-achievements .ace-button {
-        top: 95%;
-        left: 34%;
-        right: 34%;
-        position: absolute;
-    }
-
-    .achievements-slider {
-        height: 190px;
-        position: sticky;
-    }
-
-    .ace-achievements h1 {
-        font-size: 5vw;
-    }
-
-    .effect-1 .effect-text h2 {
-        height: 45px;
-        color: #ffffff;
-        font-size: 2vw;
-        margin: -15px 0 0 0;
-        transition: 0.5s;
-    }
-
-    /* END SECTION ace-achievements*/
-
-    /*SECTION ACE TESTIMONIAL*/
-    .ace-testimonials h1 {
-        font-size: 5vw;
-    }
-
-    .ace-testimonials p {
-        font-size: 2vw;
-    }
-
-    /* END SECTION ACE TESTIMONIAL */
-    /* SECTION ACE CONNECTED */
-    .ace-conected h1 {
-        font-size: 5vw;
-    }
-
-
-    .ace-conected .ace-button-black {
-        width: 100%;
-    }
-
-    /* END SECTION */
-    /*for image*/
-    .acetopbar {
-        border-radius: 2px;
-        left: 3px;
-        top: 3px;
-        z-index: 998;
-        position: fixed;
-        width: 35px;
-        height: 40px;
-    }
-
-    .topnav {
-        height: 7vh;
-        position: fixed;
-        left: 0%;
-    }
-
-    .topnav.responsive {
-        position: relative;
-    }
-
-    .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-}
+/*  */
 
 
 /* ORIENTATION LANDSCAPE */
@@ -7039,6 +6749,9 @@ footer img {
     }
     .about p {
         font-size: 25px;
+    }
+    .wrap-card-company p {
+        font-size: 12px;
     }
 
 

@@ -38,6 +38,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ static_asset('aceweb') }}/assets/carousel/carousel.css" rel="stylesheet" />
+
     <link href="{{ static_asset('aceweb') }}/assets/ace/ace.css" rel="stylesheet" />
     <link href="{{ static_asset('aceweb') }}/assets/ace/acefinal.css" rel="stylesheet" />
     <!--<link href="assets/ace/scroll.css" rel="stylesheet" />-->
@@ -55,6 +56,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link href="{{ static_asset('aceweb') }}/assets/ace/ipad.css" rel="stylesheet" />
 
 
 
