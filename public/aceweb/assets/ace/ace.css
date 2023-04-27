@@ -6721,7 +6721,9 @@ footer img {
 
 
   @media screen and (min-width: 1680px) {
-
+    .name-company{
+        font-size: 12px;
+    }
     .card-home {
         top: 0%;
     }
