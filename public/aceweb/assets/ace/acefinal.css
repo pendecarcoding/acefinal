@@ -2210,7 +2210,7 @@
     .ace-testimonials {
         position: relative;
         overflow: hidden;
-        height: 74vh;
+        height: max-content;
     }
     .gtp-anouncements .content-ace .wrap-content{
         position: relative;
