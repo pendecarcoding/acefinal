@@ -1,43 +1,42 @@
 html {
     scroll-behavior: smooth;
 }
-.img-line-structure{
+
+.img-line-structure {
     width: 98%;
 }
 
-.circle-img-ace{
+.circle-img-ace {
     width: 85%;
 }
 
-.img-strc{
+.img-strc {
     margin-top: 5%;
 }
 
-.prc-buy{
+.prc-buy {
     padding-left: 24px;
     padding-right: 24px;
 }
-.prc-sell{
 
-}
 
-.title-corporate{
+.title-corporate {
     font-weight: bold;
 }
 
 
-.ace-insight .p-title-news{
+.ace-insight .p-title-news {
     margin-top: 18px;
     margin-bottom: 18px;
 }
 
-.dropdown-menu a:active{
+.dropdown-menu a:active {
     color: black;
     background-color: white;
 }
 
 
-.wrap-caraouselservice{
+.wrap-caraouselservice {
     position: relative;
     margin-bottom: 40px;
     margin-top: 40px;
@@ -47,26 +46,26 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
+}
 
-  .horizontal-line {
+.horizontal-line {
     height: 1px;
     width: 50%;
     background-color: black;
     margin-top: 10px;
     margin-bottom: 10px;
-  }
+}
 
-  .vertical-line {
+.vertical-line {
     width: 1px;
     height: 50px;
     background-color: black;
     margin-left: 10px;
     margin-right: 10px;
-  }
+}
 
 
-.line-str{
+.line-str {
     height: 1px;
     width: 68%;
     top: 70%;
@@ -76,7 +75,8 @@ html {
     position: absolute;
 
 }
-.line-str::after{
+
+.line-str::after {
     height: 5px;
     width: 2%;
     top: 70%;
@@ -86,17 +86,17 @@ html {
 
 }
 
-#desktop-counter{
+#desktop-counter {
     margin-top: 40px;
 }
 
 
-.footer-medsos{
+.footer-medsos {
     padding: 20px;
     text-align: center;
 }
 
-.price{
+.price {
     -webkit-text-stroke: 0.2px;
 }
 
@@ -112,8 +112,10 @@ html {
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
+
 body {
-    overflow-x: hidden; /* Hide scrollbars */
+    overflow-x: hidden;
+    /* Hide scrollbars */
     font-family: 'Poppins';
     height: 100%;
     width: 100%;
@@ -121,38 +123,39 @@ body {
     margin: 0;
 }
 
-.name-company{
+.name-company {
     font-size: 12px;
 }
-footer a{
+
+footer a {
     text-decoration: none;
 }
 
-.th-sell{
+.th-sell {
     padding-top: 20px;
 }
 
 .gtp-animation {
-         /* This timing applies on the way OUT */
-  transition-timing-function: ease-in;
+    /* This timing applies on the way OUT */
+    transition-timing-function: ease-in;
 
-  /* Quick on the way out */
-  transition: 0.2s;
+    /* Quick on the way out */
+    transition: 0.2s;
 
-  /* Hide thing by pushing it outside by default */
-  transform: translateY(130%);
-  }
+    /* Hide thing by pushing it outside by default */
+    transform: translateY(130%);
+}
 
 #slideSource {
     opacity: 1;
     transition: opacity 1s;
-  }
+}
 
-  #slideSource.fade {
+#slideSource.fade {
     opacity: 0;
-  }
+}
 
-  .about-provider .carousel-indicators #btn-slider {
+.about-provider .carousel-indicators #btn-slider {
     background: #1D5189;
     /* width: 10px; */
     border: 1px solid #1D5189;
@@ -166,11 +169,11 @@ footer a{
     height: 6px;
 }
 
-  .about-provider .carousel-indicators .active {
+.about-provider .carousel-indicators .active {
     opacity: 1;
     height: 6px;
     width: 50px;
-  }
+}
 
 
 .about-provider .carousel-indicators {
@@ -203,11 +206,11 @@ footer a{
     height: 8px;
 }
 
-  .gtp-download .carousel-indicators .active {
+.gtp-download .carousel-indicators .active {
     opacity: 1;
     height: 8px;
     width: 50px;
-  }
+}
 
 
 .gtp-download .carousel-indicators {
@@ -225,9 +228,10 @@ footer a{
     list-style: none;
 }
 
-.read-now-ach{
+.read-now-ach {
     margin-top: 95px;
 }
+
 .ace-achievements .carousel-indicators {
     position: absolute;
     right: 0;
@@ -259,7 +263,7 @@ footer a{
 
 
 
-.btn-readnow-white{
+.btn-readnow-white {
     background-color: transparent;
     color: white;
     border: 2px solid #ffffff;
@@ -275,35 +279,37 @@ footer a{
 }
 
 
-#ace-investor-banner-mobile{
+#ace-investor-banner-mobile {
     display: none;
 }
 
-#content-progress{
+#content-progress {
     font-family: 'Poppins';
     font-size: medium;
     text-align: left;
 }
 
-.carousel-indicators .btn-slide{
-    width:0.6%;
+.carousel-indicators .btn-slide {
+    width: 0.6%;
     height: 6px;
 }
+
 .carousel-indicators .active {
     opacity: 1;
-    width:5%;
+    width: 5%;
 }
 
 
 
-.footer-link{
+.footer-link {
     text-align: left;
 }
 
-.btn-step-cart{
+.btn-step-cart {
     border-radius: 50px;
     background-color: #fdfe6e;
 }
+
 .ace-detailproduct {
     background-color: #ffffff;
     height: auto;
@@ -311,28 +317,35 @@ footer a{
     margin-right: 3%;
     margin-top: 2%;
 }
-.bg-banner{
+
+.bg-banner {
     object-fit: cover;
     width: 100%;
     height: 30vh;
 }
-.bg-banner img{
+
+.bg-banner img {
     object-fit: cover;
 }
+
 nav {
     display: block;
 }
-.title-card-mobile{
+
+.title-card-mobile {
     display: none;
 }
+
 .row-personals {
     position: relative;
     display: flex;
     flex-wrap: wrap;
 }
+
 .ace-personal #tablet-banner {
     display: none;
 }
+
 .img-responsive-investor {
     object-fit: cover;
     max-width: 100%;
@@ -340,21 +353,23 @@ nav {
     vertical-align: middle;
 }
 
-#alertpatner{
+#alertpatner {
     display: none;
 }
 
-#hero-lightpass{
+#hero-lightpass {
     display: none;
 }
 
-#mobile-counter{
+#mobile-counter {
     display: none;
 }
-#mobile-pricefeed{
+
+#mobile-pricefeed {
     display: none;
 }
-.poweredby-ace{
+
+.poweredby-ace {
     display: none;
 }
 
@@ -376,12 +391,14 @@ nav {
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 9999;
     text-align: center;
-  }
-  #loading img {
+}
+
+#loading img {
     width: 100px;
     height: 100px;
     margin-top: 20%;
-  }
+}
+
 .left-arrow-achievements {
     color: #f8f9fa;
     font-size: 250%;
@@ -482,7 +499,7 @@ nav {
     opacity: 100;
 }
 
-.hover-1-content p{
+.hover-1-content p {
     font-size: 2em;
 }
 
@@ -604,16 +621,16 @@ nav {
 /*MANSORY */
 .wrapper {
     margin: 50px auto;
-  }
+}
 
-  .grid {
+.grid {
     margin: 0 auto;
     padding: 10px;
     -webkit-perspective: 1000px;
     perspective: 1000px;
-  }
+}
 
-  .grid-item {
+.grid-item {
     width: 180px;
     height: 100px;
     margin-bottom: 10px;
@@ -622,32 +639,35 @@ nav {
     cursor: pointer;
     position: relative;
     opacity: 0;
-  }
+}
 
-  .grid-item.is-visible {
+.grid-item.is-visible {
     animation: Items .6s ease-in forwards;
-  }
+}
 
-  @keyframes Items {
+@keyframes Items {
     0% {
-      opacity: 0;
-      -webkit-transform: scale(0.3) rotateY(90deg);
-      transform: scale(0.3) rotateY(90deg);
+        opacity: 0;
+        -webkit-transform: scale(0.3) rotateY(90deg);
+        transform: scale(0.3) rotateY(90deg);
     }
-    60% {
-      -webkit-transform: scale(1.4);
-      transform: scale(1.4);
-    }
-    90% {
-      -webkit-transform: scale(0.9);
-      transform: scale(0.9);
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 
-  .fancybox {
+    60% {
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+
+    90% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fancybox {
     display: block;
     width: 100%;
     height: 100%;
@@ -658,29 +678,27 @@ nav {
     background-repeat: no-repeat;
     background-position: center;
     transition: all .5s;
-  }
+}
 
-  .grid-item:hover .fancybox {
+.grid-item:hover .fancybox {
     transform: scale(1.1);
-  }
+}
 
-  .grid-item:nth-child(1) .fancybox {
-
-  }
+.grid-item:nth-child(1) .fancybox {}
 
 
 
-  .grid-item:nth-child(4n-5) {
+.grid-item:nth-child(4n-5) {
     height: 50px;
-  }
+}
 
-  .grid-item:nth-child(2n) {
+.grid-item:nth-child(2n) {
     height: 300px;
-  }
+}
 
-  .grid-item:nth-child(3n) {
+.grid-item:nth-child(3n) {
     height: 120px;
-  }
+}
 
 
 .gptimg-responsive.is-visible {
@@ -768,7 +786,8 @@ header {
     flex: auto;
     display: flex;
 }
-.modaldiscount{
+
+.modaldiscount {
     position: absolute;
     width: 100%;
     top: 68%;
@@ -1114,9 +1133,11 @@ hr.gold {
     margin-bottom: 0.2rem;
     display: flex;
 }
-.post-date{
+
+.post-date {
     font-size: 12px;
 }
+
 .card-right .dlab-post-meta ul li {
     padding: 0;
     display: inline-block;
@@ -1418,6 +1439,7 @@ hr.gold {
     width: 90%;
     margin: 10px;
 }
+
 .mansory-horizontal .item1-tranding {
     padding: 20px;
     flex-wrap: wrap;
@@ -1503,9 +1525,11 @@ hr.gold {
 
     transition: opacity 0.15s ease;
 }
+
 .mansory-horizontal .item1-tranding img {
     width: 100%;
 }
+
 .mansory-horizontal .item1 img {
     width: 100%;
 }
@@ -1582,11 +1606,13 @@ hr.gold {
 .ace-footer {
     background-color: #f6f6f6;
 }
-.h6-footer{
+
+.h6-footer {
     -webkit-text-stroke: 0.1px;
     padding: 10px;
 }
-footer h6{
+
+footer h6 {
     font-weight: bold;
     color: black;
 }
@@ -1674,7 +1700,8 @@ footer img {
     height: fit-content;
     background-color: #f6f6f6;
 }
-.content-footer a{
+
+.content-footer a {
     text-decoration: none;
 }
 
@@ -1682,7 +1709,7 @@ footer img {
     margin: 20px;
     color: black;
     font-weight: bold;
-    text-decoration:none;
+    text-decoration: none;
 
 }
 
@@ -1727,6 +1754,7 @@ footer img {
     flex-direction: row;
     justify-content: end;
 }
+
 .row-mobile-counter .card span {
     font-size: 0.6em;
 }
@@ -1740,7 +1768,7 @@ footer img {
 }
 
 .ace-sliders .carousel {
-    top:0;
+    top: 0;
     position: absolute;
     width: 100%;
     margin-bottom: 4rem;
@@ -1775,7 +1803,8 @@ footer img {
     color: #999999;
     font-size: 20px;
 }
-.wrap-card-company p{
+
+.wrap-card-company p {
     font-size: 12px;
 }
 
@@ -1903,7 +1932,8 @@ footer img {
     padding-bottom: 64px;
     background: #FFFFFF;
 }
-.start-tranding .title{
+
+.start-tranding .title {
     text-align: center;
     font-family: 'Poppins';
     font-style: normal;
@@ -1975,28 +2005,30 @@ footer img {
 
 .img-wrap-gpt {
 
-        padding-top: 5px;
-        position: relative;
-        align-items: center;
-        /* display: inline-flex; */
+    padding-top: 5px;
+    position: relative;
+    align-items: center;
+    /* display: inline-flex; */
 
 }
+
 .img-wrap-gpt .alert {
     transform: translateY(130%);
     transition-timing-function: ease-in;
     transition: 0.2s;
-  }
-  .img-wrap-gpt.alert-is-shown .alert {
+}
+
+.img-wrap-gpt.alert-is-shown .alert {
     transition: 0.25s;
     transition-timing-function: ease-out;
 
     transform: translateY(0);
     opacity: 1;
-  }
+}
 
 
 
-  .alert {
+.alert {
     width: 90%;
     height: 60px;
     /* left: 5%; */
@@ -2014,6 +2046,7 @@ footer img {
     background-color: #ffffff;
     height: auto;
 }
+
 .anouncements-gpt {
     background-color: #ffffff;
     height: 100vh;
@@ -2362,7 +2395,7 @@ footer img {
     position: relative;
 }
 
-.wrap-card-company{
+.wrap-card-company {
     text-align: -webkit-center;
     width: 170px;
     height: 200px;
@@ -2475,26 +2508,26 @@ footer img {
 
 
 
-        background-color: transparent;
-        color: #fff;
-        border: 2px solid #fff;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        padding-left: 26px;
-        padding-right: 26px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 20px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
 
-        /* Vendor prefixes */
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
+    /* Vendor prefixes */
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 
 
 
@@ -2598,7 +2631,7 @@ footer img {
 }
 
 .allprice h4 {
-    -webkit-text-stroke:0.5px;
+    -webkit-text-stroke: 0.5px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -2626,6 +2659,7 @@ footer img {
 .gtp-anouncements a {
     text-decoration: none;
 }
+
 .anouncements-gpt a {
     text-decoration: none;
 }
@@ -2766,64 +2800,77 @@ footer img {
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
+
     .footer-medsos {
         justify-content: space-evenly;
         display: flex;
         padding: 5px;
         text-align: center;
     }
+
     .anouncements-gpt {
         background-color: #ffffff;
         height: auto;
         /* margin-bottom: 25px; */
     }
+
     #imggpt1 {
         width: 100%;
     }
+
     .indicator-providers {
         text-align: center;
         margin-top: 14vh;
     }
+
     .mansory-horizontal {
         width: 460px;
     }
+
     .about p {
         margin-bottom: 0px;
         margin-top: 0px;
         color: #999999;
         font-size: 14px;
     }
-    .img-structure-mobile{
+
+    .img-structure-mobile {
         display: block;
     }
+
     .company-ace {
         height: auto;
     }
-    #desktop-pricefeed{
+
+    #desktop-pricefeed {
         display: none;
     }
 
-    #mobile-pricefeed{
+    #mobile-pricefeed {
         width: 100%;
         height: max-content;
         display: flex;
         justify-content: space-between;
     }
-    #mobile-pricefeed .card{
+
+    #mobile-pricefeed .card {
         border: none;
         width: 50%;
         padding-top: 20px;
         margin: 2px;
 
     }
-    #mobile-pricefeed .card h4{
+
+    #mobile-pricefeed .card h4 {
         font-weight: bold;
         font-size: 1.3em;
     }
-    .mobile-buy-rm-gm{
+
+    .mobile-buy-rm-gm {
         font-weight: bold;
         font-size: 1.9em;
     }
+
     .indicator-providers {
         margin-top: 15vh;
         text-align: center;
@@ -2964,6 +3011,7 @@ footer img {
         width: 100%;
         height: auto;
     }
+
     .carousel-indicators .btn-slide {
         width: 0.6%;
         height: 1px;
@@ -2985,18 +3033,22 @@ footer img {
     section.ace-sliders img {
         height: 250px;
     }
-    #desktop-counter{
-        display:block;
+
+    #desktop-counter {
+        display: block;
     }
-    #mobile-counter{
+
+    #mobile-counter {
         display: none;
     }
-    .row-mobile-counter{
+
+    .row-mobile-counter {
         display: flex;
         justify-content: space-around;
 
     }
-    .row-mobile-counter .card{
+
+    .row-mobile-counter .card {
         width: 50%;
         border: none;
         height: 100px;
@@ -3005,9 +3057,11 @@ footer img {
         box-shadow: 1px 1px 5px 1px rgb(217 215 212);
         margin: 4px;
     }
-    .row-mobile-counter .card span{
+
+    .row-mobile-counter .card span {
         font-size: 0.6em;
     }
+
     .topnav a {
         font-size: 1em;
     }
@@ -3016,9 +3070,11 @@ footer img {
         font-weight: bold;
         font-size: 2rem;
     }
+
     .about h1 {
         -webkit-text-stroke: 0px;
     }
+
     .title-ace {
         font-size: 1em;
     }
@@ -3056,14 +3112,15 @@ footer img {
         font-size: 3vw;
         text-shadow: 1px 1px #515151;
     }
-    .title-card-mobile{
+
+    .title-card-mobile {
         display: block;
         background-color: #af8c26;
         text-align: center;
         color: rgb(255 255 255);
     }
 
-    .poweredby-ace{
+    .poweredby-ace {
         display: block;
         font-size: 0.8em;
         text-align: center;
@@ -3148,7 +3205,7 @@ footer img {
         width: 60%;
     }
 
-    .circle-img-ace{
+    .circle-img-ace {
         width: 60%;
     }
 
@@ -3256,6 +3313,7 @@ footer img {
         height: 60vh;
         position: relative;
     }
+
     .gtp-patner {
         height: 60vh;
     }
@@ -3290,16 +3348,17 @@ footer img {
         display: none;
     }
 
-        .ace-achievements .carousel {
-            /* position: absolute; */
-            width: 100%;
-            /* height: 75vh; */
-            margin-bottom: 2rem;
-        }
-        .ace-achievements .ace-isi {
-            padding-top: 5%;
-            padding-bottom: 0%;
-        }
+    .ace-achievements .carousel {
+        /* position: absolute; */
+        width: 100%;
+        /* height: 75vh; */
+        margin-bottom: 2rem;
+    }
+
+    .ace-achievements .ace-isi {
+        padding-top: 5%;
+        padding-bottom: 0%;
+    }
 
     .ace-achievements .carousel-indicators {
         bottom: 3%;
@@ -3348,10 +3407,12 @@ footer img {
         color: #022c59;
         font-size: 18px;
     }
-    #ace-investor-banner-mobile{
+
+    #ace-investor-banner-mobile {
         display: block;
     }
-    #ace-investor-banner-desktop{
+
+    #ace-investor-banner-desktop {
         display: none;
     }
 
@@ -3361,6 +3422,7 @@ footer img {
         height: auto;
         vertical-align: middle;
     }
+
     .btn-read-now-banner-investor {
         font-size: 3vw;
         bottom: 9%;
@@ -3371,6 +3433,7 @@ footer img {
         border-radius: 50px;
         background: radial-gradient(107.8% 223.31% at 0.9% 2.98%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.198) 96.15%);
     }
+
     #ace-investor-banner-mobile .row-personal {
         width: 100%;
         position: relative;
@@ -3378,26 +3441,33 @@ footer img {
         flex-wrap: wrap;
         height: max-content;
     }
+
     .stock-change-investor {
         padding: 10px;
         background-color: #F5F5F7;
     }
+
     .title-price-investor {
         margin-top: 20px;
         text-align: center;
         -webkit-text-stroke: 0.5px;
         font-size: 1.1em;
     }
-    .stock-price-investor{
-        width:100%;
+
+    .stock-price-investor {
+        width: 100%;
     }
-    .stock-code-market{
+
+    .stock-code-market {
         font-size: 3vw;
         margin-bottom: 25px;
     }
-    .last-title-price,.last-title-price{
+
+    .last-title-price,
+    .last-title-price {
         font-weight: bold;
     }
+
     .value-last-investor {
         font-size: 3em;
         font-weight: bold;
@@ -3405,9 +3475,11 @@ footer img {
         color: #1D5189;
         -webkit-text-stroke: 1px;
     }
+
     .list-anouncements a {
         color: grey;
     }
+
     .btn-ace-black {
         width: 150px;
         background-color: transparent;
@@ -3423,27 +3495,33 @@ footer img {
         cursor: pointer;
         border-radius: 20px;
     }
+
     .list-anouncements {
         height: 70vh;
     }
+
     .ace-button-blue {
         margin: 3px;
         font-size: 3.3vw;
     }
-    .gtp-download{
+
+    .gtp-download {
         height: 63vh;
     }
+
     .gtp-download .carousel-indicators .btn-slide {
         width: 2%;
         height: 4px;
     }
+
     .gtp-download .carousel-indicators {
         margin-bottom: -3rem;
     }
 
     .acecarousel-control-prev {
-       display: none;
+        display: none;
     }
+
     #ace-investor-banner-mobile .carousel-caption {
         position: absolute;
         right: 15%;
@@ -3453,19 +3531,23 @@ footer img {
     }
 
     .acecarousel-control-next {
-       display: none;
+        display: none;
     }
+
     .indicator-providers {
         margin-top: 14vh;
     }
+
     /*END SECTION */
     /*NAVBAR*/
-    .st-label{
+    .st-label {
         display: none;
     }
+
     #st-1.st-has-labels .st-btn {
         min-width: 60px;
     }
+
     .topnav {
         height: 6.5vh;
         position: fixed;
@@ -3477,15 +3559,19 @@ footer img {
 
         height: 30vh;
     }
+
     .hover-1-title {
         font-size: 5vw;
     }
+
     .hover-overlay {
         top: 6%;
     }
+
     .hover-1 img {
         object-fit: cover;
     }
+
     .hover-1 img {
         width: 105%;
         position: absolute;
@@ -3494,18 +3580,22 @@ footer img {
         left: -5%;
         transition: all 0.3s;
     }
+
     .wrap-content-img-achievement {
         margin: 20px;
         position: relative;
     }
-    .achievements-arrow{
+
+    .achievements-arrow {
         display: none;
     }
+
     #slider .selfie-img {
         width: 150px;
         height: 150px;
     }
-    .ace-testimonial-fpl p{
+
+    .ace-testimonial-fpl p {
         font-size: 15px;
     }
 
@@ -3515,10 +3605,12 @@ footer img {
         height: 30vh;
         vertical-align: middle;
     }
-    .h1-investor-banner{
+
+    .h1-investor-banner {
         font-size: 7vw;
         font-weight: bold;
     }
+
     .carousel-caption {
         position: absolute;
         right: 15%;
@@ -3560,6 +3652,7 @@ footer img {
         height: 37px;
         /* background-color: white; */
     }
+
     .list-features {
         direction: rtl;
         position: relative;
@@ -3605,12 +3698,14 @@ footer img {
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
+
     .footer-medsos {
         justify-content: space-evenly;
         display: flex;
         padding: 5px;
         text-align: center;
     }
+
     .list-features {
         direction: rtl;
         position: relative;
@@ -3619,41 +3714,49 @@ footer img {
         height: 46vh;
         width: 100%;
     }
+
     #imggpt1 {
         width: 100%;
     }
 
-    .gtp-solution .ace-isi{
+    .gtp-solution .ace-isi {
         padding-top: 5%;
         padding-bottom: 0%;
     }
+
     .indicator-providers {
         text-align: center;
         margin-top: 14vh;
     }
+
     .mansory-horizontal {
         width: 460px;
     }
+
     .about p {
         margin-top: 0px;
         margin-bottom: 0px;
         color: #999999;
         font-size: 14px;
     }
-    .gtp-download{
+
+    .gtp-download {
 
         height: 72vh;
 
     }
-    .company-ace{
+
+    .company-ace {
         height: auto;
     }
+
     .easigold h3 {
         margin-top: 30px;
         color: white;
         font-weight: bold;
         font-size: 1.3rem;
     }
+
     .poweredby-ace {
         display: block;
         font-size: 0.8em;
@@ -3661,52 +3764,64 @@ footer img {
         margin-left: 30px;
         margin-right: 20px;
     }
+
     .title-card-mobile {
         display: block;
         background-color: #af8c26;
         text-align: center;
         color: rgb(255 255 255);
     }
-    #desktop-pricefeed{
+
+    #desktop-pricefeed {
         display: none;
     }
-    #mobile-pricefeed{
+
+    #mobile-pricefeed {
         width: 100%;
         height: max-content;
         display: flex;
         justify-content: space-between;
     }
-    #mobile-pricefeed .card{
+
+    #mobile-pricefeed .card {
         border: none;
         width: 50%;
         padding-top: 20px;
         margin: 2px;
 
     }
-    #mobile-pricefeed .card h4{
+
+    #mobile-pricefeed .card h4 {
         font-weight: bold;
         font-size: 1.3em;
     }
-    .mobile-buy-rm-gm{
+
+    .mobile-buy-rm-gm {
         font-weight: bold;
         font-size: 1.9em;
     }
+
     .topnav a.icon {
-       font-size: 1.3em;
+        font-size: 1.3em;
     }
+
     .hover-1 img {
         margin-top: 20px;
     }
+
     #hero-lightpass {
         display: none;
     }
+
     #mobile-counter {
         display: none;
     }
+
     .row-mobile-counter {
         display: flex;
         justify-content: space-around;
     }
+
     .row-mobile-counter .card {
         width: 50%;
         border: none;
@@ -3716,9 +3831,11 @@ footer img {
         box-shadow: 1px 1px 5px 1px rgb(217 215 212);
         margin: 4px;
     }
+
     #desktop-counter {
         display: block;
     }
+
     .about h1 {
         font-weight: bold;
         font-size: 1.6rem;
@@ -3765,6 +3882,7 @@ footer img {
         padding-top: 3rem;
         padding-bottom: 0rem;
     }
+
     .gtp-po-button {
         position: absolute;
         right: 0;
@@ -3959,6 +4077,7 @@ footer img {
         position: absolute;
         top: 50%;
     }
+
     .line-structure {
         display: none;
     }
@@ -3993,7 +4112,8 @@ footer img {
     .gtp-solution .vl {
         font-size: 4.6vw;
     }
-    #content-progress{
+
+    #content-progress {
         font-size: 3.4vw;
     }
 
@@ -4004,6 +4124,7 @@ footer img {
         align-items: center;
         display: inline-flex;
     }
+
     .carousel-indicators .btn-slide {
         width: 1.6%;
         height: 4px;
@@ -4102,18 +4223,22 @@ footer img {
         position: relative;
         height: auto;
     }
+
     #carouselachivements .slide {
         position: relative;
     }
+
     .ace-achievements .carousel {
         /* position: absolute; */
         width: 100%;
         /* height: 75vh; */
         margin-bottom: 2rem;
     }
+
     .read-now-ach {
         margin-top: 3vh;
     }
+
     .ace-achievements .carousel-indicators {
         /* bottom: 15%; */
         bottom: -2%;
@@ -4123,6 +4248,7 @@ footer img {
         width: 1%;
         height: 4px;
     }
+
     .about-provider .carousel-indicators .active {
         opacity: 1;
         height: 3px;
@@ -4169,27 +4295,34 @@ footer img {
         position: fixed;
         left: 0%;
     }
+
     .hover-1-title {
         font-size: 5vw;
     }
+
     .wrap-content-img-achievement {
         margin: 20px;
         position: relative;
     }
-    .achievements-arrow{
+
+    .achievements-arrow {
         display: none;
     }
+
     .hover-overlay {
         top: 6%;
     }
+
     #slider .selfie-img {
         width: 150px;
         height: 150px;
     }
-     #ace-investor-banner-mobile{
+
+    #ace-investor-banner-mobile {
         display: block;
     }
-    #ace-investor-banner-desktop{
+
+    #ace-investor-banner-desktop {
         display: none;
     }
 
@@ -4199,19 +4332,23 @@ footer img {
         height: 42vh;
         vertical-align: middle;
     }
+
     #ace-investor-banner-mobile .carousel-caption {
         position: absolute;
         right: 15%;
         left: 9%;
         padding-top: 13%;
     }
+
     .carousel-caption {
         top: 5%;
     }
+
     .carousel-caption h1 {
         font-size: 7vw;
         text-shadow: 1px 1px #515151;
     }
+
     .btn-read-now-banner-investor {
         font-size: 3vw;
         bottom: 9%;
@@ -4222,17 +4359,22 @@ footer img {
         border-radius: 50px;
         background: radial-gradient(107.8% 223.31% at 0.9% 2.98%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.198) 96.15%);
     }
+
     .stock-price-investor {
         width: 100%;
     }
+
     .title-price-investor {
         text-align: center;
         -webkit-text-stroke: 0.5px;
         font-size: 1.3em;
     }
-    .last-title-price, .last-title-price {
+
+    .last-title-price,
+    .last-title-price {
         font-weight: bold;
     }
+
     .value-last-investor {
         font-size: 3em;
         font-weight: bold;
@@ -4240,6 +4382,7 @@ footer img {
         color: #1D5189;
         -webkit-text-stroke: 1px;
     }
+
     .list-anouncements a {
         color: grey;
     }
@@ -4247,6 +4390,7 @@ footer img {
     .stock-code-market {
         font-size: 3vw;
     }
+
     .list-anouncements {
         height: 70vh;
     }
@@ -4266,13 +4410,16 @@ footer img {
         cursor: pointer;
         border-radius: 20px;
     }
+
     .ace-button-blue {
         font-size: 3.3vw;
     }
+
     .acecarousel-control-prev {
         display: none;
     }
-    .acecarousel-control-next{
+
+    .acecarousel-control-next {
         display: none;
     }
 
@@ -4297,23 +4444,23 @@ footer img {
 
     .topnav a.icon {
 
-            margin-right: 20px;
-            float: right;
-            display: block;
-            border: none;
+        margin-right: 20px;
+        float: right;
+        display: block;
+        border: none;
 
 
     }
 
     .acetopbar {
         border-radius: 2px;
-    left: 3px;
-    top: 7px;
-    z-index: 998;
-    position: fixed;
-    width: 35px;
-    height: 40px;
-}
+        left: 3px;
+        top: 7px;
+        z-index: 998;
+        position: fixed;
+        width: 35px;
+        height: 40px;
+    }
 
     .topnav.responsive {
         position: fixed;
@@ -4346,50 +4493,64 @@ footer img {
         padding: 10px;
         background-color: #F5F5F7;
     }
+
     .stock-price-investor {
         width: 100%;
         height: 30vh;
         /* padding: 300px; */
     }
+
     .stock-change-investor {
         padding: 10px;
         height: 30vh;
         background-color: #F5F5F7;
     }
+
     .title-price-investor {
         margin-top: 20px;
     }
+
     .gtp-download .carousel-indicators {
         margin-bottom: -3rem;
     }
+
     .gtp-download {
         height: 78vh;
     }
+
     .gtp-download .carousel-indicators .btn-slide {
         height: 5px;
     }
-    .last-title-price, .last-title-price {
+
+    .last-title-price,
+    .last-title-price {
         margin-top: 20px;
     }
+
     .stock-code-market {
         font-size: 3vw;
         margin-bottom: 25px;
     }
+
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
+
     .footer-medsos {
         justify-content: space-evenly;
         display: flex;
         padding: 5px;
         text-align: center;
     }
+
     #imggpt1 {
         width: 100%;
     }
-    .company-ace{
+
+    .company-ace {
         height: auto;
     }
+
     /*PAGE PERSONAL*/
     .sticky-content {
         flex-direction: column;
@@ -4487,6 +4648,7 @@ footer img {
         font-size: 6vw;
         text-shadow: 1px 1px #515151;
     }
+
     .about h1 {
         font-weight: 100;
         font-size: 1.6rem;
@@ -4582,6 +4744,7 @@ footer img {
         align-items: center;
         display: inline-flex;
     }
+
     .about-provider .carousel-indicators .btn-slide {
         width: 1%;
         height: 4px;
@@ -4672,10 +4835,10 @@ footer img {
     }
 
     .ace-achievements .carousel {
-           /* position: absolute; */
-    width: 100%;
-    /* height: 75vh; */
-    margin-bottom: 4rem;
+        /* position: absolute; */
+        width: 100%;
+        /* height: 75vh; */
+        margin-bottom: 4rem;
     }
 
     .ace-achievements .carousel-indicators {
@@ -4795,18 +4958,22 @@ footer img {
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
+
     .footer-medsos {
         justify-content: space-evenly;
         display: flex;
         padding: 5px;
         text-align: center;
     }
+
     #imggpt1 {
         width: 100%;
     }
-    .company-ace{
+
+    .company-ace {
         height: auto;
     }
+
     /*PAGE PERSONAL*/
     .sticky-content {
         flex-direction: column;
@@ -4902,6 +5069,7 @@ footer img {
         font-size: 7vw;
         text-shadow: 1px 1px #515151;
     }
+
     .carousel-indicators .btn-slide {
         width: 0.6%;
         height: 3px;
@@ -5109,8 +5277,8 @@ footer img {
     /*NAVBAR*/
     .topnav {
         height: 7vh;
-    position: fixed;
-    left: 0%;
+        position: fixed;
+        left: 0%;
     }
 
     .wrap-content {
@@ -5136,12 +5304,12 @@ footer img {
 
     .acetopbar {
         border-radius: 2px;
-    left: 3px;
-    top: 3px;
-    z-index: 998;
-    position: fixed;
-    width: 35px;
-    height: 40px;
+        left: 3px;
+        top: 3px;
+        z-index: 998;
+        position: fixed;
+        width: 35px;
+        height: 40px;
     }
 
     .topnav.responsive {
@@ -5173,15 +5341,18 @@ footer img {
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
+
     .footer-medsos {
         justify-content: space-evenly;
         display: flex;
         padding: 5px;
         text-align: center;
     }
+
     #imggpt1 {
         width: 100%;
     }
+
     .ace-personal #tablet-banner {
         display: block;
     }
@@ -5190,12 +5361,15 @@ footer img {
         font-weight: 100;
         font-size: 4.7vw;
     }
+
     .sticky-mansory {
         height: 69vh;
     }
+
     .gtp-patner {
         height: auto;
     }
+
     #slider .selfie-img {
 
         width: 113px;
@@ -5327,9 +5501,10 @@ footer img {
         font-size: 1.7vw;
     }
 
-    .img-line-structure{
+    .img-line-structure {
         width: 90%;
     }
+
     /*END ABOUT*/
 
     /* STRUCTURE */
@@ -5756,6 +5931,7 @@ footer img {
         text-decoration: none;
         font-size: 1.5vw;
     }
+
     .banner-static {
         height: auto;
         position: relative;
@@ -5768,8 +5944,9 @@ footer img {
     #imggpt1 {
         width: 70%;
     }
-    .gtp-solution .ace-isi{
-        padding-bottom:0px;
+
+    .gtp-solution .ace-isi {
+        padding-bottom: 0px;
     }
 
     .gtp-patner {
@@ -5777,6 +5954,7 @@ footer img {
         height: 40vh;
         display: inline-table;
     }
+
     .ace-testimonials {
         background-color: white;
         height: 100vh;
@@ -5869,6 +6047,7 @@ footer img {
         color: #fff;
         text-align: center;
     }
+
     .allprice {
         height: 100vh;
         padding-top: 15vh;
@@ -5968,12 +6147,14 @@ footer img {
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
+
     .centerloader {
         align-items: center;
         position: absolute;
         top: 50%;
         left: 45%;
     }
+
     .card-home {
         border: none;
         height: 100vh;
@@ -5982,105 +6163,125 @@ footer img {
         /* padding-top: 50%; */
 
     }
-    .img-icon-corporate{
+
+    .img-icon-corporate {
         margin-top: 10px;
         width: 100%;
     }
+
     .ace-sliders .carousel-indicators {
         margin-bottom: 0.9rem;
     }
-    .img-icon-personal{
+
+    .img-icon-personal {
         margin-top: 10px;
         width: 100%;
     }
+
     .card-corporate {
         width: 50%;
         height: 120px;
     }
-    .card-corporate b{
+
+    .card-corporate b {
         font-size: 0.7em;
     }
+
     .card-personal {
         width: 50%;
         height: 120px;
 
     }
-    .card-personal b{
+
+    .card-personal b {
         font-size: 0.7em;
     }
 
     .card-home h3 {
         font-size: 1.5em;
     }
+
     .card-home h3 {
         text-shadow: 2px 2px 4px #565656;
         text-align: center;
         color: #ffffff;
         line-height: 30px;
     }
-  }
+}
 
-  /* Small Devices (Tablets) */
-  @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .card-home{
+/* Small Devices (Tablets) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .card-home {
         top: 25%;
         width: 70%;
 
     }
-    .img-icon-corporate{
+
+    .img-icon-corporate {
         width: 50%;
     }
-    .img-icon-personal{
+
+    .img-icon-personal {
         width: 50%;
     }
+
     .card-corporate {
         width: 50%;
         height: 120px;
     }
-    .card-corporate b{
+
+    .card-corporate b {
         font-size: 0.7em;
     }
+
     .card-personal {
         width: 50%;
         height: 120px;
 
     }
-    .card-personal b{
+
+    .card-personal b {
         font-size: 0.7em;
     }
 
     .card-home h3 {
         font-size: 1.5em;
     }
+
     .card-home h3 {
         text-shadow: 2px 2px 4px #565656;
         text-align: center;
         color: #ffffff;
         line-height: 30px;
     }
-  }
+}
 
-  /* Medium Devices (Desktops) */
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .img-icon-corporate{
+/* Medium Devices (Desktops) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .img-icon-corporate {
         width: 50%;
     }
-    .img-icon-personal{
+
+    .img-icon-personal {
         width: 50%;
     }
+
     .card-corporate {
         width: 50%;
         height: 120px;
     }
-    .card-corporate b{
+
+    .card-corporate b {
         font-size: 0.7em;
     }
+
     .card-personal {
         width: 50%;
         height: 120px;
 
     }
-    .card-personal b{
+
+    .card-personal b {
         font-size: 0.7em;
 
     }
@@ -6089,78 +6290,91 @@ footer img {
         font-size: 26px;
         line-height: 30px;
     }
+
     .card-home {
         height: fit-content;
         top: 25%;
     }
-  }
+}
 
-  /* Large Devices (Desktops) */
-  @media only screen and (min-width: 992px) and (max-width: 1440px) {
+/* Large Devices (Desktops) */
+@media only screen and (min-width: 992px) and (max-width: 1440px) {
     .wrap-card-company {
         text-align: -webkit-center;
         width: 134px;
         height: 200px;
         position: relative;
     }
-    .wrap-card-company p{
+
+    .wrap-card-company p {
         font-size: 12px;
     }
+
     .child-company {
         width: 68%;
     }
+
     .ace-card-company {
         position: relative;
-    padding-top: 15px;
-    border-radius: 100px;
-    width: 70px;
-    height: 70px;
-    margin: 20px;
-    /* margin-left: 55px; */
-    border: none;
-    box-shadow: 1px 1px 1px rgb(221 218 218);
+        padding-top: 15px;
+        border-radius: 100px;
+        width: 70px;
+        height: 70px;
+        margin: 20px;
+        /* margin-left: 55px; */
+        border: none;
+        box-shadow: 1px 1px 1px rgb(221 218 218);
     }
+
     .topnav a {
         float: left;
         display: block;
         color: #f2f2f2;
         text-align: center;
         margin-left: 5px;
-    margin-right: 5px;
+        margin-right: 5px;
         text-decoration: none;
         font-size: 1em;
     }
-    .img-icon-corporate{
+
+    .img-icon-corporate {
         margin-top: 10px;
         width: 100%;
     }
-    .img-icon-personal{
+
+    .img-icon-personal {
         margin-top: 10px;
         width: 100%;
     }
+
     .card-corporate {
         width: 40%;
         height: 120px;
     }
-    .card-corporate b{
+
+    .card-corporate b {
         font-size: 0.7em;
     }
+
     .card-personal {
         width: 40%;
         height: 120px;
 
     }
-    .card-personal b{
+
+    .card-personal b {
         font-size: 0.7em;
     }
-    .card-home{
+
+    .card-home {
         top: 6%;
     }
+
     .card-home h3 {
         font-size: 26px;
         line-height: 30px;
     }
-  }
+}
 
 
 
@@ -6172,14 +6386,15 @@ footer img {
 
 /* Extra Large Devices (Large Screens) */
 @media only screen and (min-width: 1200px) {
-    .img-icon-corporate{
+    .img-icon-corporate {
         /* margin-top: 10px;
         width: 50px;height: 50px; */
         margin-top: 10px;
         width: 100%;
 
     }
-    .img-icon-personal{
+
+    .img-icon-personal {
         /* margin-top: 10px;
         width: 50px;
         height: 50px; */
@@ -6187,6 +6402,7 @@ footer img {
         width: 100%;
 
     }
+
     .acetopbar {
         width: 100px;
         height: 120px;
@@ -6267,16 +6483,19 @@ footer img {
         font-weight: bold;
         text-shadow: 3px 3px 4px #323232;
     }
+
     #imggpt1 {
         width: 60%;
     }
-    .gtp-po-button{
+
+    .gtp-po-button {
         position: absolute;
         right: 0;
         bottom: 10%;
         left: 0;
         margin-top: 2px;
     }
+
     .topnav {
         box-shadow: 0 0.0625rem 0.375rem 0 rgb(0 0 0 / 10%);
         z-index: 10;
@@ -6293,9 +6512,11 @@ footer img {
         flex-direction: row;
         justify-content: end;
     }
-    .gtp-solution .ace-isi{
+
+    .gtp-solution .ace-isi {
         padding-bottom: 0%;
     }
+
     /* .ace-card-company {
         margin-left: 65px;
     } */
@@ -6367,22 +6588,23 @@ footer img {
     }
 }
 
-@media only screen and (min-width: 1440px){
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 30px;
-    text-decoration: none;
-    font-size: 1.38vw;
-}
-.ace-personal h1 {
-    -webkit-text-stroke: 2px;
-    overflow: hidden;
-    font-size: 5.31vw;
-}
+@media only screen and (min-width: 1440px) {
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 30px;
+        text-decoration: none;
+        font-size: 1.38vw;
+    }
+
+    .ace-personal h1 {
+        -webkit-text-stroke: 2px;
+        overflow: hidden;
+        font-size: 5.31vw;
+    }
 
 }
 
@@ -6394,56 +6616,69 @@ footer img {
 /* ORIENTATION LANDSCAPE */
 
 
-@media screen and (orientation: landscape) and (min-width: 600px) and (max-height: 500px){
-    .topnav{
+@media screen and (orientation: landscape) and (min-width: 600px) and (max-height: 500px) {
+    .topnav {
         height: 50px;
     }
+
     .topnav a {
         margin-left: 15px;
         margin-right: 15px;
         text-decoration: none;
         font-size: 0.6em;
     }
+
     .acetopbar {
         left: 40px;
         width: 50px;
         height: 70px;
     }
+
     .ace-sliders .carousel-caption {
         position: absolute;
         right: 40%;
         left: 10%;
     }
+
     .title-ace {
         font-size: 1em;
     }
+
     .ace-sliders h1 {
         overflow: hidden;
         font-size: 2.9rem;
     }
+
     .about h1 {
         font-size: 3rem;
     }
+
     .about p {
         font-size: 13px;
     }
+
     .company-ace {
         height: auto;
     }
+
     .ace-card-company {
         width: 70px;
         height: 70px;
     }
+
     .child-company {
         top: 50%;
         left: 40%;
     }
+
     .ace-card-company p {
         font-size: 6px;
     }
-    #imggpt1{
+
+    #imggpt1 {
         width: 50%;
     }
+
     .gtp-po-button {
         bottom: 5%;
     }
@@ -6455,10 +6690,12 @@ footer img {
         width: 150px;
         height: 150px;
     }
+
     .hover {
         height: 200px;
         padding-bottom: 60%;
     }
+
     .hover-1 img {
         width: 105%;
         top: 0;
@@ -6468,9 +6705,11 @@ footer img {
     .achievements-arrow {
         top: 25%;
     }
+
     .ace-testimonials {
         height: auto;
     }
+
     footer img {
         width: 100px;
         height: 120px;
@@ -6482,42 +6721,54 @@ footer img {
         height: 100vh;
         padding-top: 60px;
     }
+
     .allprice h4 {
         -webkit-text-stroke: 0.5px;
         font-size: 10px;
         font-weight: bold;
     }
-    .allprice h2{
+
+    .allprice h2 {
         font-size: 2rem;
     }
+
     .table-price-buy {
         font-size: 10px;
     }
+
     .table-price-sell {
         font-size: 10px;
     }
+
     #datepricefeed {
         font-size: 6px;
         margin-left: 11px;
         color: #7f7e7e;
     }
-    #statuslive, #tradeopen{
+
+    #statuslive,
+    #tradeopen {
         font-size: 10px;
     }
+
     .allprice h2 {
         font-size: 20px;
     }
-    .th-sell{
+
+    .th-sell {
         padding-top: 10px;
     }
-    .flex-number-row .fa{
+
+    .flex-number-row .fa {
         margin-left: 5px;
         margin-top: 9px;
         font-size: 10px;
     }
+
     .allprice p {
         font-size: 0.6vw;
     }
+
     .ace-personal-powered {
         bottom: 0;
         text-align: center;
@@ -6529,6 +6780,7 @@ footer img {
         position: absolute;
         top: -20px
     }
+
     /* .ace-personal .caption-banner {
         position: absolute;
         right: 20%;
@@ -6539,10 +6791,12 @@ footer img {
         right: 20%;
         top: 35%;
     }
+
     .ace-personal .carousel-inner h1 {
         overflow: hidden;
         font-size: 2.5rem;
     }
+
     .img-responsive-news {
         object-fit: cover;
         width: 100%;
@@ -6560,6 +6814,7 @@ footer img {
         top: 0%;
         -webkit-text-stroke: 2px;
     }
+
     .ace-investor-banner .carousel-caption {
         top: 20%;
         bottom: 12rem;
@@ -6583,6 +6838,7 @@ footer img {
         margin-top: 15vh;
         width: 100%;
     }
+
     .img-responsive-investor {
         height: 100vh;
     }
@@ -6598,7 +6854,8 @@ footer img {
         color: #1D5189;
         -webkit-text-stroke: 1px;
     }
-    .stock-code-market{
+
+    .stock-code-market {
         font-size: 10px;
     }
 
@@ -6611,9 +6868,11 @@ footer img {
         font-size: 0.7em;
         color: grey;
     }
+
     .list-anouncements {
         height: 45vh;
     }
+
     .btn-ace-black {
         width: 150px;
         background-color: transparent;
@@ -6640,17 +6899,21 @@ footer img {
         margin-right: 1%;
     }
 
-    .gtp-download .acecarousel-control-prev ,.acecarousel-control-next {
+    .gtp-download .acecarousel-control-prev,
+    .acecarousel-control-next {
         background-color: transparent;
     }
+
     .gtp-download .title-ace {
         margin-left: 10%;
         font-size: 1em;
     }
+
     .gtp-download h1 {
         margin-left: 10%;
     }
-    .gtp-download .investor-download{
+
+    .gtp-download .investor-download {
         margin-left: 10%;
         margin-right: 10%;
     }
@@ -6660,50 +6923,62 @@ footer img {
 
 
 @media (min-width: 1366px) and (max-width: 1535px) {
-    .caption-banner{
+    .caption-banner {
         position: absolute;
         top: 16%;
     }
+
     .ace-personal h1 {
         -webkit-text-stroke: 2px;
         overflow: hidden;
         font-size: 4.5rem;
     }
-    #statuslive{
+
+    #statuslive {
         font-size: small;
     }
-    #tradeopen{
+
+    #tradeopen {
         font-size: small;
     }
-    #datepricefeed{
+
+    #datepricefeed {
         font-size: small;
     }
+
     .ace-personal {
         overflow: hidden;
         position: relative;
     }
+
     .img-phone1 {
         top: -55px;
     }
+
     .img-phone2 {
         top: 230px;
     }
+
     .allprice {
         height: auto;
         position: relative;
         overflow: hidden;
     }
+
     .about h1 {
         /* font-size: 4.6rem; */
         font-size: 3.6rem;
     }
+
     #imggpt1 {
         width: 65%;
     }
-    #title-progress{
+
+    #title-progress {
         font-size: 1.2rem;
     }
-    #to-progress{
+
+    #to-progress {
         font-size: 1.2rem;
     }
 
@@ -6714,75 +6989,91 @@ footer img {
     .card-home {
         top: 12%;
     }
+
     .company-ace {
         height: 100vh;
     }
-  }
+}
 
 
-  @media screen and (min-width: 1680px) {
+@media screen and (min-width: 1680px) {
 
     .card-home {
         top: 0%;
     }
+
     .card-corporate {
         width: 41%;
     }
+
     .card-personal {
         width: 41%;
     }
+
     .topnav a {
         font-size: 1.8em;
     }
+
     .title-ace {
         font-size: 1.8em;
     }
+
     #content-progress {
 
         font-size: 1.6rem;
 
     }
+
     .sticky-content {
         padding-top: 0rem;
     }
+
     .ace-achievements {
         height: 100vh;
     }
+
     .hover-1 img {
         height: 400px;
     }
+
     .about p {
         font-size: 25px;
     }
-    .name-company{
+
+    .name-company {
         font-size: 12px;
     }
+
     .wrap-card-company p {
         font-size: 12px;
     }
 
 
-.step1 {
-    margin-left: 20px;
-    font-size: 29px;
+    .step1 {
+        margin-left: 20px;
+        font-size: 29px;
 
-  }
-  .easigold {
-    height: 100vh
-  }
-  .ace-personal-powered {
-    /* position: absolute; */
-    bottom: 0;
-    text-align: center;
-    padding: 25px;
+    }
+
+    .easigold {
+        height: 100vh
+    }
+
+    .ace-personal-powered {
+        /* position: absolute; */
+        bottom: 0;
+        text-align: center;
+        padding: 25px;
+    }
 }
-}
+
 @media only screen and (min-width: 1920px) {
     .card-home {
         top: 8%;
     }
 
-  }
+}
+
 @media screen and (min-width:1024px) {
     .banner-static {
         height: auto;
@@ -6797,6 +7088,7 @@ footer img {
     .card-home {
         top: 9%;
     }
+
     .banner-static {
         height: auto;
         position: relative;
@@ -6816,4 +7108,3 @@ footer img {
     }
 
 }
-
