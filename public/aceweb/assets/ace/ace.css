@@ -1386,6 +1386,7 @@ hr.gold {
 
 .banner-static {
     height: 53vh;
+    overflow: hidden;
     position: relative;
 
 }
@@ -3175,7 +3176,8 @@ footer img {
 
     /*PRODUCT*/
     .banner-static {
-        height: auto;
+        overflow: hidden;
+        height: 25vh;
         position: relative;
     }
 
@@ -4617,10 +4619,10 @@ footer img {
     /*END PERSONAL*/
 
     /*SECTION SLIDER*/
-    .ace-sliders {
+    .ace-sliders {overflow: hidden;
         display: flex;
         flex-flow: row nowrap;
-        height: 51vh;
+        height: 40vh;
     }
 
     .ace-sliders .carousel {
@@ -4668,7 +4670,8 @@ footer img {
     }
 
     .banner-static {
-        height: auto;
+        height: 25vh;
+        overflow: hidden;
         position: relative;
     }
 
@@ -4921,12 +4924,12 @@ footer img {
 
     .acetopbar {
         border-radius: 2px;
-        left: 3px;
-        top: 3px;
-        z-index: 998;
-        position: fixed;
-        width: 35px;
-        height: 40px;
+    left: 12px;
+    top: 8px;
+    z-index: 998;
+    position: fixed;
+    width: 41px;
+    height: 46px;
     }
 
     .topnav.responsive {
@@ -5933,7 +5936,8 @@ footer img {
     }
 
     .banner-static {
-        height: auto;
+        height: 25vh;
+        overflow: hidden;
         position: relative;
     }
 
@@ -6206,6 +6210,9 @@ footer img {
         text-align: center;
         color: #ffffff;
         line-height: 30px;
+    }
+    .topnav a {
+        display: none;
     }
 }
 
@@ -7077,6 +7084,7 @@ footer img {
 @media screen and (min-width:1024px) {
     .banner-static {
         height: 40vh;
+        overflow: hidden;
         position: relative;
     }
 
@@ -7090,7 +7098,8 @@ footer img {
     }
 
     .banner-static {
-        height: auto;
+        overflow: hidden;
+        height: 25vh;
         position: relative;
     }
 }
