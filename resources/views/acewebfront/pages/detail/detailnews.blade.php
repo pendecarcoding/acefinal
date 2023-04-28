@@ -16,7 +16,7 @@
           <div class="wrap-content">
             <div style="padding-top: 0px" class="ace-isi">
               <div class="row">
-                <div class="col-md-8 col-sm-8 col-lg-8">
+                <div class="col-md-8 col-sm-12 col-lg-8">
                   <div data-aos="fade-up" class="title-ace">
                     <ol class="breadcrumb">
                       <li class="breadcrumb-item">

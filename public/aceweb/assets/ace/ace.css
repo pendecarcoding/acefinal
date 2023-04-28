@@ -7118,3 +7118,14 @@ footer img {
     }
 
 }
+
+@media only screen and (width: 820px) and (height:1180px) and (orientation : portrait) {
+    .banner-static {
+        height: 24vh;
+        overflow: hidden;
+        position: relative;
+    }
+    #st-1.st-has-labels .st-btn {
+        min-width: 91px;
+    }
+}
