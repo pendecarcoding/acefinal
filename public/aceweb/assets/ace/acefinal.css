@@ -2481,9 +2481,9 @@
     .table-price-sell {
         height: 45vh;
     }
-    .caption-banner{
+    .caption-banner {
         position: absolute;
-        top: 18%;
+        top: 16%;
     }
   }
   @media only screen and (min-width: 1920px) {
