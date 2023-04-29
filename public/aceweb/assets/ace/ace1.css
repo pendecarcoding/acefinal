@@ -6508,7 +6508,7 @@ footer img {
     /*END*/
 }
 
-@media only screen and (min-width: 700px) and (max-width:919px) {
+@media only screen and (min-width: 700px) and (max-width:819px) {
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
