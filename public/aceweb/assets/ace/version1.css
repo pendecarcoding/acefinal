@@ -1879,6 +1879,7 @@ footer img {
 }
 
 .about-ace {
+    position: relative;
     background-color: white;
     height: max-content;
 }
@@ -3189,6 +3190,7 @@ footer img {
 
     /*ABOUT*/
     .about-ace {
+        position: relative;
         background-color: white;
     }
 
@@ -4050,6 +4052,7 @@ footer img {
 
     /*ABOUT*/
     .about-ace {
+        position: relative;
         margin-top: 5%;
         background-color: white;
     }
@@ -4683,6 +4686,7 @@ footer img {
 
     /*ABOUT*/
     .about-ace {
+        position: relative;
         margin-top: 1%;
         background-color: white;
     }
@@ -5092,6 +5096,7 @@ footer img {
 
     /*ABOUT*/
     .about-ace {
+        position: relative;
         margin-top: 1%;
         background-color: white;
     }
@@ -5494,6 +5499,7 @@ footer img {
 
     /*ABOUT*/
     .about-ace {
+        position: relative;
         margin-top: 1%;
         background-color: white;
     }
