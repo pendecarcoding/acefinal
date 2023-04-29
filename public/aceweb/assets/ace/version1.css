@@ -5350,6 +5350,11 @@ footer img {
 }
 
 @media screen and (min-width: 600px) and (max-width: 700px) {
+    .ace-sliders h1 {
+        overflow: hidden;
+        font-size: 2.5rem;
+        text-shadow: 4px 4px 4px #3e3e3e;
+    }
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
@@ -5769,11 +5774,7 @@ footer img {
 }
 
 @media only screen and (min-width: 700px) and (max-width:800px) {
-    .ace-sliders h1 {
-        overflow: hidden;
-        font-size: 2.5rem;
-        text-shadow: 4px 4px 4px #3e3e3e;
-    }
+
 }
 
 /*@media screen and (min-width: 1200px) and (max-width: 1278px) {
