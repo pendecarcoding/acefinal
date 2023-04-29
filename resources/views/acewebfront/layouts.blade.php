@@ -40,7 +40,7 @@
     <link href="{{ static_asset('aceweb') }}/assets/carousel/carousel.css" rel="stylesheet" />
 
     <link href="{{ static_asset('aceweb') }}/assets/ace/ace.css" rel="stylesheet" />
-    <link href="{{ static_asset('aceweb') }}/assets/ace/acefinal.css" rel="stylesheet" />
+    <link href="{{ static_asset('aceweb') }}/assets/ace/acev2.css" rel="stylesheet" />
     <!--<link href="assets/ace/scroll.css" rel="stylesheet" />-->
     <link href="{{ static_asset('aceweb') }}/assets/slick/slick.css" rel="stylesheet" />
     <link href="{{ static_asset('aceweb') }}/assets/slick/slick-theme.css" rel="stylesheet" />
