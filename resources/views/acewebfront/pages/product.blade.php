@@ -52,7 +52,7 @@
               margin-bottom: 80px;
           ">
                 @foreach($data as $i => $v)
-                <div class="col-md-4 col-sm-2">
+                <div class="col-md-4 col-sm-4">
                   <div data-aos="fade-up" class="cards">
                     <!-- <a href="{{ url('our_products/'.$v->slug) }}"> -->
                       <center><img
