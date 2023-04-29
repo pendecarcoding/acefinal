@@ -552,7 +552,7 @@
              <div class="ace-isi-achievements-img">
 
                 <div class="row">
-                    <div id="carouselachivements" class="carousel slide pointer-event" data-bs-ride="carousel">
+                    <div style="position: relative;" id="carouselachivements" class="carousel slide pointer-event" data-bs-ride="carousel">
 
                         <div class="carousel-indicators">
                             @php
