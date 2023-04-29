@@ -5664,6 +5664,9 @@ footer img {
         height: 75vh;
         margin-bottom: 4rem;
     }
+    .slide {
+        position: relative;
+    }
 
     .ace-achievements .carousel-indicators {
         bottom: 15%;
