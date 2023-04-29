@@ -4498,6 +4498,9 @@ footer img {
 }
 
 @media screen and (min-width: 500px) and (max-width: 600px) {
+    #desktop-pricefeed {
+        display: none;
+    }
     .stock-change-investor {
         padding: 10px;
         background-color: #F5F5F7;
