@@ -7110,6 +7110,15 @@ footer img {
         top: 16%;
     }
 }
+@media only screen and (width:1366px) and (height:1024px){
+    .table-price-buy {
+        height: 47vh;
+        margin: 20;
+        width: 100%;
+        padding-bottom: 20%;
+        background-color: #fff;
+    }
+}
 
 
 @media screen and (min-height: 1366px) {
