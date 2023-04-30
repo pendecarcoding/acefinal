@@ -3557,7 +3557,7 @@ footer img {
     }
 
     .topnav {
-        height: 50px;
+        height: 43px;
         position: fixed;
         left: 0%;
         z-index: 50;
@@ -6311,7 +6311,7 @@ footer img {
     /*NAVBAR*/
     .topnav {
 
-        height: 50px;
+        height: 64px;
         position: fixed;
         left: 0%;
     }
@@ -6508,7 +6508,7 @@ footer img {
     /*END*/
 }
 
-@media only screen and (min-width: 700px) and (max-width:819px) {
+@media only screen and (min-width: 700px) and (max-width:767px) {
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
@@ -6909,10 +6909,10 @@ footer img {
     }
 
     .img-structure img {
-        margin-left: 73%;
+        margin-left: 0%;
         position: relative;
         align-items: center;
-        width: 100%;
+        width: 47%;
     }
 
     .child-company {
@@ -7331,6 +7331,1087 @@ footer img {
     /*END*/
 }
 
+@media only screen and (min-width:767px) and (max-width:900px) {
+    .banner-static {
+        height: 24vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .gtp-po-button {
+        position: absolute;
+        right: 0;
+        bottom: 10%;
+        left: 0;
+        margin-top: 2px;
+    }
+
+    .card-home {
+        height: fit-content;
+        top: 25%;
+    }
+
+    .img-responsive-investor {
+        object-fit: cover;
+        width: 100%;
+        height: 43vh;
+        vertical-align: middle;
+    }
+
+    .allprice {
+        padding-top: 30px;
+    }
+
+    .personal-banner {
+        display: flex;
+        flex-direction: column;
+        height: 47vh;
+        flex-flow: wrap;
+    }
+
+    .price-feed-buy {
+        height: 20vh;
+    }
+
+    .price-feed-sell {
+        height: 20vh;
+    }
+
+    .table-price-buy {
+        height: 14vh;
+        margin-top: 5.5vh;
+        margin-bottom: 0%;
+    }
+    .prc-buy {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .allprice p {
+        font-size: 1vw;
+    }
+    .allprice .fa {
+        margin-left: 1px;
+        margin-top: 0px;
+        font-size: 9px;
+    }
+
+    .table-price-sell {
+        height: 20vh;
+        margin-top: 0%;
+    }
+
+    .allprice {
+        height: 40vh;
+    }
+
+    .allprice h4 {
+        font-size: 15px;
+    }
+
+    /*KAT SINI */
+
+    .flex-number-row .fa {
+        margin-left: 25px;
+        margin-top: 7px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    #datepricefeed {
+        font-size: 0.5em;
+    }
+
+    #tradeopen {
+        font-size: 0.6em;
+    }
+
+    .allprice h2 {
+        font-size: 1.5em;
+    }
+    #st-1.st-has-labels .st-btn {
+        min-width: 84px;
+    }
+    .ttprice{
+    font-weight: bold;
+    font-size: 0.7em;
+    }
+    #statuslive {
+        font-size: 0.6em;
+    }
+
+    .caption-banner {
+        top: 30%;
+        left: 0%;
+        width: 87%;
+        position: absolute;
+    }
+
+    .ace-personal {
+        height: 500px;
+        background-color: #f5f5f7;
+    }
+
+    .ace-personal h1 {
+        overflow: hidden;
+        font-size: 3rem;
+    }
+
+    .ace-personal img {
+        width: 100%;
+    height: 500px;
+    object-fit: cover;
+    }
+
+    .achievements-arrow {
+        top: 25%;
+    }
+
+    .img-phone1 {
+        left: 20px;
+        position: absolute;
+        top: 0px;
+    }
+
+    .list-features {
+        direction: rtl;
+        position: relative;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+        height: 25vh;
+        width: 100%;
+    }
+
+    .hover-1-title {
+        font-size: 1em;
+        position: absolute;
+        bottom: 15%;
+    }
+
+    footer img {
+        width: 150px;
+        height: 185px;
+    }
+
+    .content-footer {
+        height: 50vh;
+    }
+
+    .container-testimonials {
+        max-width: 100%;
+    }
+
+    .hover {
+        overflow: hidden;
+        position: relative;
+        height: 200px;
+        padding-bottom: 60%;
+    }
+
+    .testimonials-customhight {
+        height: 500px;
+    }
+
+    .slider-testimonials p {
+        text-align: left;
+        font-size: 20px;
+    }
+
+    .ace-testimonials {
+        background-color: white;
+        height: 60vh;
+    }
+
+    .h1-ace {
+        font-weight: bold;
+        font-size: 2.5rem;
+    }
+
+    .topnav {
+        height: 60px;
+        left: 20%;
+    }
+
+    .stock-price-investor {
+        height: 2.5vh;
+        margin-top: 5vh;
+        width: 100%;
+    }
+
+    /*TESTSI*/
+
+    .title-price-investor {
+        -webkit-text-stroke: 0.5px;
+        font-size: 1em;
+    }
+
+    .last-title-price {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    .content-last-investor {
+        margin-top: 20px;
+    }
+
+    .value-last-investor {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 20px;
+        color: #1D5189;
+        -webkit-text-stroke: 2px;
+    }
+
+    .stock-change-investor {
+        height: 37.5vh;
+        width: 100%;
+        background-color: #F5F5F7;
+    }
+
+    .stock-code-market {
+        margin: auto;
+        width: 100%;
+        font-size: 0.65em;
+    }
+
+    .carousel-caption {
+        top: 20%;
+        bottom: 12rem;
+        left: 5%;
+        right: 25%;
+        z-index: 10;
+    }
+
+    .ace-personal .carousel-caption {
+        top: 10%;
+        bottom: 12rem;
+        left: 4%;
+        right: 25%;
+        z-index: 10;
+    }
+
+    .btn-read-now-banner-investor {
+        bottom: -50%;
+        /* position: absolute; */
+        border: solid;
+        border-color: white;
+        color: white;
+        border-radius: 50px;
+        background: radial-gradient(107.8% 223.31% at 0.9% 2.98%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.198) 96.15%);
+    }
+
+    .list-anouncements a {
+        font-size: 1.1em;
+        color: grey;
+    }
+
+    .btn-ace-black {
+        width: 150px;
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        border: 2px solid #ffffff;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-color: black;
+        padding: 10px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+
+    .acecarousel-control-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background-color: transparent;
+        color: #fff;
+        text-align: center;
+        /* background: 0 0; */
+        border: 0;
+        transition: opacity 0.15s ease;
+    }
+
+    .gtp-download {
+        background-color: #badbff3d;
+        height: auto;
+        display: inline-table;
+    }
+
+    .acecarousel-control-next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+        background-color: transparent;
+        border: 0;
+        transition: opacity 0.15s ease;
+    }
+
+    .ace-button-blue {
+        background-color: transparent;
+        color: #022c59;
+        border: 2px solid #022c59;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        padding: 10px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+
+    .gtp-download .wrap-content {
+
+        position: relative;
+        margin-left: 1%;
+        margin-right: 1%;
+
+    }
+
+    .gtp-download .title-ace {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .gtp-download h1 {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .gtp-download .investor-download {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .img-responsive-news {
+        object-fit: cover;
+        width: 100%;
+        height: 200px;
+        vertical-align: middle;
+    }
+
+    .anouncements-gpt {
+        background-color: #ffffff;
+        height: auto;
+    }
+
+    .h1-investor-banner {
+        right: 10%;
+        text-shadow: 0 3px 10px rgb(0 0 0 / 52%);
+        font-size: 2.7em;
+        font-weight: bold;
+        /* position: absolute; */
+        top: 20%;
+        -webkit-text-stroke: 2px;
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-decoration: none;
+        font-size: 0.8em;
+
+    }
+
+    .img-ace-about {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .company-ace {
+        height: 500px;
+    }
+    .child-company {
+        position: absolute;
+        top: 50%;
+        left: 45%;
+    }
+
+    .ace-card-company {
+        padding-top: 9px;
+        border-radius: 100px;
+        width: 80px;
+        height: 80px;
+        margin-left: 2px;
+        border: none;
+        box-shadow: 1px 1px 1px rgb(221 218 218);
+    }
+
+    .line-structure {
+        top: 81%;
+        left: 30%;
+        width: 65%;
+        position: absolute;
+    }
+
+    .acetopbar {
+        left: 20px;
+        top: 10px;
+        z-index: 998;
+        position: absolute;
+        width: 60px;
+        height: 70px;
+    }
+    .slider-banner {
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+    }
+    .ace-sliders {
+        height: 500px;
+
+    }
+
+    .carousel-item {
+        width: 100%;
+        height: 600px;
+    }
+
+    .vl {
+        font-size: 2.3vw;
+        text-align: left;
+    }
+
+    .mansory div {
+        width: 40%;
+    }
+
+    .gtp-patner {
+        height: 10vh;
+    }
+
+    .sticky-mansory {
+        height: 50vh;
+    }
+
+    #slider .selfie-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-provider .carousel {
+        width: 100%;
+        height: 15vh;
+    }
+
+
+    .ace-sliders h1 {
+        overflow: hidden;
+        -webkit-text-stroke: 2px;
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px #3e3e3e;
+    }
+
+    .hover-1:hover .hover-1-title {
+        bottom: 5rem;
+    }
+
+    .about h1 {
+        font-weight: bold;
+        font-size: 3rem;
+    }
+
+    #imggpt1 {
+        width: 100%;
+    }
+
+    .hover-1-description {
+        font-size: 0.2em;
+    }
+
+    .hover-1 img {
+        object-fit: cover;
+    }
+
+    .hover-1-description {
+        font-size: 0.7em;
+    }
+
+    .wrap-content {
+        position: relative;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .ace-sliders .carousel-caption {
+        position: absolute;
+        right: 40%;
+        bottom: 1.25rem;
+        left: 5%;
+        padding-top: 20px;
+        padding-bottom: 1.25rem;
+        color: #fff;
+        text-align: center;
+        top: 20%;
+    }
+
+    .about-provider {
+        height: 50vh;
+    }
+
+}
+
+
+@media only screen and (min-width:900px) and (max-width:900px) {
+    .banner-static {
+        height: 24vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .gtp-po-button {
+        position: absolute;
+        right: 0;
+        bottom: 10%;
+        left: 0;
+        margin-top: 2px;
+    }
+
+    .card-home {
+        height: fit-content;
+        top: 25%;
+    }
+
+    .img-responsive-investor {
+        object-fit: cover;
+        width: 100%;
+        height: 43vh;
+        vertical-align: middle;
+    }
+
+    .allprice {
+        padding-top: 30px;
+    }
+
+    .personal-banner {
+        display: flex;
+        flex-direction: column;
+        height: 47vh;
+        flex-flow: wrap;
+    }
+
+    .price-feed-buy {
+        height: 20vh;
+    }
+
+    .price-feed-sell {
+        height: 20vh;
+    }
+
+    .table-price-buy {
+        height: 14vh;
+        margin-top: 5.5vh;
+        margin-bottom: 0%;
+    }
+    .prc-buy {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .allprice p {
+        font-size: 1vw;
+    }
+    .allprice .fa {
+        margin-left: 1px;
+        margin-top: 0px;
+        font-size: 9px;
+    }
+
+    .table-price-sell {
+        height: 20vh;
+        margin-top: 0%;
+    }
+
+    .allprice {
+        height: 40vh;
+    }
+
+    .allprice h4 {
+        font-size: 15px;
+    }
+
+    /*KAT SINI */
+
+    .flex-number-row .fa {
+        margin-left: 25px;
+        margin-top: 7px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    #datepricefeed {
+        font-size: 0.5em;
+    }
+
+    #tradeopen {
+        font-size: 0.6em;
+    }
+
+    .allprice h2 {
+        font-size: 1.5em;
+    }
+    #st-1.st-has-labels .st-btn {
+        min-width: 84px;
+    }
+    .ttprice{
+    font-weight: bold;
+    font-size: 0.7em;
+    }
+    #statuslive {
+        font-size: 0.6em;
+    }
+
+    .caption-banner {
+        top: 30%;
+        left: 0%;
+        width: 87%;
+        position: absolute;
+    }
+
+    .ace-personal {
+        height: 500px;
+        background-color: #f5f5f7;
+    }
+
+    .ace-personal h1 {
+        overflow: hidden;
+        font-size: 3rem;
+    }
+
+    .ace-personal img {
+        width: 100%;
+    height: 500px;
+    object-fit: cover;
+    }
+
+    .achievements-arrow {
+        top: 25%;
+    }
+
+    .img-phone1 {
+        left: 20px;
+        position: absolute;
+        top: 0px;
+    }
+
+    .list-features {
+        direction: rtl;
+        position: relative;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+        height: 25vh;
+        width: 100%;
+    }
+
+    .hover-1-title {
+        font-size: 1em;
+        position: absolute;
+        bottom: 15%;
+    }
+
+    footer img {
+        width: 150px;
+        height: 185px;
+    }
+
+    .content-footer {
+        height: 50vh;
+    }
+
+    .container-testimonials {
+        max-width: 100%;
+    }
+
+    .hover {
+        overflow: hidden;
+        position: relative;
+        height: 200px;
+        padding-bottom: 60%;
+    }
+
+    .testimonials-customhight {
+        height: 500px;
+    }
+
+    .slider-testimonials p {
+        text-align: left;
+        font-size: 20px;
+    }
+
+    .ace-testimonials {
+        background-color: white;
+        height: 60vh;
+    }
+
+    .h1-ace {
+        font-weight: bold;
+        font-size: 2.5rem;
+    }
+
+    .topnav {
+        height: 60px;
+        left: 20%;
+    }
+
+    .stock-price-investor {
+        height: 2.5vh;
+        margin-top: 5vh;
+        width: 100%;
+    }
+
+    /*TESTSI*/
+
+    .title-price-investor {
+        -webkit-text-stroke: 0.5px;
+        font-size: 1em;
+    }
+
+    .last-title-price {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    .content-last-investor {
+        margin-top: 20px;
+    }
+
+    .value-last-investor {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 20px;
+        color: #1D5189;
+        -webkit-text-stroke: 2px;
+    }
+
+    .stock-change-investor {
+        height: 37.5vh;
+        width: 100%;
+        background-color: #F5F5F7;
+    }
+
+    .stock-code-market {
+        margin: auto;
+        width: 100%;
+        font-size: 0.65em;
+    }
+
+    .carousel-caption {
+        top: 20%;
+        bottom: 12rem;
+        left: 5%;
+        right: 25%;
+        z-index: 10;
+    }
+
+    .ace-personal .carousel-caption {
+        top: 10%;
+        bottom: 12rem;
+        left: 4%;
+        right: 25%;
+        z-index: 10;
+    }
+
+    .btn-read-now-banner-investor {
+        bottom: -50%;
+        /* position: absolute; */
+        border: solid;
+        border-color: white;
+        color: white;
+        border-radius: 50px;
+        background: radial-gradient(107.8% 223.31% at 0.9% 2.98%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.198) 96.15%);
+    }
+
+    .list-anouncements a {
+        font-size: 1.1em;
+        color: grey;
+    }
+
+    .btn-ace-black {
+        width: 150px;
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        border: 2px solid #ffffff;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-color: black;
+        padding: 10px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+
+    .acecarousel-control-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background-color: transparent;
+        color: #fff;
+        text-align: center;
+        /* background: 0 0; */
+        border: 0;
+        transition: opacity 0.15s ease;
+    }
+
+    .gtp-download {
+        background-color: #badbff3d;
+        height: auto;
+        display: inline-table;
+    }
+
+    .acecarousel-control-next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+        background-color: transparent;
+        border: 0;
+        transition: opacity 0.15s ease;
+    }
+
+    .ace-button-blue {
+        background-color: transparent;
+        color: #022c59;
+        border: 2px solid #022c59;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        padding: 10px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+
+    .gtp-download .wrap-content {
+
+        position: relative;
+        margin-left: 1%;
+        margin-right: 1%;
+
+    }
+
+    .gtp-download .title-ace {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .gtp-download h1 {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .gtp-download .investor-download {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .img-responsive-news {
+        object-fit: cover;
+        width: 100%;
+        height: 200px;
+        vertical-align: middle;
+    }
+
+    .anouncements-gpt {
+        background-color: #ffffff;
+        height: auto;
+    }
+
+    .h1-investor-banner {
+        right: 10%;
+        text-shadow: 0 3px 10px rgb(0 0 0 / 52%);
+        font-size: 2.7em;
+        font-weight: bold;
+        /* position: absolute; */
+        top: 20%;
+        -webkit-text-stroke: 2px;
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-decoration: none;
+        font-size: 0.8em;
+
+    }
+
+    .img-ace-about {
+        width: 100%;
+        height: 20vh;
+    }
+
+    .company-ace {
+        height: 500px;
+    }
+    .child-company {
+        position: absolute;
+        top: 50%;
+        left: 45%;
+    }
+
+    .ace-card-company {
+        padding-top: 9px;
+        border-radius: 100px;
+        width: 80px;
+        height: 80px;
+        margin-left: 2px;
+        border: none;
+        box-shadow: 1px 1px 1px rgb(221 218 218);
+    }
+
+    .line-structure {
+        top: 81%;
+        left: 30%;
+        width: 65%;
+        position: absolute;
+    }
+
+    .acetopbar {
+        left: 20px;
+        top: 10px;
+        z-index: 998;
+        position: absolute;
+        width: 60px;
+        height: 70px;
+    }
+    .slider-banner {
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+    }
+    .ace-sliders {
+        height: 500px;
+
+    }
+
+    .carousel-item {
+        width: 100%;
+        height: 600px;
+    }
+
+    .vl {
+        font-size: 2.3vw;
+        text-align: left;
+    }
+
+    .mansory div {
+        width: 40%;
+    }
+
+    .gtp-patner {
+        height: 10vh;
+    }
+
+    .sticky-mansory {
+        height: 50vh;
+    }
+
+    #slider .selfie-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-provider .carousel {
+        width: 100%;
+        height: 15vh;
+    }
+
+
+    .ace-sliders h1 {
+        overflow: hidden;
+        -webkit-text-stroke: 2px;
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px #3e3e3e;
+    }
+
+    .hover-1:hover .hover-1-title {
+        bottom: 5rem;
+    }
+
+    .about h1 {
+        font-weight: bold;
+        font-size: 3rem;
+    }
+
+    #imggpt1 {
+        width: 100%;
+    }
+
+    .hover-1-description {
+        font-size: 0.2em;
+    }
+
+    .hover-1 img {
+        object-fit: cover;
+    }
+
+    .hover-1-description {
+        font-size: 0.7em;
+    }
+
+    .wrap-content {
+        position: relative;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .ace-sliders .carousel-caption {
+        position: absolute;
+        right: 40%;
+        bottom: 1.25rem;
+        left: 5%;
+        padding-top: 20px;
+        padding-bottom: 1.25rem;
+        color: #fff;
+        text-align: center;
+        top: 20%;
+    }
+
+    .about-provider {
+        height: 50vh;
+    }
+
+}
+
+@media only screen and (min-width: 832px) and (max-width:899px) {
+    .topnav a {
+        font-size: 0.85em;
+    }
+}
+
 /*@media screen and (min-width: 1200px) and (max-width: 1278px) {
   .topnav {
     box-shadow: 0 0.0625rem 0.375rem 0 rgb(0 0 0 / 10%);
@@ -7653,7 +8734,7 @@ footer img {
     }
 }
 
-@media screen and (min-width: 900px) and (max-width: 1000px) {
+@media only screen and (min-width: 900px) and (max-width: 1038px) {
     .topnav a {
         float: left;
         display: block;
@@ -7838,45 +8919,7 @@ footer img {
 }
 
 /* Medium Devices (Desktops) */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .img-icon-corporate {
-        width: 50%;
-    }
 
-    .img-icon-personal {
-        width: 50%;
-    }
-
-    .card-corporate {
-        width: 50%;
-        height: 120px;
-    }
-
-    .card-corporate b {
-        font-size: 0.7em;
-    }
-
-    .card-personal {
-        width: 50%;
-        height: 120px;
-
-    }
-
-    .card-personal b {
-        font-size: 0.7em;
-
-    }
-
-    .card-home h3 {
-        font-size: 26px;
-        line-height: 30px;
-    }
-
-    .card-home {
-        height: fit-content;
-        top: 25%;
-    }
-}
 
 /* Large Devices (Desktops) */
 @media only screen and (min-width: 992px) and (max-width: 1440px) {
