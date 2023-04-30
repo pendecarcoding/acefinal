@@ -39,8 +39,8 @@
     <!-- Custom styles for this template -->
     <link href="{{ static_asset('aceweb') }}/assets/carousel/carousel.css" rel="stylesheet" />
 
-    <link href="{{ static_asset('aceweb') }}/assets/ace/ace1.css" rel="stylesheet" />
-    <link href="{{ static_asset('aceweb') }}/assets/ace/ace2.css" rel="stylesheet" />
+    <link href="{{ static_asset('aceweb') }}/assets/ace/acev1.css" rel="stylesheet" />
+    <link href="{{ static_asset('aceweb') }}/assets/ace/acev2.css" rel="stylesheet" />
     <!--<link href="assets/ace/scroll.css" rel="stylesheet" />-->
     <link href="{{ static_asset('aceweb') }}/assets/slick/slick.css" rel="stylesheet" />
     <link href="{{ static_asset('aceweb') }}/assets/slick/slick-theme.css" rel="stylesheet" />
@@ -57,7 +57,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <link href="{{ static_asset('aceweb') }}/assets/ace/ipad.css" rel="stylesheet" />
+    <link href="{{ static_asset('aceweb') }}/assets/ace/ipadace1.css" rel="stylesheet" />
 
 
 
