@@ -729,9 +729,14 @@
 
     }
 
+    .ace-sliders .carousel-item {
+        height: 40vh;
+
+    }
+
     .carousel-item {
         width: 100%;
-        height: 40vh;
+        height: auto;
     }
 
     .vl {
@@ -1264,7 +1269,7 @@
 
     .carousel-item {
         width: 100%;
-    height: 47vh;
+        height: auto;
     }
 
     .vl {
@@ -1346,7 +1351,8 @@
     }
 
     .about-provider {
-        height: 50vh;
+        height: auto;
+        position: relative;
     }
 }
 
@@ -2814,7 +2820,7 @@
 }
 @media screen and (min-width: 1440px) {
     #imggpt1 {
-        width: 71%;
+        width: 56%;
     }
     .card-home {
         top: 12%;
@@ -2888,9 +2894,8 @@
         height: 400px;
     }
     .about-provider {
+        height: auto;
         position: relative;
-        overflow: hidden;
-        height: 100vh;
     }
     .achievements-arrow {
         top: 50%;
@@ -3202,7 +3207,7 @@
         height: 40vh;
     }
     .company-ace {
-        height: 40vh;
+        height: auto;
     }
     .ace-sliders .carousel-caption {
         top: 19%;

@@ -159,7 +159,7 @@
               >
                 <h1>Company structure</h1>
               </div>
-              <div class="row img-strc">
+              <div id="structur-desktop" class="row img-strc">
                 <div class="col-md-5 col-sm-12">
                   <div
                     data-aos="zoom-in-down"
@@ -238,6 +238,10 @@
                     </div>
                   </div>
                 </div>
+              </div>
+
+              <div id="structur-ipad" class="row img-strc">
+                <img style="width:100%" src="{{ static_asset('aceweb') }}/assets/img/structure.png" alt="">
               </div>
 
               <div style="margin-top:20px" class="row img-structure-mobile">

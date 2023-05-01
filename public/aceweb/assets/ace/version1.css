@@ -23,6 +23,14 @@ html {
 }
 
 
+#structur-desktop{
+    display: block;
+}
+#structur-ipad{
+    display: none;
+
+}
+
 .title-corporate {
     font-weight: bold;
 }
@@ -5591,7 +5599,7 @@ footer img {
     .ace-achievements .carousel {
         position: absolute;
         width: 100%;
-        height: 75vh;
+        height: auto;
         margin-bottom: 4rem;
     }
 
@@ -6507,6 +6515,7 @@ footer img {
         padding: inherit;
     }
 
+
     /*END*/
 }
 
@@ -6514,6 +6523,7 @@ footer img {
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
+
 
     .footer-medsos {
         justify-content: space-evenly;
@@ -7334,6 +7344,14 @@ footer img {
 }
 
 @media only screen and (min-width:767px) and (max-width:900px) {
+
+    #structur-desktop{
+        display: none;
+    }
+    #structur-ipad{
+        display: block;
+        width: 100%;
+    }
     .banner-static {
         height: 24vh;
         overflow: hidden;
@@ -7791,9 +7809,13 @@ footer img {
 
     }
 
-    .carousel-item {
+    .ace-sliders .carousel-item{
         width: 100%;
         height: 600px;
+    }
+    .carousel-item {
+        width: 100%;
+        /* height: 600px; */
     }
 
     .vl {
@@ -7876,6 +7898,14 @@ footer img {
 
     .about-provider {
         height: 50vh;
+    }
+    .ace-sliders .carousel-item{
+        width: 100%;
+        height: 600px;
+    }
+    .carousel-item {
+        width: 100%;
+        /* height: 600px; */
     }
 
 }
@@ -8211,6 +8241,13 @@ footer img {
 }
 
 @media only screen and (min-width:900px) and (max-width:1024px) {
+    #structur-desktop{
+        display: none;
+    }
+    #structur-ipad{
+        display: block;
+        width: 100%;
+    }
     .banner-static {
         height: 24vh;
         overflow: hidden;
@@ -8407,7 +8444,8 @@ footer img {
 
     .ace-testimonials {
         background-color: white;
-        height: 60vh;
+    height: auto;
+    position: relative;
     }
 
     .h1-ace {
@@ -8670,7 +8708,7 @@ footer img {
 
     .carousel-item {
         width: 100%;
-        height: 600px;
+        /* height: 600px; */
     }
 
     .vl {
@@ -8718,7 +8756,7 @@ footer img {
     }
 
     #imggpt1 {
-        width: 100%;
+        width: 58%;
     }
 
     .hover-1-description {
@@ -8752,7 +8790,8 @@ footer img {
     }
 
     .about-provider {
-        height: 50vh;
+        height: auto;
+        position: relative;
     }
 
 }
@@ -9161,7 +9200,7 @@ footer img {
 
     .vl {
         height: auto;
-        padding-left: 36px;
+        padding-left: 15px;
         text-align: justify;
         font-size: 1.3vw;
     }
