@@ -7348,7 +7348,17 @@ footer img {
 
     .card-home {
         height: fit-content;
-        top: 25%;
+        top: 22%;
+        width: 78%;
+    }
+
+    .img-icon-corporate {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .img-icon-personal {
+        margin-top: 10px;
+        width: 100%;
     }
 
     .img-responsive-investor {
@@ -8816,10 +8826,11 @@ footer img {
 
     .card-home {
         border: none;
-        height: 100vh;
-        width: 100%;
-        top: 10%;
-        /* padding-top: 50%; */
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    top: 0%;
+    padding-top: 31%;
 
     }
 
@@ -8880,11 +8891,13 @@ footer img {
     }
 
     .img-icon-corporate {
-        width: 50%;
+        margin-top: 10px;
+        width: 100%;
     }
 
     .img-icon-personal {
-        width: 50%;
+        margin-top: 10px;
+        width: 100%;
     }
 
     .card-corporate {
@@ -8991,7 +9004,7 @@ footer img {
     }
 
     .card-home {
-        top: 20%;
+        top: 7%;
     }
 
     .card-home h3 {
