@@ -7879,7 +7879,336 @@ footer img {
 }
 
 
-@media only screen and (min-width:900px) and (max-width:900px) {
+
+@media only screen and (min-width: 832px) and (max-width:899px) {
+    .topnav a {
+        font-size: 0.85em;
+    }
+}
+
+/*@media screen and (min-width: 1200px) and (max-width: 1278px) {
+  .topnav {
+    box-shadow: 0 0.0625rem 0.375rem 0 rgb(0 0 0 / 10%);
+    z-index: 1;
+    position: fixed;
+    overflow: hidden;
+    left: 20%;
+    right: 0;
+    display: flex;
+    padding: 5px;
+    height: 70px;
+    align-items: center;
+    background-color: #264e77;
+    flex-direction: row;
+    justify-content: end;
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 30px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .vl {
+    height: auto;
+    padding-left: 36px;
+    text-align: justify;
+    font-size: 1.7vw;
+  }
+  .sticky-content {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-repeat: no-repeat, repeat;
+    background-color: #003355;
+    background-blend-mode: soft-light;
+
+    padding-top: 4rem;
+  }
+  .carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 5%;
+    padding-top: 20px;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+    top: 30%;
+  }
+  .easigold .vl {
+    overflow-y: auto;
+    height: 40vh;
+    padding-left: 36px;
+    text-align: justify;
+    font-size: 1.5vw;
+  }
+  .ace-sliders .carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 20px;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+    top: 30%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .banner-static {
+    height: auto;
+    position: relative;
+  }
+  .topnav {
+    box-shadow: 0 0.0625rem 0.375rem 0 rgb(0 0 0 / 10%);
+    z-index: 1;
+    position: fixed;
+    overflow: hidden;
+    left: 20%;
+    right: 0;
+    display: flex;
+    padding: 5px;
+    height: 70px;
+    align-items: center;
+    background-color: #264e77;
+    flex-direction: row;
+    justify-content: end;
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .gtp-solution .sticky-content {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-repeat: no-repeat, repeat;
+    background-color: #003355;
+    background-blend-mode: soft-light;
+
+    padding-top: 1rem;
+  }
+  .slider-testimonials p {
+    text-align: left;
+    font-size: 18px;
+  }
+  .gtp-solution .vl {
+    height: auto;
+    padding-left: 36px;
+    text-align: justify;
+    font-size: 1.3vw;
+  }
+  .ace-sliders .carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 9.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+    font-size: 3vw;
+  }
+  .ace-personal .carousel-caption {
+    position: absolute;
+    right: 30%;
+    bottom: 1.25rem;
+    left: 15%;
+    top: 40%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+  }
+  .flex-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 0.9vw;
+  }
+  .allprice .fa {
+    margin-left: 20px;
+    margin-top: 0px;
+    font-size: 10px;
+  }
+  .easigold .vl {
+    overflow-y: auto;
+    height: 40vh;
+    padding-left: 36px;
+    text-align: justify;
+    font-size: 1.2vw;
+  }
+}*/
+
+@media screen and (min-width: 1001px) and (max-width: 1024px) {
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        margin-left: 9px;
+        margin-right: 9px;
+        text-decoration: none;
+        font-size: 1.5vw;
+    }
+
+    .banner-static {
+        height: 25vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .topnav {
+        height: 60px;
+    }
+
+    #imggpt1 {
+        width: 70%;
+    }
+
+    .gtp-solution .ace-isi {
+        padding-bottom: 0px;
+    }
+
+    .gtp-patner {
+        background-color: #badbff3d;
+        height: 40vh;
+        display: inline-table;
+    }
+
+    .ace-testimonials {
+        background-color: white;
+        height: 100vh;
+    }
+
+    .company-ace {
+        background-color: #f2f5f9;
+        height: auto;
+    }
+
+    .slider-banner {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .ace-sliders {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .acetopbar {
+        left: 20px;
+        top: 10px;
+        z-index: 998;
+        position: absolute;
+        width: 100px;
+        height: 110px;
+    }
+
+    .ace-sliders h1 {
+        overflow: hidden;
+        font-size: 5.5rem;
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        margin-left: 8px;
+        margin-right: 8px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .gtp-solution .sticky-content {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-repeat: no-repeat, repeat;
+
+        background-blend-mode: soft-light;
+        /* padding: 5rem 20px; */
+        padding-top: 1rem;
+    }
+
+    .slider-testimonials p {
+        text-align: left;
+        font-size: 18px;
+    }
+
+    .gtp-solution .vl {
+        height: auto;
+        padding-left: 36px;
+        text-align: justify;
+        font-size: 1.3vw;
+    }
+
+    .ace-sliders .carousel-caption {
+        position: absolute;
+        right: 15%;
+        bottom: 9.25rem;
+        left: 10%;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        color: #fff;
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    .ace-personal .carousel-caption {
+        position: absolute;
+        right: 30%;
+        /* bottom: 1.25rem; */
+        left: 10%;
+        top: 5%;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        color: #fff;
+        text-align: center;
+    }
+
+    .allprice {
+        height: 100vh;
+        padding-top: 15vh;
+    }
+
+    .flex-date {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 0.9vw;
+    }
+
+    .allprice .fa {
+        margin-left: 20px;
+        margin-top: 0px;
+        font-size: 10px;
+    }
+
+    .easigold .vl {
+        overflow-y: auto;
+        height: 40vh;
+        padding-left: 36px;
+        text-align: justify;
+        font-size: 1.2vw;
+    }
+}
+
+@media only screen and (min-width:900px) and (max-width:1023px) {
     .banner-static {
         height: 24vh;
         overflow: hidden;
@@ -7896,7 +8225,17 @@ footer img {
 
     .card-home {
         height: fit-content;
-        top: 25%;
+        top: 22%;
+        width: 78%;
+    }
+
+    .img-icon-corporate {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .img-icon-personal {
+        margin-top: 10px;
+        width: 100%;
     }
 
     .img-responsive-investor {
@@ -8415,362 +8754,6 @@ footer img {
     }
 
 }
-
-@media only screen and (min-width: 832px) and (max-width:899px) {
-    .topnav a {
-        font-size: 0.85em;
-    }
-}
-
-/*@media screen and (min-width: 1200px) and (max-width: 1278px) {
-  .topnav {
-    box-shadow: 0 0.0625rem 0.375rem 0 rgb(0 0 0 / 10%);
-    z-index: 1;
-    position: fixed;
-    overflow: hidden;
-    left: 20%;
-    right: 0;
-    display: flex;
-    padding: 5px;
-    height: 70px;
-    align-items: center;
-    background-color: #264e77;
-    flex-direction: row;
-    justify-content: end;
-  }
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 30px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  .vl {
-    height: auto;
-    padding-left: 36px;
-    text-align: justify;
-    font-size: 1.7vw;
-  }
-  .sticky-content {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-repeat: no-repeat, repeat;
-    background-color: #003355;
-    background-blend-mode: soft-light;
-
-    padding-top: 4rem;
-  }
-  .carousel-caption {
-    position: absolute;
-    right: 15%;
-    bottom: 1.25rem;
-    left: 5%;
-    padding-top: 20px;
-    padding-bottom: 1.25rem;
-    color: #fff;
-    text-align: center;
-    top: 30%;
-  }
-  .easigold .vl {
-    overflow-y: auto;
-    height: 40vh;
-    padding-left: 36px;
-    text-align: justify;
-    font-size: 1.5vw;
-  }
-  .ace-sliders .carousel-caption {
-    position: absolute;
-    right: 15%;
-    bottom: 1.25rem;
-    left: 15%;
-    padding-top: 20px;
-    padding-bottom: 1.25rem;
-    color: #fff;
-    text-align: center;
-    top: 30%;
-  }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1200px) {
-  .banner-static {
-    height: auto;
-    position: relative;
-  }
-  .topnav {
-    box-shadow: 0 0.0625rem 0.375rem 0 rgb(0 0 0 / 10%);
-    z-index: 1;
-    position: fixed;
-    overflow: hidden;
-    left: 20%;
-    right: 0;
-    display: flex;
-    padding: 5px;
-    height: 70px;
-    align-items: center;
-    background-color: #264e77;
-    flex-direction: row;
-    justify-content: end;
-  }
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  .gtp-solution .sticky-content {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-repeat: no-repeat, repeat;
-    background-color: #003355;
-    background-blend-mode: soft-light;
-
-    padding-top: 1rem;
-  }
-  .slider-testimonials p {
-    text-align: left;
-    font-size: 18px;
-  }
-  .gtp-solution .vl {
-    height: auto;
-    padding-left: 36px;
-    text-align: justify;
-    font-size: 1.3vw;
-  }
-  .ace-sliders .carousel-caption {
-    position: absolute;
-    right: 15%;
-    bottom: 9.25rem;
-    left: 15%;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    color: #fff;
-    text-align: center;
-    font-size: 3vw;
-  }
-  .ace-personal .carousel-caption {
-    position: absolute;
-    right: 30%;
-    bottom: 1.25rem;
-    left: 15%;
-    top: 40%;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    color: #fff;
-    text-align: center;
-  }
-  .flex-date {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 0.9vw;
-  }
-  .allprice .fa {
-    margin-left: 20px;
-    margin-top: 0px;
-    font-size: 10px;
-  }
-  .easigold .vl {
-    overflow-y: auto;
-    height: 40vh;
-    padding-left: 36px;
-    text-align: justify;
-    font-size: 1.2vw;
-  }
-}*/
-
-@media screen and (min-width: 1001px) and (max-width: 1024px) {
-
-    .topnav a {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        margin-left: 9px;
-        margin-right: 9px;
-        text-decoration: none;
-        font-size: 1.5vw;
-    }
-
-    .banner-static {
-        height: 25vh;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .topnav {
-        height: 60px;
-    }
-
-    #imggpt1 {
-        width: 70%;
-    }
-
-    .gtp-solution .ace-isi {
-        padding-bottom: 0px;
-    }
-
-    .gtp-patner {
-        background-color: #badbff3d;
-        height: 40vh;
-        display: inline-table;
-    }
-
-    .ace-testimonials {
-        background-color: white;
-        height: 100vh;
-    }
-
-    .company-ace {
-        background-color: #f2f5f9;
-        height: auto;
-    }
-
-    .slider-banner {
-        width: 100%;
-        height: 100vh;
-    }
-
-    .ace-sliders {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .acetopbar {
-        left: 20px;
-        top: 10px;
-        z-index: 998;
-        position: absolute;
-        width: 100px;
-        height: 110px;
-    }
-
-    .ace-sliders h1 {
-        overflow: hidden;
-        font-size: 5.5rem;
-    }
-
-    .topnav a {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        margin-left: 8px;
-        margin-right: 8px;
-        text-decoration: none;
-        font-size: 17px;
-    }
-
-    .gtp-solution .sticky-content {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        background-repeat: no-repeat, repeat;
-
-        background-blend-mode: soft-light;
-        /* padding: 5rem 20px; */
-        padding-top: 1rem;
-    }
-
-    .slider-testimonials p {
-        text-align: left;
-        font-size: 18px;
-    }
-
-    .gtp-solution .vl {
-        height: auto;
-        padding-left: 36px;
-        text-align: justify;
-        font-size: 1.3vw;
-    }
-
-    .ace-sliders .carousel-caption {
-        position: absolute;
-        right: 15%;
-        bottom: 9.25rem;
-        left: 10%;
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-        color: #fff;
-        text-align: center;
-        font-size: 3vw;
-    }
-
-    .ace-personal .carousel-caption {
-        position: absolute;
-        right: 30%;
-        /* bottom: 1.25rem; */
-        left: 10%;
-        top: 5%;
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-        color: #fff;
-        text-align: center;
-    }
-
-    .allprice {
-        height: 100vh;
-        padding-top: 15vh;
-    }
-
-    .flex-date {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        font-size: 0.9vw;
-    }
-
-    .allprice .fa {
-        margin-left: 20px;
-        margin-top: 0px;
-        font-size: 10px;
-    }
-
-    .easigold .vl {
-        overflow-y: auto;
-        height: 40vh;
-        padding-left: 36px;
-        text-align: justify;
-        font-size: 1.2vw;
-    }
-}
-
-@media only screen and (min-width: 900px) and (max-width: 1038px) {
-    .topnav a {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        margin-left: 6px;
-        margin-right: 6px;
-        text-decoration: none;
-        font-size: 15px;
-    }
-
-    .slider-testimonials p {
-        text-align: left;
-        font-size: 18px;
-    }
-
-    .acetopbar {
-        left: 27px;
-        top: 27px;
-        z-index: 998;
-        position: absolute;
-        width: 105px;
-        height: 125px;
-    }
-}
-
 @media screen and (min-width: 1025px) and (max-width: 1278px) {
     .topnav {
         box-shadow: 0 0.0625rem 0.375rem 0 rgb(0 0 0 / 10%);
