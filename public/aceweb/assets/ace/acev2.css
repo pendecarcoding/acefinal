@@ -2661,9 +2661,9 @@
 
     /*Personal Page*/
     .allprice .icon-arrow-pricefeed {
-        margin-left: 20px;
-        margin-top: 25px;
-        font-size: 40px;
+        margin-left: 6px;
+    margin-top: 2px;
+    font-size: 39px;
     }
 
     .table-price-buy i {
