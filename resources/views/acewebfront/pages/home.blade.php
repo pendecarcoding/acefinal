@@ -321,7 +321,7 @@
                 <div id="gpt0"></div>
                 <div class="row">
                   <div class="col-md-6 col-sm-6"></div>
-                  <div data-aos="fade-down" class="col-md-6 col-sm-6 text-content-gtp">
+                  <div  class="col-md-6 col-sm-6 text-content-gtp">
                     <div class="vl" style="color: #6db0da">
                       <table>
                         <th valign="top">
