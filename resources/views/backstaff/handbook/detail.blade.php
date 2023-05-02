@@ -30,7 +30,7 @@
             padding: 7px;
             display: flex;
             justify-content: space-around;
-            position: fixed;
+
             width: -webkit-fill-available;z-index: 1;">
                             <input type="text" class="form-control" placeholder="Announcement"><span><button
                                     class="btn btn-primary">SEARCH</button></span>
