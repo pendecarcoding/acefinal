@@ -98,6 +98,18 @@ class AceController extends Controller
     public function page($page){
         switch ($page) {
 
+            case 'recoverypassword':
+                try {
+                    $c = Stuff::where('reset_code',base64_decode($_GET['kode']))->count();
+                    if($c > 0){
+                        $code = base64_decode($_GET['kode']);
+                        return view('acewebfront.pages.forgotpassconfirmation',compact('code'));
+                    }
+                } catch (\Throwable $th) {
+                    print $th->getmessage();
+                }
+                break;
+
             case 'comfirregister':
                 try {
                     $data=[

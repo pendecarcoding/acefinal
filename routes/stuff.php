@@ -3,6 +3,7 @@ use App\Http\Controllers\ace\StuffController;
 Route::controller(StuffController::class)->group(function () {
     Route::get('/back/announcements', 'announcement')->name('staff.announcements');
     Route::post('/back/login', 'login')->name('staff.login');
+    Route::post('/back/staff/resetpasswordstaff', 'resetpass')->name('staff.resetpass');
     Route::post('/back/update', 'update')->name('staff.update');
     Route::get('/back/detailannouncements/{id}', 'detailannouncement')->name('staff.detailannouncements');
     Route::get('/back/handbook', 'handbook')->name('staff.handbook');

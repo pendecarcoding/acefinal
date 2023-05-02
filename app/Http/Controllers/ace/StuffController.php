@@ -40,6 +40,7 @@ use App\Mail\SecondEmailVerifyMailManager;
 use App\Models\Stuff;
 use Session;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Faker\Provider\Uuid;
 
 class StuffController extends Controller
 {
@@ -119,6 +120,27 @@ class StuffController extends Controller
             }else{
                 return redirect('investor_relations');
             }
+      }
+
+
+      public function resetpass(Request $r){
+       $c = Stuff::where('email',$r->email)->count();
+       if($c == 0){
+        return back()->with('danger','Email Account not available');
+       }else{
+        $kode = Str::uuid()->toString();
+        $data = [
+            'reset_code'=>$kode
+        ];
+        $array['subject'] = translate('Forgot Password');
+        $array['from'] = env('MAIL_FROM_ADDRESS');
+        $array['content']="for update password click the link below";
+        $array['link'] = env('URL_WEB').'/recoverypassword?kode='.base64_encode($kode);
+
+
+        Mail::to($r->email)->queue(new SecondEmailVerifyMailManager($array));
+        return back()->with('success','Password recovery link sent to email. please check your email');
+       }
       }
 
       public function backannouncement($date){

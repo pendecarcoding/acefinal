@@ -41,25 +41,31 @@
                             <h1 class="h3 mb-0" style="color:#1D5189;font-weight: bold;">Forgot Password</h1>
                             @include('acewebfront.pages.alert')
                         </div>
-                        <form class="pad-hor" method="POST" role="form" action="{{route('staff.resetpass')}}">
+                        <form class="pad-hor" method="POST" role="form" action="{{route('staff.resetconfir')}}">
                             {{csrf_field()}}
 
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope-o"
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock-o"
                                             aria-hidden="true"></i></span>
                                 </div>
-                                <input id="password" type="text" class="form-control" name="email" required=""
-                                    placeholder="EMAIL">
+                                <input id="password" type="password" class="form-control" name="password" required=""
+                                    placeholder="Password">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"
+                                            aria-hidden="true"></i></span>
+                                </div>
+                                <input id="password" type="password" class="form-control" name="repassword" required=""
+                                    placeholder="Re Password">
                             </div>
 
                             <button style="background-color:#1D5189;border-color:#1D5189 ;" type="submit"
                                 class="btn btn-primary btn-lg btn-block">
                                 CONFIRM
                             </button>
-                            <br>
-                            <center><a style="font-weight:bold;text-decoration: none;color:#1d1d1d"
-                                    href="{{ url('investor_relations') }}">GO BACK</a></center>
+
 
                         </form>
 
