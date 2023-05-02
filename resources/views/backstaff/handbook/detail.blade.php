@@ -39,7 +39,7 @@
 
                         <div class="well" style="margin-top:50px">
                             <embed
-                                src="https://dev.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf"
+                                src="https://corpweb.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf"
                                 style="width:100%;height: 85vh;" type="application/pdf">
 
 
