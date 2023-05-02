@@ -25,17 +25,7 @@
 
 
                     <div class="col-sm-9" style="padding: 36px;">
-                        <div class="well"
-                            style="    top: 0;
-            padding: 7px;
-            display: flex;
-            justify-content: space-around;
 
-            width: -webkit-fill-available;z-index: 1;">
-                            <input type="text" class="form-control" placeholder="Announcement"><span><button
-                                    class="btn btn-primary">SEARCH</button></span>
-
-                        </div>
                         if the pdf file does not appear you can use the following link : <a target="_blank" href="https://docs.google.com/viewer?url=https://corpweb.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf&embedded=true">Link PDF</a>
                         <div class="well" style="margin-top:50px">
                             <iframe src="https://docs.google.com/viewer?url=https://corpweb.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf&embedded=true" style="width:100%; height:100vh;" frameborder="0"></iframe>
