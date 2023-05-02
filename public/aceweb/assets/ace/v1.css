@@ -7548,7 +7548,8 @@ footer img {
 
     .ace-testimonials {
         background-color: white;
-        height: 60vh;
+        height: auto;
+        position: relative;
     }
 
     .h1-ace {
