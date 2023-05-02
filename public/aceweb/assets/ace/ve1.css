@@ -7898,7 +7898,8 @@ footer img {
     }
 
     .about-provider {
-        height: 50vh;
+        position: relative;
+        height: auto;
     }
     .ace-sliders .carousel-item{
         width: 100%;
