@@ -38,9 +38,10 @@
                         </div>
 
                         <div class="well" style="margin-top:50px">
-                            <embed
+                            <iframe src="https://docs.google.com/viewer?url=https://corpweb.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
+                            <!-- <embed
                                 src="https://corpweb.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf"
-                                style="width:100%;height: 85vh;" type="application/pdf">
+                                style="width:100%;height: 85vh;" type="application/pdf"> -->
 
 
                         </div>
