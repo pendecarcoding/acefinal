@@ -1891,7 +1891,7 @@ footer img {
 .about-ace {
     position: relative;
     background-color: white;
-    height: max-content;
+    height: auto;
 }
 
 .company-ace {
@@ -2135,7 +2135,8 @@ footer img {
 
 .ace-testimonials {
     background-color: white;
-    height: 100vh;
+    height: auto;
+    position: relative;
 }
 
 .ace-testimonials .wrap-content {
@@ -2223,7 +2224,7 @@ footer img {
     position: relative;
     overflow-y: scroll;
     margin-bottom: 20px;
-    height: 40vh;
+    height: 35vh;
     width: 100%;
 }
 
@@ -2316,7 +2317,8 @@ footer img {
 }
 
 .ace-conected {
-    height: fit-content;
+    height: auto;
+    position: relative;
     background-color: #f6fdff;
 }
 
@@ -7389,7 +7391,7 @@ footer img {
     }
 
     .allprice {
-        padding-top: 30px;
+        padding-top: 4px;
     }
 
     .personal-banner {
@@ -7477,7 +7479,9 @@ footer img {
     }
 
     .ace-personal {
-        height: 500px;
+        height: 39vh;
+        position: relative;
+        overflow: hidden;
         background-color: #f5f5f7;
     }
 
@@ -8282,7 +8286,7 @@ footer img {
     .img-responsive-investor {
         object-fit: cover;
         width: 100%;
-        height: 43vh;
+        /* height: 43vh; */
         vertical-align: middle;
     }
 
@@ -8293,7 +8297,7 @@ footer img {
     .personal-banner {
         display: flex;
         flex-direction: column;
-        height: 47vh;
+        height: auto;
         flex-flow: wrap;
     }
 
@@ -8324,7 +8328,7 @@ footer img {
     }
 
     .table-price-sell {
-        height: 20vh;
+        height: 48vh;
         margin-top: 0%;
     }
 
@@ -8375,7 +8379,8 @@ footer img {
     }
 
     .ace-personal {
-        height: 500px;
+        height: auto;
+        position: relative;
         background-color: #f5f5f7;
     }
 
@@ -8386,7 +8391,7 @@ footer img {
 
     .ace-personal img {
         width: 100%;
-    height: 500px;
+        height: 100vh;
     object-fit: cover;
     }
 
@@ -8704,7 +8709,7 @@ footer img {
         height: 100vh;
     }
     .ace-sliders {
-        height: 500px;
+        height: 100vh;
 
     }
 
@@ -9591,6 +9596,15 @@ footer img {
         top: 16%;
     }
 
+    .table-price-sell {
+        margin-top: 0%;
+        margin-bottom: 0%;
+        height: 46.5vh;
+        margin: 20;
+        background-color: #f0f0f0;
+        width: 100%;
+    }
+
     .ace-personal h1 {
         -webkit-text-stroke: 2px;
         overflow: hidden;
@@ -9692,7 +9706,8 @@ footer img {
     }
 
     .ace-achievements {
-        height: 100vh;
+        height: auto;
+        position: relative;
     }
 
     .hover-1 img {
@@ -9719,7 +9734,10 @@ footer img {
     }
 
     .easigold {
-        height: 100vh
+        /* height: 100vh */
+        height: auto;
+    position: relative;
+    overflow: hidden;
     }
 
     .ace-personal-powered {

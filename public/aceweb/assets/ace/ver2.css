@@ -2585,8 +2585,9 @@
     }
 
     .ace-conected {
-        height: 100vh;
+        height: auto;
         background-color: #f6fdff;
+        position: relative;
     }
 
     .topnav a.icon {
@@ -2792,7 +2793,7 @@
         min-width: 114px;
     }
     .ace-personal {
-        height: 100vh;
+        height: auto;
         position: relative;
         overflow: hidden;
     }
@@ -2801,10 +2802,11 @@
     }
     .allprice {
         height: 100vh;
-        padding-top: 10vh;
+        /* padding-top: 10vh; */
+        padding-top: 4vh;
     }
     .table-price-buy {
-        height: 50vh;
+        height: 46vh;
     }
     .table-price-sell {
         height: 50vh;
@@ -2822,13 +2824,14 @@
 }
 @media screen and (min-width: 1440px) {
     #imggpt1 {
-        width: 56%;
+        width: 72%;
     }
     .card-home {
         top: 12%;
     }
     .company-ace {
-        height: 100vh;
+        height: auto;
+        position: relative;
     }
     .child-company {
         width: 73%;
@@ -3176,7 +3179,7 @@
   @media only screen and (width:1024px) and (height:768px) {
     .allprice {
         height: 100vh;
-        padding-top: 10vh;
+        padding-top: 5vh;
     }
     .table-price-buy {
         height: 45vh;
@@ -3224,13 +3227,13 @@
         height: 40vh;
     }
     .ace-personal {
-        height: 40vh;
+        height: auto;
         position: relative;
         overflow: hidden;
     }
     .allprice {
         height: 35vh;
-        padding-top: 5vh;
+        padding-top: 0vh;
     }
     .table-price-buy {
         height: 17.5vh;
