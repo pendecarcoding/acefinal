@@ -465,7 +465,7 @@
                   </div>
                 </div>
               </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="wrap-caraouselservice">
                 <div id="carouselservice" class="carousel slide pointer-event" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -512,7 +512,7 @@
                   </div>
               </div>
 
-            </div>
+            </div> -->
             </div>
           </div>
         </div>
