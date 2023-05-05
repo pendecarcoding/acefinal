@@ -413,9 +413,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
 
     //Providers
      Route::resource('providers',ProvidersController::class);
-     Route::controller(ProvidesController::class)->group(function () {
-         Route::get('/providers/destroy/{id}', 'destroy')->name('patners.destroy');
-         Route::post('/providers/change-status', 'change_status')->name('patners.change-status');
+     Route::controller(ProvidersController::class)->group(function () {
+         Route::get('/providers/destroy/{id}', 'destroy')->name('providers.destroy');
+         Route::post('/providers/change-status', 'change_status')->name('providers.change-status');
     });
 
     // Blog
