@@ -465,6 +465,7 @@
                   </div>
                 </div>
               </div>
+              <!--Hide VProviders-->
             <!-- <div class="row">
               <div class="wrap-caraouselservice">
                 <div id="carouselservice" class="carousel slide pointer-event" data-bs-ride="carousel">
