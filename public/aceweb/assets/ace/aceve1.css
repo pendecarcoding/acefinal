@@ -1912,10 +1912,10 @@ footer img {
     background-repeat: no-repeat, repeat;
     background-image: url("/public/aceweb/assets/img/Ipad_bg_gtp.jpg");
     background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
+    background-size: auto;
 }
 
 .plus {
