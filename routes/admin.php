@@ -449,6 +449,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     //messageceo
      Route::resource('messagefromceo',MessageCeoController::class);
      Route::controller(MessageCeoController::class)->group(function () {
+       
+         Route::get('investorrelation','financialresults')->name('financialresults.index');
+         Route::get('shareholderreturn','shareholderreturn')->name('shareholderreturn.index');
          Route::get('/messagefromceo/destroy/{id}', 'destroy')->name('messagefromceo.destroy');
          Route::post('/messagefromceo/change-status', 'change_status')->name('messagefromceo.change-status');
     });

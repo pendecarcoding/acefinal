@@ -26,7 +26,14 @@ class BlogController extends Controller
     public function index(Request $request)
     {
         $sort_search = null;
-        $blogs = Blog::orderBy('created_at', 'desc');
+        $blogs = Blog::select('blogs.id as id','category_id as category_id',
+        'title as title','blogs.slug as slug',
+        'short_description as short_description',
+        'description as description','banner as banner',
+        'meta_title as meta_title','meta_img as meta_img',
+        'meta_description as meta_description','meta_keywords as meta_keywords',
+        'status as status','show as show','blogs.created_at as created_at','blogs.updated_at as updated_at','blogs.deleted_at as deleted_at')->join('blog_categories','blog_categories.id','blogs.category_id')
+        ->where('category_name','CORPORATE')->orwhere('category_name','PERSONAL')->orwhere('category_name','AIAB')->orderBy('created_at', 'desc');
 
         if ($request->search != null){
             $blogs = $blogs->where('title', 'like', '%'.$request->search.'%');
@@ -45,7 +52,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        $blog_categories = BlogCategory::all();
+        $blog_categories = BlogCategory::where('category_name','CORPORATE')->orwhere('category_name','PERSONAL')->orwhere('category_name','AIAB')->get();
         return view('backend.blog_system.blog.create', compact('blog_categories'));
     }
 
@@ -103,7 +110,7 @@ class BlogController extends Controller
     public function edit($id)
     {
         $blog = Blog::find($id);
-        $blog_categories = BlogCategory::all();
+        $blog_categories = BlogCategory::where('category_name','CORPORATE')->orwhere('category_name','PERSONAL')->orwhere('category_name','AIAB')->get();
 
         return view('backend.blog_system.blog.edit', compact('blog','blog_categories'));
     }
@@ -139,7 +146,7 @@ class BlogController extends Controller
         $blog->save();
 
         flash(translate('Blog post has been updated successfully'))->success();
-        return redirect()->route('blog.index');
+        return back();
     }
 
     public function change_status(Request $request) {

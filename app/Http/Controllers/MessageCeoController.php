@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Messageceo;
-
+use App\Models\Blog;
+use App\Models\BlogCategory;
 class MessageCeoController extends Controller
 {
 
@@ -22,6 +23,34 @@ class MessageCeoController extends Controller
     {   $data = Messageceo::find('1');
         return view('backend.investor.messageceo.index',compact('data'));
     }
+    public function financialresults(Request $r)
+    {   $blog = Blog::select('blogs.id as id','category_id as category_id',
+        'title as title','blogs.slug as slug',
+        'short_description as short_description',
+        'description as description','banner as banner',
+        'meta_title as meta_title','meta_img as meta_img',
+        'meta_description as meta_description','meta_keywords as meta_keywords',
+        'status as status','show as show','blogs.created_at as created_at','blogs.updated_at as updated_at','blogs.deleted_at as deleted_at')->join('blog_categories','blog_categories.id','blogs.category_id')
+        ->where('category_name','Financial Results : Key Points')
+        ->first();
+        $blog_categories = BlogCategory::all();
+        return view('backend.investor.financial.edit',compact('blog','blog_categories'));
+    }
+
+    public function shareholderreturn(Request $r)
+    {   $blog = Blog::select('blogs.id as id','category_id as category_id',
+        'title as title','blogs.slug as slug',
+        'short_description as short_description',
+        'description as description','banner as banner',
+        'meta_title as meta_title','meta_img as meta_img',
+        'meta_description as meta_description','meta_keywords as meta_keywords',
+        'status as status','show as show','blogs.created_at as created_at','blogs.updated_at as updated_at','blogs.deleted_at as deleted_at')->join('blog_categories','blog_categories.id','blogs.category_id')
+        ->where('category_name','shareholder')
+        ->first();
+        $blog_categories = BlogCategory::all();
+        return view('backend.investor.shareholder.edit',compact('blog','blog_categories'));
+    }
+    
 
     /**
      * Show the form for creating a new resource.

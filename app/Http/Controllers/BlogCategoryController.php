@@ -24,7 +24,7 @@ class BlogCategoryController extends Controller
     public function index(Request $request)
     {
         $sort_search =null;
-        $categories = BlogCategory::orderBy('category_name', 'asc');
+        $categories = BlogCategory::where('category_name','CORPORATE')->orwhere('category_name','PERSONAL')->orwhere('category_name','AIAB')->orderBy('category_name', 'asc');
 
         if ($request->has('search')){
             $sort_search = $request->search;

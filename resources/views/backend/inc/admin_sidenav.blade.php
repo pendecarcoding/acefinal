@@ -800,6 +800,22 @@
                                     </a>
                                 </li>
                             @endcan
+                            @can('view_FinancialResults')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('financialresults.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['financialresults.create', 'financialresults.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Financial Results') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('view_FinancialResults')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('shareholderreturn.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['shareholderreturn.create', 'shareholderreturn.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Shareholder Return') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
                             @can('view_announcements')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('announcements.index') }}"
@@ -808,6 +824,7 @@
                                     </a>
                                 </li>
                             @endcan
+
                             @can('view_downloads')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('downloads.index') }}"
@@ -815,7 +832,7 @@
                                         <span class="aiz-side-nav-text">{{ translate('Downloads') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            <!-- @endcan
                             @can('view_ir_events_persentation')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('patners.index') }}"
@@ -823,7 +840,7 @@
                                         <span class="aiz-side-nav-text">{{ translate('IR Events & Persentation') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan -->
                             @can('view_ir_persentation')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('persentation.index') }}"
@@ -1468,15 +1485,23 @@
                         <li class="aiz-side-nav-item">
                             <a href="#" class="aiz-side-nav-link">
                                 <i class="las la-user-tie aiz-side-nav-icon"></i>
-                                <span class="aiz-side-nav-text">{{ translate('Staffs') }}</span>
+                                <span class="aiz-side-nav-text">{{ translate('Staffs AND USER WEB') }}</span>
                                 <span class="aiz-side-nav-arrow"></span>
                             </a>
                             <ul class="aiz-side-nav-list level-2">
+                                @can('view_all_staffcop')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('staffs.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['staffcop.index', 'staffcop.create', 'staffcop.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('STAFF') }}</span>
+                                    </a>
+                                </li>
+                                @endcan
                                 @can('view_all_staffs')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('staffs.index') }}"
                                             class="aiz-side-nav-link {{ areActiveRoutes(['staffs.index', 'staffs.create', 'staffs.edit']) }}">
-                                            <span class="aiz-side-nav-text">{{ translate('All staffs') }}</span>
+                                            <span class="aiz-side-nav-text">{{ translate('All User Web') }}</span>
                                         </a>
                                     </li>
                                 @endcan
@@ -1484,7 +1509,7 @@
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('roles.index') }}"
                                             class="aiz-side-nav-link {{ areActiveRoutes(['roles.index', 'roles.create', 'roles.edit']) }}">
-                                            <span class="aiz-side-nav-text">{{ translate('Staff permissions') }}</span>
+                                            <span class="aiz-side-nav-text">{{ translate('User Web permissions') }}</span>
                                         </a>
                                     </li>
                                 @endcan
