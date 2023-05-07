@@ -2236,7 +2236,7 @@ footer img {
     position: relative;
     overflow-y: scroll;
     margin-bottom: 20px;
-    height: 40vh;
+    height: max-content;
     width: 100%;
 }
 
@@ -3693,7 +3693,7 @@ footer img {
         position: relative;
         overflow-y: scroll;
         margin-bottom: 20px;
-        height: 37vh;
+        height: max-content;
         width: 100%;
     }
 
@@ -3749,7 +3749,7 @@ footer img {
         position: relative;
         overflow-y: scroll;
         margin-bottom: 20px;
-        height: 38vh;
+        height: max-content;
         width: 100%;
     }
     #st-1.st-has-labels .st-btn {
@@ -4550,7 +4550,7 @@ footer img {
         position: relative;
         overflow-y: scroll;
         margin-bottom: 20px;
-        height: 36vh;
+        height: max-content;
         width: 100%;
     }
     #st-1.st-has-labels .st-btn {
@@ -5757,7 +5757,7 @@ footer img {
         position: relative;
         overflow-y: scroll;
         margin-bottom: 20px;
-        height: 38vh;
+        height: max-content;
         width: 100%;
     }
 
@@ -6584,7 +6584,7 @@ footer img {
         position: relative;
         overflow-y: scroll;
         margin-bottom: 20px;
-        height: 38vh;
+        height: max-content;
         width: 100%;
     }
 
@@ -7543,7 +7543,7 @@ footer img {
         position: relative;
         overflow-y: scroll;
         margin-bottom: 20px;
-        height: 25vh;
+        height: max-content;
         width: 100%;
     }
 
@@ -8450,7 +8450,7 @@ footer img {
         position: relative;
         overflow-y: scroll;
         margin-bottom: 20px;
-        height: 25vh;
+        height: max-content;
         width: 100%;
     }
 
