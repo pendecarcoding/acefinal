@@ -2056,16 +2056,6 @@ footer img {
 
 
 
-.alert {
-    width: 90%;
-    height: 60px;
-    /* left: 5%; */
-    bottom: 70px;
-    border-radius: 4px;
-    opacity: 0;
-    /* position: absolute; */
-    z-index: 10;
-}
 
 
 

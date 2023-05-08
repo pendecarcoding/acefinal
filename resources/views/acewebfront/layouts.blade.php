@@ -126,7 +126,7 @@
                                       border-radius: 0px;" class="input-group-text" id="basic-addon1"><i
                                                 class="fa fa-user"></i></span>
                                     </div>
-                                    <input required name="username" type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                    <input required name="username" type="text" class="form-control" placeholder="Staff ID" aria-label="Username"
                                         aria-describedby="basic-addon1">
                                 </div>
 

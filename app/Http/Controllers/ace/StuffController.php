@@ -85,17 +85,46 @@ class StuffController extends Controller
             'name'=>$r->name,
             'email'=>$r->email,
             'position'=>$r->position,
+            'display_name'=>$r->display_name,
             'stuff_id'=>$r->stuff_id,
+            'username'=>$r->stuff_id
         ];
         try {
             Stuff::where('id',$r->id)->update($data);
             return back()->with('success','data successfully updated');
         } catch (\Throwable $th) {
-            //throw $th;
+            return back()->with('danger',$th->getmessage());
         }
     }else{
         return redirect('investor_relations');
     }
+      }
+
+      public function updatepassword(Request $r){
+        if(Session::get('loginstaff')==true){
+            $staff = Stuff::where('id',$r->id)->first();
+            if($staff != null){
+                if($staff->password != md5($r->oldpass)){
+                    return back()->with('danger','old password does not match');
+                }else{
+                    if(md5($r->pass1) != md5($r->pass2)){
+                        return back()->with('danger','Password and Confirm Password does not match');
+                    }else{
+                        $data=[
+                            'password'=>md5($r->pass1)
+                        ];
+                        try {
+                            Stuff::where('id',$r->id)->update($data);
+                            return back()->with('success','Password successfully updated');
+                        } catch (\Throwable $th) {
+                            return back()->with('danger',$th->getmessage());
+                        }
+                    }
+                }
+            }
+        }else{
+            return redirect('investor_relations');
+        }
       }
 
       public function setting(){
@@ -142,6 +171,8 @@ class StuffController extends Controller
         return back()->with('success','Password recovery link sent to email. please check your email');
        }
       }
+
+    
 
       public function backannouncement($date){
         if(Session::get('loginstaff')==true){

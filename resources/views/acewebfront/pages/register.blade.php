@@ -45,8 +45,20 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
                                 </div>
+                                <input type="text" name="fullname" class="form-control" placeholder="Full Name" aria-label="fullname" aria-describedby="basic-addon1" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" name="displayname" class="form-control" placeholder="Display Name" aria-label="display name" aria-describedby="basic-addon1" required>
+                            </div>
+                            <!-- <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                </div>
                                 <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
-                              </div>
+                              </div> -->
                               <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="basic-addon1"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>

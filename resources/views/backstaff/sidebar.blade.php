@@ -13,7 +13,7 @@
        <!-- <img class="img-circle" style="width:100px;" src="https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png" alt="">
      -->
        <div class="name-login">
-        <h4 style="color:#929292">{{$data['username']}}</h4>
+        <h4 style="color:#929292">{{$data['display_name']}}</h4>
 
         <h5 style="color:#929292">{{$data['position']}}</h5>
     </div>

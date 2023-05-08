@@ -59,7 +59,6 @@ class AceController extends Controller
 
     public function registerstuff(Request $r){
         $r->validate([
-            'username' => 'required|string|max:255',
             'stuffid' => 'required',
             'password_confirmation'=>'required',
             'password' => 'required|confirmed',
@@ -72,7 +71,7 @@ class AceController extends Controller
                 $kode = Str::uuid()->toString();
                 $data=[
                     'password'=>md5($r->password),
-                    'username'=>$r->username,
+                    'username'=>$r->stuffid,
                     'stuff_id'=>$r->stuffid,
                     'email'=>$r->email,
                     'verify_code'=>$kode,
@@ -90,7 +89,7 @@ class AceController extends Controller
             // }
 
         } catch (\Throwable $th) {
-            print $th->getmessage();
+            return back()->with('danger',$th->getmessage());
         }
 
     }

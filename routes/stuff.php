@@ -5,6 +5,7 @@ Route::controller(StuffController::class)->group(function () {
     Route::post('/back/login', 'login')->name('staff.login');
     Route::post('/back/staff/resetpasswordstaff', 'resetpass')->name('staff.resetpass');
     Route::post('/back/update', 'update')->name('staff.update');
+    Route::post('/back/update/pass', 'updatepassword')->name('staff.update.password');
     Route::get('/back/detailannouncements/{id}', 'detailannouncement')->name('staff.detailannouncements');
     Route::get('/back/handbook', 'handbook')->name('staff.handbook');
     Route::get('/back/detailhandbook', 'detailhandbook')->name('staff.detailhandbook');

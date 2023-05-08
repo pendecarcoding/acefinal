@@ -12,7 +12,7 @@
                 </div>
             </div>
         </section>
-        <section class="gtp-ann">
+        <section class="gtp-ann" style="height: 100vh;position: relative;">
             <div class="container-fluid">
                 <div class="row">
                     @include('backstaff.sidebar')
