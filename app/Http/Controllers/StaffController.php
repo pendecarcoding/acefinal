@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Staff;
+use App\Models\Stuff;
 use App\Models\Role;
 use App\Models\User;
 use Hash;
@@ -27,6 +28,10 @@ class StaffController extends Controller
     {
         $staffs = Staff::paginate(10);
         return view('backend.staff.staffs.index', compact('staffs'));
+    }
+
+    public function indexstaff(){
+        $data = Stuff::all();
     }
 
     /**

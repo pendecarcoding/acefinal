@@ -1491,7 +1491,7 @@
                             <ul class="aiz-side-nav-list level-2">
                                 @can('view_all_staffcop')
                                 <li class="aiz-side-nav-item">
-                                    <a href="{{ route('staffs.index') }}"
+                                    <a href="{{ route('staffcop.index') }}"
                                         class="aiz-side-nav-link {{ areActiveRoutes(['staffcop.index', 'staffcop.create', 'staffcop.edit']) }}">
                                         <span class="aiz-side-nav-text">{{ translate('STAFF') }}</span>
                                     </a>

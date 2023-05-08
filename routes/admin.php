@@ -300,6 +300,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
         Route::post('/roles/add_permission', 'add_permission')->name('roles.permission');
     });
 
+    //staff corp
+    Route::resource('staffcop',StaffController::class);
+    Route::controller(StaffController::class)->group(function () {
+        Route::get('staffcop/view/all', 'indexstaff')->name('staffcop.index');
+        // Route::get('/roles/edit/{id}', 'edit')->name('roles.edit');
+        // Route::get('/roles/destroy/{id}', 'destroy')->name('roles.destroy');
+
+        // Add Permissiom
+        Route::post('/roles/add_permission', 'add_permission')->name('roles.permission');
+    });
+
     // Staff
     Route::resource('staffs', StaffController::class);
     Route::get('/staffs/destroy/{id}', [StaffController::class, 'destroy'])->name('staffs.destroy');
