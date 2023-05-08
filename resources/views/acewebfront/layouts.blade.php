@@ -39,7 +39,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ static_asset('aceweb') }}/assets/carousel/carousel.css" rel="stylesheet" />
 
-    <link href="{{ static_asset('aceweb') }}/assets/ace/acever1.css" rel="stylesheet" />
+    <link href="{{ static_asset('aceweb') }}/assets/ace/ace1.css" rel="stylesheet" />
     <link href="{{ static_asset('aceweb') }}/assets/ace/ver2.css" rel="stylesheet" />
     <!--<link href="assets/ace/scroll.css" rel="stylesheet" />-->
     <link href="{{ static_asset('aceweb') }}/assets/slick/slick.css" rel="stylesheet" />
