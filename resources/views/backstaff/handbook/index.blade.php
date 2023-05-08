@@ -25,17 +25,7 @@
 
 
                     <div class="col-sm-9" style="padding: 36px;">
-                        <div class="well"
-                            style="    top: 0;
-            padding: 7px;
-            display: flex;
-            justify-content: space-around;
-            position: fixed;
-            width: -webkit-fill-available;z-index: 1;">
-                            <input type="text" class="form-control" placeholder="Announcement"><span><button
-                                    class="btn btn-primary">SEARCH</button></span>
 
-                        </div>
 
                         <div class="well" style="margin-top:50px;height: 100vh;">
                             <h2 style="font-weight: bold;color:#1D5189">Employee handbook Download</h2>
