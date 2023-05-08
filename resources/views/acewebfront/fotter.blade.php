@@ -102,10 +102,23 @@
     <!-- Section: Links  -->
 
     <!-- Copyright -->
-    <!---<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-  </div>-->
+    <div class="text-left p-3" style="background-color: rgb(29 81 137);color: white;">
+        <div class="wrap-content">
+            <div class="row" style="display: flex;">
+                <div class="col-md-6 col-sm-12 col-lg-6">© Copyright 2023
+                    <a class="text-reset fw-bold" href="#">@ Ace Innovate Asia Berhad</a>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+               
+                        <a  style="float:right;" class="text-reset fw-bold" href="#">Privacy notice  | Terms of use | Terms of purchase</a>
+                    
+                    </div>
+            </div>
+            
+        </div>
+        
+       
+      </div>
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
