@@ -25,7 +25,7 @@
 
 
                     <div class="col-sm-9" style="padding: 36px;">
-                        
+
                         <div class="well"
                             style="    top: 0;
             padding: 7px;
@@ -37,7 +37,7 @@
 
                         </div>
                         <div class="well" style="margin-top:50px;height: auto;position: relative;">
-                            
+
                                 <div class="col-md-12">
                                     @include('acewebfront.pages.alert')
                                     <form action="{{ route('staff.update') }}" method="post">{{ csrf_field() }}
@@ -63,7 +63,7 @@
                                                 value="{{ $data->display_name }}" name="display_name" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="POSISITON"
+                                            <input type="text" class="form-control" placeholder="POSITION"
                                                 value="{{ $data->position }}" name="position" required>
 
                                         </div>
@@ -136,7 +136,7 @@
                                                     <input id="password" type="password" class="form-control" name="pass2" required=""
                                                         placeholder="Confirm Password">
                                                 </div>
-                                                
+
                                             </div>
 
                                             <div class="row mb-2">
