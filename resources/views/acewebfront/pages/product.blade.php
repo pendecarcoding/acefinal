@@ -33,7 +33,7 @@
                 <div class="col-md-9">
                     Purchase of 100 gram and more enjoys extra discount
                     <br>Free registration to be our dealer
-                    <br>For more enquiries please contact us at 011-28612255
+                    <br><a href="http://www.wasap.my/+601128613355/IGRgoldbar" target="_blank">For more enquiries please contact us at +011-28613355</a>
                 </div>
                 <div class="col-md-3">
                   <div class="row-personals">
