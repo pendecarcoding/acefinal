@@ -87,7 +87,7 @@ class StuffController extends Controller
             'position'=>$r->position,
             'display_name'=>$r->display_name,
             'stuff_id'=>$r->stuff_id,
-            'username'=>$r->stuff_id
+            'username'=>str_replace(' ', '',$r->stuff_id)
         ];
         try {
             Stuff::where('id',$r->id)->update($data);
@@ -172,7 +172,7 @@ class StuffController extends Controller
        }
       }
 
-    
+
 
       public function backannouncement($date){
         if(Session::get('loginstaff')==true){
@@ -190,9 +190,9 @@ class StuffController extends Controller
       public function login(Request $r){
 
         try {
-            $c = Stuff::where('username',$r->username)->where('password',md5($r->password))->count();
+            $c = Stuff::where('username',str_replace(' ', '',$r->username))->where('password',md5($r->password))->count();
             if($c > 0){
-                $c = Stuff::where('username',$r->username)->where('password',md5($r->password))->first();
+                $c = Stuff::where('username',str_replace(' ', '',$r->username))->where('password',md5($r->password))->first();
                 Session::put('loginstaff',true);
                 Session::put('id_staff',$c->id);
                 return redirect(route('staff.announcements'));
