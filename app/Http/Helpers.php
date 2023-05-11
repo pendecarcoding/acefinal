@@ -52,6 +52,14 @@ function updatelog($idstaff,$status){
         //throw $th;
     }
 }
+function numberlogin($idstaff,$status){
+    try {
+        $data = DB::table('log_staff')->where('id_staff',$idstaff)->where('status',$status)->count();
+        return $data;
+    } catch (\Throwable $th) {
+        //throw $th;
+    }
+}
 function lastlogin($idstaff,$status){
     try {
         $data = DB::table('log_staff')->where('id_staff',$idstaff)->where('status',$status)->orderBy('time', 'desc')->first();

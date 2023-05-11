@@ -30,6 +30,7 @@
                     <th data-breakpoints="lg">{{translate('Position')}}</th>
                     <th data-breakpoints="lg">{{translate('Email')}}</th>
                     <th data-breakpoints="lg">{{translate('Last Login')}}</th>
+                    <th data-breakpoints="lg">{{translate('How Much Login')}}</th>
                     <!-- <th width="10%">{{translate('Options')}}</th> -->
                 </tr>
             </thead>
@@ -41,6 +42,7 @@
                     <td>{{$v->position}}</td>
                     <td>{{$v->email}}</td>
                     <td>{{lastlogin($v->id,'login')}}</td>
+                    <td>{{numberlogin($v->id,'login')}}</td>
                     <!-- <td></td> -->
                 </tr>
                 @endforeach
