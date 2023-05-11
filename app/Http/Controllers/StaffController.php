@@ -29,9 +29,11 @@ class StaffController extends Controller
         $staffs = Staff::paginate(10);
         return view('backend.staff.staffs.index', compact('staffs'));
     }
+    
 
     public function indexstaff(){
         $data = Stuff::all();
+        return view('backend.cop_staff.index', compact('data'));
     }
 
     /**

@@ -41,6 +41,25 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Patner;
 
 
+function updatelog($idstaff,$status){
+    try {
+        $data =[
+            'id_staff'=>$idstaff,
+            'status'=>$status
+        ];
+        DB::table('log_staff')->insert($data);
+    } catch (\Throwable $th) {
+        //throw $th;
+    }
+}
+function lastlogin($idstaff,$status){
+    try {
+        $data = DB::table('log_staff')->where('id_staff',$idstaff)->where('status',$status)->orderBy('time', 'desc')->first();
+        return $data->time;
+    } catch (\Throwable $th) {
+        //throw $th;
+    }
+}
 
 
 function updatecountview($id){

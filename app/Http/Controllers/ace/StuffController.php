@@ -78,6 +78,24 @@ class StuffController extends Controller
         return redirect('investor_relations');
     }
       }
+      public function anti(){
+        if(Session::get('loginstaff')==true){
+        $announce = Announcement::orderby('created_at','DESC')->get();
+        return view('backstaff.handbook.anti_bribery',compact('announce'));
+    }else{
+        return redirect('investor_relations');
+    }
+      }
+
+      public function ethic(){
+        if(Session::get('loginstaff')==true){
+        $announce = Announcement::orderby('created_at','DESC')->get();
+        return view('backstaff.handbook.ethic',compact('announce'));
+    }else{
+        return redirect('investor_relations');
+    }
+      }
+      
 
       public function update(Request $r){
         if(Session::get('loginstaff')==true){
@@ -195,6 +213,7 @@ class StuffController extends Controller
                 $c = Stuff::where('username',str_replace(' ', '',$r->username))->where('password',md5($r->password))->first();
                 Session::put('loginstaff',true);
                 Session::put('id_staff',$c->id);
+                updatelog($c->id,'login');
                 return redirect(route('staff.announcements'));
             }else{
                 return back()->with('dangger','Account not found');
