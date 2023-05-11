@@ -57,7 +57,7 @@ onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
 		var adobeDCView = new AdobeDC.View({clientId: "f47ddb205d3849698c91458a8740eb8d", divId: "adobe-dc-view"});
 		adobeDCView.previewFile({
 			content:{location: {url: "https://acrobatservices.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-			metaData:{fileName: "Bodea Brochure.pdf"}
+			metaData:{fileName: "."}
 		}, {showAnnotationTools: false, showDownloadPDF: false, showPrintPDF: false});
 	});
 </script>

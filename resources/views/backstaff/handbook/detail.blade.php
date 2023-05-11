@@ -64,7 +64,7 @@
                                             }
                                         },
                                         metaData: {
-                                            fileName: ""
+                                            fileName: "."
                                         }
                                     }, {
                                         showAnnotationTools: false,
