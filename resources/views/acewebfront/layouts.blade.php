@@ -58,11 +58,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link href="{{ static_asset('aceweb') }}/assets/ace/ipadace1.css" rel="stylesheet" />
-
+   
 
 
 
     <style>
+        #pdfviewer {
+    border: 1px #333 solid;
+    width: 100%;
+    background: #eee;
+}
         #myBtn {
             display: none;
             position: fixed;
@@ -88,7 +93,7 @@
 
 </head>
 
-<body>
+<body >
     <!--<div class="centerloader">
     <div id="loader" class="loader"></div>
 </div>-->
@@ -672,6 +677,9 @@
       }
     });
   </script>
+
+
+
 
 
 
