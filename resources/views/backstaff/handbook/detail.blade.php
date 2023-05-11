@@ -56,8 +56,8 @@ onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
 		var adobeDCView = new AdobeDC.View({clientId: "0a6dbb8538a84e74b342da5fdef1a6d0", divId: "adobe-dc-view"});
 		adobeDCView.previewFile({
-			content:{location: {url: "https://acrobatservices.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
-			metaData:{fileName: "Bodea Brochure.pdf"}
+			content:{location: {url: "https://corpweb.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf"}},
+			metaData:{fileName: "Handbook.pdf"}
 		}, {showAnnotationTools: false, showDownloadPDF: false, showPrintPDF: false});
 	});
 </script>
