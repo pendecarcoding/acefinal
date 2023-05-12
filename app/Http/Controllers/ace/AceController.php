@@ -266,6 +266,28 @@ class AceController extends Controller
 
     public function pageslug($page,$slug){
         switch ($page) {
+            case 'view_pdf':
+                if($slug=='terms'){
+                    ?>
+                        <iframe
+                    src="https://docs.google.com/gview?url=<?php print url('/public/aceweb/pdf/terms.pdf') ?>&embedded=true"
+		            style="width: 100%;
+                    height: 1000px">
+
+		                 </iframe>
+
+                   <?php
+                }if($slug=='product'){
+                    ?>
+                        <iframe
+                    src="https://docs.google.com/gview?url=<?php print url('/public/aceweb/pdf/product.pdf') ?>&embedded=true"
+		            style="width: 100%;
+                    height: 1000px">
+
+		                 </iframe>
+                    <?php
+                }
+                break;
             case 'investor_relations':
                 if($slug=='message_from_ceo'){
                     $data = Messageceo::find('1');
