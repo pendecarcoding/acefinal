@@ -108,16 +108,16 @@
                 <div class="col-md-6 col-sm-12 col-lg-6">© Copyright 2023
                     <a class="text-reset fw-bold" href="#">@ Ace Innovate Asia Berhad</a>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-lg-6">
-               
-                        <a  style="float:right;" class="text-reset fw-bold" href="#">Privacy notice  | Terms of use | Terms of purchase</a>
-                    
+                    <div  class="col-md-6 col-sm-12 col-lg-6">
+
+                       <div style="float:right"> <a href="{{url('view_pdf/terms')}}" target="_blank"  class="text-reset fw-bold">Privacy notice | </a> <a href="{{url('view_pdf/product')}}" target="_blank"  class="text-reset fw-bold"> Terms of use | </a>  <a href="{{url('view_pdf/terms')}}" target="_blank"  class="text-reset fw-bold"> Terms of purchase</a></div>
+
                     </div>
             </div>
-            
+
         </div>
-        
-       
+
+
       </div>
     <!-- Copyright -->
 </footer>
