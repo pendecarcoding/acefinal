@@ -56,10 +56,14 @@ class StuffController extends Controller
       }
       public function detailannouncement($id){
         if(Session::get('loginstaff')==true){
+
         $data = Announcement::where('id',base64_decode($id))->first();
+        updatelasttime();
+        updatelog(Session::get('id_staff'),'Read Announcements');
         return view('backstaff.announcements.detail',compact('data'));
         }else{
             return redirect('investor_relations');
+       
         }
       }
       public function handbook(){
@@ -73,6 +77,8 @@ class StuffController extends Controller
       public function detailhandbook(){
         if(Session::get('loginstaff')==true){
         $announce = Announcement::orderby('created_at','DESC')->get();
+        updatelasttime();
+        updatelog(Session::get('id_staff'),'Read Handbook');
         return view('backstaff.handbook.detail',compact('announce'));
     }else{
         return redirect('investor_relations');
@@ -81,6 +87,8 @@ class StuffController extends Controller
       public function anti(){
         if(Session::get('loginstaff')==true){
         $announce = Announcement::orderby('created_at','DESC')->get();
+        updatelasttime();
+        updatelog(Session::get('id_staff'),'Read Anti Bribery');
         return view('backstaff.handbook.anti_bribery',compact('announce'));
     }else{
         return redirect('investor_relations');
@@ -90,12 +98,14 @@ class StuffController extends Controller
       public function ethic(){
         if(Session::get('loginstaff')==true){
         $announce = Announcement::orderby('created_at','DESC')->get();
+        updatelasttime();
+        updatelog(Session::get('id_staff'),'Ethic and Compliance');
         return view('backstaff.handbook.ethic',compact('announce'));
     }else{
         return redirect('investor_relations');
     }
       }
-      
+
 
       public function update(Request $r){
         if(Session::get('loginstaff')==true){
@@ -109,6 +119,8 @@ class StuffController extends Controller
         ];
         try {
             Stuff::where('id',$r->id)->update($data);
+            updatelasttime();
+            updatelog(Session::get('id_staff'),'Update Profil');
             return back()->with('success','data successfully updated');
         } catch (\Throwable $th) {
             return back()->with('danger',$th->getmessage());
@@ -133,6 +145,8 @@ class StuffController extends Controller
                         ];
                         try {
                             Stuff::where('id',$r->id)->update($data);
+                            updatelasttime();
+                            updatelog(Session::get('id_staff'),'Update Password');
                             return back()->with('success','Password successfully updated');
                         } catch (\Throwable $th) {
                             return back()->with('danger',$th->getmessage());
@@ -148,6 +162,8 @@ class StuffController extends Controller
       public function setting(){
         if(Session::get('loginstaff')==true){
         $data = Stuff::where('id',Session::get('id_staff'))->first();
+        updatelasttime();
+        updatelog(Session::get('id_staff'),'View Setting');
         return view('backstaff.setting.index',compact('data'));
         }else{
             return redirect('investor_relations');
@@ -227,6 +243,8 @@ class StuffController extends Controller
         return view('acewebfront.pages.loginstaff');
       }
       public function logoutstuff(){
+        updatelasttime();
+        updatelogout(Session::get('id_staff'),'logout');
         Session::forget('loginstaff');
         Session::forget('id_staff');
         return redirect('investor_relations');

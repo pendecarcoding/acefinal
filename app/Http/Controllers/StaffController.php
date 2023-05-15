@@ -8,6 +8,7 @@ use App\Models\Stuff;
 use App\Models\Role;
 use App\Models\User;
 use Hash;
+use DB;
 
 class StaffController extends Controller
 {
@@ -29,10 +30,10 @@ class StaffController extends Controller
         $staffs = Staff::paginate(10);
         return view('backend.staff.staffs.index', compact('staffs'));
     }
-    
+
 
     public function indexstaff(){
-        $data = Stuff::all();
+        $data = DB::table('log_staff')->select('log_staff.time as time','log_staff.endtime as endtime','stuffs.stuff_id as stuff_id','stuffs.name as name','log_staff.status as status','stuffs.position as position')->join('stuffs','log_staff.id_staff','stuffs.id')->get();
         return view('backend.cop_staff.index', compact('data'));
     }
 

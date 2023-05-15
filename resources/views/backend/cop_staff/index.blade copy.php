@@ -19,7 +19,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h5 class="mb-0 h6">{{translate('Log Staffs')}}</h5>
+        <h5 class="mb-0 h6">{{translate('Staffs')}}</h5>
     </div>
     <div class="card-body">
         <table id="example" class="table table-striped table-bordered dataTable no-footer">
@@ -27,12 +27,10 @@
                 <tr>
                     <th data-breakpoints="lg" width="10%">#</th>
                     <th>{{translate('Name')}}</th>
-                    <th>{{translate('Staff ID')}}</th>
                     <th data-breakpoints="lg">{{translate('Position')}}</th>
-                    <th data-breakpoints="lg">{{translate('Start Time')}}</th>
-                    <th data-breakpoints="lg">{{translate('End Time')}}</th>
-                    <th data-breakpoints="lg">{{translate('Duration')}}</th>
-                    <th data-breakpoints="lg">{{translate('Status')}}</th>
+                    <th data-breakpoints="lg">{{translate('Email')}}</th>
+                    <th data-breakpoints="lg">{{translate('Last Login')}}</th>
+                    <th data-breakpoints="lg">{{translate('How Much Login')}}</th>
                     <!-- <th width="10%">{{translate('Options')}}</th> -->
                 </tr>
             </thead>
@@ -41,16 +39,14 @@
                 <tr>
                     <td>{{$i+1}}</td>
                     <td>{{$v->name}}</td>
-                    <td>{{$v->stuff_id}}</td>
                     <td>{{$v->position}}</td>
-                    <td>{{$v->time}}</td>
-                    <td>{{$v->endtime}}</td>
-                    <td>{{duration($v->endtime,$v->time)}}</td>
-                    <td>{{$v->status}}</td>
-
+                    <td>{{$v->email}}</td>
+                    <td>{{lastlogin($v->id,'login')}}</td>
+                    <td>{{numberlogin($v->id,'login')}}</td>
+                    <!-- <td></td> -->
                 </tr>
                 @endforeach
-
+               
             </tbody>
         </table>
         <div class="aiz-pagination">

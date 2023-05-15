@@ -41,6 +41,40 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Patner;
 
 
+
+function duration($endtime,$starttime){
+    if($endtime != null AND $starttime != null){
+        $exp_endtime = explode(' ',$endtime);
+        $exp_starttime = explode(' ',$starttime);
+        $startDate = $exp_starttime[0];
+        $startTime = $exp_starttime[1];
+        $endDate = $exp_endtime[0];
+        $endTime = $exp_endtime[1];
+
+        $startDateTime = new DateTime($startDate . ' ' . $startTime);
+        $endDateTime = new DateTime($endDate . ' ' . $endTime);
+
+        $duration = $startDateTime->diff($endDateTime);
+
+        return $duration->format('%h hours, %i minutes, %s seconds');
+    }else{
+        return print "until now are here";
+    }
+
+}
+
+function updatelasttime(){
+    $lastdata = DB::table('log_staff')->where('id_staff',Session::get('id_staff'))->latest()->first();
+    $data = [
+        'endtime'=>now()
+    ];
+    try {
+        return DB::table('log_staff')->where('id', $lastdata->id)->update($data);
+    } catch (\Throwable $th) {
+        
+    }
+}
+
 function updatelog($idstaff,$status){
     try {
         $data =[
@@ -52,6 +86,19 @@ function updatelog($idstaff,$status){
         //throw $th;
     }
 }
+function updatelogout($idstaff,$status){
+    try {
+        $data =[
+            'id_staff'=>$idstaff,
+            'status'=>$status,
+            'endtime'=>now()
+        ];
+        DB::table('log_staff')->insert($data);
+    } catch (\Throwable $th) {
+        //throw $th;
+    }
+}
+
 function numberlogin($idstaff,$status){
     try {
         $data = DB::table('log_staff')->where('id_staff',$idstaff)->where('status',$status)->count();
