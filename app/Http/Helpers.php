@@ -43,7 +43,7 @@ use App\Models\Patner;
 
 
 function duration($endtime,$starttime){
-    if($endtime != null AND $starttime != null){
+    if($endtime != '0000-00-00 00:00:00' AND $starttime != null){
         $exp_endtime = explode(' ',$endtime);
         $exp_starttime = explode(' ',$starttime);
         $startDate = $exp_starttime[0];
