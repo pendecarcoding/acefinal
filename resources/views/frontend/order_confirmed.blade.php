@@ -177,13 +177,13 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>{{ translate('Shipping')}}</th>
+                                                        <th>{{ translate('Delivery Carges')}}</th>
                                                         <td class="text-right">
                                                             <span class="font-italic">{{ single_price($order->orderDetails->sum('shipping_cost')) }}</span>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>{{ translate('Tax')}}</th>
+                                                        <th>{{ translate('FPX Transaction fee')}}</th>
                                                         <td class="text-right">
                                                             <span class="font-italic">{{ single_price($order->orderDetails->sum('tax')) }}</span>
                                                         </td>
