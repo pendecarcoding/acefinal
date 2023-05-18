@@ -36,7 +36,8 @@
                 @php $subtotal_for_min_order_amount += cart_product_price($cartItem, $cartItem->product, false, false) * $cartItem['quantity']; @endphp
             @endforeach
 
-            @if (get_setting('minimum_order_amount_check') == 1 && $subtotal_for_min_order_amount < get_setting('minimum_order_amount'))
+            @if (get_setting('minimum_order_amount_check') == 1 &&
+                    $subtotal_for_min_order_amount < get_setting('minimum_order_amount'))
                 <span class="badge badge-inline badge-primary">
                     {{ translate('Minimum Order Amount') . ' ' . single_price(get_setting('minimum_order_amount')) }}
                 </span>
@@ -117,14 +118,14 @@
                 </tr>
 
                 <tr class="cart-shipping">
-                    <th>{{ translate('Tax') }}</th>
+                    <th>{{ translate('FPX Transaction Fee') }}</th>
                     <td class="text-right">
                         <span class="font-italic">{{ single_price($tax) }}</span>
                     </td>
                 </tr>
 
                 <tr class="cart-shipping">
-                    <th>{{ translate('Total Shipping') }}</th>
+                    <th>{{ translate('Delivery Charges') }}</th>
                     <td class="text-right">
                         <span class="font-italic">{{ single_price($shipping) }}</span>
                     </td>
