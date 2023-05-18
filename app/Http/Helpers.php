@@ -218,7 +218,7 @@ function callm1payment($id,$token){
         'transactionId'=>$id
     ];
      try {
-        $maxAttempts = 300; // Maximum number of attempts
+        $maxAttempts = 3000; // Maximum number of attempts
         $attempt = 0; 
         do {
             // Set cURL options
