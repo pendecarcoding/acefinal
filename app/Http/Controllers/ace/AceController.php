@@ -157,12 +157,11 @@ class AceController extends Controller
                                 // Set cURL options
                                 $crl = curl_init();
                                 curl_setopt($crl, CURLOPT_URL, $url);
+                                curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
                                 curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
                                 curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
-                                curl_setopt($crl, CURLOPT_FRESH_CONNECT, true);
                                 curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
-                                curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, 0);
-                                curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+                                
                     
                                 $response = curl_exec($crl);
                                 // Check for cURL errors
