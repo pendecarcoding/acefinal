@@ -43,7 +43,7 @@ class M1paymentController extends Controller
                 $product = Product::join('carts','carts.product_id','products.id')
                             ->where('carts.temp_user_id',Session::get('temp_user_id'))
                             ->get();
-                $amount  = $combined_order->grand_total;
+                $amount  = (($combined_order->grand_total)-1.20);
             }
             elseif (Session::get('payment_type') == 'wallet_payment') {
                 $amount = Session::get('payment_data')['amount'];
