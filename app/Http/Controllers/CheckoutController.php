@@ -135,7 +135,7 @@ class CheckoutController extends Controller
         $act = Address::insertGetId($data);
         if($act){
             $address = session()->put('address_id', $act);
-            return redirect('our_products/view/delivery_info');
+            return redirect('our_products/view/payment_select');
 
 
 
