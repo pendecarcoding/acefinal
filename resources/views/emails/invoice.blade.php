@@ -154,17 +154,17 @@
 			            <td class="currency">{{ single_price($order->orderDetails->sum('price')) }}</td>
 			        </tr>
 			        <tr>
-			            <th class="gry-color text-left">{{ translate('Shipping Cost') }}</th>
+			            <th class="gry-color text-left">{{ translate('Delivery Carges') }}</th>
 			            <td class="currency">{{ single_price($order->orderDetails->sum('shipping_cost')) }}</td>
 			        </tr>
 			        <tr class="border-bottom">
-			            <th class="gry-color text-left">{{ translate('Total Tax') }}</th>
+			            <th class="gry-color text-left">{{ translate('FPX Transaction fee') }}</th>
 			            <td class="currency">{{ single_price($order->orderDetails->sum('tax')) }}</td>
 			        </tr>
-                    <tr class="border-bottom">
+                    <!-- <tr class="border-bottom">
 			            <th class="gry-color text-left">{{ translate('Coupon') }}</th>
 			            <td class="currency">{{ single_price($order->coupon_discount) }}</td>
-			        </tr>
+			        </tr> -->
 			        <tr>
 			            <th class="text-left strong">{{ translate('Grand Total') }}</th>
 			            <td class="currency">{{ single_price($order->grand_total) }}</td>
