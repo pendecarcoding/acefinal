@@ -127,7 +127,7 @@ class OrderController extends Controller
             $shippingAddress['name']        = $address->name;
             $shippingAddress['email']       = $address->email;
             $shippingAddress['address']     = $address->address;
-            $shippingAddress['country']     = $address->country->name;
+            $shippingAddress['country']     = 'Malaysia';
             $shippingAddress['state']       = $address->state->name;
             $shippingAddress['city']        = $address->city->name;
             $shippingAddress['postal_code'] = $address->postal_code;
