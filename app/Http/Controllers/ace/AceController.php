@@ -269,15 +269,15 @@ class AceController extends Controller
     public function pageslug($page,$slug){
         switch ($page) {
             case 'view_pdf':
-                if($slug=='Privacy Notice & Terms of Purchase'){
-                    return redirect('/public/aceweb/pdf/Privacy Notice & Terms of Purchase.pdf');
-                }if($slug=='Terms of use'){
-                    return redirect('/public/aceweb/pdf/Terms of use.pdf');
+                if($slug=='Terms & Condition'){
+                    return redirect('/public/aceweb/pdf/Terms & Condition.pdf');
+                }if($slug=='Product Disclosure'){
+                    return redirect('/public/aceweb/pdf/Product Disclosure.pdf');
                 }
                 if($slug=='terms'){
-                    return redirect('/public/aceweb/pdf/Privacy Notice & Terms of Purchase.pdf');
+                    return redirect('/public/aceweb/pdf/Terms & Condition.pdf');
                 }if($slug=='product'){
-                    return redirect('/public/aceweb/pdf/Terms of use.pdf');
+                    return redirect('/public/aceweb/pdf/Product Disclosure.pdf');
                 }
                 break;
             case 'investor_relations':
