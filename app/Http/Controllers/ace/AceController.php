@@ -161,7 +161,7 @@ class AceController extends Controller
                                 curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
                                 curl_setopt($crl, CURLOPT_FRESH_CONNECT, true);
                                 curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
-                                curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, 300);
+                                curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, 0);
                                 curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
                     
                                 $response = curl_exec($crl);
@@ -192,7 +192,7 @@ class AceController extends Controller
                                 }
                                  
                             } catch (\Throwable $th) {
-                                print $th->getmessage();
+                                print "have some mistake need to reload";
                             }
                     
                   
