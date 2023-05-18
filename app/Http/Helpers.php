@@ -220,7 +220,7 @@ function callm1payment($id,$token){
      try {
         $crl = curl_init();
         curl_setopt($crl, CURLOPT_URL, $url);
-        // curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
+        curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
         curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
         curl_setopt($crl, CURLOPT_FRESH_CONNECT, true);
         curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
