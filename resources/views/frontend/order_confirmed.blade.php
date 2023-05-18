@@ -188,12 +188,12 @@
                                                             <span class="font-italic">{{ single_price($order->orderDetails->sum('tax')) }}</span>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <th>{{ translate('Coupon Discount')}}</th>
                                                         <td class="text-right">
                                                             <span class="font-italic">{{ single_price($order->coupon_discount) }}</span>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                     <tr>
                                                         <th><span class="fw-600">{{ translate('Total')}}</span></th>
                                                         <td class="text-right">
