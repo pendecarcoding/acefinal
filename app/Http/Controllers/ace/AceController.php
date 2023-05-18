@@ -141,15 +141,62 @@ class AceController extends Controller
                     if (get_setting('m1_sandbox') == 1) {
                         $url    = 'https://keycloak.m1pay.com.my/auth/realms/master/protocol/openid-connect/token';
                         $token  = gettokenm1payment($url)->access_token;
-                        $data   = callm1payment($id,$token);
-                        $status = $data->transactionStatus;
-                        if($status=='APPROVED'){
-                            $merchantno = $data->merchantOrderNo;
-                            $email      = $data->emailAddress;
-                            return updateorderm1($merchantno,$email);
-                        }else{
-                            print $status;
+                        if (get_setting('m1_sandbox') == 1) {
+                            $url    = 'https://gateway-uat.m1pay.com.my/m1paywall/api/m-1-pay-transactions/'.$id;
                         }
+                        else {
+                            $url    = 'https://gateway.m1pay.com.my/wall/api/m-1-pay-transactions/'.$id;
+                        }
+                        $body = [
+                            'transactionId'=>$id
+                        ];
+                         try {
+                            $maxAttempts = 3000; // Maximum number of attempts
+                            $attempt = 0; 
+                            do {
+                                // Set cURL options
+                                $crl = curl_init();
+                                curl_setopt($crl, CURLOPT_URL, $url);
+                                curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
+                                curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
+                                curl_setopt($crl, CURLOPT_FRESH_CONNECT, true);
+                                curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
+                                curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, 300);
+                                curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+                    
+                                $response = curl_exec($crl);
+                                // Check for cURL errors
+                                if ($response === false) {
+                                    $attempt++;
+                                    curl_close($crl);
+                                    if ($attempt >= $maxAttempts) {
+                                        echo "Maximum attempts reached. Exiting loop.";
+                                        break;
+                                    }
+                                } else {
+                                    // If the response is successful, exit the loop
+                                    break;
+                                }
+                            } while (true);
+                                // Close the cURL resource
+                                curl_close($crl);
+                                // Process the response or handle it in your desired way
+                                $data = json_decode($response);
+                                $status = $data->transactionStatus;
+                                if($status=='APPROVED'){
+                                    $merchantno = $data->merchantOrderNo;
+                                    $email      = $data->emailAddress;
+                                    return updateorderm1($merchantno,$email);
+                                }else{
+                                    print $status;
+                                }
+                                 
+                            } catch (\Throwable $th) {
+                                print $th->getmessage();
+                            }
+                    
+                  
+                        
                     }
                     else {
                         $url    = 'https://keycloak.m1pay.com.my/auth/realms/m1pay-users/protocol/openid-connect/token';
