@@ -52,13 +52,14 @@
         <div class="container">
             @if ($carts && count($carts) > 0)
                 <div class="row">
-                    <div class="col-xxl-8 col-xl-10 mx-auto">
+                    <div class="col-xxl-12 col-xl-12 mx-auto">
                         <div class="shadow-sm bg-white p-3 p-lg-4 rounded text-left">
                             <div class="mb-4">
                                 <div class="row gutters-5 d-none d-lg-flex border-bottom mb-3 pb-3">
                                     <div class="col-md-5 fw-600">{{ translate('Product') }}</div>
                                     <div class="col fw-600">{{ translate('Price') }}</div>
-                                    <div class="col fw-600">{{ translate('Tax') }}</div>
+                                    <div class="col fw-600">{{ translate('FPX Transaction Fee') }}</div>
+                                    <div class="col fw-600">{{ translate('Delivery Charges') }}</div>
                                     <div class="col fw-600">{{ translate('Quantity') }}</div>
                                     <div class="col fw-600">{{ translate('Total') }}</div>
                                     <div class="col-auto fw-600">{{ translate('Remove') }}</div>
@@ -100,6 +101,11 @@
                                                         class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Tax') }}</span>
                                                     <span
                                                         class="fw-600 fs-16">{{ cart_product_tax($cartItem, $product) }}</span>
+                                                </div>
+                                                <div class="col-lg col-4 order-2 order-lg-0 my-3 my-lg-0">
+                                                    <span
+                                                        class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Tax') }}</span>
+                                                    <span class="fw-600 fs-16">{{ deliverycharges() }}</span>
                                                 </div>
 
                                                 <div class="col-lg col-6 order-4 order-lg-0">

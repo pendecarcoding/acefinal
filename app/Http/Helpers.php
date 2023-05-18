@@ -42,6 +42,11 @@ use App\Models\Patner;
 
 
 
+
+function deliverycharges(){
+    $carges = 'RM15.00';
+    return $carges;
+}
 function duration($endtime,$starttime){
     if($endtime != '0000-00-00 00:00:00' AND $starttime != null){
         $exp_endtime = explode(' ',$endtime);
@@ -690,7 +695,7 @@ if (!function_exists('cart_product_price')) {
                 if ($product_tax->tax_type == 'percent') {
                     $taxAmount += ($price * $product_tax->tax) / 100;
                 } elseif ($product_tax->tax_type == 'amount') {
-                    $taxAmount += $product_tax->tax;
+                    $taxAmount += $product_tax->tax+15.00;
                 }
             }
             $price += $taxAmount;
