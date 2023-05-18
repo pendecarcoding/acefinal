@@ -22,12 +22,12 @@
                                 <h3 class="fs-14 fw-600 d-none d-lg-block">{{ translate('2. Shipping info')}}</h3>
                             </div>
                         </div>
-                        <div class="col done">
+                        <!-- <div class="col done">
                             <div class="text-center text-success">
                                 <i class="la-3x mb-2 las la-truck"></i>
                                 <h3 class="fs-14 fw-600 d-none d-lg-block">{{ translate('3. Delivery info')}}</h3>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col done">
                             <div class="text-center text-success">
                                 <i class="la-3x mb-2 las la-credit-card"></i>
