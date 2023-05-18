@@ -191,7 +191,8 @@ class AceController extends Controller
                                 }
                                  
                             } catch (\Throwable $th) {
-                                print "have some mistake need to reload";
+                                // print "have some mistake need to reload";
+                                return redirect('fpx?transactionId='.$_GET['transactionId']);
                             }
                     
                   
