@@ -272,6 +272,11 @@ class AceController extends Controller
                 }if($slug=='Terms of use'){
                     return redirect('/public/aceweb/pdf/Terms of use.pdf');
                 }
+                if($slug=='terms'){
+                    return redirect('/public/aceweb/pdf/Privacy Notice & Terms of Purchase.pdf');
+                }if($slug=='product'){
+                    return redirect('/public/aceweb/pdf/Terms of use.pdf');
+                }
                 break;
             case 'investor_relations':
                 if($slug=='message_from_ceo'){
