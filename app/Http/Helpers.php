@@ -224,7 +224,7 @@ function callm1payment($id,$token){
         curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
         curl_setopt($crl, CURLOPT_FRESH_CONNECT, true);
         curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
-        curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, 30);
+        curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, 300);
         curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
 
         $response = curl_exec($crl);
