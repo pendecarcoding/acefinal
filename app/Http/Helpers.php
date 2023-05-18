@@ -245,12 +245,10 @@ function callm1payment($id,$token){
                 break;
             }
         } while (true);
-        // Close the cURL resource
-            curl_close($crl);
-
             // Process the response or handle it in your desired way
-            return $response;
-       
+            return json_decode($response);
+             // Close the cURL resource
+             curl_close($crl);
      } catch (\Throwable $th) {
         print $th->getmessage();
      }
