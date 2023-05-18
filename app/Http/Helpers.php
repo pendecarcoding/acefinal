@@ -218,24 +218,39 @@ function callm1payment($id,$token){
         'transactionId'=>$id
     ];
      try {
-        $crl = curl_init();
-        curl_setopt($crl, CURLOPT_URL, $url);
-        curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
-        curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
-        curl_setopt($crl, CURLOPT_FRESH_CONNECT, true);
-        curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
-        curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, 300);
-        curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+        $maxAttempts = 300; // Maximum number of attempts
+        $attempt = 0; 
+        do {
+            // Set cURL options
+            $crl = curl_init();
+            curl_setopt($crl, CURLOPT_URL, $url);
+            curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
+            curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
+            curl_setopt($crl, CURLOPT_FRESH_CONNECT, true);
+            curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
+            curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, 300);
+            curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
 
-        $response = curl_exec($crl);
-        if(!$response){
-           die('Error: "' . curl_error($crl) . '" - Code: ' . curl_errno($crl));
-        }else{
-            return json_decode($response);
+            $response = curl_exec($crl);
+            // Check for cURL errors
+            if ($response === false) {
+                $attempt++;
+                curl_close($crl);
+                if ($attempt >= $maxAttempts) {
+                    echo "Maximum attempts reached. Exiting loop.";
+                    break;
+                }
+            } else {
+                // If the response is successful, exit the loop
+                break;
+            }
+        } while (true);
+        // Close the cURL resource
+            curl_close($crl);
 
-        }
-
-        curl_close($crl);
+            // Process the response or handle it in your desired way
+            return $response;
+       
      } catch (\Throwable $th) {
         print $th->getmessage();
      }
