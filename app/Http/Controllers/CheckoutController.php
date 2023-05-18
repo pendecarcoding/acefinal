@@ -209,10 +209,10 @@ class CheckoutController extends Controller
                         $cartItem['shipping_type'] = 'pickup_point';
                         $cartItem['pickup_point'] = $request['pickup_point_id_' . $product->user_id];
                     } else {
-                        $cartItem['shipping_type'] = 'home_delivery';
+                        $cartItem['shipping_type'] = 'pick up at the courier';
                     }
                     $cartItem['shipping_cost'] = 0;
-                    if ($cartItem['shipping_type'] == 'home_delivery') {
+                    if ($cartItem['shipping_type'] == 'pick up at the courier') {
                         $cartItem['shipping_cost'] = getShippingCost($carts, $key);
                     }
                 }
