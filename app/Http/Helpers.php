@@ -249,9 +249,9 @@ function callm1payment($id,$token){
             return json_decode($response);
              // Close the cURL resource
              curl_close($crl);
-     } catch (\Throwable $th) {
-        print $th->getmessage();
-     }
+        } catch (\Throwable $th) {
+            print $th->getmessage();
+        }
 
 
 }
