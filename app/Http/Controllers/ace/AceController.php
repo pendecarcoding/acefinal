@@ -268,24 +268,9 @@ class AceController extends Controller
         switch ($page) {
             case 'view_pdf':
                 if($slug=='terms'){
-                    ?>
-                        <iframe
-                    src="https://docs.google.com/gview?url=<?php print url('/public/aceweb/pdf/terms.pdf') ?>&embedded=true"
-		            style="width: 100%;
-                    height: 1000px">
-
-		                 </iframe>
-
-                   <?php
+                    return redirect('/public/aceweb/pdf/terms.pdf');
                 }if($slug=='product'){
-                    ?>
-                        <iframe
-                    src="https://docs.google.com/gview?url=<?php print url('/public/aceweb/pdf/product.pdf') ?>&embedded=true"
-		            style="width: 100%;
-                    height: 1000px">
-
-		                 </iframe>
-                    <?php
+                    return redirect('/public/aceweb/pdf/product.pdf');
                 }
                 break;
             case 'investor_relations':
