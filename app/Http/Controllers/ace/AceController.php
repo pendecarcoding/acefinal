@@ -147,6 +147,8 @@ class AceController extends Controller
                             $merchantno = $data->merchantOrderNo;
                             $email      = $data->emailAddress;
                             return updateorderm1($merchantno,$email);
+                        }else{
+                            print $status;
                         }
                     }
                     else {

@@ -237,7 +237,7 @@ function callm1payment($id,$token){
 
         curl_close($crl);
      } catch (\Throwable $th) {
-        throw $th;
+        print $th->getmessage();
      }
 
 
