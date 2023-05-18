@@ -149,7 +149,7 @@
                                             required></textarea>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-md-2">
                                         <label>{{ translate('Country') }}</label>
                                     </div>
@@ -165,7 +165,7 @@
                                             </select>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="row">
                                     <div class="col-md-2">
@@ -251,9 +251,10 @@
                                         <label>{{ translate('Phone') }}</label>
                                     </div>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control mb-3"
-                                            placeholder="{{ translate('+60') }}" name="phone" value=""
+                                        <input id="phoneNumberInput" type="text" class="form-control mb-3"
+                                            placeholder="{{ translate('') }}" name="phone" value=""
                                             required>
+                                            <p style="font-style: italic;line-height: 0px;color:red">* {{ translate('please provide correct phone number') }} </p>
                                     </div>
                                 </div>
                                 <div class="row align-items-center">
@@ -282,6 +283,11 @@
 
 @section('script')
     <script type="text/javascript">
+        window.addEventListener('load', function() {
+        // Code to be executed when the page has finished loading
+        get_states('132');
+        });
+
         function add_new_address() {
             $('#new-address-modal').modal('show');
         }
@@ -318,7 +324,7 @@
 
         $(document).on('change', '[name=country_id]', function() {
             var country_id = $(this).val();
-            get_states(country_id);
+            get_states('132');
         });
 
         $(document).on('change', '[name=state_id]', function() {
