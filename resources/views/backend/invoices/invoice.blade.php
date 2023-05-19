@@ -142,7 +142,8 @@
                                     </small>
                                 </td>
 								<td>
-									@if ($order->shipping_type != null && $order->shipping_type == 'home_delivery')
+                                    {{$order->shipping_type}}
+									<!-- @if ($order->shipping_type != null && $order->shipping_type == 'home_delivery')
 										{{ translate('Home Delivery') }}
 									@elseif ($order->shipping_type == 'pickup_point')
 										@if ($order->pickup_point != null)
@@ -158,7 +159,7 @@
 										@else
 											{{ translate('Carrier') }}
 										@endif
-									@endif
+									@endif -->
 								</td>
 								<td class="">{{ $orderDetail->quantity }}</td>
 								<td class="currency">{{ single_price($orderDetail->price/$orderDetail->quantity) }}</td>
