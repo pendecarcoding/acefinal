@@ -122,7 +122,6 @@
 						<th width="15%" class="text-left">{{ translate('Delivery Type') }}</th>
 	                    <th width="10%" class="text-left">{{ translate('Qty') }}</th>
 	                    <th width="15%" class="text-left">{{ translate('Unit Price') }}</th>
-	                    <th width="10%" class="text-left">{{ translate('Tax') }}</th>
 	                    <th width="15%" class="text-right">{{ translate('Total') }}</th>
 	                </tr>
 				</thead>
@@ -163,8 +162,8 @@
 								</td>
 								<td class="">{{ $orderDetail->quantity }}</td>
 								<td class="currency">{{ single_price($orderDetail->price/$orderDetail->quantity) }}</td>
-								<td class="currency">{{ single_price($orderDetail->tax/$orderDetail->quantity) }}</td>
-			                    <td class="text-right currency">{{ single_price($orderDetail->price+$orderDetail->tax) }}</td>
+								<!-- <td class="currency">{{ single_price($orderDetail->tax/$orderDetail->quantity) }}</td> -->
+			                    <td class="text-right currency">{{ single_price($orderDetail->price) }}</td>
 							</tr>
 		                @endif
 					@endforeach
