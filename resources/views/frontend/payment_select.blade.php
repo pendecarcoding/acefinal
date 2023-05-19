@@ -572,9 +572,8 @@
                                 <span class="aiz-square-check"></span>
                                 <span>{{ translate('I agree to the') }}</span>
                             </label>
-                            <a href="{{ route('terms') }}">{{ translate('terms and conditions') }}</a>,
-                            <a href="{{ route('returnpolicy') }}">{{ translate('return policy') }}</a> &
-                            <a href="{{ route('privacypolicy') }}">{{ translate('privacy policy') }}</a>
+                            <a href="{{ url('view_pdf/Terms & Condition') }}">{{ translate('terms and conditions') }}</a>,
+                            <a href="{{ route('view_pdf/Product Disclosure') }}">{{ translate('Product Disclosure') }}</a> &
                         </div>
 
                         <div class="row align-items-center pt-3">
