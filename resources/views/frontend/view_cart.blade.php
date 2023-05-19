@@ -1,9 +1,10 @@
 @extends('frontend.layouts.app2')
 
 @section('content')
-<section class="bg-banner">
-    <img title="Ace Innovate upbeat on prospects as investors seek safe havens" style="width:100%;height: 30vh;" src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/product-banner.png" alt="">
-  </section>
+    <section class="bg-banner">
+        <img title="Ace Innovate upbeat on prospects as investors seek safe havens" style="width:100%;height: 30vh;"
+            src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/product-banner.png" alt="">
+    </section>
     <section class="pt-5 mb-4">
         <div class="container">
             <div class="row">
@@ -23,22 +24,22 @@
                             </div>
                         </div>
                         <!-- <div class="col">
-                            <div class="text-center">
-                                <i class="la-3x mb-2 opacity-50 las la-truck"></i>
-                                <h3 class="fs-14 fw-600 d-none d-lg-block opacity-50">{{ translate('3. Delivery info') }}
-                                </h3>
-                            </div>
-                        </div> -->
+                                <div class="text-center">
+                                    <i class="la-3x mb-2 opacity-50 las la-truck"></i>
+                                    <h3 class="fs-14 fw-600 d-none d-lg-block opacity-50">{{ translate('3. Delivery info') }}
+                                    </h3>
+                                </div>
+                            </div> -->
                         <div class="col">
                             <div class="text-center">
                                 <i class="la-3x mb-2 opacity-50 las la-credit-card"></i>
-                                <h3 class="fs-14 fw-600 d-none d-lg-block opacity-50">{{ translate('4. Payment') }}</h3>
+                                <h3 class="fs-14 fw-600 d-none d-lg-block opacity-50">{{ translate('3. Payment') }}</h3>
                             </div>
                         </div>
                         <div class="col">
                             <div class="text-center">
                                 <i class="la-3x mb-2 opacity-50 las la-check-circle"></i>
-                                <h3 class="fs-14 fw-600 d-none d-lg-block opacity-50">{{ translate('5. Confirmation') }}
+                                <h3 class="fs-14 fw-600 d-none d-lg-block opacity-50">{{ translate('4. Confirmation') }}
                                 </h3>
                             </div>
                         </div>
@@ -139,7 +140,7 @@
                                                     <span
                                                         class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Total') }}</span>
                                                     <span
-                                                        class="fw-600 fs-16 text-primary">{{ single_price(cart_product_price($cartItem, $product, false) * $cartItem['quantity']+fpxfee()+deliveryfee()) }}</span>
+                                                        class="fw-600 fs-16 text-primary">{{ single_price(cart_product_price($cartItem, $product, false) * $cartItem['quantity'] + fpxfee() + deliveryfee()) }}</span>
                                                 </div>
                                                 <div class="col-lg-auto col-6 order-5 order-lg-0 text-right">
                                                     <a href="javascript:void(0)"
@@ -156,7 +157,7 @@
 
                             <div class="px-3 py-2 mb-4 border-top d-flex justify-content-between">
                                 <span class="opacity-60 fs-15">{{ translate('Subtotal') }}</span>
-                                <span class="fw-600 fs-17">{{ single_price($total+fpxfee()+deliveryfee()) }}</span>
+                                <span class="fw-600 fs-17">{{ single_price($total + fpxfee() + deliveryfee()) }}</span>
                             </div>
                             <div class="row align-items-center">
                                 <div class="col-md-6 text-center text-md-left order-1 order-md-0">
@@ -167,9 +168,9 @@
                                 </div>
                                 <div class="col-md-6 text-center text-md-right">
 
-                                        <a href="{{ route('checkout.shipping_info') }}" class="btn btn-primary fw-600">
-                                            {{ translate('Continue to Shipping') }}
-                                        </a>
+                                    <a href="{{ route('checkout.shipping_info') }}" class="btn btn-primary fw-600">
+                                        {{ translate('Continue to Shipping') }}
+                                    </a>
 
                                 </div>
                             </div>
@@ -205,7 +206,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="p-3">
-                        <form class="form-default" role="form" action="{{ route('cart.login.submit') }}" method="POST">
+                        <form class="form-default" role="form" action="{{ route('cart.login.submit') }}"
+                            method="POST">
                             @csrf
                             @if (addon_is_activated('otp_system') && env('DEMO_MODE') != 'On')
                                 <div class="form-group phone-form-group mb-1">
@@ -219,8 +221,8 @@
                                 <div class="form-group email-form-group mb-1 d-none">
                                     <input type="email"
                                         class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                        value="{{ old('email') }}" placeholder="{{ translate('Email') }}" name="email"
-                                        id="email" autocomplete="off">
+                                        value="{{ old('email') }}" placeholder="{{ translate('Email') }}"
+                                        name="email" id="email" autocomplete="off">
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -236,8 +238,8 @@
                                 <div class="form-group">
                                     <input type="email"
                                         class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                        value="{{ old('email') }}" placeholder="{{ translate('Email') }}" name="email"
-                                        id="email" autocomplete="off">
+                                        value="{{ old('email') }}" placeholder="{{ translate('Email') }}"
+                                        name="email" id="email" autocomplete="off">
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
@@ -277,39 +279,38 @@
                         <p class="text-muted mb-0">{{ translate('Dont have an account?') }}</p>
                         <a href="{{ route('user.registration') }}">{{ translate('Register Now') }}</a>
                     </div>
-                    @if (get_setting('google_login') == 1 || get_setting('facebook_login') == 1 || get_setting('twitter_login') == 1 || get_setting('apple_login') == 1)
+                    @if (get_setting('google_login') == 1 ||
+                            get_setting('facebook_login') == 1 ||
+                            get_setting('twitter_login') == 1 ||
+                            get_setting('apple_login') == 1)
                         <div class="separator mb-3">
                             <span class="bg-white px-3 opacity-60">{{ translate('Or Login With') }}</span>
                         </div>
                         <ul class="list-inline social colored text-center mb-3">
                             @if (get_setting('facebook_login') == 1)
                                 <li class="list-inline-item">
-                                    <a href="{{ route('social.login', ['provider' => 'facebook']) }}"
-                                        class="facebook">
+                                    <a href="{{ route('social.login', ['provider' => 'facebook']) }}" class="facebook">
                                         <i class="lab la-facebook-f"></i>
                                     </a>
                                 </li>
                             @endif
                             @if (get_setting('google_login') == 1)
                                 <li class="list-inline-item">
-                                    <a href="{{ route('social.login', ['provider' => 'google']) }}"
-                                        class="google">
+                                    <a href="{{ route('social.login', ['provider' => 'google']) }}" class="google">
                                         <i class="lab la-google"></i>
                                     </a>
                                 </li>
                             @endif
                             @if (get_setting('twitter_login') == 1)
                                 <li class="list-inline-item">
-                                    <a href="{{ route('social.login', ['provider' => 'twitter']) }}"
-                                        class="twitter">
+                                    <a href="{{ route('social.login', ['provider' => 'twitter']) }}" class="twitter">
                                         <i class="lab la-twitter"></i>
                                     </a>
                                 </li>
                             @endif
                             @if (get_setting('apple_login') == 1)
                                 <li class="list-inline-item">
-                                    <a href="{{ route('social.login', ['provider' => 'apple']) }}"
-                                        class="apple">
+                                    <a href="{{ route('social.login', ['provider' => 'apple']) }}" class="apple">
                                         <i class="lab la-apple"></i>
                                     </a>
                                 </li>
@@ -330,7 +331,7 @@
         }
 
         function updateQuantity(key, element) {
-           $.post('{{ route('cart.updateQuantity') }}', {
+            $.post('{{ route('cart.updateQuantity') }}', {
                 _token: AIZ.data.csrf,
                 id: key,
                 quantity: element.value
@@ -341,7 +342,7 @@
         }
 
         function showCheckoutModal() {
-           // $('#login-modal').modal();
+            // $('#login-modal').modal();
         }
 
         // Country Code
@@ -359,7 +360,13 @@
         var iti = intlTelInput(input, {
             separateDialCode: true,
             utilsScript: "{{ static_asset('assets/js/intlTelutils.js') }}?1590403638580",
-            onlyCountries: @php echo json_encode(\App\Models\Country::where('status', 1)->pluck('code')->toArray()) @endphp,
+            onlyCountries: @php
+                echo json_encode(
+                    \App\Models\Country::where('status', 1)
+                        ->pluck('code')
+                        ->toArray(),
+                );
+            @endphp,
             customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
                 if (selectedCountryData.iso2 == 'bd') {
                     return "01xxxxxxxxx";
