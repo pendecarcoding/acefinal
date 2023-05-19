@@ -361,7 +361,7 @@ class AceController extends Controller
             case 'printinvoice':
                 $combined_order = CombinedOrder::findOrFail(Session::get('combined_order_id'));
                 $orders = DB::table('orders')->where('combined_order_id',Session::get('combined_order_id'))->first();
-                $pdf = PDF::loadView('acewebfront.pages.invoice', compact('combined_order'));
+                $pdf = PDF::WriteHTML(view('acewebfront.pages.invoice', compact('combined_order')));
                 return $pdf->stream('document.pdf');
                 // return View('acewebfront.pages.invoice',compact('combined_order'));
                 break;
