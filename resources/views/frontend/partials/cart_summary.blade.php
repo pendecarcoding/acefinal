@@ -83,9 +83,9 @@
                         $subtotal += cart_product_price($cartItem, $product, false, false) * $cartItem['quantity'];
                         $tax += cart_product_tax($cartItem, $product, false) * $cartItem['quantity'];
                         $product_shipping_cost = $cartItem['shipping_cost'];
-                        
+
                         $shipping += $product_shipping_cost;
-                        
+
                         $product_name_with_choice = $product->getTranslation('name');
                         if ($cartItem['variant'] != null) {
                             $product_name_with_choice = $product->getTranslation('name') . ' - ' . $cartItem['variant'];
@@ -120,14 +120,14 @@
                 <tr class="cart-shipping">
                     <th>{{ translate('FPX Transaction Fee') }}</th>
                     <td class="text-right">
-                        <span class="font-italic">{{ single_price($tax) }}</span>
+                        <span class="font-italic">{{ single_price(fpxfee()) }}</span>
                     </td>
                 </tr>
 
                 <tr class="cart-shipping">
                     <th>{{ translate('Delivery Charges') }}</th>
                     <td class="text-right">
-                        <span class="font-italic">{{ single_price($shipping) }}</span>
+                        <span class="font-italic">{{ single_price(deliveryfee()) }}</span>
                     </td>
                 </tr>
 
@@ -150,7 +150,7 @@
                 @endif
 
                 @php
-                    $total = $subtotal + $tax + $shipping;
+                    $total = $subtotal + fpxfee() + deliveryfee();
                     if (Session::has('club_point')) {
                         $total -= Session::get('club_point');
                     }

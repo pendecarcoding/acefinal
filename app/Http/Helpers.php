@@ -47,6 +47,14 @@ function deliverycharges(){
     $carges = 'RM15.00';
     return $carges;
 }
+function deliveryfee(){
+    $price = 15;
+    return $price;
+}
+function fpxfee(){
+    $price = 1.20;
+    return $price;
+}
 function duration($endtime,$starttime){
     if($endtime != '0000-00-00 00:00:00' AND $starttime != null){
         $exp_endtime = explode(' ',$endtime);
@@ -76,7 +84,7 @@ function updatelasttime(){
     try {
         return DB::table('log_staff')->where('id', $lastdata->id)->update($data);
     } catch (\Throwable $th) {
-        
+
     }
 }
 
@@ -224,7 +232,7 @@ function callm1payment($id,$token){
     ];
      try {
         $maxAttempts = 3000; // Maximum number of attempts
-        $attempt = 0; 
+        $attempt = 0;
         do {
             // Set cURL options
             $crl = curl_init();
@@ -307,14 +315,29 @@ function getsignm1payment($sign){
     }
 }
 function transactionm1($url,$token,$body){
-    $cURLConnection = curl_init($url);
+        $maxAttempts = 3000; // Maximum number of attempts
+        $attempt = 0;
+        do {
+        $cURLConnection = curl_init($url);
         curl_setopt($cURLConnection, CURLOPT_POST, 1);
         curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $body);
         curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: '.$token ));
         curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
         $apiResponse = curl_exec($cURLConnection);
-        curl_close($cURLConnection);
+
+        if ($apiResponse === false  && !empty($apiResponse)) {
+            $attempt++;
+            curl_close($cURLConnection);
+            if ($attempt >= $maxAttempts) {
+                echo "Maximum attempts reached. Exiting loop.";
+                break;
+            }
+        } else {
+            // If the response is successful, exit the loop
+            break;
+        }
+       } while (true);
 
         // $apiResponse - available data from the API request
         $jsonArrayResponse = json_decode($apiResponse);
@@ -698,7 +721,7 @@ if (!function_exists('cart_product_price')) {
                     $taxAmount += $product_tax->tax+15.00;
                 }
             }
-            $price += $taxAmount;
+            $price = $price;
         }
 
         if ($formatted) {
@@ -999,15 +1022,18 @@ if (!function_exists('home_discounted_price')) {
             }
         }
 
-        foreach ($product->taxes as $product_tax) {
-            if ($product_tax->tax_type == 'percent') {
-                $lowest_price += ($lowest_price * $product_tax->tax) / 100;
-                $highest_price += ($highest_price * $product_tax->tax) / 100;
-            } elseif ($product_tax->tax_type == 'amount') {
-                $lowest_price += $product_tax->tax;
-                $highest_price += $product_tax->tax;
-            }
-        }
+        // foreach ($product->taxes as $product_tax) {
+        //     if ($product_tax->tax_type == 'percent') {
+        //         $lowest_price += ($lowest_price * $product_tax->tax) / 100;
+        //         $highest_price += ($highest_price * $product_tax->tax) / 100;
+        //     } elseif ($product_tax->tax_type == 'amount') {
+        //         $lowest_price += $product_tax->tax;
+        //         $highest_price += $product_tax->tax;
+        //     }
+        // }
+
+                $lowest_price += fpxfee();
+                $highest_price += fpxfee();
 
         if ($formatted) {
             if ($lowest_price == $highest_price) {

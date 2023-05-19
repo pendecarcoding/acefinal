@@ -5,6 +5,7 @@
     <div class="card">
         <div class="card-header">
             <h1 class="h2 fs-16 mb-0">{{ translate('Order Details') }}</h1>
+            <a style="color:white" class="btn btn-primary">Send Notification</a>
         </div>
         <div class="card-body">
             <div class="row gutters-5">
@@ -18,7 +19,7 @@
 
                 <!--Assign Delivery Boy-->
                 @if ($order->seller_id == $admin_user_id || get_setting('product_manage_by_admin') == 1)
-                    
+
                     @if (addon_is_activated('delivery_boy'))
                         <div class="col-md-3 ml-auto">
                             <label for="assign_deliver_boy">{{ translate('Assign Deliver Boy') }}</label>
@@ -91,7 +92,9 @@
                         <input type="text" class="form-control" id="update_tracking_code"
                             value="{{ $order->tracking_code }}">
                     </div>
+
                 @endif
+
             </div>
             <div class="mb-3">
                 @php
@@ -246,7 +249,8 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if ($order->shipping_type != null && $order->shipping_type == 'home_delivery')
+                                        {{$order->shipping_type}}
+                                        <!-- @if ($order->shipping_type != null && $order->shipping_type == 'home_delivery')
                                             {{ translate('Home Delivery') }}
                                         @elseif ($order->shipping_type == 'pickup_point')
                                             @if ($order->pickup_point != null)
@@ -263,7 +267,7 @@
                                             @else
                                                 {{ translate('Carrier') }}
                                             @endif
-                                        @endif
+                                        @endif -->
                                     </td>
                                     <td class="text-center">
                                         {{ $orderDetail->quantity }}
@@ -293,7 +297,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong class="text-muted">{{ translate('Tax') }} :</strong>
+                                <strong class="text-muted">{{ translate('Fpx Transaction fee') }} :</strong>
                             </td>
                             <td>
                                 {{ single_price($order->orderDetails->sum('tax')) }}
@@ -301,20 +305,20 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong class="text-muted">{{ translate('Shipping') }} :</strong>
+                                <strong class="text-muted">{{ translate('Delivery Charges') }} :</strong>
                             </td>
                             <td>
                                 {{ single_price($order->orderDetails->sum('shipping_cost')) }}
                             </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>
                                 <strong class="text-muted">{{ translate('Coupon') }} :</strong>
                             </td>
                             <td>
                                 {{ single_price($order->coupon_discount) }}
                             </td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td>
                                 <strong class="text-muted">{{ translate('TOTAL') }} :</strong>

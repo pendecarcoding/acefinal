@@ -405,10 +405,10 @@ class HomeController extends Controller
             }
         }
 
-        $price += $tax;
+        $price = $price;
 
         return array(
-            'price' => single_price($price * $request->quantity),
+            'price' => single_price(($price * $request->quantity)+fpxfee()+deliveryfee()),
             'quantity' => $quantity,
             'digital' => $product->digital,
             'variation' => $str,

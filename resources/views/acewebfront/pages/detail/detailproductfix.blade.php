@@ -248,7 +248,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                         <div class="col-sm-10">
                                             <div class="">
                                                 <strong class="h2 fw-600 text-primary price">
-                                                    {{ home_discounted_price($detailedProduct) }}
+                                                    {{ format_price(convert_price($detailedProduct->unit_price)) }}
                                                 </strong>
                                                 @if ($detailedProduct->unit != null)
                                                     <span
@@ -377,6 +377,33 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                     </div>
                                 </div>
 
+                                <hr>
+
+                                <div class="row no-gutters pb-3 d-none" id="chosen_price_div">
+                                    <div class="col-sm-2">
+                                        <div class="opacity-50 my-2">{{ translate('Fpx Transaction Fee') }}:</div>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div class="product-price">
+                                            <strong class="h4 fw-600 text-primary">
+                                                {{format_price(convert_price(fpxfee()))}}
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row no-gutters pb-3 d-none" id="chosen_price_div">
+                                    <div class="col-sm-2">
+                                        <div class="opacity-50 my-2">{{ translate('Delivery Charges') }}:</div>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div class="product-price">
+                                            <strong class="h4 fw-600 text-primary">
+                                                {{format_price(convert_price(deliveryfee()))}}
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
                                 <hr>
 
                                 <div class="row no-gutters pb-3 d-none" id="chosen_price_div">
