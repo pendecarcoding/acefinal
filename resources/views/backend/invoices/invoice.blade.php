@@ -201,7 +201,7 @@
 							        </tr>
 							        <tr class="border-bottom">
 							            <th class="gry-color text-left">{{ translate('FPX Transaction fee') }}</th>
-							            <td class="currency">{{ single_price($order->orderDetails->sum('tax')) }}</td>
+							            <td class="currency">{{ single_price(fpxfee()) }}</td>
 							        </tr>
 				                    <!-- <tr class="border-bottom">
 							            <th class="gry-color text-left">{{ translate('Coupon Discount') }}</th>
