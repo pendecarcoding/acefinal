@@ -101,9 +101,8 @@ class M1paymentController extends Controller
             $json = json_decode($response);
 
             // Check if the decoding was successful and if the response was valid JSON
-            if ($json === null && json_last_error() !== JSON_ERROR_NONE && !empty($json)) {
-                // return Redirect::to($response);
-                print $response;
+            if ($json === null && json_last_error() !== JSON_ERROR_NONE && $json !== '') {
+                return Redirect::to($response);
             } else {
                 print $json->detail;
 
