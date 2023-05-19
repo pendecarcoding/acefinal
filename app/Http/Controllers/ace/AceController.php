@@ -152,7 +152,7 @@ class AceController extends Controller
                         ];
                          try {
                             $maxAttempts = 3000; // Maximum number of attempts
-                            $attempt = 0; 
+                            $attempt = 0;
                             do {
                                 // Set cURL options
                                 $crl = curl_init();
@@ -161,8 +161,8 @@ class AceController extends Controller
                                 curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
                                 curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
                                 curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
-                                
-                    
+
+
                                 $response = curl_exec($crl);
                                 // Check for cURL errors
                                 if ($response === false) {
@@ -187,16 +187,17 @@ class AceController extends Controller
                                     $email      = $data->emailAddress;
                                     return updateorderm1($merchantno,$email);
                                 }else{
-                                    print $status;
+                                    flash(translate('Your Transaction '.$status))->warning();
+                                    return redirect('/view/payment_select');
                                 }
-                                 
+
                             } catch (\Throwable $th) {
                                 // print "have some mistake need to reload";
                                 return redirect('fpx?transactionId='.$_GET['transactionId']);
                             }
-                    
-                  
-                        
+
+
+
                     }
                     else {
                         $url    = 'https://keycloak.m1pay.com.my/auth/realms/m1pay-users/protocol/openid-connect/token';
