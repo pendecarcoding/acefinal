@@ -59,8 +59,6 @@
                                 <div class="row gutters-5 d-none d-lg-flex border-bottom mb-3 pb-3">
                                     <div class="col-md-5 fw-600">{{ translate('Product') }}</div>
                                     <div class="col fw-600">{{ translate('Price') }}</div>
-                                    <div class="col fw-600">{{ translate('FPX Transaction Fee') }}</div>
-                                    <div class="col fw-600">{{ translate('Delivery Charges') }}</div>
                                     <div class="col fw-600">{{ translate('Quantity') }}</div>
                                     <div class="col fw-600">{{ translate('Total') }}</div>
                                     <div class="col-auto fw-600">{{ translate('Remove') }}</div>
@@ -97,19 +95,9 @@
                                                     <span
                                                         class="fw-600 fs-16">{{ cart_product_price($cartItem, $product, true, false) }}</span>
                                                 </div>
-                                                <div class="col-lg col-4 order-2 order-lg-0 my-3 my-lg-0">
-                                                    <span
-                                                        class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Tax') }}</span>
-                                                    <span
-                                                        class="fw-600 fs-16">{{ cart_product_tax($cartItem, $product) }}</span>
-                                                </div>
-                                                <div class="col-lg col-4 order-2 order-lg-0 my-3 my-lg-0">
-                                                    <span
-                                                        class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Tax') }}</span>
-                                                    <span class="fw-600 fs-16">{{ deliverycharges() }}</span>
-                                                </div>
+                                                
 
-                                                <div class="col-lg col-6 order-4 order-lg-0">
+                                                <div class="col-lg col-4 order-4 order-lg-0">
                                                     @if ($cartItem['digital'] != 1 && $product->auction_product == 0)
                                                         <div
                                                             class="row no-gutters align-items-center aiz-plus-minus mr-2 ml-0">
@@ -140,7 +128,7 @@
                                                     <span
                                                         class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Total') }}</span>
                                                     <span
-                                                        class="fw-600 fs-16 text-primary">{{ single_price(cart_product_price($cartItem, $product, false) * $cartItem['quantity'] + fpxfee() + deliveryfee()) }}</span>
+                                                        class="fw-600 fs-16 text-primary">{{ single_price(cart_product_price($cartItem, $product, false) * $cartItem['quantity']) }}</span>
                                                 </div>
                                                 <div class="col-lg-auto col-6 order-5 order-lg-0 text-right">
                                                     <a href="javascript:void(0)"
@@ -155,9 +143,26 @@
                                 </ul>
                             </div>
 
-                            <div class="px-3 py-2 mb-4 border-top d-flex justify-content-between">
-                                <span class="opacity-60 fs-15">{{ translate('Subtotal') }}</span>
-                                <span class="fw-600 fs-17">{{ single_price($total + fpxfee() + deliveryfee()) }}</span>
+                            <div style="justify-content: right;" class="px-3 py-2 mb-4 border-top d-flex">
+                                <table>
+                                    <tr>
+                                        <td><span class="fw-600 fs-15">{{ translate('FPX Transaction fee') }}</span></td>
+                                        <td>:</td>
+                                        <td><span class="fw-600 fs-15">{{ single_price(fpxfee()) }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-600 fs-15">{{ translate('Delivery Charges') }}</span></td>
+                                        <td>:</td>
+                                        <td><span class="fw-600 fs-15">{{ single_price(deliveryfee()) }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-600 fs-15">{{ translate('Total') }}</span></td>
+                                        <td>:</td>
+                                        <td><span class="fw-600 fs-15">{{ single_price($total+fpxfee()+deliveryfee()) }}</span></td>
+                                    </tr>
+                                </table>
+                                
+                                
                             </div>
                             <div class="row align-items-center">
                                 <div class="col-md-6 text-center text-md-left order-1 order-md-0">

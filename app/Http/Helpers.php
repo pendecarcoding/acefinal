@@ -314,6 +314,10 @@ function getsignm1payment($sign){
         echo 'Caught exception: ', $e->getMessage(), "\n";
     }
 }
+function isUrl($response) {
+    $pattern = '/^https?:\/\/\S+/i';
+    return preg_match($pattern, $response);
+}
 function transactionm1($url,$token,$body){
         $maxAttempts = 3000; // Maximum number of attempts
         $attempt = 0;

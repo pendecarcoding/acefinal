@@ -93,20 +93,32 @@ class M1paymentController extends Controller
 
        try {
             // Call API with your client and get a response for your call
-            $response = transactionm1($link,$token,$body);
-            // If call returns body in response, you can get the deserialized version from the result attribute of the response
-            //print $sign;
-            // print $response['detail'];
-            // return Redirect::to($response);
-            $json = json_decode($response);
-
-            // Check if the decoding was successful and if the response was valid JSON
-            if ($json === null && json_last_error() !== JSON_ERROR_NONE && $json !== '') {
-                return Redirect::to($response);
-            } else {
-                print $json->detail;
-
-            }
+            $maxAttempts = 3000; // Maximum number of attempts
+            $attempt = 0;
+            do {
+                $cURLConnection = curl_init($link);
+                curl_setopt($cURLConnection, CURLOPT_POST, 1);
+                curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $body);
+                curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: '.$token ));
+                curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+        
+                $apiResponse = curl_exec($cURLConnection);
+        
+                if (isUrl($apiResponse)) {
+                    break;
+                } else {
+                    $attempt++;
+                    curl_close($cURLConnection);
+                    if ($attempt >= $maxAttempts) {
+                        echo "Maximum attempts reached. Exiting loop.";
+                        break;
+                    }
+                  
+                }
+               } while (true);
+        
+                return Redirect::to($apiResponse);
+           
         }catch (\Exception $ex) {
             flash(translate($ex->getmessage()))->error();
             //return back();

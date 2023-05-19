@@ -578,7 +578,7 @@
 
                         <div class="row align-items-center pt-3">
                             <div class="col-6">
-                                <a href="{{ route('home') }}" class="link link--style-3">
+                                <a href="{{ url('our_products') }}" class="link link--style-3">
                                     <i class="las la-arrow-left"></i>
                                     {{ translate('Return to shop') }}
                                 </a>
