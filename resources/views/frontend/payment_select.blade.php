@@ -572,7 +572,7 @@
                                 <span class="aiz-square-check"></span>
                                 <span>{{ translate('I agree to the') }}</span>
                             </label>
-                            <a target="_blank" href="{{ url('view_pdf/Terms & Condition') }}">{{ translate('terms and conditions') }}</a>,
+                            <a target="_blank" href="{{ url('view_pdf/Terms & Condition') }}">{{ translate('terms and conditions') }}</a>&
                             <a target="_blank" href="{{ url('view_pdf/Product Disclosure') }}">{{ translate('Product Disclosure') }}</a>
                         </div>
 
