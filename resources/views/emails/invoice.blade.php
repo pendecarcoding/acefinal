@@ -102,7 +102,7 @@
 					$shipping_address = json_decode($order->shipping_address);
 				@endphp
 				<tr><td class="strong small gry-color">{{ translate('Bill to') }}:</td></tr>
-				<tr><td class="strong">{{ $shipping_address->name }}</td></tr>
+				<tr><td class="strong">{{ $shipping_address->name }}</td><td rowspan="4"><h1 style="color: @if($order->payment_status=='paid') green @else red @endif">{{strtoupper($order->payment_status)}}</h1></td></tr>
 				<tr><td class="gry-color small">{{ $shipping_address->address }}, {{ $shipping_address->city }}, {{ $shipping_address->country }}</td></tr>
 				<tr><td class="gry-color small">{{ translate('Email') }}: {{ $shipping_address->email }}</td></tr>
 				<tr><td class="gry-color small">{{ translate('Phone') }}: {{ $shipping_address->phone }}</td></tr>
@@ -117,7 +117,7 @@
 						<th width="15%">{{ translate('Delivery Type') }}</th>
 	                    <th width="10%">{{ translate('Qty') }}</th>
 	                    <th width="15%">{{ translate('Unit Price') }}</th>
-	                    <th width="10%">{{ translate('Tax') }}</th>
+	            
 	                    <th width="15%" class="text-right">{{ translate('Total') }}</th>
 	                </tr>
 				</thead>
@@ -127,18 +127,18 @@
 							<tr class="">
 								<td>{{ $orderDetail->product->getTranslation('name') }} @if($orderDetail->variation != null) ({{ $orderDetail->variation }}) @endif</td>
 								<td>
-									@if ($order->shipping_type != null && $order->shipping_type == 'home_delivery')
+									<!-- @if ($order->shipping_type != null && $order->shipping_type == 'home_delivery')
 										{{ translate('Home Delivery') }}
 									@elseif ($order->shipping_type == 'pickup_point')
 										@if ($order->pickup_point != null)
 											{{ $order->pickup_point->getTranslation('name') }} ({{ translate('Pickip Point') }})
 										@endif
-									@endif
+									@endif -->
+                                    $order->shipping_type
 								</td>
 								<td class="gry-color">{{ $orderDetail->quantity }}</td>
 								<td class="gry-color currency">{{ single_price($orderDetail->price/$orderDetail->quantity) }}</td>
-								<td class="gry-color currency">{{ single_price($orderDetail->tax/$orderDetail->quantity) }}</td>
-			                    <td class="text-right currency">{{ single_price($orderDetail->price+$orderDetail->tax) }}</td>
+			                    <td class="text-right currency">{{ single_price($orderDetail->price) }}</td>
 							</tr>
 		                @endif
 					@endforeach
@@ -159,7 +159,7 @@
 			        </tr>
 			        <tr class="border-bottom">
 			            <th class="gry-color text-left">{{ translate('FPX Transaction fee') }}</th>
-			            <td class="currency">{{ single_price($order->orderDetails->sum('tax')) }}</td>
+			            <td class="currency">{{ single_price(fpxfee()) }}</td>
 			        </tr>
                     <!-- <tr class="border-bottom">
 			            <th class="gry-color text-left">{{ translate('Coupon') }}</th>
