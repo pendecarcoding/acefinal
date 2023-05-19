@@ -105,15 +105,7 @@
                                                         {{ $orderDetail->quantity }}
                                                     </td>
                                                     <td>
-                                                        @if ($order->shipping_type != null && $order->shipping_type == 'home_delivery')
-                                                            {{  translate('Home Delivery') }}
-                                                        @elseif ($order->shipping_type != null && $order->shipping_type == 'carrier')
-                                                            {{  translate('Carrier') }}
-                                                        @elseif ($order->shipping_type == 'pickup_point')
-                                                            @if ($order->pickup_point != null)
-                                                                {{ $order->pickup_point->getTranslation('name') }} ({{ translate('Pickip Point') }})
-                                                            @endif
-                                                        @endif
+                                                        $order->shipping_type
                                                     </td>
                                                     <td class="text-right">{{ single_price($orderDetail->price) }}</td>
                                                 </tr>
@@ -132,23 +124,23 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>{{ translate('Shipping')}}</th>
+                                                    <th>{{ translate('Delivery Charges')}}</th>
                                                     <td class="text-right">
                                                         <span class="font-italic">{{ single_price($order->orderDetails->sum('shipping_cost')) }}</span>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>{{ translate('Tax')}}</th>
+                                                    <th>{{ translate('Fpx Transaction Fee')}}</th>
                                                     <td class="text-right">
                                                         <span class="font-italic">{{ single_price($order->orderDetails->sum('tax')) }}</span>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <!-- <tr>
                                                     <th>{{ translate('Coupon Discount')}}</th>
                                                     <td class="text-right">
                                                         <span class="font-italic">{{ single_price($order->coupon_discount) }}</span>
                                                     </td>
-                                                </tr>
+                                                </tr> -->
                                                 <tr>
                                                     <th><span class="fw-600">{{ translate('Total')}}</span></th>
                                                     <td class="text-right">
