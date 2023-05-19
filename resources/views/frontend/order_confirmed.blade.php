@@ -123,7 +123,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th width="30%">{{ translate('Product') }}</th>
-                                                    <th>{{ translate('Variation') }}</th>
+                                                    <!-- <th>{{ translate('Variation') }}</th> -->
                                                     <th>{{ translate('Quantity') }}</th>
                                                     <th>{{ translate('Delivery Type') }}</th>
                                                     <th class="text-right">{{ translate('Price') }}</th>
@@ -150,23 +150,14 @@
                                                                 <strong>{{ translate('Product Unavailable') }}</strong>
                                                             @endif
                                                         </td>
-                                                        <td>
+                                                        <!-- <td>
                                                             {{ $orderDetail->variation }}
-                                                        </td>
+                                                        </td> -->
                                                         <td>
                                                             {{ $orderDetail->quantity }}
                                                         </td>
                                                         <td>
-                                                            @if ($order->shipping_type != null && $order->shipping_type == 'home_delivery')
-                                                                {{ translate('Home Delivery') }}
-                                                            @elseif ($order->shipping_type != null && $order->shipping_type == 'carrier')
-                                                                {{ translate('Carrier') }}
-                                                            @elseif ($order->shipping_type == 'pickup_point')
-                                                                @if ($order->pickup_point != null)
-                                                                    {{ $order->pickup_point->getTranslation('name') }}
-                                                                    ({{ translate('Pickip Point') }})
-                                                                @endif
-                                                            @endif
+                                                           {{$order->shipping_type}}
                                                         </td>
                                                         <td class="text-right">{{ single_price($orderDetail->price) }}</td>
                                                     </tr>
