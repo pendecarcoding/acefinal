@@ -188,7 +188,7 @@ class AceController extends Controller
                                     return updateorderm1($merchantno,$email);
                                 }else{
                                     flash(translate('Your Transaction '.$status))->warning();
-                                    return redirect('/view/payment_select');
+                                    return redirect('our_products/view/payment_select');
                                 }
 
                             } catch (\Throwable $th) {
