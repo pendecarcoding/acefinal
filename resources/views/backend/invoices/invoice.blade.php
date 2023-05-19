@@ -102,16 +102,21 @@
 		</div>
 
 		<div style="padding: 1rem;padding-bottom: 0">
-            <table>
-				@php
-					$shipping_address = json_decode($order->shipping_address);
-				@endphp
-				<tr><td class="strong small gry-color">{{ translate('Bill to') }}:</td></tr>
-				<tr><td class="strong">{{ $shipping_address->name }}</td></tr>
-				<tr><td class="gry-color small">{{ $shipping_address->address }}, {{ $shipping_address->city }}, {{ $shipping_address->postal_code }}, {{ $shipping_address->country }}</td></tr>
-				<tr><td class="gry-color small">{{ translate('Email') }}: {{ $shipping_address->email }}</td></tr>
-				<tr><td class="gry-color small">{{ translate('Phone') }}: {{ $shipping_address->phone }}</td></tr>
-			</table>
+            <div style="display:flex;justify-content: space-between;">
+                <table>
+                    @php
+                        $shipping_address = json_decode($order->shipping_address);
+                    @endphp
+                    <tr><td class="strong small gry-color">{{ translate('Bill to') }}:</td></tr>
+                    <tr><td class="strong">{{ $shipping_address->name }}</td><td rowspan="4"><h1 style="color: @if($order->payment_status=='paid') green @else red @endif">{{strtoupper($order->payment_status)}}</h1></td></tr>
+                    <tr><td class="gry-color small">{{ $shipping_address->address }}, {{ $shipping_address->city }}, {{ $shipping_address->postal_code }}, {{ $shipping_address->country }}</td>
+                        </tr>
+                    <tr><td class="gry-color small">{{ translate('Email') }}: {{ $shipping_address->email }}</td></tr>
+                    <tr><td class="gry-color small">{{ translate('Phone') }}: {{ $shipping_address->phone }}</td></tr>
+                </table>
+                
+            </div>
+            
 		</div>
 
 	    <div style="padding: 1rem;">
