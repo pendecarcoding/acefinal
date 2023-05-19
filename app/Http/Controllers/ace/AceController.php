@@ -411,13 +411,18 @@ class AceController extends Controller
         
                 $config = [];
                 $order = Order::findOrFail($slug);
-                return PDF::loadView('backend.invoices.invoice',[
-                    'order' => $order,
-                    'font_family' => $font_family,
-                    'direction' => $direction,
-                    'text_align' => $text_align,
-                    'not_text_align' => $not_text_align
-                ], [], $config)->download('order-'.$order->code.'.pdf');
+                if($order){
+                    return PDF::loadView('backend.invoices.invoice',[
+                        'order' => $order,
+                        'font_family' => $font_family,
+                        'direction' => $direction,
+                        'text_align' => $text_align,
+                        'not_text_align' => $not_text_align
+                    ], [], $config)->download('order-'.$order->code.'.pdf');
+                }else{
+                    return redirect('/our_products');
+                }
+               
                 break;
 
 
