@@ -23,11 +23,11 @@
                             </div>
                         </div>
                         <!-- <div class="col done">
-                                <div class="text-center text-success">
-                                    <i class="la-3x mb-2 las la-truck"></i>
-                                    <h3 class="fs-14 fw-600 d-none d-lg-block">{{ translate('3. Delivery info') }}</h3>
-                                </div>
-                            </div> -->
+                                    <div class="text-center text-success">
+                                        <i class="la-3x mb-2 las la-truck"></i>
+                                        <h3 class="fs-14 fw-600 d-none d-lg-block">{{ translate('3. Delivery info') }}</h3>
+                                    </div>
+                                </div> -->
                         <div class="col done">
                             <div class="text-center text-success">
                                 <i class="la-3x mb-2 las la-credit-card"></i>
@@ -151,13 +151,13 @@
                                                             @endif
                                                         </td>
                                                         <!-- <td>
-                                                            {{ $orderDetail->variation }}
-                                                        </td> -->
+                                                                {{ $orderDetail->variation }}
+                                                            </td> -->
                                                         <td>
                                                             {{ $orderDetail->quantity }}
                                                         </td>
                                                         <td>
-                                                           {{$order->shipping_type}}
+                                                            {{ $order->shipping_type }}
                                                         </td>
                                                         <td class="text-right">{{ single_price($orderDetail->price) }}</td>
                                                     </tr>
@@ -191,11 +191,11 @@
                                                         </td>
                                                     </tr>
                                                     <!-- <tr>
-                                                            <th>{{ translate('Coupon Discount') }}</th>
-                                                            <td class="text-right">
-                                                                <span class="font-italic">{{ single_price($order->coupon_discount) }}</span>
-                                                            </td>
-                                                        </tr> -->
+                                                                <th>{{ translate('Coupon Discount') }}</th>
+                                                                <td class="text-right">
+                                                                    <span class="font-italic">{{ single_price($order->coupon_discount) }}</span>
+                                                                </td>
+                                                            </tr> -->
                                                     <tr>
                                                         <th><span class="fw-600">{{ translate('Total') }}</span></th>
                                                         <td class="text-right">
@@ -225,7 +225,7 @@
     </section>
     <script>
         function printinvoice(order) {
-            location.href = '{{ url('cetakinvoice') }}/' + order;
+            location.href = '{{ url('printinvoice') }}/' + order;
             var url = location.href;
             var windowName = "myWindow";
             var windowFeatures = "width=600,height=400";

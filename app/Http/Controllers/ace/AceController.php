@@ -39,8 +39,9 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Auth\Events\PasswordReset;
 use App\Mail\SecondEmailVerifyMailManager;
 use Session;
-use Barryvdh\DomPDF\Facade\Pdf;
 use Faker\Provider\Uuid;
+use PDF;
+use DB;
 
 
 class AceController extends Controller
@@ -357,9 +358,12 @@ class AceController extends Controller
                 break;
 
 
-            case 'cetakinvoice':
+            case 'printinvoice':
                 $combined_order = CombinedOrder::findOrFail(Session::get('combined_order_id'));
-                return View('acewebfront.pages.invoice',compact('combined_order'));
+                $orders = DB::table('orders')->where('combined_order_id',Session::get('combined_order_id'))->first();
+                $pdf = PDF::loadView('acewebfront.pages.invoice', compact('combined_order'));
+                return $pdf->stream('document.pdf');
+                // return View('acewebfront.pages.invoice',compact('combined_order'));
                 break;
 
 
