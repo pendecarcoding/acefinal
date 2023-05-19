@@ -187,7 +187,7 @@
                                                         <th>{{ translate('FPX Transaction fee') }}</th>
                                                         <td class="text-right">
                                                             <span
-                                                                class="font-italic">{{ single_price($order->orderDetails->sum('tax')) }}</span>
+                                                                class="font-italic">{{ single_price(fpxfee()) }}</span>
                                                         </td>
                                                     </tr>
                                                     <!-- <tr>
