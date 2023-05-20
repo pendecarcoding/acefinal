@@ -177,7 +177,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th>{{ translate('Delivery Carges') }}</th>
+                                                        <th>{{ translate('Delivery Charges') }}</th>
                                                         <td class="text-right">
                                                             <span
                                                                 class="font-italic">{{ single_price($order->orderDetails->sum('shipping_cost')) }}</span>
