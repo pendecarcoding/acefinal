@@ -65,8 +65,23 @@
                             <div class="form-group px-3 pt-3">
                                 <textarea name="additional_info" rows="5" class="form-control" placeholder="{{ translate('Type your text') }}"></textarea>
                             </div>
-
-                            <div class="card-header p-3">
+                            @if (get_setting('m1_payment') == 1)
+                            <div class="col-6 col-md-4">
+                                <label class="aiz-megabox d-block mb-3">
+                                    <input value="m1payment" class="online_payment" type="radio"
+                                        name="payment_option" checked>
+                                    <!-- <span class="d-block aiz-megabox-elem p-3">
+                                        <img style="height: 79px" src="{{ static_asset('assets/img/cards/m1pay.svg') }}"
+                                            class="img-fluid mb-2">
+                                        <span class="d-block text-center">
+                                            <span
+                                                class="d-block fw-600 fs-15">{{ translate('M1') }}</span>
+                                        </span>
+                                    </span> -->
+                                </label>
+                            </div>
+                        @endif
+                            <!-- <div class="card-header p-3">
                                 <h3 class="fs-16 fw-600 mb-0">
                                     {{ translate('Select a payment option') }}
                                 </h3>
@@ -564,7 +579,7 @@
                                         @endif
                                     </div>
                                 @endif
-                            </div>
+                            </div> -->
                         </div>
                         <div class="pt-3">
                             <label class="aiz-checkbox">
@@ -576,18 +591,23 @@
                             <a target="_blank" href="{{ url('view_pdf/Product Disclosure') }}">{{ translate('Product Disclosure') }}</a>
                         </div>
 
-                        <div class="row align-items-center pt-3">
-                            <div class="col-6">
-                                <a href="{{ url('our_products') }}" class="link link--style-3">
-                                    <i class="las la-arrow-left"></i>
-                                    {{ translate('Return to shop') }}
-                                </a>
-                            </div>
-                            <div class="col-6 text-right">
-                                <button type="button" onclick="submitOrder(this)"
-                                    class="btn btn-primary fw-600">{{ translate('Complete Order') }}</button>
+                        <div style="margin-right:20px;margin-left: 20px;">
+                            <div class="row align-items-center pt-3">
+                                <div class="col-6">
+                                    <a href="{{ url('our_products') }}" class="link link--style-3">
+                                        <i class="las la-arrow-left"></i>
+                                        {{ translate('Return to shop') }}
+                                    </a>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button type="button" onclick="submitOrder(this)"
+                                        class="btn btn-primary fw-600">{{ translate('Pay Use FPX') }}</button>
+                                </div>
                             </div>
                         </div>
+                        
+
+                      
                     </form>
                 </div>
 

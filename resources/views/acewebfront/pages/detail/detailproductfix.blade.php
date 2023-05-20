@@ -592,9 +592,9 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                                     <a href="{{ url('our_products/'.$top_product->slug) }}"
                                                         class="d-block text-reset">{{ $top_product->getTranslation('name') }}</a>
                                                 </h4>
-                                                <div class="rating rating-sm mt-1">
+                                                <!-- <div class="rating rating-sm mt-1">
                                                     {{ renderStarRating($top_product->rating) }}
-                                                </div>
+                                                </div> -->
                                                 <div style="display:none" class="gram">{{$top_product->weight}}</div>
                                                 <div class="mt-2">
                                                     <span
@@ -621,8 +621,8 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                 <a href="#tab_default_3" data-toggle="tab"
                                     class="p-3 fs-16 fw-600 text-reset">{{ translate('Downloads') }}</a>
                             @endif
-                            <a href="#tab_default_4" data-toggle="tab"
-                                class="p-3 fs-16 fw-600 text-reset">{{ translate('Reviews') }}</a>
+                            <!-- <a href="#tab_default_4" data-toggle="tab"
+                                class="p-3 fs-16 fw-600 text-reset">{{ translate('Reviews') }}</a> -->
                         </div>
 
                         <div class="tab-content pt-0">
@@ -740,9 +740,9 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                                     <span
                                                         class="fw-700 text-primary">{{ home_discounted_base_price($related_product) }}</span>
                                                 </div>
-                                                <div class="rating rating-sm mt-1">
+                                                <!-- <div class="rating rating-sm mt-1">
                                                     {{ renderStarRating($related_product->rating) }}
-                                                </div>
+                                                </div> -->
                                                 <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
                                                     <a href="{{ url('our_products/'.$related_product->slug) }}"
                                                         class="d-block text-reset">{{ $related_product->getTranslation('name') }}</a>

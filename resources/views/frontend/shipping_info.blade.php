@@ -268,7 +268,7 @@
                                     <div class="col-md-6 text-center text-md-right">
 
                                         <button type="submit" class="btn btn-primary fw-600">
-                                            Continue to Delivery
+                                            Continue to Payment
                                         </button>
 
                                     </div>
