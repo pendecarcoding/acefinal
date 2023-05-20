@@ -134,7 +134,7 @@
 											{{ $order->pickup_point->getTranslation('name') }} ({{ translate('Pickip Point') }})
 										@endif
 									@endif -->
-                                    $order->shipping_type
+                                    {{$order->shipping_type}}
 								</td>
 								<td class="gry-color">{{ $orderDetail->quantity }}</td>
 								<td class="gry-color currency">{{ single_price($orderDetail->price/$orderDetail->quantity) }}</td>
