@@ -320,6 +320,9 @@ class AceController extends Controller
 
     public function pageslug($page,$slug){
         switch ($page) {
+            case 'tracking':
+                return view('acewebfront.pages.tracking');
+                break;
             case 'view_pdf':
                 if($slug=='Terms & Condition'){
                     return redirect('/public/aceweb/pdf/Terms & Condition.pdf');
