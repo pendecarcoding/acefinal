@@ -63,7 +63,7 @@ class StuffController extends Controller
         return view('backstaff.announcements.detail',compact('data'));
         }else{
             return redirect('investor_relations');
-       
+
         }
       }
       public function handbook(){
@@ -195,6 +195,7 @@ class StuffController extends Controller
         $data = [
             'reset_code'=>$kode
         ];
+        $act = Stuff::where('email',$r->email)->update($data);
         $array['subject'] = translate('Forgot Password');
         $array['from'] = env('MAIL_FROM_ADDRESS');
         $array['content']="for update password click the link below";
