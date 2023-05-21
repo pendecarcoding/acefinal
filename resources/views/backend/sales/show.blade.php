@@ -100,7 +100,7 @@
                 @php
                     $removedXML = '<?xml version="1.0" encoding="UTF-8"?>';
                 @endphp
-                {!! str_replace($removedXML, '', QrCode::size(100)->generate($order->code)) !!}
+                {!! str_replace($removedXML, '', QrCode::size(100)->generate(env('URL_WEB').'/view/track-your-order/code?order_code='.$order->code)) !!}
             </div>
             <div class="row gutters-5">
                 <div class="col text-md-left text-center">
