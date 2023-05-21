@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-header">
             <h1 class="h2 fs-16 mb-0">{{ translate('Order Details') }}</h1>
-            <a style="color:white" class="btn btn-primary">Send Notification</a>
+            <a href="{{route('all_orders.index')}}" class="btn btn-danger btn-sm" style="color:white;"><i class="las la-times"></i></a>
         </div>
         <div class="card-body">
             <div class="row gutters-5">
@@ -65,8 +65,8 @@
                                 <option value="pending" @if ($delivery_status == 'pending') selected @endif>
                                     {{ translate('Pending') }}
                                 </option>
-                                <option value="confirmed" @if ($delivery_status == 'confirmed') selected @endif>
-                                    {{ translate('Confirmed') }}
+                                <option value="packing" @if ($delivery_status == 'packing') selected @endif>
+                                    {{ translate('Packing') }}
                                 </option>
                                 <option value="picked_up" @if ($delivery_status == 'picked_up') selected @endif>
                                     {{ translate('Picked Up') }}

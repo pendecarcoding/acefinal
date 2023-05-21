@@ -22,6 +22,7 @@ use App\Utility\NotificationUtility;
 use CoreComponentRepository;
 use App\Utility\SmsUtility;
 use Illuminate\Support\Facades\Route;
+use App\Mail\SecondEmailVerifyMailManager;
 
 class OrderController extends Controller
 {
@@ -453,6 +454,13 @@ class OrderController extends Controller
 
             NotificationUtility::sendFirebaseNotification($request);
         }
+
+        $status = str_replace("_", "", $order->delivery_status);
+        $array['subject'] = translate('Order updated !');
+        $array['from'] = env('MAIL_FROM_ADDRESS');
+        $array['content']="Your order {$order->code} has been {$status}";
+        $array['link'] = env('URL_WEB').'/tracking/'.$order->code;
+        Mail::to(json_decode($order->shipping_address)->email)->queue(new SecondEmailVerifyMailManager($array));
 
 
         if (addon_is_activated('delivery_boy')) {

@@ -55,6 +55,10 @@ function fpxfee(){
     $price = 1.20;
     return $price;
 }
+
+function sendnotiforderbyemail($order, $status){
+    
+}
 function duration($endtime,$starttime){
     if($endtime != '0000-00-00 00:00:00' AND $starttime != null){
         $exp_endtime = explode(' ',$endtime);
