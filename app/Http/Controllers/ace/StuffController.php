@@ -207,6 +207,29 @@ class StuffController extends Controller
        }
       }
 
+      public function resetpassword(Request $r){
+        $c = Stuff::where('reset_code',$r->reset_code)->count();
+        if($c == 0){
+         return back()->with('danger','Reset code not Avaliable');
+        }else{
+            if(md5($r->pass1) != md5($r->pass2)){
+                return back()->with('danger','Password and Confirm Password does not match');
+            }else{
+                $data=[
+                    'password'=>md5($r->pass1)
+                ];
+                try {
+                    Stuff::where('reset_code',$r->reset_code)->update($data);
+                    return redirect('/back/loginstaff')->with('success','Password successfully updated');
+                } catch (\Throwable $th) {
+                    return back()->with('danger',$th->getmessage());
+                }
+            }
+        }
+       }
+
+
+
 
 
       public function backannouncement($date){

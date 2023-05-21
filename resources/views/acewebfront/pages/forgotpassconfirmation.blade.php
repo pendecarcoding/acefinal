@@ -45,11 +45,12 @@
                             {{csrf_field()}}
 
                             <div class="input-group mb-3">
+                                <input type="hidden" name="reset_code" value={{$code}}>
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock-o"
                                             aria-hidden="true"></i></span>
                                 </div>
-                                <input id="password" type="password" class="form-control" name="password" required=""
+                                <input id="password" type="password" class="form-control" name="pass1" required=""
                                     placeholder="Password">
                             </div>
                             <div class="input-group mb-3">
@@ -57,7 +58,7 @@
                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock"
                                             aria-hidden="true"></i></span>
                                 </div>
-                                <input id="password" type="password" class="form-control" name="repassword" required=""
+                                <input id="password" type="password" class="form-control" name="pass2" required=""
                                     placeholder="Re Password">
                             </div>
 
