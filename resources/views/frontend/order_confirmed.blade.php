@@ -205,10 +205,14 @@
                                                     <tr>
                                                         <th><span class="fw-600"></span></th>
                                                         <td class="text-right">
-                                                            <strong><span><a onClick="printinvoice('{{ $order->id }}')"
-                                                                        style="color:white" class="btn btn-success"><i
-                                                                            class="fa fa-print"></i> Print
-                                                                    </a></span></strong>
+                                                            <strong><span style="
+                                                                display: flex;
+                                                                width: 300px;
+                                                            ">
+                                                                <a href="{{url('our_products')}}" style="color:white" class="btn btn-warning"><i class="fa fa-arrow-left"></i> back shopping 
+                                                                                                                            </a>
+                                                                <a onclick="printinvoice('440')" style="color:white" class="btn btn-success"><i class="fa fa-print"></i> Print
+                                                            </a></span></strong>
                                                         </td>
                                                     </tr>
                                                 </tbody>

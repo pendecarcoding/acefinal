@@ -158,7 +158,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                     </div>-->
                                 @endif
 
-                                @if ($detailedProduct->brand != null)
+                                <!-- @if ($detailedProduct->brand != null)
                                     <div class="col-auto">
                                         <a href="{{ route('products.brand', $detailedProduct->brand->slug) }}">
                                             <img src="{{ uploaded_asset($detailedProduct->brand->logo) }}"
@@ -166,7 +166,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                                 height="30">
                                         </a>
                                     </div>
-                                @endif
+                                @endif -->
                             </div>
 
                             <hr>
