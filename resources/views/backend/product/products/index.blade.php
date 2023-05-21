@@ -7,7 +7,7 @@
     //CoreComponentRepository::initializeCache();
 @endphp
 
-<div class="aiz-titlebar text-left mt-2 mb-3">
+<!-- <div class="aiz-titlebar text-left mt-2 mb-3">
     <div class="row align-items-center">
         <div class="col-auto">
             <h1 class="h3">{{translate('All products')}}</h1>
@@ -20,7 +20,7 @@
             </div>
         @endif
     </div>
-</div>
+</div> -->
 <br>
 
 <div class="card">
