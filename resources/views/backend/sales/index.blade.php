@@ -54,7 +54,7 @@
         </div>
 
         <div class="card-body">
-            <table id="example" class="table table-striped table-bordered">
+            <table class="table aiz-table mb-0">
                 <thead>
                     <tr>
                         <!--<th>#</th>-->
@@ -80,7 +80,7 @@
                         @if (addon_is_activated('refund_request'))
                         <th>{{ translate('Refund') }}</th>
                         @endif
-                        <th class="text-right" width="15%">{{translate('options')}}</th>
+                        <th class="text-center" width="15%">{{translate('options')}}</th>
                     </tr>
                 </thead>
                 <tbody>
