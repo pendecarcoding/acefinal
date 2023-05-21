@@ -361,6 +361,14 @@ class OrderController extends Controller
         $order->delivery_status = $request->status;
         $order->save();
 
+        $order = Order::findOrFail($request->order_id);
+        $status = str_replace("_", "", $order->delivery_status);
+        $array['subject'] = translate('Order updated !');
+        $array['from'] = env('MAIL_FROM_ADDRESS');
+        $array['content']="Your order {$order->code} has been {$status}";
+        $array['link'] = env('URL_WEB').'/tracking/'.$order->code;
+        Mail::to(json_decode($order->shipping_address)->email)->queue(new SecondEmailVerifyMailManager($array));
+
         if ($request->status == 'cancelled' && $order->payment_type == 'wallet') {
             $user = User::where('id', $order->user_id)->first();
             $user->balance += $order->grand_total;
@@ -454,13 +462,7 @@ class OrderController extends Controller
 
             NotificationUtility::sendFirebaseNotification($request);
         }
-        $order = Order::findOrFail($request->order_id);
-        $status = str_replace("_", "", $order->delivery_status);
-        $array['subject'] = translate('Order updated !');
-        $array['from'] = env('MAIL_FROM_ADDRESS');
-        $array['content']="Your order {$order->code} has been {$status}";
-        $array['link'] = env('URL_WEB').'/tracking/'.$order->code;
-        Mail::to(json_decode($order->shipping_address)->email)->queue(new SecondEmailVerifyMailManager($array));
+        
 
 
         if (addon_is_activated('delivery_boy')) {
