@@ -454,7 +454,7 @@ class OrderController extends Controller
 
             NotificationUtility::sendFirebaseNotification($request);
         }
-
+        $order = Order::findOrFail($request->order_id);
         $status = str_replace("_", "", $order->delivery_status);
         $array['subject'] = translate('Order updated !');
         $array['from'] = env('MAIL_FROM_ADDRESS');
