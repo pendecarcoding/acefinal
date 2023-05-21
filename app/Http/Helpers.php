@@ -57,7 +57,7 @@ function fpxfee(){
 }
 
 function sendnotiforderbyemail($order, $status){
-    
+
 }
 function duration($endtime,$starttime){
     if($endtime != '0000-00-00 00:00:00' AND $starttime != null){
@@ -75,7 +75,7 @@ function duration($endtime,$starttime){
 
         return $duration->format('%h hours, %i minutes, %s seconds');
     }else{
-        return print "until now are here";
+        return print "Last Activity";
     }
 
 }
