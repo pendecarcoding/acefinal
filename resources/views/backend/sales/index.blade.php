@@ -54,7 +54,7 @@
         </div>
 
         <div class="card-body">
-            <table class="table aiz-table mb-0">
+            <table id="example" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <!--<th>#</th>-->
@@ -76,6 +76,7 @@
                         <th data-breakpoints="md">{{ translate('Delivery Status') }}</th>
                         <th data-breakpoints="md">{{ translate('Payment method') }}</th>
                         <th data-breakpoints="md">{{ translate('Payment Status') }}</th>
+                        <th data-breakpoints="md">{{ translate('Time Order') }}</th>
                         @if (addon_is_activated('refund_request'))
                         <th>{{ translate('Refund') }}</th>
                         @endif
@@ -128,6 +129,9 @@
                             @else
                             <span class="badge badge-inline badge-danger">{{translate('Unpaid')}}</span>
                             @endif
+                        </td>
+                        <td>
+                            {{$order->created_at}}
                         </td>
                         @if (addon_is_activated('refund_request'))
                         <td>
