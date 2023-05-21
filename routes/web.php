@@ -108,7 +108,7 @@ Route::controller(VerificationController::class)->group(function () {
 Route::controller(AceController::class)->group(function(){
     Route::get('/','index')->name('home');
     Route::post('/stuffb/back/register','registerstuff')->name('stuff.register');
-    Route::get('/{page}','page')->name('page');
+    Route::any('/{page}','page')->name('page');
     Route::get('/{page}/{slug}','pageslug')->name('pageslug');
     Route::post('forcorporate/addrequest/submit','addrequest')->name('forcorporate.addrequest');
 

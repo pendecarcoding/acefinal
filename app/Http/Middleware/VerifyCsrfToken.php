@@ -31,6 +31,7 @@ class VerifyCsrfToken extends Middleware
          '/aamarpay*',
          '/mock_payments',
          '/apple-callback',
-         '/lnmo*'
+         '/lnmo*',
+         '/fpx*'
      ];
 }

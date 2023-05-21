@@ -217,7 +217,18 @@ class AceController extends Controller
 
 
                 }else{
-                   print "this return";
+                    if($_POST['transactionAmount']!=null){
+                        $data=[
+                            'transactionAmount'=>$_POST['transactionAmount'],
+                            'fpxTxnId'=>$_POST['fpxTxnId'],
+                            'merchantOrderNo'=>$_POST['merchantOrderNo'],
+                            'status'=>$_POST['status'],
+                            'sellerOrderNo'=>$_POST['sellerOrderNo'],
+                            'description'=>$_POST['description'],
+                            'signedData'=>$_POST['signedData'],
+                           ];
+                           $act = DB::table('fpxcalback')->insert($data);
+                    }
                 }
                  break;
 
