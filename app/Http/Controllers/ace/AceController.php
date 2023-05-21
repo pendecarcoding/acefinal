@@ -217,7 +217,7 @@ class AceController extends Controller
 
 
                 }else{
-                    if($_POST['transactionAmount']!=null){
+                   if($_POST['transactionAmount']!=null){
                         $data=[
                             'transactionAmount'=>$_POST['transactionAmount'],
                             'fpxTxnId'=>$_POST['fpxTxnId'],
