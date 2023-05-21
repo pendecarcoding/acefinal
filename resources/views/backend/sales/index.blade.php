@@ -71,7 +71,7 @@
                         <th>{{ translate('Order Code') }}</th>
                         <th data-breakpoints="md">{{ translate('Num. of Products') }}</th>
                         <th data-breakpoints="md">{{ translate('Customer') }}</th>
-                        <th data-breakpoints="md">{{ translate('Seller') }}</th>
+                        <!-- <th data-breakpoints="md">{{ translate('Seller') }}</th> -->
                         <th data-breakpoints="md">{{ translate('Amount') }}</th>
                         <th data-breakpoints="md">{{ translate('Delivery Status') }}</th>
                         <th data-breakpoints="md">{{ translate('Payment method') }}</th>
@@ -102,19 +102,17 @@
                             {{ count($order->orderDetails) }}
                         </td>
                         <td>
-                            @if ($order->user != null)
-                                {{ $order->user->name }}
-                            @else
-                                Guest ({{ $order->name }})
+                            @if(json_decode($order->shipping_address))
+                                {{ json_decode($order->shipping_address)->name }}
                             @endif
                         </td>
-                        <td>
+                        <!-- <td>
                             @if($order->shop)
                                 {{ $order->shop->name }}
                             @else
                                 {{ translate('ACE') }}
                             @endif
-                        </td>
+                        </td> -->
                         <td>
                             {{ single_price($order->grand_total) }}
                         </td>
