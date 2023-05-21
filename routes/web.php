@@ -281,8 +281,8 @@ Route::group(['middleware' => ['user', 'verified', 'unbanned']], function() {
     });
 
     Route::controller(AddressController::class)->group(function () {
-        Route::post('/get-states', 'getStates')->name('get-state');
-        Route::post('/get-cities', 'getCities')->name('get-city');
+        Route::post('/view/cities/get-states', 'getStates')->name('get-state');
+        Route::post('/view/cities/get-cities', 'getCities')->name('get-city');
         Route::post('/addresses/update/{id}', 'update')->name('addresses.update');
         Route::get('/addresses/destroy/{id}', 'destroy')->name('addresses.destroy');
         Route::get('/addresses/set_default/{id}', 'set_default')->name('addresses.set_default');
