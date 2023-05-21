@@ -220,7 +220,7 @@ class StuffController extends Controller
                 ];
                 try {
                     Stuff::where('reset_code',$r->reset_code)->update($data);
-                    return redirect('/back/loginstaff')->with('success','Password successfully updated');
+                    return redirect(route('staff.loginback'))->with('success','Password successfully updated');
                 } catch (\Throwable $th) {
                     return back()->with('danger',$th->getmessage());
                 }
