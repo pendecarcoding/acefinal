@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-header">
             <h1 class="h2 fs-16 mb-0">{{ translate('Order Details') }}</h1>
-            <a href="{{route('all_orders.index')}}" class="btn btn-danger btn-sm" style="color:white;"><i class="las la-times"></i></a>
+            <a href="{{ url()->previous() }}" class="btn btn-danger btn-sm" style="color:white;"><i class="las la-times"></i></a>
         </div>
         <div class="card-body">
             <div class="row gutters-5">
