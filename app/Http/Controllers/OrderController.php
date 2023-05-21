@@ -366,7 +366,7 @@ class OrderController extends Controller
         $array['subject'] = translate('Order updated !');
         $array['from'] = env('MAIL_FROM_ADDRESS');
         $array['content']="Your order {$order->code} has been {$status}";
-        $array['link'] = env('URL_WEB').'view/track-your-order/code?order_code='.$order->code;
+        $array['link'] = env('URL_WEB').'/view/track-your-order/code?order_code='.$order->code;
         Mail::to(json_decode($order->shipping_address)->email)->queue(new SecondEmailVerifyMailManager($array));
 
         if ($request->status == 'cancelled' && $order->payment_type == 'wallet') {
