@@ -4,7 +4,7 @@
         <section class="ace-investor">
 
             <div class="col-md-12">
-                <div class="banner-static">
+                <div class="banner-static" style="height:auto">
                     <img class="img-responsive-banner"
                         src="{{ asset('public/uploads') }}/all/ySFIbEbUUtgi6okRteLoDLH71K9faQfB3X5nKqCZ.jpg"
                         alt="ACE-BANNER-PRODUCT" />
