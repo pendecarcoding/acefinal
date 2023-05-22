@@ -335,8 +335,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     // Order
     Route::resource('orders', OrderController::class);
     Route::controller(OrderController::class)->group(function () {
+        //ALL CC EMAIL
+        Route::get('/all_ccemail', 'all_ccemail')->name('all_ccemail.index');
+        Route::post('/update/ccemail', 'update_ccemail')->name('ccemail.update');
+        Route::post('/add/ccemail', 'add_ccemail')->name('ccemail.add');
+        Route::get('/delete/ccemail/{id}', 'delete_ccemail')->name('cc_email.delete');
         // All Orders
         Route::get('/all_orders', 'all_orders')->name('all_orders.index');
+
         Route::get('/inhouse-orders', 'all_orders')->name('inhouse_orders.index');
         Route::get('/seller_orders', 'all_orders')->name('seller_orders.index');
         Route::get('orders_by_pickup_point', 'all_orders')->name('pick_up_point.index');
@@ -460,7 +466,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     //messageceo
      Route::resource('messagefromceo',MessageCeoController::class);
      Route::controller(MessageCeoController::class)->group(function () {
-       
+
          Route::get('investorrelation','financialresults')->name('financialresults.index');
          Route::get('shareholderreturn','shareholderreturn')->name('shareholderreturn.index');
          Route::get('/messagefromceo/destroy/{id}', 'destroy')->name('messagefromceo.destroy');

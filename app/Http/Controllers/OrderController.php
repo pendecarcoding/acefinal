@@ -23,6 +23,7 @@ use CoreComponentRepository;
 use App\Utility\SmsUtility;
 use Illuminate\Support\Facades\Route;
 use App\Mail\SecondEmailVerifyMailManager;
+use DB;
 
 class OrderController extends Controller
 {
@@ -30,13 +31,58 @@ class OrderController extends Controller
     public function __construct() {
         // Staff Permission Check
         $this->middleware(['permission:view_all_orders'])->only('all_orders');
+        $this->middleware(['permission:view_all_ccemail'])->only('all_ccemail');
         $this->middleware(['permission:view_inhouse_orders'])->only('all_orders');
         $this->middleware(['permission:view_seller_orders'])->only('all_orders');
         $this->middleware(['permission:view_pickup_point_orders'])->only('all_orders');
         $this->middleware(['permission:view_order_details'])->only('show');
         $this->middleware(['permission:delete_order'])->only('destroy');
+        $this->middleware(['permission:delete_ccemail'])->only('delete_ccemail');
+        $this->middleware(['permission:edit_ccemail'])->only('ccemail.update');
+        $this->middleware(['permission:add_ccemail'])->only('ccemail.add');
     }
 
+    //All CC EMAIL
+    public function add_ccemail(Request $r){
+        $data =[
+            'email'=>$r->email
+        ];
+        try {
+            DB::table('cc_email')->insert($data);
+            flash(translate('Email added successfully'))->success();
+            return back();
+        } catch (\Throwable $th) {
+            flash(translate($th->getMessage()))->warning();
+            return back();
+        }
+    }
+    public function all_ccemail(){
+        $data = DB::table('cc_email')->get();
+        return view('backend.sales.ccemail',compact('data'));
+    }
+    public function update_ccemail(Request $r){
+        $data=[
+            'email'=>$r->email
+        ];
+        try {
+            DB::table('cc_email')->where('id',$r->id)->update($data);
+            flash(translate('Email has been to update'))->success();
+            return back();
+        } catch (\Throwable $th) {
+            flash(translate($th->getMessage()))->warning();
+            return back();
+        }
+    }
+    public function delete_ccemail($id){
+        try {
+            DB::table('cc_email')->where('id',$id)->delete();
+            flash(translate('Email deleted successfully'))->success();
+            return back();
+        } catch (\Throwable $th) {
+            flash(translate($th->getMessage()))->success();
+            return back();
+        }
+    }
     // All Orders
     public function all_orders(Request $request)
     {
@@ -462,7 +508,7 @@ class OrderController extends Controller
 
             NotificationUtility::sendFirebaseNotification($request);
         }
-        
+
 
 
         if (addon_is_activated('delivery_boy')) {

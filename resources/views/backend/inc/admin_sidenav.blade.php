@@ -301,7 +301,7 @@
                 @endif
 
                 <!-- Sale -->
-                @canany(['view_all_orders', 'view_inhouse_orders', 'view_seller_orders', 'view_pickup_point_orders'])
+                @canany(['view_all_orders','view_all_ccemail','view_inhouse_orders', 'view_seller_orders', 'view_pickup_point_orders'])
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
                             <i class="las la-money-bill aiz-side-nav-icon"></i>
@@ -317,6 +317,14 @@
                                         <span class="aiz-side-nav-text">{{ translate('All Orders') }}</span>
                                     </a>
                                 </li>
+                            @endcan
+                            @can('view_all_ccemail')
+                            <li class="aiz-side-nav-item">
+                                <a href="{{ route('all_ccemail.index') }}"
+                                    class="aiz-side-nav-link {{ areActiveRoutes(['all_orders.index', 'all_orders.show']) }}">
+                                    <span class="aiz-side-nav-text">{{ translate('CC Email') }}</span>
+                                </a>
+                            </li>
                             @endcan
                             {{-- @can('view_inhouse_orders')
                                 <li class="aiz-side-nav-item">
