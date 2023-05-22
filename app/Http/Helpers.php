@@ -60,7 +60,7 @@ function sendnotiforderbyemail($order, $status){
 
 }
 function duration($endtime,$starttime){
-    if($endtime != '0000-00-00 00:00:00' AND $starttime != null){
+    if($endtime != '0000-00-00 00:00:00' AND $starttime != null AND $endtime != null){
         $exp_endtime = explode(' ',$endtime);
         $exp_starttime = explode(' ',$starttime);
         $startDate = $exp_starttime[0];
@@ -75,7 +75,7 @@ function duration($endtime,$starttime){
 
         return $duration->format('%h hours, %i minutes, %s seconds');
     }else{
-        return print "Last Activity";
+        return "Last Activity";
     }
 
 }

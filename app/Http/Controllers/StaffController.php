@@ -33,7 +33,7 @@ class StaffController extends Controller
 
 
     public function indexstaff(){
-        $data = DB::table('log_staff')->select('log_staff.time as time','log_staff.endtime as endtime','stuffs.stuff_id as stuff_id','stuffs.name as name','log_staff.status as status','stuffs.position as position')->join('stuffs','log_staff.id_staff','stuffs.id')->get();
+        $data = DB::table('log_staff')->select('log_staff.time as time','log_staff.endtime as endtime','stuffs.stuff_id as stuff_id','stuffs.name as name','log_staff.status as status','stuffs.position as position')->join('stuffs','log_staff.id_staff','stuffs.id')->orderby('log_staff.created_at','desc')->get();
         return view('backend.cop_staff.index', compact('data'));
     }
 
