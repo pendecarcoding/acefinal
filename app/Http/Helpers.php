@@ -320,6 +320,7 @@ function updateorderm1($no,$email){
       $data =[
         'payment_status'=>'paid'
       ];
+      $ccemail = DB::table('cc_email')->get();
       try {
         $act = Order::where('code',$no)->update($data);
         $order = Order::where('code',$no)->first();
@@ -329,6 +330,9 @@ function updateorderm1($no,$email){
         $array['order'] = $order;
 
         try {
+            foreach ($ccemail as $key => $v) {
+                Mail::to($v->email)->queue(new InvoiceEmailManager($array));
+            }
             Mail::to($email)->queue(new InvoiceEmailManager($array));
             //session()->remove('temp_user_id');
             return redirect()->route('order_confirmed');
