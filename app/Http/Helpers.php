@@ -297,10 +297,11 @@ function sendinvoice($no,$email){
       $array['order'] = $order;
 
       try {
-
+        
         foreach ($ccemail as $key => $v) {
             Mail::to($v->email)->queue(new InvoiceEmailManager($array));
         }
+        Mail::to($email)->queue(new InvoiceEmailManager($array));
           //session()->remove('temp_user_id');
           return redirect()->route('order_confirmed');
       } catch (\Exception $e) {
