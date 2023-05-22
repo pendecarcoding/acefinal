@@ -101,9 +101,9 @@ class M1paymentController extends Controller
                 curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $body);
                 curl_setopt($cURLConnection, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: '.$token ));
                 curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
-        
+
                 $apiResponse = curl_exec($cURLConnection);
-        
+
                 if (isUrl($apiResponse)) {
                     break;
                 } else {
@@ -113,16 +113,16 @@ class M1paymentController extends Controller
                         echo "Maximum attempts reached. Exiting loop.";
                         break;
                     }
-                  
+
                 }
                } while (true);
-        
+
                 return Redirect::to($apiResponse);
-           
+
         }catch (\Exception $ex) {
             flash(translate($ex->getmessage()))->error();
-            //return back();
-            print $ex->getmessage();
+            return back();
+            // print $ex->getmessage();
         }
 
 
