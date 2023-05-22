@@ -23,11 +23,11 @@
                             </div>
                         </div>
                         <!-- <div class="col done">
-                                            <div class="text-center text-success">
-                                                <i class="la-3x mb-2 las la-truck"></i>
-                                                <h3 class="fs-14 fw-600 d-none d-lg-block">{{ translate('3. Delivery info') }}</h3>
-                                            </div>
-                                        </div> -->
+                                                <div class="text-center text-success">
+                                                    <i class="la-3x mb-2 las la-truck"></i>
+                                                    <h3 class="fs-14 fw-600 d-none d-lg-block">{{ translate('3. Delivery info') }}</h3>
+                                                </div>
+                                            </div> -->
                         <div class="col done">
                             <div class="text-center text-success">
                                 <i class="la-3x mb-2 las la-credit-card"></i>
@@ -151,8 +151,8 @@
                                                             @endif
                                                         </td>
                                                         <!-- <td>
-                                                                        {{ $orderDetail->variation }}
-                                                                    </td> -->
+                                                                            {{ $orderDetail->variation }}
+                                                                        </td> -->
                                                         <td>
                                                             {{ $orderDetail->quantity }}
                                                         </td>
@@ -190,11 +190,11 @@
                                                         </td>
                                                     </tr>
                                                     <!-- <tr>
-                                                                        <th>{{ translate('Coupon Discount') }}</th>
-                                                                        <td class="text-right">
-                                                                            <span class="font-italic">{{ single_price($order->coupon_discount) }}</span>
-                                                                        </td>
-                                                                    </tr> -->
+                                                                            <th>{{ translate('Coupon Discount') }}</th>
+                                                                            <td class="text-right">
+                                                                                <span class="font-italic">{{ single_price($order->coupon_discount) }}</span>
+                                                                            </td>
+                                                                        </tr> -->
                                                     <tr>
                                                         <th><span class="fw-600">{{ translate('Total') }}</span></th>
                                                         <td class="text-right">
@@ -213,7 +213,7 @@
                                                                         class="btn btn-warning"><i
                                                                             class="fa fa-arrow-left"></i> back shopping
                                                                     </a>
-                                                                    <a onclick="printinvoice({{ $order->code }})"
+                                                                    <a onclick="printinvoice({{ $order->id }})"
                                                                         style="color:white" class="btn btn-success"><i
                                                                             class="fa fa-print"></i>
                                                                         Print
