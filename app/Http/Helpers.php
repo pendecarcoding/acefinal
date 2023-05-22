@@ -273,6 +273,45 @@ function callm1payment($id,$token){
 
 }
 
+function ccemail(){
+    $data = [
+        'bohatimulyadi99@gmail.com',
+        'anonylast99@gmail.com',
+    ];
+    return $data;
+}
+
+
+function sendinvoice($no,$email){
+
+    $data =[
+      'payment_status'=>'paid'
+    ];
+    $ccemail = DB::table('cc_email')->get();
+    try {
+      $act = Order::where('code',$no)->update($data);
+      $order = Order::where('code',$no)->first();
+      $array['view'] = 'emails.invoice';
+      $array['subject'] = translate('Payment Successfull for Order code') . ' - ' . $order->code;
+      $array['from'] = env('MAIL_FROM_ADDRESS');
+      $array['order'] = $order;
+
+      try {
+
+        foreach ($ccemail as $key => $v) {
+            Mail::to($v->email)->queue(new InvoiceEmailManager($array));
+        }
+          //session()->remove('temp_user_id');
+          return redirect()->route('order_confirmed');
+      } catch (\Exception $e) {
+        print $e->getMessage();
+      }
+
+    } catch (\Throwable $th) {
+        print $th->getMessage();
+    }
+}
+
 
 
 

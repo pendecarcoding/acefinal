@@ -135,7 +135,7 @@ class AceController extends Controller
                 break;
 
             case 'testsendemail':
-                $no ='20230216-08512612';
+                $no ='20230519-12092533';
                 $email = 'bohati@silverstream.my';
                 sendinvoice($no,$email);
                 break;
@@ -376,7 +376,7 @@ class AceController extends Controller
 
 
             case 'printinvoice':
-               
+
                 if(Session::has('currency_code')){
                     $currency_code = Session::get('currency_code');
                 }
@@ -384,7 +384,7 @@ class AceController extends Controller
                     $currency_code = Currency::findOrFail(get_setting('system_default_currency'))->code;
                 }
                 $language_code = Session::get('locale', Config::get('app.locale'));
-        
+
                 if(Language::where('code', $language_code)->first()->rtl == 1){
                     $direction = 'rtl';
                     $text_align = 'right';
@@ -392,9 +392,9 @@ class AceController extends Controller
                 }else{
                     $direction = 'ltr';
                     $text_align = 'left';
-                    $not_text_align = 'right';            
+                    $not_text_align = 'right';
                 }
-        
+
                 if($currency_code == 'BDT' || $language_code == 'bd'){
                     // bengali font
                     $font_family = "'Hind Siliguri','sans-serif'";
@@ -417,12 +417,12 @@ class AceController extends Controller
                     // general for all
                     $font_family = "'Roboto','sans-serif'";
                 }
-                
+
                 // $config = ['instanceConfigurator' => function($mpdf) {
                 //     $mpdf->showImageErrors = true;
                 // }];
                 // mpdf config will be used in 4th params of loadview
-        
+
                 $config = [];
                 $order = Order::findOrFail($slug);
                 if($order){
@@ -436,7 +436,7 @@ class AceController extends Controller
                 }else{
                     return redirect('/our_products');
                 }
-               
+
                 break;
 
 
