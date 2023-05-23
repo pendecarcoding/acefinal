@@ -20,7 +20,7 @@
                 </div>
             </div>
         </section>
-        <section class="gtp-ann">
+        <section class="gtp-ann" style="display:relative">
             <div class="container-fluid">
                 <div class="row">
                     @include('backstaff.sidebar')
