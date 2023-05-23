@@ -42,6 +42,16 @@ use App\Models\Patner;
 
 
 
+function showweightqty($id){
+    $c = DB::table('order_details')->where('order_id',$id)->count();
+    if($c > 0){
+        $data=DB::table('order_details')->where('order_id',$id)->join('products','products.id','order_details.product_id')->get();
+        return $data;
+    }else{
+        return null;
+    }
+
+}
 
 function deliverycharges(){
     $carges = 'RM15.00';
@@ -297,7 +307,7 @@ function sendinvoice($no,$email){
       $array['order'] = $order;
 
       try {
-        
+
         foreach ($ccemail as $key => $v) {
             Mail::to($v->email)->queue(new InvoiceEmailManager($array));
         }
