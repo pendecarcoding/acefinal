@@ -43,15 +43,15 @@
             <table id="example" class="table table-striped table-bordered dataTable no-footer">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th style="width:20px">#</th>
                         <th data-breakpoints="lg">{{ translate('email') }}</th>
-                        <th class="text-right">{{ translate('Option') }}</th>
+                        <th style="width:30px" class="text-right">{{ translate('Option') }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($data as $i =>$v)
                     <tr>
-                        <td>{{$i+1}}</td>
+                        <td style="text-align: center;">{{$i+1}}</td>
                         <td>{{$v->email}}</td>
                         <td>
                                 @can('edit_ccemail')

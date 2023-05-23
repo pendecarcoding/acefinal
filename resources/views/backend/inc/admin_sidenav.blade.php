@@ -321,7 +321,7 @@
                             @can('view_all_ccemail')
                             <li class="aiz-side-nav-item">
                                 <a href="{{ route('all_ccemail.index') }}"
-                                    class="aiz-side-nav-link {{ areActiveRoutes(['all_orders.index', 'all_orders.show']) }}">
+                                    class="aiz-side-nav-link {{ areActiveRoutes(['all_ccemail.index']) }}">
                                     <span class="aiz-side-nav-text">{{ translate('CC Email') }}</span>
                                 </a>
                             </li>
