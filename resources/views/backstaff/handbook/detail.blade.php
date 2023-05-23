@@ -34,7 +34,7 @@
                     <div class="col-sm-9" style="padding: 36px;">
                         <!--
                             if the pdf file does not appear you can use the following link : <a target="_blank" href="https://docs.google.com/viewer?url=https://corpweb.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf&embedded=true">Link PDF</a> -->
-                        <div class="well" style="margin-top:50px">
+                        <div  class="well" style="margin-top:50px;position:relative">
                             <!-- <iframe src="https://docs.google.com/viewer?url=https://corpweb.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf&embedded=true" style="width:100%; height:100vh;" frameborder="0"></iframe> -->
                             <!-- <embed
                                     src="https://corpweb.ace2u.com/public/uploads/all/heeL4Nh2Ce6OQt6hJBF0SrRQQn6hSTGG8rJqWdNt.pdf"
@@ -50,8 +50,9 @@
     style="border:none;" id="fraDisabled"
     onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
                             <div id="adobe-dc-view" style="width:100%;height:800px">
-                                <input type="checkbox" name="allow_handbook" id=""> Allow Handbook
+
                             </div>
+                            <input type="checkbox" name="allow_handbook" id=""> Allow Handbook
                             <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function() {
