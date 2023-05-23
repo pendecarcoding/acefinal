@@ -49,7 +49,7 @@
     height="780"
     style="border:none;" id="fraDisabled"
     onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
-                            <div id="adobe-dc-view" style="width:100%;height:800px">
+                            <div id="adobe-dc-view" style="width:100%;height:800px;position:relative">
 
                             </div>
                             <input type="checkbox" name="allow_handbook" id=""> Allow Handbook
