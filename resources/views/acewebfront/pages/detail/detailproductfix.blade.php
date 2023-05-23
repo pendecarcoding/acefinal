@@ -46,7 +46,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
         <div data-aos="fade-up" class="aos-init aos-animate">
           <div class="col-md-12">
             <div class="banner-static">
-              <img class="img-responsive" src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/product-banner.png" alt="">
+              <img class="img-responsive" src="/public/aceweb/assets/img/product-banner.png" alt="">
             </div>
           </div>
         </div>

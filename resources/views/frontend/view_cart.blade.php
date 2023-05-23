@@ -3,7 +3,7 @@
 @section('content')
     <section class="bg-banner">
         <img title="Ace Innovate upbeat on prospects as investors seek safe havens" style="width:100%;height: 30vh;"
-            src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/product-banner.png" alt="">
+            src="/public/aceweb/assets/img/product-banner.png" alt="">
     </section>
     <section class="pt-5 mb-4">
         <div class="container">
