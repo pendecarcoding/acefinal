@@ -49,12 +49,10 @@
     height="780"
     style="border:none;" id="fraDisabled"
     onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
-                        <div style="position: relative;overflow: auto;">
                             <div id="adobe-dc-view" style="width:100%;height:800px">
 
                             </div>
                             <input type="checkbox" name="allow_handbook" id=""> Allow Handbook
-                        </div>
                             <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function() {
