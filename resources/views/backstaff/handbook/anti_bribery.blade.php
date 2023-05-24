@@ -51,7 +51,8 @@ height="780"
 style="border:none;" id="fraDisabled"
 onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
 <div id="adobe-dc-view" style="width:100%;height:800px"></div>
-<input value="1" type="checkbox" name="allow_handbook" onclick="disableCheckbox(this)" id="myCheckbox"  {{checkagree('antibribery')}}> By clicking here, I state that I have read and understood the  Anti-Bribery and Corruption Policy
+<br>
+<input value="1" type="checkbox" name="allow_handbook" onclick="disableCheckbox(this)" id="myCheckbox"  {{checkagree('antibribery')}}> &nbsp;By clicking here, I state that I have read and understood the  Anti-Bribery and Corruption Policy
 <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
 <script type="text/javascript">
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){

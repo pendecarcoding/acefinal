@@ -51,7 +51,8 @@ height="780"
 style="border:none;" id="fraDisabled"
 onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
 <div id="adobe-dc-view" style="width:100%;height:800px"></div>
-<input value="1" type="checkbox" name="allow_handbook" onclick="disableCheckbox(this)" id="myCheckbox"  {{checkagree('ethic')}}> By clicking here, I state that I have read and understood the Ethics and Compliance Whistleblowing Policy and Procedures
+<br>
+<input value="1" type="checkbox" name="allow_handbook" onclick="disableCheckbox(this)" id="myCheckbox"  {{checkagree('ethic')}}> &nbsp;By clicking here, I state that I have read and understood the Ethics and Compliance Whistleblowing Policy and Procedures
 <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
 <script type="text/javascript">
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){
