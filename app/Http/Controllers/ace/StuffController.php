@@ -156,6 +156,7 @@ class StuffController extends Controller
                         'status'=>$type
                     ];
                     try {
+                        updatelogout(Session::get('id_staff'),'Staff Agree for '.$type);
                         DB::table('agree')->insert($data);
                     } catch (\Throwable $th) {
                         //throw $th;
