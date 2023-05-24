@@ -79,7 +79,7 @@ class StuffController extends Controller
         if(Session::get('loginstaff')==true){
         $announce = Announcement::orderby('created_at','DESC')->get();
         updatelasttime();
-        updatelog(Session::get('id_staff'),'Read Handbook');
+        // updatelog(Session::get('id_staff'),'Read Handbook');
         return view('backstaff.handbook.detail',compact('announce'));
     }else{
         return redirect('investor_relations');
@@ -90,7 +90,7 @@ class StuffController extends Controller
         
         $announce = Announcement::orderby('created_at','DESC')->get();
         updatelasttime();
-        updatelog(Session::get('id_staff'),'Read Anti Bribery');
+        // updatelog(Session::get('id_staff'),'Read Anti Bribery');
         return view('backstaff.handbook.anti_bribery',compact('announce'));
     }else{
         return redirect('investor_relations');
@@ -101,7 +101,7 @@ class StuffController extends Controller
         if(Session::get('loginstaff')==true){
         $announce = Announcement::orderby('created_at','DESC')->get();
         updatelasttime();
-        updatelog(Session::get('id_staff'),'Ethic and Compliance');
+        // updatelog(Session::get('id_staff'),'Ethic and Compliance');
         return view('backstaff.handbook.ethic',compact('announce'));
     }else{
         return redirect('investor_relations');

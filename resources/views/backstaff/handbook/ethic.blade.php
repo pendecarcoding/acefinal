@@ -106,8 +106,8 @@ onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
                 type: 'POST',
                 data: data,
                 success: function(response) {
-                    // location.reload();
-                    window.location.href = "{{route('staff.setting')}}";
+                    location.reload();
+                    // window.location.href = "{{route('staff.setting')}}";
                     console.log(response);
                 },
                 error: function(xhr) {
