@@ -89,13 +89,13 @@
                                                     <span class="fs-14 opacity-60">{{ $product_name_with_choice }}</span>
                                                 </div>
 
-                                                <div class="col-lg col-4 order-1 order-lg-0 my-3 my-lg-0">
+                                                <div class="col-lg col-3 order-1 order-lg-0 my-3 my-lg-0">
                                                     <span
                                                         class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Price') }}</span>
                                                     <span
                                                         class="fw-600 fs-16">{{ cart_product_price($cartItem, $product, true, false) }}</span>
                                                 </div>
-                                                
+
 
                                                 <div class="col-lg col-4 order-4 order-lg-0">
                                                     @if ($cartItem['digital'] != 1 && $product->auction_product == 0)
@@ -124,13 +124,13 @@
                                                         <span class="fw-600 fs-16">1</span>
                                                     @endif
                                                 </div>
-                                                <div class="col-lg col-4 order-3 order-lg-0 my-3 my-lg-0">
+                                                <div class="col-lg col-3 order-3 order-lg-0 my-3 my-lg-0">
                                                     <span
                                                         class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Total') }}</span>
                                                     <span
                                                         class="fw-600 fs-16 text-primary">{{ single_price(cart_product_price($cartItem, $product, false) * $cartItem['quantity']) }}</span>
                                                 </div>
-                                                <div class="col-lg-auto col-6 order-5 order-lg-0 text-right">
+                                                <div class="col-lg-auto col-2 order-5 order-lg-0 text-right">
                                                     <a href="javascript:void(0)"
                                                         onclick="removeFromCartView(event, {{ $cartItem['id'] }})"
                                                         class="btn btn-icon btn-sm btn-soft-primary btn-circle">
@@ -161,8 +161,8 @@
                                         <td><span class="fw-600 fs-15">{{ single_price($total+fpxfee()+deliveryfee()) }}</span></td>
                                     </tr>
                                 </table>
-                                
-                                
+
+
                             </div>
                             <div class="row align-items-center">
                                 <div class="col-md-6 text-center text-md-left order-1 order-md-0">
