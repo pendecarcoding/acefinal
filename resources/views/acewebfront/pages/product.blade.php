@@ -29,8 +29,8 @@
 
                         <div style="margin-top: 50px" class="row-personals">
                             <div class="col-md-9">
-                                Purchase of 100 gram and more enjoys extra discount
-                                <br>Free registration to be our dealer
+                                For 100 grams and above or bulk order please DM us with the info quantity
+                                <br>You're welcome to be our reseller/dealer with free registration
                                 <br><a href="http://www.wasap.my/+601128613355/IGRgoldbar" target="_blank">For more
                                     enquiries please contact us at +011-28613355</a>
                             </div>
