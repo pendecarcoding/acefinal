@@ -21,7 +21,7 @@
      </div>
      <ul class="nav nav-pills nav-stacked" style="margin-top: 50px;display: contents;">
          <li style="margin-top: 5px;" class="active"><a href="{{route('staff.announcements')}}"><i class="fa fa-bell" aria-hidden="true"></i> Announcement</a></li>
-         <li style="margin-top: 10px;"><a href="{{route('staff.handbook')}}"><i class="fa fa-book" aria-hidden="true"></i> Employee Handbook</a></li>
+         <!-- <li style="margin-top: 10px;"><a href="{{route('staff.handbook')}}"><i class="fa fa-book" aria-hidden="true"></i> Employee Handbook</a></li> -->
          <li style="margin-top: 10px;"><a href="{{route('staff.anti')}}"><i class="fa fa-book" aria-hidden="true"></i> Anti-Bribery and Corruption Policy</a></li>
          <li style="margin-top: 10px;"><a href="{{route('staff.ethic')}}"><i class="fa fa-book" aria-hidden="true"></i> Ethics and Compliance Whistleblowing Policy and Procedures
          </a></li>

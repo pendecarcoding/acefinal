@@ -54,7 +54,7 @@
                             @foreach ($data as $i => $v)
                                 <div class="col-md-4 col-sm-4">
                                     <div data-aos="fade-up" class="cards">
-                                        <a href="{{ url('our_products/' . $v->slug) }}">
+                                        <a href="#">
                                             <center><img class="img-responsive-product"
                                                     src="{{ getimage($v->thumbnail_img) }}" alt="" /></center>
                                             <p>{{ $v->name }}</p>
