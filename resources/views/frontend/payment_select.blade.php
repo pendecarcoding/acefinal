@@ -61,7 +61,7 @@
 
 
                         <div class="card rounded border-0 shadow-sm">
-                            <div class="card-header p-3">
+                            <div style="margin-left: 20px;" class="card-header p-3">
                                 <h3 class="fs-16 fw-600 mb-0">
                                     {{ translate('Any additional info?') }}
                                 </h3>
@@ -585,7 +585,7 @@
                                 @endif
                             </div> -->
                         </div>
-                        <div style="margin-right:20px;margin-left: 20px;" class="pt-3">
+                        <div style="margin-right:20px;margin-left: 38px;" class="pt-3">
                             <label class="aiz-checkbox">
                                 <input type="checkbox" required id="agree_checkbox">
                                 <span class="aiz-square-check"></span>
