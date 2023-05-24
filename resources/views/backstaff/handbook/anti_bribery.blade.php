@@ -105,7 +105,8 @@ onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
                 type: 'POST',
                 data: data,
                 success: function(response) {
-                    location.reload();
+                    // location.reload();
+                    window.location.href = "{{route('staff.ethic')}}";
                     console.log(response);
                 },
                 error: function(xhr) {

@@ -119,7 +119,8 @@
                 type: 'POST',
                 data: data,
                 success: function(response) {
-                    location.reload();
+                    // location.reload();
+                    window.location.href = "{{route('staff.anti')}}";
                     console.log(response);
                 },
                 error: function(xhr) {
