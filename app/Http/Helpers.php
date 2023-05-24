@@ -42,6 +42,17 @@ use App\Models\Patner;
 
 
 
+function checkagree($status){
+    $c = DB::table('agree')->where('id_staff',Session::get('id_staff'))->where('status',$status)->count();
+    if($c > 0){
+        return 'disabled checked';
+    }
+}
+function agree($status){
+    $c = DB::table('agree')->where('id_staff',Session::get('id_staff'))->where('status',$status)->count();
+    return $c;
+}
+
 function showweightqty($id){
     $c = DB::table('order_details')->where('order_id',$id)->count();
     if($c > 0){

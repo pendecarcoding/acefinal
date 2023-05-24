@@ -85,8 +85,9 @@ class StuffController extends Controller
         return redirect('investor_relations');
     }
       }
-      public function anti(){
+    public function anti(){
         if(Session::get('loginstaff')==true){
+        
         $announce = Announcement::orderby('created_at','DESC')->get();
         updatelasttime();
         updatelog(Session::get('id_staff'),'Read Anti Bribery');
@@ -135,14 +136,27 @@ class StuffController extends Controller
         if(Session::get('loginstaff')==true){
             $isChecked = $r->input('isChecked');
             $type  = $r->type;
-            if($type=='handbook' && !empty($isChecked)){
-                $check = DB::table('agree')->where('id_staff',Session::get('id_staff'))->count();
+            if(!empty($isChecked)){
+                $check = DB::table('agree')->where('id_staff',Session::get('id_staff'))->where('status',$type)->count();
                 if($check > 0){
                     $data=[
-                        'handbook'=>$isChecked
+                        'checked'=>$isChecked,
                     ];
                     try {
-                        // $act = DB::table('ag')
+                        DB::table('agree')->where('status',$type)
+                                ->where('id_staff',Session::get('id_staff'))
+                                ->updtae($data);
+                    } catch (\Throwable $th) {
+                        //throw $th;
+                    }
+                }else{
+                    $data=[
+                        'checked'=>$isChecked,
+                        'id_staff'=>Session::get('id_staff'),
+                        'status'=>$type
+                    ];
+                    try {
+                        DB::table('agree')->insert($data);
                     } catch (\Throwable $th) {
                         //throw $th;
                     }
@@ -150,7 +164,7 @@ class StuffController extends Controller
 
             }
         }else{
-            return redirect('investor_relations');
+            
         }
       }
 

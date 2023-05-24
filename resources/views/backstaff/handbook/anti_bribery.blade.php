@@ -51,7 +51,7 @@ height="780"
 style="border:none;" id="fraDisabled"
 onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
 <div id="adobe-dc-view" style="width:100%;height:800px"></div>
-<input type="checkbox" name="allow_ant_bribery" id=""> By clicking here, I state that I have read and understood the  Anti-Bribery and Corruption Policy
+<input value="1" type="checkbox" name="allow_handbook" onclick="disableCheckbox(this)" id="myCheckbox"  {{checkagree('antibribery')}}> By clicking here, I state that I have read and understood the  Anti-Bribery and Corruption Policy
 <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
 <script type="text/javascript">
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){
@@ -77,6 +77,44 @@ onload="disableContextMenu();" onMyLoad="disableContextMenu();"> </iframe> -->
             </div>
         </section>
     </main>
+    <script>
+        function disableCheckbox(checkbox) {
+          if (checkbox.checked) {
+            checkbox.disabled = true;
+          }
+        }
 
+        //SEND TO SERVER
+        $(document).ready(function() {
+      // Set up CSRF token for Ajax requests
+            $.ajaxSetup({
+                headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $('#myCheckbox').on('change', function() {
+                var isChecked = $(this).is(':checked');
+                var data = {
+                isChecked: isChecked,
+                type:'antibribery'
+                };
+
+                $.ajax({
+                url: "{{route('agree.staff')}}",
+                type: 'POST',
+                data: data,
+                success: function(response) {
+                    location.reload();
+                    console.log(response);
+                },
+                error: function(xhr) {
+                    // Handle any errors that occur during the request
+                    console.log(xhr.responseText);
+                }
+                });
+            });
+            });
+      </script>
 
 @endsection
