@@ -52,7 +52,7 @@
                             <div id="adobe-dc-view" style="width:100%;height:800px;position:relative">
 
                             </div>
-                            <input type="checkbox" name="allow_handbook" id=""> Allow Handbook
+                            <input type="checkbox" name="allow_handbook" id=""> By clicking here, I state that I have read and understood the Employee Handbook
                             <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
                             <script type="text/javascript">
                                 document.addEventListener("adobe_dc_view_sdk.ready", function() {

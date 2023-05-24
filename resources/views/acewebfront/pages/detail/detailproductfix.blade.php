@@ -46,7 +46,8 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
         <div data-aos="fade-up" class="aos-init aos-animate">
           <div class="col-md-12">
             <div class="banner-static">
-              <img class="img-responsive" src="/public/aceweb/assets/img/product-banner.png" alt="">
+              <img style="width: 100%;
+              height: 30vh;" class="img-responsive" src="/public/aceweb/assets/img/product-banner.png" alt="">
             </div>
           </div>
         </div>
@@ -191,7 +192,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                     </tbody>
                                 </table>
                             @else
-                               
+
                                 <div class="row no-gutters mt-3">
                                     <div class="col-sm-2">
                                         <div class="opacity-50 my-2">{{ translate('Weight') }}:</div>
@@ -224,7 +225,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                             </div>
                                         </div>
                                     </div>
-                         
+
                             @endif
 
                             @if (addon_is_activated('club_point') && $detailedProduct->earn_point > 0)
