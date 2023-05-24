@@ -6,10 +6,11 @@
         src="/public/aceweb/assets/img/product-banner.png" alt="">
 </section>
 <section class="pt-5 mb-4">
-    <div class="ace-content">
+    <div class="ace-content" style="position: relative;
+    overflow: hidden;">
             <div class="row">
                 <div class="col-xl-8 mx-auto">
-                    <div class="row aiz-steps arrow-divider">
+                    <div style="margin-right: -1px;" class="row aiz-steps arrow-divider">
                         <div class="col done">
                             <div class="text-success text-center">
                                 <i class="la-3x las la-shopping-cart mb-2"></i>
@@ -49,6 +50,9 @@
     <section class="mb-4">
         <div class="container text-left">
             <div class="row">
+                <div class="col-lg-4 mt-lg-0 mt-4" id="cart_summary">
+                    @include('frontend.partials.cart_summary')
+                </div>
                 <div class="col-lg-8">
                     <form action="{{ route('payment.checkout') }}" class="form-default" role="form" method="POST"
                         id="checkout-form">
@@ -581,7 +585,7 @@
                                 @endif
                             </div> -->
                         </div>
-                        <div class="pt-3">
+                        <div style="margin-right:20px;margin-left: 20px;" class="pt-3">
                             <label class="aiz-checkbox">
                                 <input type="checkbox" required id="agree_checkbox">
                                 <span class="aiz-square-check"></span>
@@ -592,7 +596,8 @@
                         </div>
 
                         <div style="margin-right:20px;margin-left: 20px;">
-                            <div class="row align-items-center pt-3">
+                            <div style="margin-left: 20px;
+                            margin-right: 20px;" class="row align-items-center pt-3">
                                 <div class="col-6">
                                     <a href="{{ url('our_products') }}" class="link link--style-3">
                                         <i class="las la-arrow-left"></i>
@@ -605,15 +610,13 @@
                                 </div>
                             </div>
                         </div>
-                        
 
-                      
+
+
                     </form>
                 </div>
 
-                <div class="col-lg-4 mt-lg-0 mt-4" id="cart_summary">
-                    @include('frontend.partials.cart_summary')
-                </div>
+
             </div>
         </div>
     </section>
