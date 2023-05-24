@@ -47,7 +47,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
           <div class="col-md-12">
             <div class="banner-static">
               <img style="width: 100%;
-              height: 30vh;" class="img-responsive" src="/public/aceweb/assets/img/product-banner.png" alt="">
+                 height: 40vh;" class="img-responsive" src="/public/aceweb/assets/img/product-banner.png" alt="">
             </div>
           </div>
         </div>
