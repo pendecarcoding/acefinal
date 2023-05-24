@@ -41,6 +41,7 @@ use App\Models\Stuff;
 use Session;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Faker\Provider\Uuid;
+use DB;
 
 class StuffController extends Controller
 {
@@ -128,6 +129,29 @@ class StuffController extends Controller
     }else{
         return redirect('investor_relations');
     }
+      }
+
+      public function agreestaff(Request $r){
+        if(Session::get('loginstaff')==true){
+            $isChecked = $r->input('isChecked');
+            $type  = $r->type;
+            if($type=='handbook' && !empty($isChecked)){
+                $check = DB::table('agree')->where('id_staff',Session::get('id_staff'))->count();
+                if($check > 0){
+                    $data=[
+                        'handbook'=>$isChecked
+                    ];
+                    try {
+                        // $act = DB::table('ag')
+                    } catch (\Throwable $th) {
+                        //throw $th;
+                    }
+                }
+
+            }
+        }else{
+            return redirect('investor_relations');
+        }
       }
 
       public function updatepassword(Request $r){

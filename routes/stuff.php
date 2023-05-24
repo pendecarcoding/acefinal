@@ -17,6 +17,7 @@ Route::controller(StuffController::class)->group(function () {
     Route::get('/back/backannouncement/{date}', 'backannouncement')->name('staff.back.announcement');
     Route::get('/back/loginstaff', 'loginview')->name('staff.loginback');
     Route::post('/back/resetpassword', 'resetpassword')->name('staff.resetconfir');
+    Route::post('/back/agreestaff', 'agreestaff')->name('agree.staff');
 
 });
 
