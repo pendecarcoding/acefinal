@@ -91,7 +91,7 @@
                             <button style="position: absolute;
                     left: 90%;" type="button"
                                 class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">X</button>
-                            <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/discounts.gif">
+                            <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/popupdiscounts.gif">
                         </div>
 
                     </div>
