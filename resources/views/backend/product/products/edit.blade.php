@@ -2,7 +2,15 @@
 
 @section('content')
 <div class="aiz-titlebar text-left mt-2 mb-3">
+    <div class="card">
+    <div class="card-header">
     <h1 class="mb-0 h6">{{ translate('Edit Product') }}</h5>
+
+        <a href="{{url('admin/products/all')}}" class="btn btn-danger btn-sm"><i class="las la-times"></i></a>
+    </div>
+</div>
+    
+  
 </div>
 <div class="">
     @if ($errors->any())
@@ -22,7 +30,7 @@
                 <input type="hidden" name="lang" value="{{ $lang }}">
                 @csrf
                 <div class="card">
-                    <ul class="nav nav-tabs nav-fill border-light">
+                    <!-- <ul class="nav nav-tabs nav-fill border-light">
                         @foreach (\App\Models\Language::all() as $key => $language)
                         <li class="nav-item">
                             <a class="nav-link text-reset @if ($language->code == $lang) active @else bg-soft-dark border-light border-left-0 @endif py-3" href="{{ route('products.admin.edit', ['id'=>$product->id, 'lang'=> $language->code] ) }}">
@@ -31,7 +39,7 @@
                             </a>
                         </li>
                         @endforeach
-                    </ul>
+                    </ul> -->
                     <div class="card-body">
                         <div class="form-group row">
                             <label class="col-lg-3 col-from-label">{{translate('Product Name')}} <i class="las la-language text-danger" title="{{translate('Translatable')}}"></i></label>
@@ -446,7 +454,7 @@
 
             <div class="col-lg-4">
 
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6" class="dropdown-toggle" data-toggle="collapse" data-target="#collapse_2">
                             {{translate('Shipping Configuration')}}
@@ -501,7 +509,7 @@
                         </p>
                         @endif
                     </div>
-                </div>
+                </div> -->
 
                 <div class="card">
                     <div class="card-header">
@@ -630,7 +638,7 @@
                     </div>
                 </div> -->
 
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Flash Deal')}}</h5>
                     </div>
@@ -670,8 +678,8 @@
                             </select>
                         </div>
                     </div>
-                </div>
-
+                </div> -->
+<!-- 
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Estimate Shipping Time')}}</h5>
@@ -689,9 +697,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="card">
+                <!-- <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('VAT & Tax')}}</h5>
                     </div>
@@ -730,7 +738,7 @@
                         </div>
                         @endforeach
                     </div>
-                </div>
+                </div> -->
 
             </div>
             <div class="col-12">

@@ -15,6 +15,25 @@
     animation-duration: 2s;
 }
 
+.discount{
+    color: white;
+    background-color: red;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-weight: bold;
+    padding: 4px;
+}
+.active > .page-link, .page-link.active {
+    z-index: 3;
+    color: var(--bs-pagination-active-color);
+    background-color: #264e77;
+    border-color: #264e77;
+}
+.page-link {
+    color: #62666d;
+}
+
 
 .fotter-announcement{
     display: flex;

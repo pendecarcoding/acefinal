@@ -14,12 +14,16 @@
                         <ul class="list-group list-group-flush">
                             @php
                                 $total = 0;
+                                $total_discount = 0;
+                                $total_price=0;
                             @endphp
                             @foreach ($carts as $key => $cartItem)
                                 @php
                                     $product = \App\Models\Product::find($cartItem['product_id']);
                                     $product_stock = $product->stocks->where('variant', $cartItem['variation'])->first();
                                     $total = $total + ($cartItem['price']) * $cartItem['quantity'];
+                                    $total_discount += $cartItem['discount'];
+                                    $total_price += $cartItem['price']*$cartItem['quantity'];
                                     $product_name_with_choice = $product->getTranslation('name');
                                     if ($cartItem['variation'] != null) {
                                         $product_name_with_choice = $product->getTranslation('name') . ' - ' . $cartItem['variation'];
@@ -41,7 +45,7 @@
                                                 class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Price') }}</span>
                                             <span class="fw-600 fs-16">{{ single_price($cartItem['price']) }}</span>
                                         </div>
-                                        
+
 
                                         <div class="col-lg col-6 order-4 order-lg-0">
                                             @if ($cartItem['digital'] != 1)
@@ -68,7 +72,7 @@
                                             <span
                                                 class="opacity-60 fs-12 d-block d-lg-none">{{ translate('Total') }}</span>
                                             <span
-                                                class="fw-600 fs-16 text-primary">{{ single_price(cart_product_price($cartItem, $product, false) * $cartItem['quantity']) }}</span>
+                                                class="fw-600 fs-16 text-primary">{{ single_price(cart_product_price_base($cartItem, $product, false) * $cartItem['quantity']) }}</span>
                                         </div>
                                         <div class="col-lg-auto col-6 order-5 order-lg-0 text-right">
                                             <a href="javascript:void(0)"
@@ -85,6 +89,11 @@
                     <div style="justify-content: right;" class="px-3 py-2 mb-4 border-top d-flex">
                         <table>
                             <tr>
+                                <td><span class="fw-600 fs-15">{{ translate('Sub Total') }}</span></td>
+                                <td>:</td>
+                                <td><span class="fw-600 fs-15">{{ single_price($total_price) }}</span></td>
+                            </tr>
+                            <tr>
                                 <td><span class="fw-600 fs-15">{{ translate('FPX Transaction fee') }}</span></td>
                                 <td>:</td>
                                 <td><span class="fw-600 fs-15">{{ single_price(fpxfee()) }}</span></td>
@@ -95,15 +104,21 @@
                                 <td><span class="fw-600 fs-15">{{ single_price(deliveryfee()) }}</span></td>
                             </tr>
                             <tr>
+                                <td><span class="fw-600 fs-15">{{ translate('Discount (Total)') }}</span></td>
+                                <td>:</td>
+                                <td><span class="fw-600 fs-15">{{ single_price($total_discount) }}</span></td>
+
+                            </tr>
+                            <tr>
                                 <td><span class="fw-600 fs-15">{{ translate('Total') }}</span></td>
                                 <td>:</td>
-                                <td><span class="fw-600 fs-15">{{ single_price($total+fpxfee()+deliveryfee()) }}</span></td>
+                                <td><span class="fw-600 fs-15">{{ single_price($total+fpxfee()+deliveryfee()-$total_discount) }}</span></td>
                             </tr>
                         </table>
-                        
-                        
+
+
                     </div>
-                    
+
                     <div class="row align-items-center">
                         <div class="col-md-6 text-center text-md-left order-1 order-md-0">
                             <a href="{{ route('home') }}" class="btn btn-link">

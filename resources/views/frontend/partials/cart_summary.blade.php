@@ -72,6 +72,7 @@
             <tbody>
                 @php
                     $subtotal = 0;
+                    $total_discount=0;
                     $tax = 0;
                     $shipping = 0;
                     $product_shipping_cost = 0;
@@ -80,10 +81,10 @@
                 @foreach ($carts as $key => $cartItem)
                     @php
                         $product = \App\Models\Product::find($cartItem['product_id']);
-                        $subtotal += cart_product_price($cartItem, $product, false, false) * $cartItem['quantity'];
+                        $subtotal += cart_product_price_base($cartItem, $product, false, false) * $cartItem['quantity'];
                         $tax += cart_product_tax($cartItem, $product, false) * $cartItem['quantity'];
                         $product_shipping_cost = $cartItem['shipping_cost'];
-
+                        $total_discount+=$cartItem['discount'];
                         $shipping += $product_shipping_cost;
 
                         $product_name_with_choice = $product->getTranslation('name');
@@ -130,6 +131,12 @@
                         <span class="font-italic">{{ single_price(deliveryfee()) }}</span>
                     </td>
                 </tr>
+                <tr class="cart-shipping">
+                    <th>{{ translate('Total Discount') }}</th>
+                    <td class="text-right">
+                        <span class="font-italic">{{ single_price($total_discount) }}</span>
+                    </td>
+                </tr>
 
                 @if (Session::has('club_point'))
                     <tr class="cart-shipping">
@@ -162,7 +169,7 @@
                 <tr class="cart-total">
                     <th><span class="strong-600">{{ translate('Total') }}</span></th>
                     <td class="text-right">
-                        <strong><span>{{ single_price($total) }}</span></strong>
+                        <strong><span>{{ single_price($total-$total_discount) }}</span></strong>
                     </td>
                 </tr>
             </tfoot>

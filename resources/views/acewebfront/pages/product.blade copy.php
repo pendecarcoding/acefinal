@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="banner-static">
                     <img class="img-responsive-banner"
-                        src="/public/aceweb/assets/img/product-banner.png"
+                        src="{{ asset('public/uploads') }}/all/ySFIbEbUUtgi6okRteLoDLH71K9faQfB3X5nKqCZ.jpg"
                         alt="ACE-BANNER-PRODUCT" />
                 </div>
             </div>
@@ -31,7 +31,7 @@
                             <div class="col-md-9">
                                 For 100 grams and above or bulk order please DM us with the info quantity
                                 <br>You're welcome to be our reseller/dealer with free registration
-                                <br><a href="https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar" target="_blank">For more
+                                <br><a href="http://www.wasap.my/+601128613355/IGRgoldbar" target="_blank">For more
                                     enquiries please contact us at +011-28613355</a>
                             </div>
                             <div class="col-md-3">
@@ -53,34 +53,17 @@
           ">
                             @foreach ($data as $i => $v)
                                 <div class="col-md-4 col-sm-4">
-
                                     <div data-aos="fade-up" class="cards">
-                                        @if (home_price($v) != home_discounted_price($v))
-                                        <span class="discount">PROMO</span>
-                                        @endif
                                         <a href="{{url('our_products/'.$v->slug)}}">
                                             <center><img class="img-responsive-product"
                                                     src="{{ getimage($v->thumbnail_img) }}" alt="" /></center>
                                             <p>{{ $v->name }}</p>
                                             <div style="display:none" class="gram">{{ $v->weight }}</div>
-
-                                                @if (home_price($v) != home_discounted_price($v))
-                                                <div style="display: flex;"></div>
-                                                <h5 class="price"> {{ home_discounted_price($v) }}</h5>
-                                                <h5 class="price">
-                                                    <del style="color:#bec0c2">
-                                                        {{ home_price($v) }}
-                                                    </del>
-                                                </h5>
-
-                                                @else
-                                                <h5 class="price">{{ format_price($v->unit_price) }}</h5>
-                                                @endif
-
+                                            <h5 class="price">{{ format_price($v->unit_price) }}</h5>
                                         </a>
                                     </div>
                                 </div>
-
+                                <!-- <span class="discount">20%</span> -->
                             @endforeach
 
                         </div>
@@ -118,9 +101,7 @@
 
 
         </section>
-        <div class="wa-floating-button" onclick="openWhatsApp()">
-            <span class="whatsapp-icon"><i class="fa fa-phone"></i></span>
-        </div>
+
 
     </main>
 
@@ -130,11 +111,6 @@
         $(window).on('load', function() {
             $('#discountbanner').modal('show');
         });
-    </script>
-    <script>
-        function openWhatsApp() {
-            window.location.href = "https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar";
-        }
     </script>
 
     {{-- <script src="{{ static_asset('aceweb') }}/assets/ace/realprice.js"></script> --}}

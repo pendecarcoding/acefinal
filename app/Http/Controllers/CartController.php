@@ -126,11 +126,13 @@ class CartController extends Controller
 
             $product_stock = $product->stocks->where('variant', $str)->first();
             $price = $product_stock->price;
+            $price_result = $product_stock->price;
 
             if($product->wholesale_product){
                 $wholesalePrice = $product_stock->wholesalePrices->where('min_qty', '<=', $request->quantity)->where('max_qty', '>=', $request->quantity)->first();
                 if($wholesalePrice){
                     $price = $wholesalePrice->price;
+                    $price_result = $wholesalePrice->price;
                 }
             }
 
@@ -158,10 +160,10 @@ class CartController extends Controller
 
             if ($discount_applicable) {
                 if($product->discount_type == 'percent'){
-                    $price -= ($price*$product->discount)/100;
+                    $price_result -= ($price*$product->discount)/100;
                 }
                 elseif($product->discount_type == 'amount'){
-                    $price -= $product->discount;
+                    $price_result -= $product->discount;
                 }
             }
 
@@ -174,7 +176,8 @@ class CartController extends Controller
                     $tax += $product_tax->tax;
                 }
             }
-
+            
+            $data['discount']=  $request['quantity']*$product->discount;
             $data['quantity'] = $request['quantity'];
             $data['price'] = $price;
             $data['tax'] = $tax;
@@ -250,16 +253,17 @@ class CartController extends Controller
                 $temp_user_id = $request->session()->get('temp_user_id');
                 $carts = Cart::where('temp_user_id', $temp_user_id)->get();
             /*}*/
-
+            $price_result= $price_result*$request['quantity'];
             return array(
                 'status' => 1,
                 'cart_count' => count($carts),
-                'modal_view' => view('frontend.partials.addedToCart', compact('product', 'data'))->render(),
+                'modal_view' => view('frontend.partials.addedToCart', compact('product', 'data','price_result'))->render(),
                 'nav_cart_view' => view('frontend.partials.cart')->render(),
             );
         }
         else{
             $price = $product->bids->max('amount');
+            $price_result = $product->bids->max('amount');
 
             foreach ($product->taxes as $product_tax) {
                 if($product_tax->tax_type == 'percent'){
@@ -269,7 +273,7 @@ class CartController extends Controller
                     $tax += $product_tax->tax;
                 }
             }
-
+            $price_result= $price_result*$request['quantity'];
             $data['quantity'] = 1;
             $data['price'] = $price;
             $data['tax'] = $tax;
@@ -291,7 +295,7 @@ class CartController extends Controller
             return array(
                 'status' => 1,
                 'cart_count' => count($carts),
-                'modal_view' => view('frontend.partials.addedToCart', compact('product', 'data'))->render(),
+                'modal_view' => view('frontend.partials.addedToCart', compact('product', 'data','price_result'))->render(),
                 'nav_cart_view' => view('frontend.partials.cart')->render(),
             );
         }
@@ -328,11 +332,12 @@ class CartController extends Controller
             $product_stock = $product->stocks->where('variant', $cartItem['variation'])->first();
             $quantity = $product_stock->qty;
             $price = $product_stock->price;
+            $discount = $cartItem->discount;
 
-			//discount calculation
+			// discount calculation
             $discount_applicable = false;
 
-            if ($product->discount_start_date == null) {
+            if ($product->discount_start_date != null AND $product->discount_end_date != null) {
                 $discount_applicable = true;
             }
             elseif (strtotime(date('d-m-Y H:i:s')) >= $product->discount_start_date &&
@@ -345,7 +350,8 @@ class CartController extends Controller
                     $price -= ($price*$product->discount)/100;
                 }
                 elseif($product->discount_type == 'amount'){
-                    $price -= $product->discount;
+                    // $price -= $product->discount;
+                    $discount = $product->discount*$request->quantity;
                 }
             }
 
@@ -361,7 +367,7 @@ class CartController extends Controller
                     $price = $wholesalePrice->price;
                 }
             }
-
+            $cartItem['discount'] = $discount;
             $cartItem['price'] = $price;
             $cartItem->save();
         }

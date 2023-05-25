@@ -5,8 +5,7 @@
              <div data-aos="fade-up">
                  <div class="col-md-12">
                      <div class="banner-static">
-                         <img class="img-responsive-banner"
-                             src="{{ asset('public/uploads') }}/all/HCifCkhxS4bcoJbMFkdAVq4vjhK48gBFxikuDkRY.jpg"
+                         <img class="img-responsive-banner" src="/public/aceweb/assets/img/contact-banner.jpg"
                              alt="ACE-BANNER-CONTACT" />
                      </div>
                  </div>

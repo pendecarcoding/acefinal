@@ -209,57 +209,22 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                         </div>
                                     </div>
                                 </div>
-                                @if (home_price($detailedProduct) != home_discounted_price($detailedProduct))
-                                <div class="row no-gutters mt-3">
-                                    <div class="col-sm-2">
-                                        <div class="opacity-50 my-2">{{ translate('Price') }}:</div>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <div class="fs-20 opacity-60">
-                                            <del>
-                                                {{ home_price($detailedProduct) }}
+                                    <div class="row no-gutters mt-3">
+                                        <div class="col-sm-2">
+                                            <div class="opacity-50 my-2">{{ translate('Price') }}:</div>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <div class="">
+                                                <strong class="h2 fw-600 text-primary price">
+                                                    {{ format_price(convert_price($detailedProduct->unit_price)) }}
+                                                </strong>
                                                 @if ($detailedProduct->unit != null)
-                                                    <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                                    <span
+                                                        class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
                                                 @endif
-                                            </del>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row no-gutters my-2">
-                                    <div class="col-sm-2">
-                                        <div class="opacity-50">{{ translate('Discount Price') }}:</div>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <div class="">
-                                            <strong class="h2 fw-600 text-primary">
-                                                {{ home_discounted_price($detailedProduct) }}
-                                            </strong>
-                                            @if ($detailedProduct->unit != null)
-                                                <span
-                                                    class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            @else
-                                <div class="row no-gutters mt-3">
-                                    <div class="col-sm-2">
-                                        <div class="opacity-50 my-2">{{ translate('Price') }}:</div>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <div class="">
-                                            <strong class="h2 fw-600 text-primary">
-                                                {{ home_discounted_price($detailedProduct) }}
-                                            </strong>
-                                            @if ($detailedProduct->unit != null)
-                                                <span
-                                                    class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
 
                             @endif
 
@@ -633,14 +598,8 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                                 </div> -->
                                                 <div style="display:none" class="gram">{{$top_product->weight}}</div>
                                                 <div class="mt-2">
-                                                    <div  class="fs-15 price">
-                                                        @if (home_base_price($top_product) != home_discounted_base_price($top_product))
-                                                            <del
-                                                                class="fw-600 opacity-50 mr-1">{{ home_base_price($top_product) }}</del>
-                                                        @endif
-                                                        <span
-                                                            class="fw-700 text-primary">{{ home_discounted_base_price($top_product) }}</span>
-                                                    </div>
+                                                    <span
+                                                        class="price fs-17 fw-600 text-primary">{{ home_discounted_base_price($top_product) }}</span>
                                                 </div>
                                             </div>
                                         </div>

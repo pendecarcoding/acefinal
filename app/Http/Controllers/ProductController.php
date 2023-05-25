@@ -361,7 +361,7 @@ class ProductController extends Controller
     {
         //Product
         $product = $this->productService->update($request->except([
-            '_token', 'sku', 'choice', 'tax_id', 'tax', 'tax_type', 'flash_deal_id', 'flash_discount', 'flash_discount_type'
+            '_token', 'sku', 'choice', 'tax_id', 'tax', 'tax_type', 'flash_discount', 'flash_discount_type'
         ]), $product);
 
         //Product Stock
@@ -375,9 +375,9 @@ class ProductController extends Controller
         ]), $product);
 
         //Flash Deal
-        $this->productFlashDealService->store($request->only([
-            'flash_deal_id', 'flash_discount', 'flash_discount_type'
-        ]), $product);
+        // $this->productFlashDealService->store($request->only([
+        //     'flash_deal_id', 'flash_discount', 'flash_discount_type'
+        // ]), $product);
 
         //VAT & Tax
         if ($request->tax_id) {

@@ -4,7 +4,20 @@ html {
 .slide {
     position: relative;
 }
-
+.wa-floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #264e77;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+}
 .easigold .ace-isi {
     padding-top: 5%;
     padding-bottom: 13%;
@@ -29,6 +42,16 @@ html {
 .prc-buy {
     padding-left: 24px;
     padding-right: 24px;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blinking-text {
+    animation: blink 1s infinite;
 }
 
 
@@ -822,7 +845,7 @@ header {
     background-size: cover;
     width: 100%;
     height: 100vh;
-    background-image: url("https://dev.ace2u.com/public/uploads/all/MRIDu4wOpG5KplQhxvudhT7yyoHHYTYzjsCAM6ol.jpg");
+    background-image: url("/public/aceweb/assets/img/home-banner.jpg");
 }
 
 .ace-achievements .content-col {
@@ -1315,7 +1338,7 @@ hr.gold {
 .cards {
     margin-top: 20px;
     width: 100%;
-    height: 350px;
+    height: 388px;
     border: none;
     flex-wrap: wrap;
     background-color: white;
