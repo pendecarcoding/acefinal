@@ -9,8 +9,8 @@
         <a href="{{url('admin/products/all')}}" class="btn btn-danger btn-sm"><i class="las la-times"></i></a>
     </div>
 </div>
-    
-  
+
+
 </div>
 <div class="">
     @if ($errors->any())
@@ -304,16 +304,17 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-lg-3 col-from-label">{{translate('Discount')}}</label>
+                            <label class="col-lg-3 col-from-label">{{translate('Discount   (Promotion Price / Gram)')}}</label>
                             <div class="col-lg-6">
-                                <input type="number" lang="en" min="0" step="0.01" placeholder="{{translate('Discount')}}" name="discount" class="form-control" value="{{ $product->discount }}" required>
+                                <input type="number" lang="en" min="0" step="0.01" placeholder="{{translate('Discount')}}" name="discount" class="form-control" value="{{ $product->promo_price }}" required>
                             </div>
-                            <div class="col-lg-3">
+                            <input type="hidden" name="discount_type" required value="amount">
+                            <!-- <div class="col-lg-3">
                                 <select class="form-control aiz-selectpicker" name="discount_type" required>
                                     <option value="amount" <?php if ($product->discount_type == 'amount') echo "selected"; ?> >{{translate('Flat')}}</option>
                                     <option value="percent" <?php if ($product->discount_type == 'percent') echo "selected"; ?> >{{translate('Percent')}}</option>
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
 
                         @if(addon_is_activated('club_point'))
@@ -679,7 +680,7 @@
                         </div>
                     </div>
                 </div> -->
-<!-- 
+<!--
                 <div class="card">
                     <div class="card-header">
                         <h5 class="mb-0 h6">{{translate('Estimate Shipping Time')}}</h5>

@@ -61,7 +61,46 @@ class ProductController extends Controller
             'margin'=>$r->margin
         ];
         try {
-            $act = DB::table('marginprice')->where('id',$r->id)->update($data);
+            DB::table('marginprice')->where('id',$r->id)->update($data);
+                $margin    = DB::table('marginprice')->where('id',$r->id)->first();
+                $product   = Product::where('id',$margin->id_product)->first();
+                $unitprice = (getlastprice()+$r->margin)*$product->weight;
+                $update = [
+                    'unit_price'=>$unitprice,
+                ];
+                Product::where('id',$product->id)->update($update);
+                
+                    $overrideprice = getlastprice();
+                    $denomination  = $product->weight;
+                    if($product->discount_start_date != null && $product->discount_end_date && $product->promo_price != null){
+                        $unitprice = ($overrideprice+$r->margin)*$denomination;
+                        $discount  = ($overrideprice+$product->promo_price)*$denomination;
+                        $discount  = $unitprice-$discount;
+                        $update = [
+                            'unit_price'=>$unitprice,
+                            'discount'=>$discount
+                        ];
+                        Product::where('id',$product->id)->update($update);
+                        $p = [
+                            'price'=>$unitprice
+                        ];
+                        DB::table('product_stocks')->where('product_id',$product->id)->update($p);
+                    }else{
+                        $unitprice = ($overrideprice+$r->margin)*$product->weight;
+                        $update = [
+                            'unit_price'=>$unitprice,
+                        ];
+                        Product::where('id',$product->id)->update($update);
+                        $p = [
+                            'price'=>$unitprice
+                        ];
+                        DB::table('product_stocks')->where('product_id',$product->id)->update($p);
+
+                    }
+            
+
+
+           
             flash(translate('Margin has been updated successfully'))->success();
             return back();
         } catch (\Throwable $th) {
@@ -204,14 +243,30 @@ class ProductController extends Controller
             foreach ($datas as $key => $v) {
                 $margin = DB::table('marginprice')->where('denominations',$v->weight)->first();
                 $formula = ($r->override+$margin->margin)*$v->weight;
-                $u = [
-                    'unit_price'=>$formula
-                ];
-                $act = Product::where('id',$v->id)->update($u);
-                $p = [
-                    'price'=>$formula
-                ];
-                $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+                if($v->discount_start_date != null && $v->discount_end_date != null && $v->promo_price != null){
+                    $discount  = ($r->override+$v->promo_price)*$v->weight;
+                    $discount  = $formula-$discount;
+                    $u = [
+                        'unit_price'=>$formula,
+                        'discount'=>$discount
+                    ];
+                    $act = Product::where('id',$v->id)->update($u);
+                    $p = [
+                        'price'=>$formula
+                    ];
+                    $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+                }else{
+                    $u = [
+                        'unit_price'=>$formula
+                    ];
+                    $act = Product::where('id',$v->id)->update($u);
+                    $p = [
+                        'price'=>$formula
+                    ];
+                    $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+
+                }
+                
             }
 
 

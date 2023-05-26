@@ -197,10 +197,10 @@
 @endif -->
                                 </td>
                                 <td class="">{{ $orderDetail->quantity }}</td>
-                                <td class="currency">{{ single_price($orderDetail->price / $orderDetail->quantity) }}
+                                <td class="currency">{{ single_price($orderDetail->base_price / $orderDetail->quantity) }}
                                 </td>
                                 <!-- <td class="currency">{{ single_price($orderDetail->tax / $orderDetail->quantity) }}</td> -->
-                                <td class="text-right currency">{{ single_price($orderDetail->price) }}</td>
+                                <td class="text-right currency">{{ single_price($orderDetail->base_price) }}</td>
                             </tr>
                         @endif
                     @endforeach
@@ -233,7 +233,7 @@
                                 <tbody>
                                     <tr>
                                         <th class="gry-color text-left">{{ translate('Sub Total') }}</th>
-                                        <td class="currency">{{ single_price($order->orderDetails->sum('price')) }}
+                                        <td class="currency">{{ single_price($order->orderDetails->sum('base_price')) }}
                                         </td>
                                     </tr>
                                     <tr>
@@ -245,10 +245,10 @@
                                         <th class="gry-color text-left">{{ translate('FPX Transaction fee') }}</th>
                                         <td class="currency">{{ single_price(fpxfee()) }}</td>
                                     </tr>
-                                    <!-- <tr class="border-bottom">
-       <th class="gry-color text-left">{{ translate('Coupon Discount') }}</th>
-       <td class="currency">{{ single_price($order->coupon_discount) }}</td>
-       </tr> -->
+                                    <tr class="border-bottom">
+                                    <th class="gry-color text-left">{{ translate('Discount (Total)') }}</th>
+                                    <td class="currency">{{ single_price($order->coupon_discount) }}</td>
+                                    </tr>
                                     <tr>
                                         <th class="text-left strong">{{ translate('Grand Total') }}</th>
                                         <td class="currency">{{ single_price($order->grand_total) }}</td>

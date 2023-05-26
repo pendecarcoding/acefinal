@@ -256,6 +256,7 @@ class OrderController extends Controller
                 $order_detail->product_id = $product->id;
                 $order_detail->variation = $product_variation;
                 $order_detail->price = cart_product_price($cartItem, $product, false, false) * $cartItem['quantity'];
+                $order_detail->base_price = cart_product_price_base($cartItem, $product, false, false) * $cartItem['quantity'];
                 $order_detail->tax = fpxfee();
                 $order_detail->shipping_type = $cartItem['shipping_type'];
                 $order_detail->product_referral_code = $cartItem['product_referral_code'];
@@ -306,6 +307,9 @@ class OrderController extends Controller
                 $coupon_usage->user_id = 0;
                 $coupon_usage->coupon_id = Coupon::where('code', $seller_product[0]->coupon_code)->first()->id;
                 $coupon_usage->save();
+            }
+            if($cartItem['discount'] > 0){
+                $order->coupon_discount = $coupon_discount;
             }
 
             $combined_order->grand_total += $order->grand_total;

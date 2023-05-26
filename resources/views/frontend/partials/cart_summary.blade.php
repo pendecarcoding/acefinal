@@ -101,7 +101,7 @@
                         </td>
                         <td class="product-total text-right">
                             <span
-                                class="pl-4 pr-0">{{ single_price(cart_product_price($cartItem, $cartItem->product, false, false) * $cartItem['quantity']) }}</span>
+                                class="pl-4 pr-0">{{ single_price(cart_product_price_base($cartItem, $cartItem->product, false, false) * $cartItem['quantity']) }}</span>
                         </td>
                     </tr>
                 @endforeach

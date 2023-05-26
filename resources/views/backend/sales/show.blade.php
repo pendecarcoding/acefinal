@@ -273,10 +273,10 @@
                                         {{ $orderDetail->quantity }}
                                     </td>
                                     <td class="text-center">
-                                        {{ single_price($orderDetail->price / $orderDetail->quantity) }}
+                                        {{ single_price($orderDetail->base_price / $orderDetail->quantity) }}
                                     </td>
                                     <td class="text-center">
-                                        {{ single_price($orderDetail->price) }}
+                                        {{ single_price($orderDetail->base_price) }}
                                     </td>
                                 </tr>
                             @endforeach
@@ -292,7 +292,7 @@
                                 <strong class="text-muted">{{ translate('Sub Total') }} :</strong>
                             </td>
                             <td>
-                                {{ single_price($order->orderDetails->sum('price')) }}
+                                {{ single_price($order->orderDetails->sum('base_price')) }}
                             </td>
                         </tr>
                         <tr>
@@ -311,14 +311,14 @@
                                 {{ single_price($order->orderDetails->sum('shipping_cost')) }}
                             </td>
                         </tr>
-                        <!-- <tr>
+                        <tr>
                             <td>
-                                <strong class="text-muted">{{ translate('Coupon') }} :</strong>
+                                <strong class="text-muted">{{ translate('Discount (Total)') }} :</strong>
                             </td>
                             <td>
                                 {{ single_price($order->coupon_discount) }}
                             </td>
-                        </tr> -->
+                        </tr>
                         <tr>
                             <td>
                                 <strong class="text-muted">{{ translate('TOTAL') }} :</strong>

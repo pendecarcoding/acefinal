@@ -25,14 +25,29 @@ class PricefeedController extends Controller
                 foreach ($datas as $key => $v) {
                     $margin = DB::table('marginprice')->where('denominations',$v->weight)->first();
                     $formula = ($r->overrideprice+$margin->margin)*$v->weight;
-                    $u = [
-                        'unit_price'=>$formula
-                    ];
-                    $act = Product::where('id',$v->id)->update($u);
-                    $p = [
-                        'price'=>$formula
-                    ];
-                    $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+                    if($v->discount_start_date != null && $v->discount_end_date != null && $v->promo_price != null){
+                        $discount  = ($r->overrideprice+$v->promo_price)*$v->weight;
+                        $discount  = $formula-$discount;
+                        $u = [
+                            'unit_price'=>$formula,
+                            'discount'=>$discount
+                        ];
+                        $act = Product::where('id',$v->id)->update($u);
+                        $p = [
+                            'price'=>$formula
+                        ];
+                        $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+                    }else{
+                        $u = [
+                            'unit_price'=>$formula
+                        ];
+                        $act = Product::where('id',$v->id)->update($u);
+                        $p = [
+                            'price'=>$formula
+                        ];
+                        $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+    
+                    }
                 }
         }
 

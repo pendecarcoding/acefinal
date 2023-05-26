@@ -159,7 +159,7 @@
                                                         <td>
                                                             {{ $order->shipping_type }}
                                                         </td>
-                                                        <td class="text-right">{{ single_price($orderDetail->price) }}</td>
+                                                        <td class="text-right">{{ single_price($orderDetail->base_price) }}</td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -173,7 +173,7 @@
                                                         <th>{{ translate('Subtotal') }}</th>
                                                         <td class="text-right">
                                                             <span
-                                                                class="fw-600">{{ single_price($order->orderDetails->sum('price')) }}</span>
+                                                                class="fw-600">{{ single_price($order->orderDetails->sum('base_price')) }}</span>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -189,12 +189,12 @@
                                                             <span class="font-italic">{{ single_price(fpxfee()) }}</span>
                                                         </td>
                                                     </tr>
-                                                    <!-- <tr>
-                                                                            <th>{{ translate('Coupon Discount') }}</th>
-                                                                            <td class="text-right">
-                                                                                <span class="font-italic">{{ single_price($order->coupon_discount) }}</span>
-                                                                            </td>
-                                                                        </tr> -->
+                                                    <tr>
+                                                        <th>{{ translate('Discount (Total)') }}</th>
+                                                        <td class="text-right">
+                                                        <span class="font-italic">{{ single_price($order->coupon_discount) }}</span>
+                                                        </td>
+                                                    </tr>
                                                     <tr>
                                                         <th><span class="fw-600">{{ translate('Total') }}</span></th>
                                                         <td class="text-right">

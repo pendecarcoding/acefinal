@@ -41,7 +41,10 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Patner;
 
 
-
+function getlastprice(){
+    $data = DB::table('pricefeeds')->latest()->first();
+    return $data->overrideprice;
+}
 function checkagree($status){
     $c = DB::table('agree')->where('id_staff',Session::get('id_staff'))->where('status',$status)->count();
     if($c > 0){
@@ -355,8 +358,6 @@ function updateorderm1($no,$email){
                 Mail::to($v->email)->queue(new InvoiceEmailManager($array));
             }
             Mail::to($email)->queue(new InvoiceEmailManager($array));
-
-
             //session()->remove('temp_user_id');
             return redirect()->route('order_confirmed');
         } catch (\Exception $e) {
