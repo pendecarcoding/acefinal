@@ -352,12 +352,12 @@ function updateorderm1($no,$email){
         $array['subject'] = translate('Payment Successfull for Order code') . ' - ' . $order->code;
         $array['from'] = env('MAIL_FROM_ADDRESS');
         $array['order'] = $order;
-        $array['cc']=$ccemail['email'];
+        // $array['cc']=$ccemail['email'];
 
         try {
-            // foreach ($ccemail as $key => $v) {
-            //     Mail::to($v->email)->queue(new InvoiceEmailManager($array));
-            // }
+            foreach ($ccemail as $key => $v) {
+                Mail::to($v->email)->queue(new InvoiceEmailManager($array));
+            }
             Mail::to($email)->queue(new InvoiceEmailManager($array));
             //session()->remove('temp_user_id');
             return redirect()->route('order_confirmed');
