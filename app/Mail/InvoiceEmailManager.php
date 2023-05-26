@@ -30,6 +30,7 @@ class InvoiceEmailManager extends Mailable
      {
          return $this->view($this->array['view'])
                      ->from($this->array['from'], env('MAIL_FROM_NAME'))
+                     ->cc($this->array['cc'])
                      ->subject($this->array['subject'])
                      ->with([
                          'order' => $this->array['order']
