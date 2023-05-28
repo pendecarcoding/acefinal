@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Auth\Events\PasswordReset;
 use App\Mail\SecondEmailVerifyMailManager;
+use Session;
 
 class HomeController extends Controller
 {
@@ -408,7 +409,7 @@ class HomeController extends Controller
         if ($request->has('weight')) {
             $weight = $request->weight*$request->quantity;
             if($weight > 100){
-                $extradiscount=50;
+                $extradiscount=env('DISCOUNT_EXTRA');
             }
         }
 
