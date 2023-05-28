@@ -854,11 +854,12 @@ if (!function_exists('cart_product_price')) {
             //discount calculation
             $discount_applicable = false;
 
-            if ($product->discount_start_date != null && $product->discount_end_date != null) {
-                $discount_applicable = true;
-            } elseif (
+            // if ($product->discount_start_date != null && $product->discount_end_date != null) {
+            //     $discount_applicable = true;
+            // } else
+            if (
                 strtotime(date('d-m-Y H:i:s')) >= $product->discount_start_date &&
-                strtotime(date('d-m-Y H:i:s')) <= $product->discount_end_date
+                strtotime(date('d-m-Y H:i:s')) <= $product->discount_end_date && $product->discount_start_date != null && $product->discount_end_date != null
             ) {
                 $discount_applicable = true;
             }
@@ -1165,12 +1166,9 @@ if (!function_exists('home_discounted_price')) {
         }
 
         $discount_applicable = false;
-
-        if ($product->discount_start_date == null && $product->discount_end_date) {
-            $discount_applicable = false;
-        } elseif (
+        if (
             strtotime(date('d-m-Y H:i:s')) >= $product->discount_start_date &&
-            strtotime(date('d-m-Y H:i:s')) <= $product->discount_end_date
+            strtotime(date('d-m-Y H:i:s')) <= $product->discount_end_date && $product->discount_start_date != null && $product->discount_end_date != null
         ) {
             $discount_applicable = true;
         }

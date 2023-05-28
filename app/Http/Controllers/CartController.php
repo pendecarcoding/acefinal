@@ -351,11 +351,10 @@ class CartController extends Controller
 			// discount calculation
             $discount_applicable = false;
 
-            if ($product->discount_start_date != null AND $product->discount_end_date != null) {
-                $discount_applicable = true;
-            }
-            elseif (strtotime(date('d-m-Y H:i:s')) >= $product->discount_start_date &&
-                strtotime(date('d-m-Y H:i:s')) <= $product->discount_end_date) {
+            if (
+                strtotime(date('d-m-Y H:i:s')) >= $product->discount_start_date &&
+                strtotime(date('d-m-Y H:i:s')) <= $product->discount_end_date && $product->discount_start_date != null && $product->discount_end_date != null
+            ) {
                 $discount_applicable = true;
             }
 
