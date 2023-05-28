@@ -56,6 +56,27 @@ class ProductController extends Controller
         return view('backend.product.pricefeed.margin',compact('data'));
     }
 
+    public function all_discount(){
+        $data = Product::join('marginprice','products.id','marginprice.id_product')->orderby('denominations','ASC')->get();
+        return view('backend.product.discount.index',compact('data'));
+    }
+    
+
+    public function discountextra(Request $request){
+        try {
+            foreach ($request->types as $key => $type) {
+                overWriteEnvFile($type, $request[$type]);
+                //print $type;
+            }
+            Artisan::call('cache:clear');
+            flash(translate('Extra Discount has been updated successfully'))->success();
+            return back();
+           } catch (\Throwable $th) {
+            print $th->getmessage();
+            // flash(translate('Slider has been updated successfully'))->success();
+            // return redirect()->route('about.index');
+           }
+    }
     public function marginupdate(Request $r){
         $data=[
             'margin'=>$r->margin

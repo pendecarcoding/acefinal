@@ -1,6 +1,7 @@
 @extends('acewebfront.layouts')
 @section('content')
- <main>
+ <main style="position: relative;
+ overflow: hidden;">
       <section  class="ace-personal">
         <div class="personal-banner">
         <div class="row-personal">

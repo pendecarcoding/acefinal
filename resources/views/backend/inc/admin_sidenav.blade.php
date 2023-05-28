@@ -92,6 +92,13 @@
                                     </a>
                                 </li>
                             @endcan
+                            @can('setting_margin')
+                            <li class="aiz-side-nav-item">
+                                <a class="aiz-side-nav-link" href="{{ route('margin.set') }}">
+                                    <span class="aiz-side-nav-text">{{ translate('Margin Set') }}</span>
+                                </a>
+                            </li>
+                             @endcan
 
                             {{-- @can('add_new_product')
                                 <li class="aiz-side-nav-item">
@@ -100,6 +107,13 @@
                                     </a>
                                 </li>
                             @endcan --}}
+                            @can('show_all_diskon')
+                            <li class="aiz-side-nav-item">
+                                <a href="{{ route('products.discount') }}" class="aiz-side-nav-link">
+                                    <span class="aiz-side-nav-text">{{ translate('Price Info') }}</span>
+                                </a>
+                            </li>
+                            @endcan
                             @can('show_all_products')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('products.all') }}" class="aiz-side-nav-link">
@@ -107,13 +121,8 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('setting_margin')
-                                <li class="aiz-side-nav-item">
-                                    <a class="aiz-side-nav-link" href="{{ route('margin.set') }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Margin Set') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
+                           
+                           
                             <!--@can('show_in_house_products')
                                                         <li class="aiz-side-nav-item">
                                                             <a href="{{ route('products.admin') }}" class="aiz-side-nav-link {{ areActiveRoutes(['products.admin', 'products.create', 'products.admin.edit']) }}" >

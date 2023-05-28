@@ -106,13 +106,13 @@
                             <tr>
                                 <td><span class="fw-600 fs-15">{{ translate('Discount (Total)') }}</span></td>
                                 <td>:</td>
-                                <td><span class="fw-600 fs-15">{{ single_price($total_discount) }}</span></td>
+                                <td><span class="fw-600 fs-15">{{ single_price($total_discount+extradiscount(Session::get('temp_user_id'))) }}</span></td>
 
                             </tr>
                             <tr>
                                 <td><span class="fw-600 fs-15">{{ translate('Total') }}</span></td>
                                 <td>:</td>
-                                <td><span class="fw-600 fs-15">{{ single_price($total+fpxfee()+deliveryfee()-$total_discount) }}</span></td>
+                                <td><span class="fw-600 fs-15">{{ single_price(($total+fpxfee()+deliveryfee()-$total_discount)-extradiscount(Session::get('temp_user_id'))) }}</span></td>
                             </tr>
                         </table>
 

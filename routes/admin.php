@@ -99,6 +99,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
         Route::get('/products/admin', 'admin_products')->name('products.admin');
         Route::get('/products/seller', 'seller_products')->name('products.seller');
         Route::get('/products/all', 'all_products')->name('products.all');
+        Route::get('/products/priceinfo', 'all_discount')->name('products.discount');
+        Route::post('/products/discountextraupdate', 'discountextra')->name('discountextra.update');
         Route::get('/products/create', 'create')->name('products.create');
         Route::get('/products/pricefeed', 'pricefeed')->name('pricefeed.set');
         Route::get('/products/marginset', 'marginset')->name('margin.set');

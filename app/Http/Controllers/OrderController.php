@@ -24,6 +24,7 @@ use App\Utility\SmsUtility;
 use Illuminate\Support\Facades\Route;
 use App\Mail\SecondEmailVerifyMailManager;
 use DB;
+use Session;
 
 class OrderController extends Controller
 {
@@ -296,8 +297,8 @@ class OrderController extends Controller
                     }
                 }
             }
-
-            $order->grand_total = $subtotal + fpxfee() + $shipping;
+            $coupon_discount +=extradiscount(Session::get('temp_user_id'));
+            $order->grand_total = ($subtotal + fpxfee() + $shipping)-extradiscount(Session::get('temp_user_id'));
 
             if ($seller_product[0]->coupon_code != null) {
                 $order->coupon_discount = $coupon_discount;

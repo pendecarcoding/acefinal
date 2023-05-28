@@ -95,6 +95,10 @@ class CartController extends Controller
 
         $str = '';
         $tax = 0;
+       
+        $countdiscount = 0;
+        //extra discount
+        
         if($product->auction_product == 0){
             if($product->digital != 1 && $request->quantity < $product->min_qty) {
                 return array(
@@ -146,17 +150,18 @@ class CartController extends Controller
                     'nav_cart_view' => view('frontend.partials.cart')->render(),
                 );
             }
-
+            
             //discount calculation
             $discount_applicable = false;
 
-            if ($product->discount_start_date == null) {
-                $discount_applicable = true;
+            if ($product->discount_start_date == null && $product->discount_end_date ==null) {
+                $discount_applicable = false;
             }
             elseif (strtotime(date('d-m-Y H:i:s')) >= $product->discount_start_date &&
                 strtotime(date('d-m-Y H:i:s')) <= $product->discount_end_date) {
                 $discount_applicable = true;
             }
+
 
             if ($discount_applicable) {
                 if($product->discount_type == 'percent'){
@@ -164,6 +169,7 @@ class CartController extends Controller
                 }
                 elseif($product->discount_type == 'amount'){
                     $price_result -= $product->discount;
+                    $countdiscount  = ($request['quantity']*$product->discount);
                 }
             }
 
@@ -176,8 +182,10 @@ class CartController extends Controller
                     $tax += $product_tax->tax;
                 }
             }
-            
-            $data['discount']=  $request['quantity']*$product->discount;
+               
+         
+           
+            $data['discount']=  $countdiscount;
             $data['quantity'] = $request['quantity'];
             $data['price'] = $price;
             $data['tax'] = $tax;
@@ -245,7 +253,7 @@ class CartController extends Controller
             else{
                 Cart::create($data);
             }
-
+            $extradiscount = extradiscount($temp_user_id);
             /*if(auth()->user() != null) {
                 $user_id = Auth::user()->id;
                 $carts = Cart::where('user_id', $user_id)->get();
@@ -253,7 +261,7 @@ class CartController extends Controller
                 $temp_user_id = $request->session()->get('temp_user_id');
                 $carts = Cart::where('temp_user_id', $temp_user_id)->get();
             /*}*/
-            $price_result= $price_result*$request['quantity'];
+            $price_result= ($price_result*$request['quantity'])-$extradiscount;
             return array(
                 'status' => 1,
                 'cart_count' => count($carts),
@@ -273,8 +281,8 @@ class CartController extends Controller
                     $tax += $product_tax->tax;
                 }
             }
-            $price_result= $price_result*$request['quantity'];
-            $data['quantity'] = 1;
+            
+            $data['quantity'] = $request['quantity'];
             $data['price'] = $price;
             $data['tax'] = $tax;
             $data['shipping_cost'] = 0;
@@ -289,6 +297,8 @@ class CartController extends Controller
                 $user_id = Auth::user()->id;
                 $carts = Cart::where('user_id', $user_id)->get();
             } else {*/
+                $extradiscount = extradiscount($temp_user_id);
+                $price_result= ($price_result*$request['quantity'])-$extradiscount;
                 $temp_user_id = $request->session()->get('temp_user_id');
                 $carts = Cart::where('temp_user_id', $temp_user_id)->get();
            /* }*/
@@ -326,6 +336,8 @@ class CartController extends Controller
     public function updateQuantity(Request $request)
     {
         $cartItem = Cart::findOrFail($request->id);
+        $extradiscount = extradiscount(Session::get('temp_user_id'));
+       
 
         if($cartItem['id'] == $request->id){
             $product = Product::find($cartItem['product_id']);
@@ -333,6 +345,8 @@ class CartController extends Controller
             $quantity = $product_stock->qty;
             $price = $product_stock->price;
             $discount = $cartItem->discount;
+            $weight = $product->weight*$request->quantity;
+            
 
 			// discount calculation
             $discount_applicable = false;
@@ -367,12 +381,14 @@ class CartController extends Controller
                     $price = $wholesalePrice->price;
                 }
             }
+            $discount = $discount;
             $cartItem['discount'] = $discount;
             $cartItem['price'] = $price;
             $cartItem->save();
         }
 
             $temp_user_id = $request->session()->get('temp_user_id');
+            $extradiscount = extradiscount($temp_user_id);
             $carts = Cart::where('temp_user_id', $temp_user_id)->get();
 
         /*if(auth()->user() != null) {

@@ -199,6 +199,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                     </div>
                                     <div class="col-sm-10">
                                         <div class="">
+                                            
                                             <strong class="h2 fw-600 text-primary gram">
                                                 {{$detailedProduct->weight}}
                                             </strong>
@@ -209,6 +210,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                         </div>
                                     </div>
                                 </div>
+                              
                                 @if (home_price($detailedProduct) != home_discounted_price($detailedProduct))
                                 <div class="row no-gutters mt-3">
                                     <div class="col-sm-2">
@@ -282,7 +284,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                             <form id="option-choice-form">
                                 @csrf
                                 <input id="product_id_ace" type="hidden" name="id" value="{{ $detailedProduct->id }}">
-
+                                <input id="weight" type="hidden" name="weight" value="{{$detailedProduct->weight}}">
                                 @if ($detailedProduct->choice_options != null)
                                     @foreach (json_decode($detailedProduct->choice_options) as $key => $choice)
                                         <div class="row no-gutters">
@@ -419,6 +421,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
 
                                             </strong>
                                         </div>
+                                        <span style="visibility: hidden;" id="above100" class="badge badge-inline badge-danger">Extra Discount for purchases above 100 gram</span>
                                     </div>
                                 </div>
 

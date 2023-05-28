@@ -421,12 +421,22 @@
             });
         }
 
-        $('#option-choice-form input').on('change', function(){
+        $('#option-choice-form input').on('change', function(){   
             getVariantPrice();
         });
 
         function getVariantPrice(){
             if($('#option-choice-form input[name=quantity]').val() > 0 && checkAddToCartValidity()){
+                var weightElement = document.getElementById('weight');
+                var weightValue   = parseInt(weightElement.value);
+                var weight        = parseInt($('#option-choice-form input[name=quantity]').val())*weightValue;
+                var extradiscount = document.getElementById('above100');
+                if(weight > 100){
+                    extradiscount.style.visibility = "visible";
+                }else{
+                    extradiscount.style.visibility = "hidden";
+                }
+        
                 $.ajax({
                    type:"POST",
                    url: '{{ route('products.variant_price') }}',

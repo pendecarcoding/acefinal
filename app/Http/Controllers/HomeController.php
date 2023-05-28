@@ -331,6 +331,7 @@ class HomeController extends Controller
         $quantity = 0;
         $tax = 0;
         $max_limit = 0;
+        $extradiscount=0;
 
         if ($request->has('color')) {
             $str = $request['color'];
@@ -379,8 +380,8 @@ class HomeController extends Controller
         //discount calculation
         $discount_applicable = false;
 
-        if ($product->discount_start_date == null) {
-            $discount_applicable = true;
+        if ($product->discount_start_date == null && $product->discount_end_date == null) {
+            $discount_applicable = false;
         } elseif (
             strtotime(date('d-m-Y H:i:s')) >= $product->discount_start_date &&
             strtotime(date('d-m-Y H:i:s')) <= $product->discount_end_date
@@ -404,11 +405,18 @@ class HomeController extends Controller
                 $tax += $product_tax->tax;
             }
         }
+        if ($request->has('weight')) {
+            $weight = $request->weight*$request->quantity;
+            if($weight > 100){
+                $extradiscount=50;
+            }
+        }
 
         $price = $price;
 
         return array(
-            'price' => single_price(($price * $request->quantity)+fpxfee()+deliveryfee()),
+            // 'price' => single_price($price),
+            'price' => single_price((($price * $request->quantity)+fpxfee()+deliveryfee())-$extradiscount),
             'quantity' => $quantity,
             'digital' => $product->digital,
             'variation' => $str,

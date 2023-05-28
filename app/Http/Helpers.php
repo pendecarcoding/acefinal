@@ -41,6 +41,50 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Patner;
 
 
+
+function extradiscount($usrtmpid){
+    $data = Cart::where('temp_user_id',$usrtmpid)->get();
+    $weight = 0;
+    $extradiscount = 0;
+    foreach ($data as $i => $v) {
+       $product = Product::where('id',$v->product_id)->first();
+        $weight += $product->weight*$v->quantity;
+    }
+    if($weight > 100){
+        $extradiscount=env('DISCOUNT_EXTRA');
+        $c = DB::table('extra_discount')->where('temp_user_id',$usrtmpid)->first();
+        if($c != null){
+            $up=[
+                'discount'=>$extradiscount
+            ];
+            DB::table('extra_discount')->where('temp_user_id',$usrtmpid)->where('id',$c->id)->update($up);
+        }else{
+            $up=[
+                'discount'=>$extradiscount,
+                'temp_user_id'=>$usrtmpid
+            ];
+            DB::table('extra_discount')->insert($up);
+        }
+    }
+    else{
+        $c = DB::table('extra_discount')->where('temp_user_id',$usrtmpid)->first();
+        if($c != null){
+            $up=[
+                'discount'=>0
+            ];
+            DB::table('extra_discount')->where('temp_user_id',$usrtmpid)->where('id',$c->id)->update($up);
+        }else{
+            $up=[
+                'discount'=>0,
+                'temp_user_id'=>$usrtmpid
+            ];
+            DB::table('extra_discount')->insert($up);
+        }
+    }
+
+    return $extradiscount;
+    
+}
 function getlastprice(){
     $data = DB::table('pricefeeds')->latest()->first();
     return $data->overrideprice;
@@ -810,7 +854,7 @@ if (!function_exists('cart_product_price')) {
             //discount calculation
             $discount_applicable = false;
 
-            if ($product->discount_start_date == null) {
+            if ($product->discount_start_date != null && $product->discount_end_date != null) {
                 $discount_applicable = true;
             } elseif (
                 strtotime(date('d-m-Y H:i:s')) >= $product->discount_start_date &&

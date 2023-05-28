@@ -2,21 +2,12 @@
 
 @section('content')
 <div class="aiz-titlebar text-left mt-2 mb-3">
-	<div class="row align-items-center">
-		<div class="col-md-6">
-			<h1 class="h3">{{translate('All uploaded files')}}</h1>
-		</div>
-		<div class="col-md-6 text-md-right">
-			<a href="{{ route('uploaded-files.create') }}" class="btn btn-primary">
-				<span>{{translate('Upload New File')}}</span>
-			</a>
-		</div>
-	</div>
 </div>
 
 <div class="card">
 	<form id="sort_uploads" action="">
         <div class="card-header row gutters-5">
+            
             <div class="col">
                 <h5 class="mb-0 h6">{{translate('All files')}}</h5>
             </div>
@@ -42,6 +33,9 @@
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary">{{ translate('Search') }}</button>
             </div>
+            <a href="{{ route('uploaded-files.create') }}" class="btn btn-primary">
+				<span>{{translate('Upload New File')}}</span>
+			</a>
         </div>
     
 		<div class="card-body">

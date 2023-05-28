@@ -72,7 +72,7 @@
             <tbody>
                 @php
                     $subtotal = 0;
-                    $total_discount=0;
+                    $total_discount = 0;
                     $tax = 0;
                     $shipping = 0;
                     $product_shipping_cost = 0;
@@ -84,9 +84,9 @@
                         $subtotal += cart_product_price_base($cartItem, $product, false, false) * $cartItem['quantity'];
                         $tax += cart_product_tax($cartItem, $product, false) * $cartItem['quantity'];
                         $product_shipping_cost = $cartItem['shipping_cost'];
-                        $total_discount+=$cartItem['discount'];
+                        $total_discount += $cartItem['discount'];
                         $shipping += $product_shipping_cost;
-
+                        
                         $product_name_with_choice = $product->getTranslation('name');
                         if ($cartItem['variant'] != null) {
                             $product_name_with_choice = $product->getTranslation('name') . ' - ' . $cartItem['variant'];
@@ -134,7 +134,8 @@
                 <tr class="cart-shipping">
                     <th>{{ translate('Total Discount') }}</th>
                     <td class="text-right">
-                        <span class="font-italic">{{ single_price($total_discount) }}</span>
+                        <span
+                            class="font-italic">{{ single_price($total_discount + extradiscount(Session::get('temp_user_id'))) }}</span>
                     </td>
                 </tr>
 
@@ -169,7 +170,7 @@
                 <tr class="cart-total">
                     <th><span class="strong-600">{{ translate('Total') }}</span></th>
                     <td class="text-right">
-                        <strong><span>{{ single_price($total-$total_discount) }}</span></strong>
+                        <strong><span>{{ single_price(($total - $total_discount)-extradiscount(Session::get('temp_user_id'))) }}</span></strong>
                     </td>
                 </tr>
             </tfoot>
