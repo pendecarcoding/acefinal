@@ -95,7 +95,7 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-md-3 col-from-label">{{ translate('Weight') }}
-                                    <small>({{ translate('In Kg') }})</small></label>
+                                    <small>({{ translate('In gram') }})</small></label>
                                 <div class="col-md-8">
                                     <input type="number" class="form-control" name="weight"
                                         value="{{ $product->weight }}" step="0.01" placeholder="0.00">
