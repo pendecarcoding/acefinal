@@ -60,7 +60,7 @@ class ProductController extends Controller
         $data = Product::join('marginprice','products.id','marginprice.id_product')->orderby('denominations','ASC')->get();
         return view('backend.product.discount.index',compact('data'));
     }
-    
+
 
     public function discountextra(Request $request){
         try {
@@ -90,7 +90,7 @@ class ProductController extends Controller
                     'unit_price'=>$unitprice,
                 ];
                 Product::where('id',$product->id)->update($update);
-                
+
                     $overrideprice = getlastprice();
                     $denomination  = $product->weight;
                     if($product->discount_start_date != null && $product->discount_end_date && $product->promo_price != null){
@@ -118,10 +118,10 @@ class ProductController extends Controller
                         DB::table('product_stocks')->where('product_id',$product->id)->update($p);
 
                     }
-            
 
 
-           
+
+
             flash(translate('Margin has been updated successfully'))->success();
             return back();
         } catch (\Throwable $th) {
@@ -287,7 +287,7 @@ class ProductController extends Controller
                     $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
 
                 }
-                
+
             }
 
 
@@ -424,6 +424,23 @@ class ProductController extends Controller
             ->get();
 
         return view('backend.product.products.edit', compact('product', 'categories', 'tags', 'lang'));
+    }
+
+    public function seller_product_edit_discount(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+        if ($product->digital == 1) {
+            return redirect('digitalproducts/' . $id . '/edit');
+        }
+        $lang = $request->lang;
+        $tags = json_decode($product->tags);
+        // $categories = Category::all();
+        $categories = Category::where('parent_id', 0)
+            ->where('digital', 0)
+            ->with('childrenCategories')
+            ->get();
+
+        return view('backend.product.discount.edit', compact('product', 'categories', 'tags', 'lang'));
     }
 
     /**

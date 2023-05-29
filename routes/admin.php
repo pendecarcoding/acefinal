@@ -110,6 +110,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
         Route::post('/products/store/', 'store')->name('products.store');
         Route::get('/products/admin/{id}/edit', 'admin_product_edit')->name('products.admin.edit');
         Route::get('/products/seller/{id}/edit', 'seller_product_edit')->name('products.seller.edit');
+        Route::get('/products/seller/{id}/editdiscount', 'seller_product_edit_discount')->name('products.seller.editdiscount');
         Route::post('/products/update/{product}', 'update')->name('products.update');
         Route::post('/products/todays_deal', 'updateTodaysDeal')->name('products.todays_deal');
         Route::post('/products/featured', 'updateFeatured')->name('products.featured');

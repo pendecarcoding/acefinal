@@ -17,7 +17,7 @@
                                 <img style="width:100%" src="/public/aceweb/assets/img/extraset.png">
 
                             </div>
-                           
+
                                 <div class="modal-body">
                                     <label for="">Discounted prices for purchases of more than 100 grams</label>
                                     <input type="hidden" name="types[]" value="DISCOUNT_EXTRA">
@@ -28,7 +28,7 @@
                                     <a type="button" class="btn btn-default" data-dismiss="modal">Cancel</a>
                                     <button type="submit" class="btn btn-primary">SET</button>
                                 </div>
-                          
+
                         </div>
 
                     </div>
@@ -84,7 +84,7 @@
                             </td>
                             <td>
                                 <a style="color:white" data-toggle="modal" data-target="#edit{{ $v->id }}"class="btn btn-circle btn-sm btn-info btn-icon "><i class="las la-money-bill-wave"></i></a>
-                                <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{route('products.seller.edit', ['id'=>$v->id_product, 'lang'=>env('DEFAULT_LANGUAGE')] )}}" title="{{ translate('Edit') }}">
+                                <a class="btn btn-soft-primary btn-icon btn-circle btn-sm" href="{{route('products.seller.editdiscount', ['id'=>$v->id_product, 'lang'=>env('DEFAULT_LANGUAGE')] )}}" title="{{ translate('Edit') }}">
                                     <i class="las la-edit"></i>
                                 </a>
                             </td>
