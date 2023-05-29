@@ -16,13 +16,16 @@
 }
 
 .discount{
+    transform: rotate(45deg);
     color: white;
     background-color: red;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 19px;
+    right: -34px;
+    text-align: center;
     font-weight: bold;
     padding: 4px;
+    width: 130px;
 }
 .active > .page-link, .page-link.active {
     z-index: 3;

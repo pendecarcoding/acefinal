@@ -54,7 +54,8 @@
                             @foreach ($data as $i => $v)
                                 <div class="col-md-4 col-sm-4">
 
-                                    <div data-aos="fade-up" class="cards">
+                                    <div data-aos="fade-up" class="cards" style="position: relative;
+                                    overflow: hidden;">
                                         @if (home_price($v) != home_discounted_price($v))
                                         <span class="discount">PROMO</span>
                                         @endif
