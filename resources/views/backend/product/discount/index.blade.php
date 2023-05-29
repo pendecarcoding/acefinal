@@ -19,7 +19,7 @@
                             </div>
 
                                 <div class="modal-body">
-                                    <label for="">Discounted prices for purchases of more than 100 grams</label>
+                                    <label for="">Discounted prices for purchases of more than 100 grams. Please Set Amount (RM)</label>
                                     <input type="hidden" name="types[]" value="DISCOUNT_EXTRA">
                                     <input id="doubleInput" oninput="validateNumberFormat(this)"
                                         value="{{ env('DISCOUNT_EXTRA') }}" class="form-control" required name="DISCOUNT_EXTRA">

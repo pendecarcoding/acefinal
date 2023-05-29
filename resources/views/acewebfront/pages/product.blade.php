@@ -133,7 +133,7 @@
     </script>
     <script>
         function openWhatsApp() {
-            window.location.href = "https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar";
+            window.open("https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar", "_blank");
         }
     </script>
 
