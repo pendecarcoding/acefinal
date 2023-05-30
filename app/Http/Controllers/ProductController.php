@@ -247,7 +247,7 @@ class ProductController extends Controller
 
     public function pricefeedjson()
     {
-        $data = Pricefeed::select('updateby','name','systemprice','overrideprice','created_at')->take(20)->orderby('id','desc')->get();
+        $data = Pricefeed::select('updateby','name','systemprice','overrideprice','created_at')->whereDate('created_at',date('Y-m-d'))->take(20)->orderby('id','desc')->get();
         header("Content-Type: application/json");
         echo json_encode($data);
     }
