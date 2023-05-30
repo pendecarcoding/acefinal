@@ -232,7 +232,7 @@ class AceController extends Controller
                 }
                  break;
             case 'callfpx':
-                if($_POST['transactionAmount']!=null){
+                if(isset($_POST['transactionAmount'])){
                     $data=[
                         'transactionAmount'=>$_POST['transactionAmount'],
                         'fpxTxnId'=>$_POST['fpxTxnId'],
