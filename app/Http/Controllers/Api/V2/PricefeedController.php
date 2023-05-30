@@ -12,49 +12,99 @@ class PricefeedController extends Controller
 {
     public function update(Request $r)
     {
+        $currentDateTime = date('Y-m-d H:i:s');
+        $currentDate     = date('Y-m-d');
+        $isAM = (date('A', strtotime($currentDateTime)) === 'AM');
 
-        // if($r->time=="08:30" || $r->time=="14:00" || $r->time=="02:45"){
-            $data =[
-                'updateby'=>'SYSTEM',
-                'name'=>'CRONJOB',
-                'systemprice'=>$r->currentprice,
-                'overrideprice'=>$r->overrideprice,
-            ];
-            Pricefeed::insert($data);
-                $datas = Product::all();
-                foreach ($datas as $key => $v) {
-                    $margin = DB::table('marginprice')->where('denominations',$v->weight)->first();
-                    $formula = ($r->overrideprice+$margin->margin)*$v->weight;
-                    if($v->discount_start_date != null && $v->discount_end_date != null && $v->promo_price != null){
-                        $discount  = ($r->overrideprice+$v->promo_price)*$v->weight;
-                        $discount  = $formula-$discount;
-                        $u = [
-                            'unit_price'=>$formula,
-                            'discount'=>$discount
-                        ];
-                        $act = Product::where('id',$v->id)->update($u);
-                        $p = [
-                            'price'=>$formula
-                        ];
-                        $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
-                    }else{
-                        $u = [
-                            'unit_price'=>$formula
-                        ];
-                        $act = Product::where('id',$v->id)->update($u);
-                        $p = [
-                            'price'=>$formula
-                        ];
-                        $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
-    
+        if ($isAM) {
+            $c = Pricefeed::whereDate('created_at',$currentDate)->count();
+            if($c > 0){
+
+            }else{
+                $data =[
+                    'updateby'=>'SYSTEM',
+                    'name'=>'CRONJOB',
+                    'systemprice'=>$r->currentprice,
+                    'overrideprice'=>$r->overrideprice,
+                ];
+                Pricefeed::insert($data);
+                    $datas = Product::all();
+                    foreach ($datas as $key => $v) {
+                        $margin = DB::table('marginprice')->where('denominations',$v->weight)->first();
+                        $formula = ($r->overrideprice+$margin->margin)*$v->weight;
+                        if($v->discount_start_date != null && $v->discount_end_date != null && $v->promo_price != null){
+                            $discount  = ($r->overrideprice+$v->promo_price)*$v->weight;
+                            $discount  = $formula-$discount;
+                            $u = [
+                                'unit_price'=>$formula,
+                                'discount'=>$discount
+                            ];
+                            $act = Product::where('id',$v->id)->update($u);
+                            $p = [
+                                'price'=>$formula
+                            ];
+                            $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+                        }else{
+                            $u = [
+                                'unit_price'=>$formula
+                            ];
+                            $act = Product::where('id',$v->id)->update($u);
+                            $p = [
+                                'price'=>$formula
+                            ];
+                            $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+
+                        }
                     }
-                }
+            }
+        } else {
+            $c = Pricefeed::whereDate('created_at',$currentDate)->count();
+            if($c > 0){
+
+            }else{
+                $data =[
+                    'updateby'=>'SYSTEM',
+                    'name'=>'CRONJOB',
+                    'systemprice'=>$r->currentprice,
+                    'overrideprice'=>$r->overrideprice,
+                ];
+                Pricefeed::insert($data);
+                    $datas = Product::all();
+                    foreach ($datas as $key => $v) {
+                        $margin = DB::table('marginprice')->where('denominations',$v->weight)->first();
+                        $formula = ($r->overrideprice+$margin->margin)*$v->weight;
+                        if($v->discount_start_date != null && $v->discount_end_date != null && $v->promo_price != null){
+                            $discount  = ($r->overrideprice+$v->promo_price)*$v->weight;
+                            $discount  = $formula-$discount;
+                            $u = [
+                                'unit_price'=>$formula,
+                                'discount'=>$discount
+                            ];
+                            $act = Product::where('id',$v->id)->update($u);
+                            $p = [
+                                'price'=>$formula
+                            ];
+                            $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+                        }else{
+                            $u = [
+                                'unit_price'=>$formula
+                            ];
+                            $act = Product::where('id',$v->id)->update($u);
+                            $p = [
+                                'price'=>$formula
+                            ];
+                            $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
+
+                        }
+                    }
+            }
         }
 
+    }
 
 
 
 
-    // }
 
-}
+    }
+
