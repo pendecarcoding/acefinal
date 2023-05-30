@@ -59,7 +59,7 @@
                                         @if (home_price($v) != home_discounted_price($v))
                                         <span class="discount">PROMO</span>
                                         @endif
-                                        <a href="{{url('our_products/'.$v->slug)}}">
+                                        <a href="#">
                                             <center><img class="img-responsive-product"
                                                     src="{{ getimage($v->thumbnail_img) }}" alt="" /></center>
                                             <p>{{ $v->name }}</p>
