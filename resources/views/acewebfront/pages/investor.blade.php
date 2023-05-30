@@ -61,7 +61,7 @@
       <section id="ace-investor-banner-mobile">
         <div class="row-personal">
           <div  class="col-md-12 col-sm-12 col-lg-9">
-            <img class="img-responsive-investor" src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/buisnismen.png" alt="">
+            <img class="img-responsive-investor" src="{{ getimage(env('INVESTOR_BANNER')) }}" alt="">
             <div class="container">
               <div class="carousel-caption text-start">
                 <h1 class="h1-investor-banner">Half Yearly Results as at @php $created = explode(' ',$announcementnew->created_at); print $created[0] @endphp</h1>

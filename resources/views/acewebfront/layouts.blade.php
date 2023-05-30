@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="
-    https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="description" content="" />
     <meta name="theme-color" content="#264e77" />
 
     <meta name="generator" content="Hugo 0.104.2" />
-    <link rel="icon"
-        href="https://aceweb.kanalapps.web.id/public/uploads/all/sfGZMHPHsxYDerGPCBKsZYgTze8TMq55iPlnP01y.png">
-    <title>@if (!empty($page))
-        ACE INOVATE ASIA BERHARD |{{ strtoupper($page) }}
-
-    @else
-        @yield('title')
+    <link rel="icon" href="{{ uploaded_asset(get_setting('site_icon')) }}">
+    <title>
+        @if (!empty($page))
+            ACE INOVATE ASIA BERHARD |{{ strtoupper($page) }}
+        @else
+            @yield('title')
         @endif
     </title>
 
@@ -59,16 +58,17 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link href="{{ static_asset('aceweb') }}/assets/ace/ipadace1.css" rel="stylesheet" />
-   
+
 
 
 
     <style>
         #pdfviewer {
-    border: 1px #333 solid;
-    width: 100%;
-    background: #eee;
-}
+            border: 1px #333 solid;
+            width: 100%;
+            background: #eee;
+        }
+
         #myBtn {
             display: none;
             position: fixed;
@@ -88,13 +88,12 @@
         #myBtn:hover {
             background-color: #555;
         }
-
     </style>
 
 
 </head>
 
-<body >
+<body>
     <!--<div class="centerloader">
     <div id="loader" class="loader"></div>
 </div>-->
@@ -118,32 +117,34 @@
                     padding: 50px;
                 ">
                         <div class="mb-5 text-center">
-                            <img src="{{ uploaded_asset(get_setting('site_icon')) }}"
-                                class="mw-100 mb-4" height="100">
+                            <img src="{{ uploaded_asset(get_setting('site_icon')) }}" class="mw-100 mb-4"
+                                height="100">
                             <h1 style="color: #6d6d6d;font-size: 20px;" class="h3  mb-0">Staff Login</h1>
 
                         </div>
-                        <form class="pad-hor" method="POST" role="form" action="{{route('staff.login')}}">
-                            {{csrf_field()}}
+                        <form class="pad-hor" method="POST" role="form" action="{{ route('staff.login') }}">
+                            {{ csrf_field() }}
                             <div style="margin-left: 20px;margin-right: 20px;">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span style="height: 40px;
-                                      border-radius: 0px;" class="input-group-text" id="basic-addon1"><i
-                                                class="fa fa-user"></i></span>
+                                        <span
+                                            style="height: 40px;
+                                      border-radius: 0px;"
+                                            class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input required name="username" type="text" class="form-control" placeholder="Staff ID" aria-label="Username"
-                                        aria-describedby="basic-addon1">
+                                    <input required name="username" type="text" class="form-control"
+                                        placeholder="Staff ID" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
 
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span style="height: 40px;
-                                      border-radius: 0px;" class="input-group-text" id="basic-addon1"><i
-                                                class="fa fa-lock"></i></span>
+                                        <span
+                                            style="height: 40px;
+                                      border-radius: 0px;"
+                                            class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
                                     </div>
-                                    <input id="password" type="password" class="form-control" name="password" required=""
-                                        placeholder="Password">
+                                    <input id="password" type="password" class="form-control" name="password"
+                                        required="" placeholder="Password">
                                 </div>
                             </div>
 
@@ -157,12 +158,13 @@
                                 </button>
                                 <br>
                                 <center>
-                                    <p style="margin-top: 5px;color:#959595">Don't have an account? <span><a style="color:#959595;text-decoration: none;"
+                                    <p style="margin-top: 5px;color:#959595">Don't have an account? <span><a
+                                                style="color:#959595;text-decoration: none;"
                                                 href="{{ url('registerstaff') }}">Create
                                                 account</a></span></p>
 
                                     <p><span><a style="color:#959595;text-decoration: none;"
-                                        href="{{ url('forgotpass') }}">Forgot Password</a></span></p>
+                                                href="{{ url('forgotpass') }}">Forgot Password</a></span></p>
                                 </center>
 
                             </div>
@@ -188,26 +190,25 @@
 
 
 
-        $('#requestpatnerform').submit(function (event) {
+        $('#requestpatnerform').submit(function(event) {
             event.preventDefault();
             $("#loading").show();
             $.ajax({
                 url: '{{ route('forcorporate.addrequest') }}',
                 type: 'POST',
                 data: $('#requestpatnerform').serialize(),
-                success: function (response) {
+                success: function(response) {
                     if (response == "success") {
 
                         $("#alertpatner").show();
                         $("#requestpatnerform")[0].reset();
                     }
                 },
-                complete: function () {
+                complete: function() {
                     $("#loading").hide();
                 }
             });
         });
-
     </script>
     <script>
         var myVar;
@@ -221,7 +222,6 @@
             document.getElementById("loader").style.display = "none";
             document.getElementById("divbody").style.display = "block";
         }
-
     </script>
 
     <script type="text/javascript">
@@ -264,13 +264,12 @@
 
         }
 
-        window.onscroll = function () {
+        window.onscroll = function() {
 
             progressBarScroll();
 
 
         };
-
     </script>
     <script type="text/javascript">
         function fadeingtp(section, classname) {
@@ -282,7 +281,7 @@
 
         }
 
-        $(window).on("scroll", function () {
+        $(window).on("scroll", function() {
 
             //document.getElementById("progressBar").style.height =  window.innerHeight;
 
@@ -296,7 +295,7 @@
                 window.innerHeight
             ) {
                 if (!localStorage.getItem("visited")) {
-                    $(".number").each(function () {
+                    $(".number").each(function() {
                         $(this)
                             .prop("Counter", 0)
                             .animate({
@@ -304,12 +303,12 @@
                             }, {
                                 duration: 2000,
                                 easing: "swing",
-                                step: function (now) {
+                                step: function(now) {
                                     $(this).text(Math.ceil(now));
                                 },
                             });
                     });
-                    $(".decimal").each(function () {
+                    $(".decimal").each(function() {
                         $(this)
                             .prop("Counter", 0)
                             .animate({
@@ -317,7 +316,7 @@
                             }, {
                                 duration: 2000,
                                 easing: "swing",
-                                step: function (now) {
+                                step: function(now) {
                                     $(this).text(parseFloat(now).toFixed(1));
                                 },
                             });
@@ -330,9 +329,9 @@
         });
 
 
-        $(document).ready(function () {
+        $(document).ready(function() {
 
-            $(window).on("scroll", function () {
+            $(window).on("scroll", function() {
 
                 if (
                     $(window).scrollTop() >=
@@ -361,8 +360,8 @@
                     window.innerHeight
                 ) {
 
-                    $(".grid-item").each(function (i) {
-                        setTimeout(function () {
+                    $(".grid-item").each(function(i) {
+                        setTimeout(function() {
                             $(".grid-item").eq(i).addClass("is-visible");
                         }, 200 * i);
                     });
@@ -377,8 +376,8 @@
                     window.innerHeight
                 ) {
 
-                    $(".grid-item").each(function (i) {
-                        setTimeout(function () {
+                    $(".grid-item").each(function(i) {
+                        setTimeout(function() {
                             $(".grid-item").eq(i).removeClass("is-visible");
                         }, 200 * i);
                     });
@@ -511,7 +510,6 @@
 
             });
         });
-
     </script>
 
     <script>
@@ -527,7 +525,6 @@
                 y.style.display = "block";
             }
         }
-
     </script>
 
     <script src="{{ static_asset('aceweb') }}/assets/vendor/aos/aos.js"></script>
@@ -535,53 +532,50 @@
 
     <!--Mansory Scroll-->
     @php
-    $datapatner = getPatner();
+        $datapatner = getPatner();
     @endphp
     <script>
         var images = [
-            @foreach($datapatner as $i => $p)
-           "{{getimage($p->image)}}",
+            @foreach ($datapatner as $i => $p)
+                "{{ getimage($p->image) }}",
             @endforeach
-    ];
+        ];
 
-  console.log(images);
+        console.log(images);
 
-  var lists = document.getElementsByClassName("selfie-img");
-  var list = lists;
-  console.log(lists);
-  console.log(list);
-  // Var or Let works in the for loop
-  let counter = 0;
-  let counter2 = 0;
-  for (let i = 0; i < lists.length; i++) {
-    // console.log(list[i]);
-    if (i < images.length) {
-      list[i].style.backgroundImage = "url(" + images[i] + ")";
-    } else if (i < 2 * images.length) {
-      list[i].style.backgroundImage = "url(" + images[counter] + ")";
-      counter = counter + 1;
-    } else {
-      list[i].style.backgroundImage = "url(" + images[counter2] + ")";
-      counter2 = counter2 + 1;
-    }
-  }
+        var lists = document.getElementsByClassName("selfie-img");
+        var list = lists;
+        console.log(lists);
+        console.log(list);
+        // Var or Let works in the for loop
+        let counter = 0;
+        let counter2 = 0;
+        for (let i = 0; i < lists.length; i++) {
+            // console.log(list[i]);
+            if (i < images.length) {
+                list[i].style.backgroundImage = "url(" + images[i] + ")";
+            } else if (i < 2 * images.length) {
+                list[i].style.backgroundImage = "url(" + images[counter] + ")";
+                counter = counter + 1;
+            } else {
+                list[i].style.backgroundImage = "url(" + images[counter2] + ")";
+                counter2 = counter2 + 1;
+            }
+        }
 
-  var clone1 = $(".col1 ul li").clone();
-  clone1.appendTo(".col1 ul");
-  var clone2 = $(".col2 ul li").clone();
-  clone2.appendTo(".col2 ul");
-  var clone3 = $(".col3 ul li").clone();
-  clone3.appendTo(".col3 ul");
-
+        var clone1 = $(".col1 ul li").clone();
+        clone1.appendTo(".col1 ul");
+        var clone2 = $(".col2 ul li").clone();
+        clone2.appendTo(".col2 ul");
+        var clone3 = $(".col3 ul li").clone();
+        clone3.appendTo(".col3 ul");
     </script>
     <!--END MAnsory-->
-    <script src="{{ static_asset('aceweb') }}/assets/ace/gtpscroll.js" type="text/javascript">
-    </script>
+    <script src="{{ static_asset('aceweb') }}/assets/ace/gtpscroll.js" type="text/javascript"></script>
     <script src="{{ static_asset('aceweb') }}/assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <script>
         if (!window.Cypress) AOS.init();
-
     </script>
     <script type="text/javascript">
         $(".slider-service").slick({
@@ -590,7 +584,6 @@
             autoplay: true,
             autoplaySpeed: 2000,
         });
-
     </script>
     <script>
         let magicGrid = new MagicGrid({
@@ -602,13 +595,12 @@
         });
 
         magicGrid.listen();
-
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             // Masonry Grid
             $(".grid").masonry({
                 itemSelector: ".grid-item",
@@ -633,7 +625,6 @@
                 }
             });
         });
-
     </script>
 
 
@@ -663,21 +654,18 @@
 
             }
         }
-
     </script>
 
+
+    <script></script>
 
     <script>
-
+        window.addEventListener('wheel', function(event) {
+            if (event.ctrlKey == true) {
+                event.preventDefault();
+            }
+        });
     </script>
-
-<script>
-    window.addEventListener('wheel', function(event) {
-      if (event.ctrlKey == true) {
-        event.preventDefault();
-      }
-    });
-  </script>
 
 
 
