@@ -17,7 +17,7 @@ class PricefeedController extends Controller
         $isAM = (date('A', strtotime($currentDateTime)) === 'AM');
 
         if ($isAM) {
-            $c = Pricefeed::whereDate('created_at',$currentDate)->count();
+            $c = Pricefeed::whereDate('created_at',$currentDate)->where('updateby','SYSTEM')->count();
             if($c > 0){
 
             }else{
@@ -58,10 +58,8 @@ class PricefeedController extends Controller
                     }
             }
         } else {
-            $c = Pricefeed::whereDate('created_at',$currentDate)->count();
-            if($c > 0){
-
-            }else{
+            $c = Pricefeed::whereDate('created_at',$currentDate)->where('updateby','SYSTEM')->count();
+            if($c < 3){
                 $data =[
                     'updateby'=>'SYSTEM',
                     'name'=>'CRONJOB',
@@ -97,6 +95,8 @@ class PricefeedController extends Controller
 
                         }
                     }
+            }else{
+
             }
         }
 
