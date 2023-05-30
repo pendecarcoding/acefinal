@@ -65,7 +65,7 @@ class M1paymentController extends Controller
 
 
         $amounts = str_replace(',','',format_priceback(convert_price($amount)));
-        $signdata = $description.'|'.$amounts.'|'.$order['code'].'|'.$order['code'].'|MYR|'.$detail->email.'|41012618';
+        $signdata = $description.'|'.$amounts.'|'.$order['code'].'|'.$order['code'].'|MYR|'.$detail->email.'|'.env('M1_CLIENT_ID');
         $sign = str_replace(' ','',getsignm1payment($signdata));
         $body =[
                 "transactionAmount"=>$amounts,
@@ -93,7 +93,7 @@ class M1paymentController extends Controller
 
        try {
             // Call API with your client and get a response for your call
-            $maxAttempts = 3000; // Maximum number of attempts
+            $maxAttempts = 3; // Maximum number of attempts
             $attempt = 0;
             do {
                 $cURLConnection = curl_init($link);
@@ -110,7 +110,8 @@ class M1paymentController extends Controller
                     $attempt++;
                     curl_close($cURLConnection);
                     if ($attempt >= $maxAttempts) {
-                        echo "Maximum attempts reached. Exiting loop.";
+                        print $apiResponse;
+                        // echo "Maximum attempts reached. Exiting loop.";
                         break;
                     }
 
