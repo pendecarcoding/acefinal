@@ -93,7 +93,7 @@ class M1paymentController extends Controller
 
        try {
             // Call API with your client and get a response for your call
-            $maxAttempts = 3; // Maximum number of attempts
+            $maxAttempts = 300; // Maximum number of attempts
             $attempt = 0;
             do {
                 $cURLConnection = curl_init($link);
