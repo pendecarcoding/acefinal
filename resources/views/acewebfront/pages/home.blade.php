@@ -365,7 +365,7 @@
                  </center>
                  <div class="gtp-po-button">
                   <center>
-                      <a href="https://aceweb.kanalapps.web.id/newsroom" class="ace-button">Find Out More</a>
+                      <a href="#" class="ace-button">Find Out More</a>
                     </center>
                   </div>
                  </div>
