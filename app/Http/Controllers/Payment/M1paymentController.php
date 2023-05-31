@@ -60,7 +60,7 @@ class M1paymentController extends Controller
         $detail   = json_decode($order['shipping_address']);
 
 
-        $description = $order['code'];
+        $description = 'BUY GOLD';
 
 
 
