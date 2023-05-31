@@ -6,8 +6,7 @@
         <div data-aos="fade-up" class="aos-init aos-animate">
             <div class="col-md-12">
                 <div class="banner-static">
-                    <img class="img-responsive-banner"
-                        src="https://aceweb.kanalapps.web.id/public/aceweb/assets/img/banner-newsrom.png" alt="">
+                    <img class="img-responsive-banner" src="/public/aceweb/assets/img/newsroom-banner.jpg" alt="">
                 </div>
             </div>
         </div>
