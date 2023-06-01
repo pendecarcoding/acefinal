@@ -1,15 +1,15 @@
 @extends('acewebfront.layouts')
 @section('content')
-<style>
-   .ndfHFb-c4YZDc-i5oIFb.ndfHFb-c4YZDc-e1YmVc .ndfHFb-c4YZDc-Wrql6b {
-    display: none;
-    background: rgba(0,0,0,.75);
-    height: 40px;
-    top: 12px;
-    left: auto;
-    padding: 0
-}
-</style>
+    <style>
+        .ndfHFb-c4YZDc-i5oIFb.ndfHFb-c4YZDc-e1YmVc .ndfHFb-c4YZDc-Wrql6b {
+            display: none;
+            background: rgba(0, 0, 0, .75);
+            height: 40px;
+            top: 12px;
+            left: auto;
+            padding: 0
+        }
+    </style>
     <main>
 
         <section class="ace-investor">
@@ -44,7 +44,7 @@
                             <a style="text-decoration: none;" href="{{ route('staff.detailhandbook') }}">
                                 <div class="list-content">
                                     <p><span><img src="{{ static_asset('aceweb') }}/assets/img/pdficon.png"></span>AIAB
-                                        Employee Handbook 30.03.2023</p>
+                                        Employee Handbook VERSION 3.0 Effective 1 June 2023</p>
 
 
                                 </div>
