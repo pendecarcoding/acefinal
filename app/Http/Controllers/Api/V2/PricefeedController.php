@@ -26,6 +26,7 @@ class PricefeedController extends Controller
                     'name'=>'CRONJOB',
                     'systemprice'=>$r->currentprice,
                     'overrideprice'=>$r->overrideprice,
+                    'timeprice'=>$r->timeprice
                 ];
                 Pricefeed::insert($data);
                     $datas = Product::all();
@@ -65,6 +66,7 @@ class PricefeedController extends Controller
                     'name'=>'CRONJOB',
                     'systemprice'=>$r->currentprice,
                     'overrideprice'=>$r->overrideprice,
+                    'timeprice'=>$r->timeprice
                 ];
                 Pricefeed::insert($data);
                     $datas = Product::all();
