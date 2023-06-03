@@ -35,8 +35,6 @@
 
 
                     <div class="col-sm-9" style="padding: 36px;">
-
-
                         <div class="well" style="margin-top:50px;height: 100vh;">
                             <h2 style="font-weight: bold;color:#1D5189">Employee handbook Download</h2>
                             <br>
@@ -45,7 +43,7 @@
 
                             <a style="text-decoration: none;" href="{{ route('staff.detailhandbook',base64_encode($v->file)) }}">
                                 <div class="list-content">
-                                    <p><span><img src="{{ static_asset('aceweb') }}/assets/img/pdficon.png"></span> &nbsp;AIAB
+                                    <p><span><img src="{{ static_asset('aceweb') }}/assets/img/pdficon.png"></span> &nbsp;
                                         {{$v->name}} Effective {{convertdate($v->effective)}}</p>
 
 
