@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header">
                     <h5 class="mb-0 h6">{{ translate('Announcements Information') }}</h5>
-                    <a style="float:right" href="{{ route('announcements.index') }}" class="btn btn-danger">X</a>
+                    <a style="float:right" href="{{ route('announcements.staff') }}" class="btn btn-danger">X</a>
                 </div>
                 <div class="card-body">
                     <form id="add_form" class="form-horizontal" action="{{ route('announcements.storeadmin') }}"

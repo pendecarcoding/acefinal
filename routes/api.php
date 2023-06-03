@@ -316,5 +316,6 @@ Route::fallback(function() {
     ]);
 });
 
-Route::post('/apiupdatepricefeed/test/kirim', 'App\Http\Controllers\Api\V2\PricefeedController@update');
+// Route::post('/apiupdatepricefeed/test/kirim', 'App\Http\Controllers\Api\V2\PricefeedController@update');
+Route::post('/apiupdatepricefeed/update/price', 'App\Http\Controllers\Api\V2\PricefeedController@update');
 

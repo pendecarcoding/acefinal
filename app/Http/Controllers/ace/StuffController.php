@@ -69,25 +69,30 @@ class StuffController extends Controller
       }
       public function handbook(){
         if(Session::get('loginstaff')==true){
-        $announce = Announcement::orderby('created_at','DESC')->get();
-        return view('backstaff.handbook.index',compact('announce'));
+        $data = DB::table('handbook')->where('published','1')->orderby('effective','DESC')->get();
+        return view('backstaff.handbook.index',compact('data'));
     }else{
         return redirect('investor_relations');
     }
       }
-      public function detailhandbook(){
+      public function detailhandbook($file){
         if(Session::get('loginstaff')==true){
-        $announce = Announcement::orderby('created_at','DESC')->get();
-        updatelasttime();
-        // updatelog(Session::get('id_staff'),'Read Handbook');
-        return view('backstaff.handbook.detail',compact('announce'));
+        $handbook = DB::table('handbook')->where('published','1')->where('file',base64_decode($file))->first();
+        if(!empty($handbook)){
+            updatelasttime();
+            // updatelog(Session::get('id_staff'),'Read Handbook');
+            return view('backstaff.handbook.detail',compact('handbook'));
+        }else{
+            return redirect('staff/back/handbook');
+        }
+        
     }else{
         return redirect('investor_relations');
     }
       }
     public function anti(){
         if(Session::get('loginstaff')==true){
-        
+
         $announce = Announcement::orderby('created_at','DESC')->get();
         updatelasttime();
         // updatelog(Session::get('id_staff'),'Read Anti Bribery');
@@ -165,7 +170,7 @@ class StuffController extends Controller
 
             }
         }else{
-            
+
         }
       }
 

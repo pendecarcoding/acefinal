@@ -45,6 +45,7 @@
 
 
             <div class="card-footer">
+            <div class="table-responsive">
                 <table id="example" class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -81,6 +82,7 @@
                         </tr>
                     </tfoot>
                 </table>
+                </div>
             </div>
         </div>
     </div>

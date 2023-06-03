@@ -66,7 +66,7 @@
                                     adobeDCView.previewFile({
                                         content: {
                                             location: {
-                                                url: "/public/aceweb/pdf/AIAB Employee Handbook V3.0.pdf"
+                                                url: "/public/handbook/{{$handbook->file}}"
                                             }
                                         },
                                         metaData: {

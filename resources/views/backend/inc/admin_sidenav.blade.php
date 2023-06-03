@@ -1,7 +1,8 @@
 <div class="aiz-sidebar-wrap">
     <div class="aiz-sidebar left c-scrollbar">
         <div class="aiz-side-nav-logo-wrap">
-            <a href="{{ route('admin.dashboard') }}" class="d-block text-left">
+            <a style="font-size: 20px;
+    color: #5c7a9f;" href="{{ route('admin.dashboard') }}" class="d-block text-left">
                 @if (get_setting('system_logo_white') != null)
                     <img class="mw-100" src="{{ uploaded_asset(get_setting('system_logo_white')) }}" class="brand-icon"
                         alt="{{ get_setting('site_name') }}">
@@ -36,6 +37,14 @@
                         <a href="{{ route('announcements.staff') }}" class="aiz-side-nav-link">
                             <i class="las la-bullhorn aiz-side-nav-icon"></i>
                             <span class="aiz-side-nav-text">{{ translate('Announcement For Staff') }}</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('admin_announcement')
+                    <li class="aiz-side-nav-item">
+                        <a href="{{ route('handbook.staff') }}" class="aiz-side-nav-link {{ areActiveRoutes(['handbook.staff', 'handbook.create']) }}">
+                            <i class="las la-book aiz-side-nav-icon"></i>
+                            <span class="aiz-side-nav-text">{{ translate('Handbook Staff') }}</span>
                         </a>
                     </li>
                 @endcan
@@ -121,8 +130,8 @@
                                     </a>
                                 </li>
                             @endcan
-                           
-                           
+
+
                             <!--@can('show_in_house_products')
                                                         <li class="aiz-side-nav-item">
                                                             <a href="{{ route('products.admin') }}" class="aiz-side-nav-link {{ areActiveRoutes(['products.admin', 'products.create', 'products.admin.edit']) }}" >
@@ -770,7 +779,7 @@
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('personalpageset.index') }}"
                                         class="aiz-side-nav-link {{ areActiveRoutes(['perseonalpageset.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Perseonal Page Setting') }}</span>
+                                        <span class="aiz-side-nav-text">{{ translate('Personal Page Setting') }}</span>
                                     </a>
                                 </li>
                             @endcan
@@ -1327,14 +1336,14 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('pickup_point_setup')
+                            <!-- @can('pickup_point_setup')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('pick_up_points.index') }}"
                                         class="aiz-side-nav-link {{ areActiveRoutes(['pick_up_points.index', 'pick_up_points.create', 'pick_up_points.edit']) }}">
                                         <span class="aiz-side-nav-text">{{ translate('Pickup point') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan -->
                             @can('smtp_settings')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('smtp_settings.index') }}" class="aiz-side-nav-link">
@@ -1482,14 +1491,14 @@
                                                 </a>
                                             </li>
                                         @endcan
-                                        @can('manage_carriers')
+                                        <!-- @can('manage_carriers')
                                             <li class="aiz-side-nav-item">
                                                 <a href="{{ route('carriers.index') }}"
                                                     class="aiz-side-nav-link {{ areActiveRoutes(['carriers.index', 'carriers.create', 'carriers.edit']) }}">
                                                     <span class="aiz-side-nav-text">{{ translate('Shipping Carrier') }}</span>
                                                 </a>
                                             </li>
-                                        @endcan
+                                        @endcan -->
                                     </ul>
                                 </li>
                                 @endif

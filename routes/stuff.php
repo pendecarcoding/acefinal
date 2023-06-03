@@ -8,7 +8,7 @@ Route::controller(StuffController::class)->group(function () {
     Route::post('/back/update/pass', 'updatepassword')->name('staff.update.password');
     Route::get('/back/detailannouncements/{id}', 'detailannouncement')->name('staff.detailannouncements');
     Route::get('/back/handbook', 'handbook')->name('staff.handbook');
-    Route::get('/back/detailhandbook', 'detailhandbook')->name('staff.detailhandbook');
+    Route::get('/back/detailhandbook/{id}', 'detailhandbook')->name('staff.detailhandbook');
     Route::get('/back/Anti-Bribery and Corruption Policy', 'anti')->name('staff.anti');
     Route::get('/back/Ethics and Compliance Whistleblowing Policy and Procedures', 'ethic')->name('staff.ethic');
     Route::get('/back/setting', 'setting')->name('staff.setting');

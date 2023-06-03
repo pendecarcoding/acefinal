@@ -25,64 +25,67 @@
         </div>
 
         <div class="card-body">
-            <table id="example" class="table table-striped table-bordered dataTable no-footer">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>{{ translate('Title') }}</th>
-                        <th data-breakpoints="lg">{{ translate('Category') }}</th>
-                        <th data-breakpoints="lg">{{ translate('Short Description') }}</th>
-                        <th data-breakpoints="lg">{{ translate('Status') }}</th>
-                        <th class="text-right">{{ translate('Options') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($blogs as $key => $blog)
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-bordered dataTable no-footer">
+                    <thead>
                         <tr>
-                            <td>
-                                {{ $key + 1 + ($blogs->currentPage() - 1) * $blogs->perPage() }}
-                            </td>
-                            <td>
-                                {{ $blog->title }}
-                            </td>
-                            <td>
-                                @if ($blog->category != null)
-                                    {{ $blog->category->category_name }}
-                                @else
-                                    --
-                                @endif
-                            </td>
-                            <td>
-                                {{ $blog->short_description }}
-                            </td>
-                            <td>
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" @can('publish_blog') onchange="change_status(this)" @endcan
-                                        value="{{ $blog->id }}" <?php if ($blog->status == 1) {
-                                            echo 'checked';
-                                        } ?>
-                                        @cannot('publish_blog') disabled @endcan>
-                                    <span></span>
-                                </label>
-                            </td>
-                            <td class="text-right">
-                                @can('edit_blog')
-                                    <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
-                                        href="{{ route('blog.edit', $blog->id) }}" title="{{ translate('Edit') }}">
-                                        <i class="las la-pen"></i>
-                                    </a>
-                                @endcan
-                                @can('delete_blog')
-                                    <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
-                                        data-href="{{ route('blog.destroy', $blog->id) }}" title="{{ translate('Delete') }}">
-                                        <i class="las la-trash"></i>
-                                    </a>
-                                @endcan
-                            </td>
+                            <th>#</th>
+                            <th>{{ translate('Title') }}</th>
+                            <th data-breakpoints="lg">{{ translate('Category') }}</th>
+                            <th data-breakpoints="lg">{{ translate('Short Description') }}</th>
+                            <th data-breakpoints="lg">{{ translate('Status') }}</th>
+                            <th class="text-right">{{ translate('Options') }}</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($blogs as $key => $blog)
+                            <tr>
+                                <td>
+                                    {{ $key + 1 + ($blogs->currentPage() - 1) * $blogs->perPage() }}
+                                </td>
+                                <td>
+                                    {{ $blog->title }}
+                                </td>
+                                <td>
+                                    @if ($blog->category != null)
+                                        {{ $blog->category->category_name }}
+                                    @else
+                                        --
+                                    @endif
+                                </td>
+                                <td>
+                                    {{ $blog->short_description }}
+                                </td>
+                                <td>
+                                    <label class="aiz-switch aiz-switch-success mb-0">
+                                        <input type="checkbox" @can('publish_blog') onchange="change_status(this)" @endcan
+                                            value="{{ $blog->id }}" <?php if ($blog->status == 1) {
+                                                echo 'checked';
+                                            } ?>
+                                            @cannot('publish_blog') disabled @endcan>
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td class="text-right">
+                                    @can('edit_blog')
+                                        <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"
+                                            href="{{ route('blog.edit', $blog->id) }}" title="{{ translate('Edit') }}">
+                                            <i class="las la-pen"></i>
+                                        </a>
+                                    @endcan
+                                    @can('delete_blog')
+                                        <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete"
+                                            data-href="{{ route('blog.destroy', $blog->id) }}"
+                                            title="{{ translate('Delete') }}">
+                                            <i class="las la-trash"></i>
+                                        </a>
+                                    @endcan
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
             <div class="aiz-pagination">
                 {{ $blogs->links() }}
             </div>

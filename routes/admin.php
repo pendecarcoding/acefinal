@@ -57,6 +57,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\RequestPatner;
 use App\Http\Controllers\PersonalPageset;
 use App\Http\Controllers\InvestorController;
+use App\Http\Controllers\FileStaffController;
 
 
 /*
@@ -457,6 +458,21 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
          Route::get('/announcementstaff/edit/{id}', 'announcementstaffedit')->name('announcementsadmin.edit');
          Route::post('/announcements/change-status', 'change_status')->name('announcements.change-status');
     });
+
+
+    //handbook and another
+    //announcements
+    Route::resource('filestaff',FileStaffController::class);
+    Route::controller(FileStaffController::class)->group(function () {
+        Route::get('/handbookstaff', 'index')->name('handbook.staff');
+        Route::post('/handbook/published', 'change_status')->name('handbook.published');
+        Route::get('/handbook/create', 'create')->name('handbook.create');
+        Route::post('/handbook/store', 'storehandbook')->name('handbook.store');
+        Route::get('/handbook/destroy/{id}', 'destroyhandbook')->name('handbook.destroy');
+        Route::get('/handbook/edit/{id}', 'handbookedit')->name('handbook.edit');
+        Route::post('/handbook/update', 'updatehandbook')->name('handbook.update');
+   });
+
 
     //Banner Investor
     Route::resource('investorset',InvestorController::class);

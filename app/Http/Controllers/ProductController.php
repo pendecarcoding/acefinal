@@ -253,11 +253,13 @@ class ProductController extends Controller
     }
 
     public function pricefeedupdate(Request $r){
+        $ip        = $_SERVER['REMOTE_ADDR'];
         $data =[
             'updateby'=>'AdminACE',
             'name'=>'Admin',
             'systemprice'=>$r->pricecurrent,
             'overrideprice'=>$r->override,
+            'ip'=>$ip
         ];
         Pricefeed::insert($data);
             $datas = Product::all();

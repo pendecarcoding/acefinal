@@ -41,6 +41,12 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Patner;
 
 
+function convertdate($date){
+    $dateString = $date;
+    $dateTime = new DateTime($dateString);
+    $formattedDate = $dateTime->format('j F Y');
+    return  $formattedDate;
+}
 
 function extradiscount($usrtmpid){
     $data = Cart::where('temp_user_id',$usrtmpid)->get();

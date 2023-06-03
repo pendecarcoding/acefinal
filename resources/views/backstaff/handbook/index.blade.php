@@ -41,14 +41,17 @@
                             <h2 style="font-weight: bold;color:#1D5189">Employee handbook Download</h2>
                             <br>
 
-                            <a style="text-decoration: none;" href="{{ route('staff.detailhandbook') }}">
+                            @foreach($data as $i =>$v)
+
+                            <a style="text-decoration: none;" href="{{ route('staff.detailhandbook',base64_encode($v->file)) }}">
                                 <div class="list-content">
-                                    <p><span><img src="{{ static_asset('aceweb') }}/assets/img/pdficon.png"></span>AIAB
-                                        Employee Handbook VERSION 3.0 Effective 1 June 2023</p>
+                                    <p><span><img src="{{ static_asset('aceweb') }}/assets/img/pdficon.png"></span> &nbsp;AIAB
+                                        {{$v->name}} Effective {{convertdate($v->effective)}}</p>
 
 
                                 </div>
                             </a>
+                            @endforeach
 
 
                         </div>

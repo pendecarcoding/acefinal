@@ -37,6 +37,7 @@
             </div>
         </form>
         <div class="card-body">
+          <div class="table-responsive">
             <table id="example" class="table table-striped table-bordered dataTable no-footer">
                 <thead>
                     <tr>
@@ -122,6 +123,7 @@
 
                 </tbody>
             </table>
+            </div>
             <div class="aiz-pagination">
 
             </div>
