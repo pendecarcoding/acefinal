@@ -222,7 +222,47 @@ class AceController extends Controller
                                     }catch (\Throwable $th) {
                                         print $th->getMessage();
                                     }
-                                }else{
+                                }elseif($status=='REQUEST'){
+                                    try{
+                                        $d = [
+                                        "transactionId"=> $data->transactionId,
+                                        "transactionStatus"=> $data->transactionStatus,
+                                        "productDescription"=> $data->productDescription,
+                                        "transactionAmount"=> $data->transactionAmount,
+                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
+                                        "channel"=> $data->channel,
+                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
+                                        "merchantOrderNo"=> $data->merchantOrderNo,
+                                        "transactionCurrency"=> $data->transactionCurrency,
+                                        "createdDate"=> $data->createdDate,
+                                        "modifiedDate"=> (property_exists($data, 'modifiedDate')) ? $data->modifiedDate : "Null",
+                                        "merchantId"=> $data->merchantId,
+                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
+                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
+                                        "phoneNumber"=> $data->phoneNumber,
+                                        "emailAddress"=> $data->emailAddress,
+                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
+                                        "skipConfirmation"=>$data->skipConfirmation
+                                    ];
+                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
+                                    if($cfpx > 0){
+                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
+                                    }else{
+                                        DB::table('fpxcalback')->insert($d);
+                                        $payment =[
+                                            'payment_status'=>$data->transactionStatus
+                                        ];
+                                        $act = Order::where('code',$data->merchantOrderNo)->update($payment);
+                                        $order = Order::where('code',$data->merchantOrderNo)->first();
+                                    }
+                                    
+                                    return redirect('/our_products/view/payment_select');
+
+                                    }catch (\Throwable $th) {
+                                        print $th->getMessage();
+                                    }
+                                }
+                                else{
                                     try{
                                         $d = [
                                         "transactionId"=> $data->transactionId,
@@ -345,6 +385,45 @@ class AceController extends Controller
                                         print $th->getMessage();
                                     }
                                     
+                                }elseif($status=='REQUEST'){
+                                    try{
+                                        $d = [
+                                        "transactionId"=> $data->transactionId,
+                                        "transactionStatus"=> $data->transactionStatus,
+                                        "productDescription"=> $data->productDescription,
+                                        "transactionAmount"=> $data->transactionAmount,
+                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
+                                        "channel"=> $data->channel,
+                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
+                                        "merchantOrderNo"=> $data->merchantOrderNo,
+                                        "transactionCurrency"=> $data->transactionCurrency,
+                                        "createdDate"=> $data->createdDate,
+                                        "modifiedDate"=> (property_exists($data, 'modifiedDate')) ? $data->modifiedDate : "Null",
+                                        "merchantId"=> $data->merchantId,
+                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
+                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
+                                        "phoneNumber"=> $data->phoneNumber,
+                                        "emailAddress"=> $data->emailAddress,
+                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
+                                        "skipConfirmation"=>$data->skipConfirmation
+                                    ];
+                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
+                                    if($cfpx > 0){
+                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
+                                    }else{
+                                        DB::table('fpxcalback')->insert($d);
+                                        $payment =[
+                                            'payment_status'=>$data->transactionStatus
+                                        ];
+                                        $act = Order::where('code',$data->merchantOrderNo)->update($payment);
+                                        $order = Order::where('code',$data->merchantOrderNo)->first();
+                                    }
+                                    
+                                    return redirect('/our_products/view/payment_select');
+
+                                    }catch (\Throwable $th) {
+                                        print $th->getMessage();
+                                    }
                                 }else{
                                     try{
                                         $d = [
