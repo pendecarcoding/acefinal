@@ -205,14 +205,56 @@ class AceController extends Controller
                     }
                     else {
                         $url    = 'https://keycloak.m1pay.com.my/auth/realms/m1pay-users/protocol/openid-connect/token';
-                        $token  = gettokenm1payment($url);
-                        $data   = callm1payment($id,$token);
-                        $status = $data->transactionStatus;
-                        if($status=='APPROVED'){
-                            $merchantno = $data->merchantOrderNo;
-                            $email      = $data->emailAddress;
-                            return updateorderm1($merchantno,$email);
-                        }
+                        $token  = gettokenm1payment($url)->access_token;
+                        $url    = 'https://gateway.m1pay.com.my/wall/api/m-1-pay-transactions/'.$id;
+                        $body = [
+                            'transactionId'=>$id
+                        ];
+                         try {
+                            $maxAttempts = 3000; // Maximum number of attempts
+                            $attempt = 0;
+                            do {
+                                // Set cURL options
+                                $crl = curl_init();
+                                curl_setopt($crl, CURLOPT_URL, $url);
+                                curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
+                                curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
+                                curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
+                                curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
+
+
+                                $response = curl_exec($crl);
+                                // Check for cURL errors
+                                if ($response === false) {
+                                    $attempt++;
+                                    curl_close($crl);
+                                    if ($attempt >= $maxAttempts) {
+                                        echo "Maximum attempts reached. Exiting loop.";
+                                        break;
+                                    }
+                                } else {
+                                    // If the response is successful, exit the loop
+                                    break;
+                                }
+                            } while (true);
+                                // Close the cURL resource
+                                curl_close($crl);
+                                // Process the response or handle it in your desired way
+                                $data = json_decode($response);
+                                $status = $data->transactionStatus;
+                                if($status=='APPROVED'){
+                                    $merchantno = $data->merchantOrderNo;
+                                    $email      = $data->emailAddress;
+                                    return updateorderm1($merchantno,$email);
+                                }else{
+                                    flash(translate('Your Transaction '.$status))->warning();
+                                    return redirect('our_products/view/payment_select');
+                                }
+
+                            } catch (\Throwable $th) {
+                                // print "have some mistake need to reload";
+                                return redirect('fpx?transactionId='.$_GET['transactionId']);
+                            }
                     }
 
 

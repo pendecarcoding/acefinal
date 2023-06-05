@@ -1,23 +1,5 @@
 @extends('backend.layouts.app')
-
 @section('content')
-
-<div class="aiz-titlebar text-left mt-2 mb-3">
-    <div class="row align-items-center">
-        <div class="col-auto">
-            <h1 class="h3">{{translate('All Testimonial')}}</h1>
-        </div>
-        @can('add_testimonial')
-            <div class="col text-right">
-                <a href="{{ route('testimonial.create') }}" class="btn btn-circle btn-info">
-                    <span>{{translate('Add New Testimonial')}}</span>
-                </a>
-            </div>
-        @endcan
-    </div>
-</div>
-<br>
-
 <div class="card">
     <form class="" id="sort_testimonial" action="" method="GET">
         <div class="card-header row gutters-5">
@@ -25,15 +7,20 @@
                 <h5 class="mb-md-0 h6">{{ translate('All Testimonial ') }}</h5>
             </div>
 
-            <div class="col-md-2">
-                <div class="form-group mb-0">
-                    <input type="text" class="form-control form-control-sm" id="search" name="search"@isset($sort_search) value="{{ $sort_search }}" @endisset placeholder="{{ translate('Type & Enter') }}">
-                </div>
-            </div>
+           
+                @can('add_testimonial')
+                    <div class="col text-right">
+                        <a href="{{ route('testimonial.create') }}" class="btn btn-primary">
+                            <span>{{translate('Add New Testimonial')}}</span>
+                        </a>
+                    </div>
+                @endcan
+           
         </div>
         </form>
         <div class="card-body">
-            <table class="table mb-0 aiz-table">
+         <div class="table-responsive">
+            <table id="example" class="table t dataTable no-footer">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -41,7 +28,7 @@
                         <th data-breakpoints="lg">{{translate('Person')}}</th>
                         <th data-breakpoints="lg">{{translate('Position')}}</th>
                         <th data-breakpoints="lg">{{translate('content')}}</th>
-                        <th class="text-right">{{translate('Options')}}</th>
+                        <th class="text-center">{{translate('Options')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,16 +40,19 @@
                         <td>{{ $v->position }}</td>
                         <td>{{ $v->content }}</td>
                         <td>
-                             @can('edit_testimonial')
-                                <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"  href="{{ route('testimonial.edit',base64_encode($v->id))}}" title="{{ translate('Edit') }}">
-                                    <i class="las la-pen"></i>
-                                </a>
-                            @endcan
-                            @can('delete_testimonial')
-                                <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('testimonial.destroy', $v->id)}}" title="{{ translate('Delete') }}">
-                                    <i class="las la-trash"></i>
-                                </a>
-                            @endcan
+                            <center>
+                                @can('edit_testimonial')
+                                    <a class="btn btn-soft-primary btn-icon btn-circle btn-sm"  href="{{ route('testimonial.edit',base64_encode($v->id))}}" title="{{ translate('Edit') }}">
+                                        <i class="las la-pen"></i>
+                                    </a>
+                                @endcan
+                                @can('delete_testimonial')
+                                    <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('testimonial.destroy', $v->id)}}" title="{{ translate('Delete') }}">
+                                        <i class="las la-trash"></i>
+                                    </a>
+                                @endcan
+                            </center>
+                             
                         </td>
                     </tr>
                     @endforeach
@@ -70,6 +60,7 @@
 
                 </tbody>
             </table>
+         </div>
             <div class="aiz-pagination">
 
             </div>

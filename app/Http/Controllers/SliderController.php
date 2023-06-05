@@ -23,7 +23,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::select('sliders.type as type','sliders.id as id','sliders.caption as caption','sliders.sub_caption','uploads.file_name as file_name')->join('uploads','uploads.id','sliders.image')->get();
+        $sliders = Slider::select('sliders.type as type','sliders.id as id','sliders.caption as caption','sliders.sub_caption','uploads.file_name as file_name')->join('uploads','uploads.id','sliders.image')->orderby('sliders.id','desc')->get();
         return view('backend.blog_system.sliders.index', compact('sliders'));
     }
 

@@ -21,7 +21,7 @@
         @endif
     </title>
 
-    <meta property="og:image" content="{{ uploaded_asset(get_setting('meta_image')) }}" />
+    <meta property="og:image" content="{{ uploaded_asset(get_setting('site_icon')) }}" />
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/" />
 

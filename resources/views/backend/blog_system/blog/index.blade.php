@@ -1,27 +1,18 @@
 @extends('backend.layouts.app')
 
 @section('content')
-    <div class="aiz-titlebar text-left mt-2 mb-3">
-        <div class="row align-items-center">
-            <div class="col-auto">
-                <h1 class="h3">{{ translate('All Posts') }}</h1>
-            </div>
-            @can('add_blog')
-                <div class="col text-right">
-                    <a href="{{ route('blog.create') }}" class="btn btn-circle btn-info">
-                        <span>{{ translate('Add New Post') }}</span>
-                    </a>
-                </div>
-            @endcan
-        </div>
-    </div>
-    <br>
-
     <div class="card">
         <div class="card-header row gutters-5">
             <div class="col text-center text-md-left">
                 <h5 class="mb-md-0 h6">{{ translate('All blog posts') }}</h5>
             </div>
+            @can('add_blog')
+                <div class="col text-right">
+                    <a href="{{ route('blog.create') }}" class="btn btn-primary">
+                        <span>{{ translate('Add New Post') }}</span>
+                    </a>
+                </div>
+            @endcan
         </div>
 
         <div class="card-body">

@@ -27,7 +27,7 @@
                             </div>
 
                             <div class="row" style="justify-content:space-around;display:flex;margin-top:20px">
-                                <a class="btn btn-warning right">Cancel</a>
+                                <a id="resetoveride" class="btn btn-warning right">Cancel</a>
                                 <button id="saveoveride" class="btn btn-success right">Save</button>
                             </div>
 
@@ -97,6 +97,13 @@
         }
     </script>
     <script>
+        const resetButton = document.getElementById("resetoveride");
+        resetButton.addEventListener("click",()=>{
+            var override = document.getElementById("overrides");
+            override.value = '';
+            
+        });
+
         const myButton = document.getElementById("saveoveride");
         myButton.addEventListener("click", () => {
             const swalWithBootstrapButtons = Swal.mixin({

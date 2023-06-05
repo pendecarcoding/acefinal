@@ -775,14 +775,14 @@
                             <span class="aiz-side-nav-arrow"></span>
                         </a>
                         <ul class="aiz-side-nav-list level-2">
-                            @can('view_personalpageset')
+                            <!-- @can('view_personalpageset')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('personalpageset.index') }}"
                                         class="aiz-side-nav-link {{ areActiveRoutes(['perseonalpageset.edit']) }}">
                                         <span class="aiz-side-nav-text">{{ translate('Personal Page Setting') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan -->
                             @can('view_personaltestimonial')
                                 <li class="aiz-side-nav-item">
                                     <a href="{{ route('personaltestimonial.index') }}"
@@ -1515,11 +1515,19 @@
                                 <span class="aiz-side-nav-arrow"></span>
                             </a>
                             <ul class="aiz-side-nav-list level-2">
+                                @can('view_all_copstaff')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('staffcop.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['staffcop.index', 'staffcop.create', 'staffcop.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Staff') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('view_all_staffcop')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('staffcop.index') }}"
                                             class="aiz-side-nav-link {{ areActiveRoutes(['staffcop.index', 'staffcop.create', 'staffcop.edit']) }}">
-                                            <span class="aiz-side-nav-text">{{ translate('LOG STAFF') }}</span>
+                                            <span class="aiz-side-nav-text">{{ translate('Log Staff') }}</span>
                                         </a>
                                     </li>
                                 @endcan

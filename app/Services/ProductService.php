@@ -275,7 +275,12 @@ class ProductService
 
         $promo_price = $collection['discount'];
         $discount    = (getlastprice()+$promo_price)*$collection['weight'];
-        $discount    =  $collection['unit_price']-$discount;
+        if($promo_price > 0){
+            $discount    =  $collection['unit_price']-$discount;
+        }else{
+            $discount    = 0;
+        }
+        
 
         $data = $collection->merge(compact(
             'discount_start_date',

@@ -28,10 +28,12 @@ class M1paymentController extends Controller
         if (get_setting('m1_sandbox') == 1) {
             $url    = 'https://keycloak.m1pay.com.my/auth/realms/master/protocol/openid-connect/token';
             $token  = gettokenm1payment($url);
+            // print "UAT";
         }
         else {
             $url    = 'https://keycloak.m1pay.com.my/auth/realms/m1pay-users/protocol/openid-connect/token';
             $token  = gettokenm1payment($url);
+            // print "LIVE";
         }
 
         $token = "Bearer ".$token->access_token;
