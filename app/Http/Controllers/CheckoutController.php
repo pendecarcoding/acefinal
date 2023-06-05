@@ -391,20 +391,26 @@ class CheckoutController extends Controller
     public function order_confirmed_other()
     {
         $combined_order = CombinedOrder::findOrFail(Session::get('combined_order_id'));
+        if($combined_order != null AND Session::get('combined_order_id')){
+            Cart::where('user_id', $combined_order->user_id)
+            ->delete();
 
-        Cart::where('user_id', $combined_order->user_id)
-                ->delete();
+            //Session::forget('club_point');
+            Session::forget('combined_order_id');
 
-        //Session::forget('club_point');
-        Session::forget('combined_order_id');
+            //foreach($combined_order->orders as $order){
+            //  NotificationUtility::sendOrderPlacedNotification($order);
+            //}
 
-        //foreach($combined_order->orders as $order){
-          //  NotificationUtility::sendOrderPlacedNotification($order);
-        //}
+            session()->forget('temp_user_id');
+            session()->forget('addres_id');
 
-        session()->forget('temp_user_id');
-        session()->forget('addres_id');
+            return view('frontend.order_reject', compact('combined_order'));
 
-        return view('frontend.order_reject', compact('combined_order'));
+        }else{
+            return redirect('/our_products/view/payment_select');
+        }
+
+       
     }
 }
