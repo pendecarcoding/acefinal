@@ -270,6 +270,7 @@ Route::group(['middleware' => ['user', 'verified', 'unbanned']], function() {
             Route::any('/view/delivery_info', 'store_shipping_info')->name('checkout.store_shipping_infostore');
             Route::any('/view/payment_select', 'store_delivery_info')->name('checkout.store_delivery_info');
             Route::get('/view/order-confirmed', 'order_confirmed')->name('order_confirmed');
+            Route::get('/view/order-confirmed_other', 'order_confirmed_other')->name('order_confirmed_other');
             Route::post('/payment', 'checkout')->name('payment.checkout');
             Route::post('/get_pick_up_points', 'get_pick_up_points')->name('shipping_info.get_pick_up_points');
             Route::get('/payment-select', 'get_payment_info')->name('checkout.payment_info');

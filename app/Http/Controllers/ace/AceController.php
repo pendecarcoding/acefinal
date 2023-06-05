@@ -189,10 +189,78 @@ class AceController extends Controller
                                 if($status=='APPROVED'){
                                     $merchantno = $data->merchantOrderNo;
                                     $email      = $data->emailAddress;
+                                    $merchantno = $data->merchantOrderNo;
+                                    $email      = $data->emailAddress;
+                                    try{
+                                        $d = [
+                                        "transactionId"=> $data->transactionId,
+                                        "transactionStatus"=> $data->transactionStatus,
+                                        "productDescription"=> $data->productDescription,
+                                        "transactionAmount"=> $data->transactionAmount,
+                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
+                                        "channel"=> $data->channel,
+                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
+                                        "merchantOrderNo"=> $data->merchantOrderNo,
+                                        "transactionCurrency"=> $data->transactionCurrency,
+                                        "createdDate"=> $data->createdDate,
+                                        "modifiedDate"=> $data->modifiedDate,
+                                        "merchantId"=> $data->merchantId,
+                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
+                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
+                                        "phoneNumber"=> $data->phoneNumber,
+                                        "emailAddress"=> $data->emailAddress,
+                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
+                                        "skipConfirmation"=>$data->skipConfirmation
+                                    ];
+                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
+                                    if($cfpx > 0){
+                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
+                                    }else{
+                                        DB::table('fpxcalback')->insert($d);
+                                    }
                                     return updateorderm1($merchantno,$email);
+                                    }catch (\Throwable $th) {
+                                        print $th->getMessage();
+                                    }
                                 }else{
-                                    flash(translate('Your Transaction '.$status))->warning();
-                                    return redirect('our_products/view/payment_select');
+                                    try{
+                                        $d = [
+                                        "transactionId"=> $data->transactionId,
+                                        "transactionStatus"=> $data->transactionStatus,
+                                        "productDescription"=> $data->productDescription,
+                                        "transactionAmount"=> $data->transactionAmount,
+                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
+                                        "channel"=> $data->channel,
+                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
+                                        "merchantOrderNo"=> $data->merchantOrderNo,
+                                        "transactionCurrency"=> $data->transactionCurrency,
+                                        "createdDate"=> $data->createdDate,
+                                        "modifiedDate"=> $data->modifiedDate,
+                                        "merchantId"=> $data->merchantId,
+                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
+                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
+                                        "phoneNumber"=> $data->phoneNumber,
+                                        "emailAddress"=> $data->emailAddress,
+                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
+                                        "skipConfirmation"=>$data->skipConfirmation
+                                    ];
+                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
+                                    if($cfpx > 0){
+                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
+                                    }else{
+                                        DB::table('fpxcalback')->insert($d);
+                                        $payment =[
+                                            'payment_status'=>$data->transactionStatus
+                                        ];
+                                        $act = Order::where('code',$data->merchantOrderNo)->update($payment);
+                                        $order = Order::where('code',$data->merchantOrderNo)->first();
+                                    }
+                                    
+                                    return redirect()->route('order_confirmed_other');
+
+                                    }catch (\Throwable $th) {
+                                        print $th->getMessage();
+                                    }
                                 }
 
                             } catch (\Throwable $th) {
@@ -245,10 +313,79 @@ class AceController extends Controller
                                 if($status=='APPROVED'){
                                     $merchantno = $data->merchantOrderNo;
                                     $email      = $data->emailAddress;
+                                    try{
+                                        $d = [
+                                        "transactionId"=> $data->transactionId,
+                                        "transactionStatus"=> $data->transactionStatus,
+                                        "productDescription"=> $data->productDescription,
+                                        "transactionAmount"=> $data->transactionAmount,
+                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
+                                        "channel"=> $data->channel,
+                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
+                                        "merchantOrderNo"=> $data->merchantOrderNo,
+                                        "transactionCurrency"=> $data->transactionCurrency,
+                                        "createdDate"=> $data->createdDate,
+                                        "modifiedDate"=> $data->modifiedDate,
+                                        "merchantId"=> $data->merchantId,
+                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
+                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
+                                        "phoneNumber"=> $data->phoneNumber,
+                                        "emailAddress"=> $data->emailAddress,
+                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
+                                        "skipConfirmation"=>$data->skipConfirmation
+                                    ];
+                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
+                                    if($cfpx > 0){
+                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
+                                    }else{
+                                        DB::table('fpxcalback')->insert($d);
+                                    }
                                     return updateorderm1($merchantno,$email);
+                                    }catch (\Throwable $th) {
+                                        print $th->getMessage();
+                                    }
+                                    
                                 }else{
-                                    flash(translate('Your Transaction '.$status))->warning();
-                                    return redirect('our_products/view/payment_select');
+                                    try{
+                                        $d = [
+                                        "transactionId"=> $data->transactionId,
+                                        "transactionStatus"=> $data->transactionStatus,
+                                        "productDescription"=> $data->productDescription,
+                                        "transactionAmount"=> $data->transactionAmount,
+                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
+                                        "channel"=> $data->channel,
+                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
+                                        "merchantOrderNo"=> $data->merchantOrderNo,
+                                        "transactionCurrency"=> $data->transactionCurrency,
+                                        "createdDate"=> $data->createdDate,
+                                        "modifiedDate"=> $data->modifiedDate,
+                                        "merchantId"=> $data->merchantId,
+                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
+                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
+                                        "phoneNumber"=> $data->phoneNumber,
+                                        "emailAddress"=> $data->emailAddress,
+                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
+                                        "skipConfirmation"=>$data->skipConfirmation
+                                    ];
+                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
+                                    if($cfpx > 0){
+                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
+                                    }else{
+                                        DB::table('fpxcalback')->insert($d);
+                                        $payment =[
+                                            'payment_status'=>$data->transactionStatus
+                                        ];
+                                        $act = Order::where('code',$data->merchantOrderNo)->update($payment);
+                                        $order = Order::where('code',$data->merchantOrderNo)->first();
+                                    }
+                                    
+                                    return redirect()->route('order_confirmed_other');
+
+                                    }catch (\Throwable $th) {
+                                        print $th->getMessage();
+                                    }
+
+                                    
                                 }
 
                             } catch (\Throwable $th) {
@@ -260,16 +397,31 @@ class AceController extends Controller
 
                 }else{
                    if($_POST['transactionAmount']!=null){
-                        $data=[
-                            'transactionAmount'=>$_POST['transactionAmount'],
-                            'fpxTxnId'=>$_POST['fpxTxnId'],
-                            'merchantOrderNo'=>$_POST['merchantOrderNo'],
-                            'status'=>$_POST['status'],
-                            'sellerOrderNo'=>$_POST['sellerOrderNo'],
-                            'description'=>$_POST['description'],
-                            'signedData'=>$_POST['signedData'],
-                           ];
-                           $act = DB::table('fpxcalback')->insert($data);
+                    $d = [
+                        "transactionId"=> $_POST['transactionId'],
+                        "transactionStatus"=> $_POST['transactionStatus'],
+                        "productDescription"=> $_POST['productDescription'],
+                        "transactionAmount"=> $_POST['transactionAmount'],
+                        "transactionAmountConverted"=> $_POST['transactionAmountConverted'],
+                        "channel"=> $_POST['channel'],
+                        "exchangeOrderNo"=> $_POST['exchangeOrderNo'],
+                        "merchantOrderNo"=> $_POST['merchantOrderNo'],
+                        "transactionCurrency"=> $_POST['transactionCurrency'],
+                        "createdDate"=> $_POST['createdDate'],
+                        "modifiedDate"=> $_POST['modifiedDate'],
+                        "merchantId"=> $_POST['merchantId'],
+                        "merchantCallBackUrl"=> $_POST['merchantCallBackUrl'],
+                        "merchantRedirectUrl"=> $_POST['merchantRedirectUrl'],
+                        "phoneNumber"=> $_POST['phoneNumber'],
+                        "emailAddress"=> $_POST['emailAddress'],
+                        "authorisedChannels"=> implode(' ',$_POST['authorisedChannels']),
+                        "skipConfirmation"=>$_POST['skipConfirmation']
+                    ];
+                    DB::table('fpxcalback')->insert($d);
+                    $payment =[
+                        'payment_status'=>$data->transactionStatus
+                    ];
+                    $act = Order::where('code',$_POST['merchantOrderNo'])->update($payment);
                     }
                 }
                  break;
