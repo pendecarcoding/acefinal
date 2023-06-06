@@ -9,11 +9,16 @@
     RewriteEngine On
     RewriteCond %{SERVER_PORT} 80
     RewriteRule ^(.*)$ https://dev.ace2u.com/ [L,R=301]
+    # Handle Authorization Header
+    RewriteCond %{REQUEST_FILENAME} -d [OR]
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ ^$1 [N]
 
+    RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
+    RewriteRule ^(.*)$ public/$1
 
-    # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+    RewriteRule ^ index.php
 
 </IfModule>
