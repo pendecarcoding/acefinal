@@ -37,6 +37,24 @@ class StaffController extends Controller
         return view('backend.cop_staff.index', compact('data'));
     }
 
+    public function indexcopstaff(){
+        $data = Stuff::all();
+        return view('backend.cop_staff.data_staff',compact('data'));
+
+    }
+
+    public function changestatus(Request $r){
+        $data = [
+            'status'=>$r->status
+        ];
+        try {
+            Stuff::where('id',$r->id)->update($data);
+            return "success";
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

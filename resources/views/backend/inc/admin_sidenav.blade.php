@@ -1517,8 +1517,8 @@
                             <ul class="aiz-side-nav-list level-2">
                                 @can('view_all_copstaff')
                                     <li class="aiz-side-nav-item">
-                                        <a href="{{ route('staffcop.index') }}"
-                                            class="aiz-side-nav-link {{ areActiveRoutes(['staffcop.index', 'staffcop.create', 'staffcop.edit']) }}">
+                                        <a href="{{ route('copstaff.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['copstaff.index', 'copstaff.create', 'copstaff.edit']) }}">
                                             <span class="aiz-side-nav-text">{{ translate('Staff') }}</span>
                                         </a>
                                     </li>

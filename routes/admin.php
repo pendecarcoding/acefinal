@@ -308,6 +308,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     Route::resource('staffcop',StaffController::class);
     Route::controller(StaffController::class)->group(function () {
         Route::get('staffcop/view/all', 'indexstaff')->name('staffcop.index');
+        Route::get('copstaff/view/all', 'indexcopstaff')->name('copstaff.index');
+        Route::post('copstaff/view/changestatus', 'changestatus')->name('changestatus.staff');
         // Route::get('/roles/edit/{id}', 'edit')->name('roles.edit');
         // Route::get('/roles/destroy/{id}', 'destroy')->name('roles.destroy');
 

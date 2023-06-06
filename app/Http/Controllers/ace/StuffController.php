@@ -85,7 +85,7 @@ class StuffController extends Controller
         }else{
             return redirect('staff/back/handbook');
         }
-        
+
     }else{
         return redirect('investor_relations');
     }
@@ -294,11 +294,22 @@ class StuffController extends Controller
         try {
             $c = Stuff::where('username',str_replace(' ', '',$r->username))->where('password',md5($r->password))->count();
             if($c > 0){
-                $c = Stuff::where('username',str_replace(' ', '',$r->username))->where('password',md5($r->password))->first();
-                Session::put('loginstaff',true);
-                Session::put('id_staff',$c->id);
-                updatelog($c->id,'login');
-                return redirect(route('staff.announcements'));
+                $blokir =  Stuff::where('username',str_replace(' ', '',$r->username))
+                            ->where('password',md5($r->password))
+                            ->where('status','!=','A')
+                            ->count();
+                if($blokir > 0){
+
+                    return view('backstaff.block');
+
+                }else{
+                    $c = Stuff::where('username',str_replace(' ', '',$r->username))->where('password',md5($r->password))->first();
+                    Session::put('loginstaff',true);
+                    Session::put('id_staff',$c->id);
+                    updatelog($c->id,'login');
+                    return redirect(route('staff.announcements'));
+                }
+
             }else{
                 return back()->with('dangger','Account not found');
             }
