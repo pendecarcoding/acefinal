@@ -263,7 +263,7 @@
                                 <span class="h-dash" style="font-weight: bold">—</span>
                             </div>
                         </div>
-                        <div class="row">
+                        <div data-aos="fade-up" class="row">
                             <div class="col-md-6 col-sm-6">
                                 <h1>EasiGold, your trusted companion</h1>
                                 <h3>EasiGold Features</h3>
