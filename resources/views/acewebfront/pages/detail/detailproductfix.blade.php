@@ -18,7 +18,8 @@
     <meta name="twitter:site" content="@publisher_handle">
     <meta name="twitter:title" content="{{ $detailedProduct->meta_title }}">
     <meta name="twitter:description" content="{{ $detailedProduct->meta_description }}">
-    <meta name="twitter:creator" content="@author_handle">
+    <meta name="twitter:creator"
+        content="@author_handle">
     <meta name="twitter:image" content="{{ uploaded_asset($detailedProduct->meta_img) }}">
     <meta name="twitter:data1" content="{{ single_price($detailedProduct->unit_price) }}">
     <meta name="twitter:label1" content="Price">
@@ -52,7 +53,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
           </div>
         </div>
       </section>
-       <a href="{{ url('our_products/view/cart') }}" style="color:white" class="btn  floating-button"> <div id="countcart" style="font-weight: bold;"  class="btn btn-danger btn-sm"> {{$totalcart }}</div> <i class="la la-shopping-cart"></i> Checkout Your Order</a>
+       <a href="{{ url('our_products/view/cart') }}" style="color:white" class="btn  floating-button"> <div id="countcart" style="font-weight: bold;"  class="btn btn-danger btn-sm"> {{ $totalcart }}</div> <i class="la la-shopping-cart"></i> Checkout Your Order</a>
     <section class="ace-detailproduct">
 
         <div class="content-ace">
@@ -199,9 +200,9 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                     </div>
                                     <div class="col-sm-10">
                                         <div class="">
-                                            
+
                                             <strong class="h2 fw-600 text-primary gram">
-                                                {{$detailedProduct->weight}}
+                                                {{ $detailedProduct->weight }}
                                             </strong>
                                             @if ($detailedProduct->unit != null)
                                                 <span
@@ -210,7 +211,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                         </div>
                                     </div>
                                 </div>
-                              
+
                                 @if (home_price($detailedProduct) != home_discounted_price($detailedProduct))
                                 <div class="row no-gutters mt-3">
                                     <div class="col-sm-2">
@@ -221,7 +222,8 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                             <del>
                                                 {{ home_price($detailedProduct) }}
                                                 @if ($detailedProduct->unit != null)
-                                                    <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                                   <span
+                                                    class="opacity-70">/Item</span>
                                                 @endif
                                             </del>
                                         </div>
@@ -239,7 +241,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                             </strong>
                                             @if ($detailedProduct->unit != null)
                                                 <span
-                                                    class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                                    class="opacity-70">/Item</span>
                                             @endif
                                         </div>
                                     </div>
@@ -256,7 +258,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                             </strong>
                                             @if ($detailedProduct->unit != null)
                                                 <span
-                                                    class="opacity-70">/{{ $detailedProduct->getTranslation('unit') }}</span>
+                                                    class="opacity-70">/Item</span>
                                             @endif
                                         </div>
                                     </div>
@@ -284,7 +286,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                             <form id="option-choice-form">
                                 @csrf
                                 <input id="product_id_ace" type="hidden" name="id" value="{{ $detailedProduct->id }}">
-                                <input id="weight" type="hidden" name="weight" value="{{$detailedProduct->weight}}">
+                                <input id="weight" type="hidden" name="weight" value="{{ $detailedProduct->weight }}">
                                 @if ($detailedProduct->choice_options != null)
                                     @foreach (json_decode($detailedProduct->choice_options) as $key => $choice)
                                         <div class="row no-gutters">
@@ -391,7 +393,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                     <div class="col-sm-10">
                                         <div class="product-price">
                                             <strong class="h4 fw-600 text-primary">
-                                                {{format_price(convert_price(fpxfee()))}}
+                                                {{ format_price(convert_price(fpxfee())) }}
                                             </strong>
                                         </div>
                                     </div>
@@ -404,7 +406,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                     <div class="col-sm-10">
                                         <div class="product-price">
                                             <strong class="h4 fw-600 text-primary">
-                                                {{format_price(convert_price(deliveryfee()))}}
+                                                {{ format_price(convert_price(deliveryfee())) }}
                                             </strong>
                                         </div>
                                     </div>
@@ -462,7 +464,12 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                         onclick="addToCompare({{ $detailedProduct->id }})">
                                         {{ translate('Add to compare') }}
                                     </button>-->
-                                    @if (Auth::check() && addon_is_activated('affiliate_system') && (\App\Models\AffiliateOption::where('type', 'product_sharing')->first()->status || \App\Models\AffiliateOption::where('type', 'category_wise_affiliate')->first()->status) && Auth::user()->affiliate_user != null && Auth::user()->affiliate_user->status)
+                                    @if (Auth::check() &&
+                                            addon_is_activated('affiliate_system') &&
+                                            (\App\Models\AffiliateOption::where('type', 'product_sharing')->first()->status ||
+                                                \App\Models\AffiliateOption::where('type', 'category_wise_affiliate')->first()->status) &&
+                                            Auth::user()->affiliate_user != null &&
+                                            Auth::user()->affiliate_user->status)
                                         @php
                                             if (Auth::check()) {
                                                 if (Auth::user()->referral_code == null) {
@@ -612,12 +619,11 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                         </div>
                         <div class="p-3">
                             <ul class="list-group list-group-flush">
-                                @foreach (filter_products(\App\Models\Product::where('user_id', $detailedProduct->user_id)->orderBy('num_of_sale', 'desc'))->limit(6)->get()
-        as $key => $top_product)
+                                @foreach (filter_products(\App\Models\Product::where('user_id', $detailedProduct->user_id)->orderBy('num_of_sale', 'desc'))->limit(6)->get() as $key => $top_product)
                                     <li class="py-3 px-0 list-group-item border-light">
                                         <div class="row gutters-10 align-items-center">
                                             <div class="col-5">
-                                                <a href="{{ url('our_products/'.$top_product->slug) }}"
+                                                <a href="{{ url('our_products/' . $top_product->slug) }}"
                                                     class="d-block text-reset">
                                                     <img class="img-fit lazyload h-xxl-110px h-xl-80px h-120px"
                                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
@@ -628,13 +634,13 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                             </div>
                                             <div class="col-7 text-left">
                                                 <h4 class="fs-13 text-truncate-2">
-                                                    <a href="{{ url('our_products/'.$top_product->slug) }}"
+                                                    <a href="{{ url('our_products/' . $top_product->slug) }}"
                                                         class="d-block text-reset">{{ $top_product->getTranslation('name') }}</a>
                                                 </h4>
                                                 <!-- <div class="rating rating-sm mt-1">
                                                     {{ renderStarRating($top_product->rating) }}
                                                 </div> -->
-                                                <div style="display:none" class="gram">{{$top_product->weight}}</div>
+                                                <div style="display:none" class="gram">{{ $top_product->weight }}</div>
                                                 <div class="mt-2">
                                                     <div  class="fs-15 price">
                                                         @if (home_base_price($top_product) != home_discounted_base_price($top_product))
@@ -760,13 +766,12 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                             <div class="aiz-carousel gutters-5 half-outside-arrow" data-items="5" data-xl-items="3"
                                 data-lg-items="4" data-md-items="3" data-sm-items="2" data-xs-items="2"
                                 data-arrows='true' data-infinite='true'>
-                                @foreach (filter_products(\App\Models\Product::where('category_id', $detailedProduct->category_id)->where('id', '!=', $detailedProduct->id))->limit(10)->get()
-        as $key => $related_product)
+                                @foreach (filter_products(\App\Models\Product::where('category_id', $detailedProduct->category_id)->where('id', '!=', $detailedProduct->id))->limit(10)->get() as $key => $related_product)
                                     <div class="carousel-box">
                                         <div
                                             class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">
                                             <div class="">
-                                                <a href="{{ url('our_products/'.$related_product->slug) }}"
+                                                <a href="{{ url('our_products/' . $related_product->slug) }}"
                                                     class="d-block">
                                                     <img class="img-fit lazyload mx-auto h-140px h-md-210px"
                                                         src="{{ static_asset('assets/img/placeholder.jpg') }}"
@@ -776,7 +781,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                                 </a>
                                             </div>
                                             <div class="p-md-3 p-2 text-left">
-                                                <div style="display:none" class="gram">{{$related_product->weight}}</div>
+                                                <div style="display:none" class="gram">{{ $related_product->weight }}</div>
                                                 <div  class="fs-15 price">
                                                     @if (home_base_price($related_product) != home_discounted_base_price($related_product))
                                                         <del
@@ -789,7 +794,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                                     {{ renderStarRating($related_product->rating) }}
                                                 </div> -->
                                                 <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-                                                    <a href="{{ url('our_products/'.$related_product->slug) }}"
+                                                    <a href="{{ url('our_products/' . $related_product->slug) }}"
                                                         class="d-block text-reset">{{ $related_product->getTranslation('name') }}</a>
                                                 </h3>
                                                 @if (addon_is_activated('club_point'))
@@ -808,7 +813,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                         </div>
                     </div>
                     {{-- Product Query --}}
-                    @if(get_setting('product_query_activation') == 1)
+                    @if (get_setting('product_query_activation') == 1)
                         <div class="bg-white rounded shadow-sm mt-3">
                             <div class="border-bottom p-3">
                                 <h3 class="fs-18 fw-600 mb-0">
@@ -900,20 +905,20 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                         @endforeach
                                     </div>
 
-                                @endif
-                            @endauth
+                                @endif @endauth
 
-                            <div class="pagination-area my-4 mb-0 ml-3">
-                                @include('frontend.partials.product_query_pagination')
-                            </div>
-                        </div>
-                    @endif
-                    {{-- End of Product Query --}}
-                </div>
-            </div>
-        </div>
+                            <div class="pagination-area
+        my-4 mb-0 ml-3">
+    @include('frontend.partials.product_query_pagination')
+    </div>
+    </div>
+    @endif
+    {{-- End of Product Query --}}
+    </div>
+    </div>
+    </div>
     </section>
-</main>
+    </main>
 
 @endsection
 
@@ -939,8 +944,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                 required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="8" name="message" required
-                                placeholder="{{ translate('Your Question') }}">{{ route('product', $detailedProduct->slug) }}</textarea>
+                            <textarea class="form-control" rows="8" name="message" required placeholder="{{ translate('Your Question') }}">{{ route('product', $detailedProduct->slug) }}</textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -1015,7 +1019,10 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                             <p class="text-muted mb-0">{{ translate('Dont have an account?') }}</p>
                             <a href="{{ route('user.registration') }}">{{ translate('Register Now') }}</a>
                         </div>
-                        @if (get_setting('google_login') == 1 || get_setting('facebook_login') == 1 || get_setting('twitter_login') == 1 || get_setting('apple_login') == 1)
+                        @if (get_setting('google_login') == 1 ||
+                                get_setting('facebook_login') == 1 ||
+                                get_setting('twitter_login') == 1 ||
+                                get_setting('apple_login') == 1)
                             <div class="separator mb-3">
                                 <span class="bg-white px-3 opacity-60">{{ translate('Or Login With') }}</span>
                             </div>
@@ -1030,8 +1037,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                 @endif
                                 @if (get_setting('google_login') == 1)
                                     <li class="list-inline-item">
-                                        <a href="{{ route('social.login', ['provider' => 'google']) }}"
-                                            class="google">
+                                        <a href="{{ route('social.login', ['provider' => 'google']) }}" class="google">
                                             <i class="lab la-google"></i>
                                         </a>
                                     </li>
@@ -1046,8 +1052,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                 @endif
                                 @if (get_setting('apple_login') == 1)
                                     <li class="list-inline-item">
-                                        <a href="{{ route('social.login', ['provider' => 'apple']) }}"
-                                            class="apple">
+                                        <a href="{{ route('social.login', ['provider' => 'apple']) }}" class="apple">
                                             <i class="lab la-apple"></i>
                                         </a>
                                     </li>
@@ -1065,7 +1070,6 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
 @section('script')
 
     <script type="text/javascript">
-
         $(document).ready(function() {
             getVariantPrice();
         });
@@ -1141,13 +1145,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
         // Pagination end
     </script>
 
-{{-- <script src="{{ static_asset('aceweb') }}/assets/ace/realprice.js"></script> --}}
+    {{-- <script src="{{ static_asset('aceweb') }}/assets/ace/realprice.js"></script> --}}
 
 
 @endsection
-
-
-
-
-
-
