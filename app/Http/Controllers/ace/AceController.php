@@ -63,6 +63,8 @@ class AceController extends Controller
 
     public function registerstuff(Request $r){
         $r->validate([
+            'fullname'=>'required',
+            'displayname' => 'required',
             'stuffid' => 'required',
             'password_confirmation'=>'required',
             'password' => 'required|confirmed',
@@ -76,6 +78,8 @@ class AceController extends Controller
                 $data=[
                     'password'=>md5($r->password),
                     'username'=>$r->stuffid,
+                    'display_name'=>$r->displayname,
+                    'name'=>$r->fullname,
                     'stuff_id'=>$r->stuffid,
                     'email'=>$r->email,
                     'verify_code'=>$kode,
@@ -255,7 +259,7 @@ class AceController extends Controller
                                         $act = Order::where('code',$data->merchantOrderNo)->update($payment);
                                         $order = Order::where('code',$data->merchantOrderNo)->first();
                                     }
-                                    
+
                                     return redirect('/our_products/view/payment_select');
 
                                     }catch (\Throwable $th) {
@@ -295,7 +299,7 @@ class AceController extends Controller
                                         $act = Order::where('code',$data->merchantOrderNo)->update($payment);
                                         $order = Order::where('code',$data->merchantOrderNo)->first();
                                     }
-                                    
+
                                     return redirect()->route('order_confirmed_other');
 
                                     }catch (\Throwable $th) {
@@ -384,7 +388,7 @@ class AceController extends Controller
                                     }catch (\Throwable $th) {
                                         print $th->getMessage();
                                     }
-                                    
+
                                 }elseif($status=='REQUEST'){
                                     try{
                                         $d = [
@@ -418,7 +422,7 @@ class AceController extends Controller
                                         $act = Order::where('code',$data->merchantOrderNo)->update($payment);
                                         $order = Order::where('code',$data->merchantOrderNo)->first();
                                     }
-                                    
+
                                     return redirect('/our_products/view/payment_select');
 
                                     }catch (\Throwable $th) {
@@ -457,14 +461,14 @@ class AceController extends Controller
                                         $act = Order::where('code',$data->merchantOrderNo)->update($payment);
                                         $order = Order::where('code',$data->merchantOrderNo)->first();
                                     }
-                                    
+
                                     return redirect()->route('order_confirmed_other');
 
                                     }catch (\Throwable $th) {
                                         print $th->getMessage();
                                     }
 
-                                    
+
                                 }
 
                             } catch (\Throwable $th) {
