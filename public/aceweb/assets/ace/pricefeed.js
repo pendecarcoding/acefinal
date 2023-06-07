@@ -3,7 +3,7 @@ let socket;
 
 function changeprice(price){
   var pricelast = price*0.5;
-  console.log("Price / (gram) :"+price+" Jika 0.5 gram ="+pricelast);
+//   console.log("Price / (gram) :"+price+" Jika 0.5 gram ="+pricelast);
 }
 
 function connect() {
@@ -212,7 +212,7 @@ function connect() {
   });
 
   socket.addEventListener('close', (event) => {
-    console.log('WebSocket connection closed');
+    // console.log('WebSocket connection closed');
     setTimeout(connect, 100); // try to reconnect after 1 second
   });
 }

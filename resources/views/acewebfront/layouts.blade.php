@@ -5,8 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script src="
-        https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="description" content="" />
     <meta name="theme-color" content="#264e77" />
@@ -241,7 +239,7 @@
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
                 height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
                 scrolled = (winScroll / height) * 190;
-            console.log("Hasil " + scrolled);
+
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 mybutton.style.display = "block";
             } else {
@@ -540,13 +538,10 @@
                 "{{ getimage($p->image) }}",
             @endforeach
         ];
-
-        console.log(images);
-
         var lists = document.getElementsByClassName("selfie-img");
         var list = lists;
-        console.log(lists);
-        console.log(list);
+        // console.log(lists);
+        // console.log(list);
         // Var or Let works in the for loop
         let counter = 0;
         let counter2 = 0;
@@ -577,15 +572,15 @@
     <script>
         if (!window.Cypress) AOS.init();
     </script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         $(".slider-service").slick({
             slidesToShow: 3,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
         });
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         let magicGrid = new MagicGrid({
             container: ".mansory",
             animate: true,
@@ -595,7 +590,7 @@
         });
 
         magicGrid.listen();
-    </script>
+    </script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
