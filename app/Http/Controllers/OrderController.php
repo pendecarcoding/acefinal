@@ -114,8 +114,14 @@ class OrderController extends Controller
             $orders = $orders->where('code', 'like', '%' . $sort_search . '%');
         }
         if ($request->payment_status != null) {
-            $orders = $orders->where('payment_status', $request->payment_status);
-            $payment_status = $request->payment_status;
+            if($request->payment_status=='unpaid'){
+                $orders = $orders->where('payment_status', $request->payment_status)->orwhere('payment_status','REQUEST')->orwhere('payment_status','UNSUCCESSFUL');
+                $payment_status = $request->payment_status;
+            }else{
+                $orders = $orders->where('payment_status', $request->payment_status);
+                $payment_status = $request->payment_status;
+            }
+
         }
         if ($request->delivery_status != null) {
             $orders = $orders->where('delivery_status', $request->delivery_status);
