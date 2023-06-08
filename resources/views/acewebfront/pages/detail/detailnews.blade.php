@@ -1,4 +1,7 @@
 @extends('acewebfront.layouts')
+@section('meta')
+    <meta property="og:image" content="{{ getimage($data->banner) }}" />
+@endsection
 @section('content')
 @section('title', $data->title)
 <main>

@@ -1,4 +1,7 @@
 @extends('acewebfront.layouts')
+@section('meta')
+    <meta property="og:image" content="{{ uploaded_asset(get_setting('site_icon')) }}" />
+@endsection
 @section('content')
     <main style="position: relative;
  overflow: hidden;">
@@ -45,18 +48,18 @@
                             </div>
                         </div>
                         <!-- <img
-                  class="img-responsive"
-                  src="{{ getimage(env('PERSONAL_IMAGE')) }}"
-                  alt=""
-                />
-                <div class="container">
-                  <div data-aos="fade-up" class="carousel-caption text-start caption-banner">
-                    <div class="caption-banner">
-                      <h1>{{ env('PERSONAL_TITLE_CAPTION') }}</h1>
-                      <p class="ace-banner-p">{{ env('PERSONAL_SUB_TITLE_CAPTION') }}</p>
-                    </div>
-                  </div>
-                </div>-->
+                      class="img-responsive"
+                      src="{{ getimage(env('PERSONAL_IMAGE')) }}"
+                      alt=""
+                    />
+                    <div class="container">
+                      <div data-aos="fade-up" class="carousel-caption text-start caption-banner">
+                        <div class="caption-banner">
+                          <h1>{{ env('PERSONAL_TITLE_CAPTION') }}</h1>
+                          <p class="ace-banner-p">{{ env('PERSONAL_SUB_TITLE_CAPTION') }}</p>
+                        </div>
+                      </div>
+                    </div>-->
                     </div>
 
 

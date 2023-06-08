@@ -18,9 +18,7 @@
             @yield('title')
         @endif
     </title>
-
-    <meta property="og:image" content="{{ uploaded_asset(get_setting('site_icon')) }}" />
-
+    @yield('meta')
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
