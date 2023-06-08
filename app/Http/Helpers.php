@@ -89,7 +89,7 @@ function extradiscount($usrtmpid){
     }
 
     return $extradiscount;
-    
+
 }
 function getlastprice(){
     $data = DB::table('pricefeeds')->latest()->first();
@@ -243,7 +243,7 @@ function overWriteEnvFile($type, $val)
 function getimage($id){
     try {
         $data = Upload::findorfail($id);
-        return url('public').'/'.$data->file_name;
+        return '/public/'.$data->file_name;
     } catch (\Throwable $th) {
         return null;
     }
