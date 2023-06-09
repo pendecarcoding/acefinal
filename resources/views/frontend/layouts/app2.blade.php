@@ -124,6 +124,8 @@
     </script>
 @endif
 
+
+
 @if (get_setting('facebook_pixel') == 1)
     <!-- Facebook Pixel Code -->
     <script>
@@ -421,7 +423,7 @@
             });
         }
 
-        $('#option-choice-form input').on('change', function(){   
+        $('#option-choice-form input').on('change', function(){
             getVariantPrice();
         });
 
@@ -436,7 +438,7 @@
                 }else{
                     extradiscount.style.visibility = "hidden";
                 }
-        
+
                 $.ajax({
                    type:"POST",
                    url: '{{ route('products.variant_price') }}',

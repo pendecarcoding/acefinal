@@ -1404,7 +1404,7 @@
                                     </ul>
                                 </li>
                             @endcanany --}}
-                            {{-- @canany(['analytics_tools_configuration', 'google_recaptcha_configuration', 'google_map_setting', 'google_firebase_setting'])
+                            @canany(['analytics_tools_configuration', 'google_recaptcha_configuration', 'google_map_setting', 'google_firebase_setting'])
                                 <li class="aiz-side-nav-item">
                                     <a href="javascript:void(0);" class="aiz-side-nav-link">
                                         <span class="aiz-side-nav-text">{{translate('Google')}}</span>
@@ -1418,7 +1418,7 @@
                                                 </a>
                                             </li>
                                         @endcan
-                                        @can('google_recaptcha_configuration')
+                                        <!-- @can('google_recaptcha_configuration')
                                             <li class="aiz-side-nav-item">
                                                 <a href="{{ route('google_recaptcha.index') }}" class="aiz-side-nav-link">
                                                     <span class="aiz-side-nav-text">{{translate('Google reCAPTCHA')}}</span>
@@ -1438,10 +1438,10 @@
                                                     <span class="aiz-side-nav-text">{{translate('Google Firebase')}}</span>
                                                 </a>
                                             </li>
-                                        @endcan
+                                        @endcan -->
                                     </ul>
                                 </li>
-                            @endcanany --}}
+                            @endcanany
                             @canany(['shipping_configuration', 'shipping_country_setting', 'manage_shipping_states',
                                 'manage_shipping_cities', 'manage_zones', 'manage_carriers'])
                                 <li class="aiz-side-nav-item">
