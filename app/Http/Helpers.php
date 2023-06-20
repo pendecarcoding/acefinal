@@ -529,14 +529,14 @@ function getPatner(){
 function getnav(){
     $data = array(
         [
+        'name'=>'Our Company',
+        'link'=>'ourcompany',
+        'is_active'=>'ourcompany'
+        ],
+         [
         'name'=>'For Corporate',
         'link'=>'forcorporate',
         'is_active'=>'forcorporate'
-        ],
-         [
-        'name'=>'For Personal',
-        'link'=>'forpersonal',
-        'is_active'=>'forpersonal'
          ],
          [
         'name'=>'Investor Relations',

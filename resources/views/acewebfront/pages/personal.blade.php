@@ -333,7 +333,8 @@
                         <div class="row">
                             <div data-aos="fade-up" class="col-md-12">
                                 <center>
-                                    <button class="ace-button">Explore EasiGold</button>
+                                    <button style="padding: 10px;
+                                    margin-top: 50px;" class="ace-button">Explore EasiGold</button>
                                 </center>
                             </div>
                         </div>

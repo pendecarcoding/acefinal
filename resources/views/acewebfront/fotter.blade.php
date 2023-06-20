@@ -32,14 +32,14 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-3">
                     <!-- Links -->
+                    <a href="{{ url('ourcompany') }}">
+                        <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                            Our Company
+                        </h6>
+                    </a>
                     <a href="{{ url('forcorporate') }}">
                         <h6 class="text-uppercase fw-bold mb-4 h6-footer">
                             For Corporate
-                        </h6>
-                    </a>
-                    <a href="{{ url('forpersonal') }}">
-                        <h6 class="text-uppercase fw-bold mb-4 h6-footer">
-                            For Personal
                         </h6>
                     </a>
                     <a href="{{ url('investor_relations') }}">

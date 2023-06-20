@@ -367,7 +367,7 @@
                  </center>
                  <div class="gtp-po-button">
                   <center>
-                      <a href="#" class="ace-button">Find Out More</a>
+                      <a style="padding: 10px;" href="#" class="ace-button">Find Out More</a>
                     </center>
                   </div>
                  </div>
@@ -651,7 +651,7 @@
             <div class="row">
               <div class="read-now-ach">
               <center>
-                  <a href="{{ url('newsroom') }}" class="ace-button">Read More</a>
+                  <a style="padding: 10px;" href="{{ url('newsroom') }}" class="ace-button">Read More</a>
                 </center>
               </div>
             </div>

@@ -526,8 +526,11 @@ class AceController extends Controller
             case 'signdby':
                 print getsignm1payment('test');
                 break;
+            case 'forpersonal':
+                 return redirect('forcorporate');
+                break;
 
-            case 'forcorporate':
+            case 'ourcompany':
                 $featured_categories = Cache::rememberForever('featured_categories', function () {
                     return Category::where('featured', 1)->get();
                 });
@@ -563,7 +566,7 @@ class AceController extends Controller
                     $patner      =  Patner::select('patners.id as id','patners.company as company','uploads.file_name as file_name')->join('uploads','uploads.id','patners.image')->groupby('id')->get();
                     return view('acewebfront.pages.homeedit', compact('achievement','featured_categories', 'todays_deal_products', 'newest_products','slider','testimonial','patner','page'));
                     break;
-            case 'forpersonal':
+            case 'forcorporate':
                 $slider      =  Slider::select('sliders.id as id','sliders.caption as caption','sliders.sub_caption','uploads.file_name as file_name')->join('uploads','uploads.id','sliders.image')->where('sliders.type','PERSONAL')->get();
                 $blog = Blog::select('blogs.id as id','blogs.title as title','blogs.slug as slug','blogs.short_description as short_description','blogs.description as description','blogs.banner as banner','uploads.file_name as file_name')->join('uploads','uploads.id','blogs.banner')->join('blog_categories','blog_categories.id','blogs.category_id')->where('status','1')->where('category_name','PERSONAL')->orderby('blogs.created_at','DESC')->take(6)->get();
                 $testimonial = Testimonial::where('type','PO')->orderby('id','desc')->get();
