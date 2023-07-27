@@ -13,7 +13,7 @@
     <link rel="icon" href="{{ uploaded_asset(get_setting('system_logo_white')) }}">
     <title>
         @if (!empty($page))
-            ACE INOVATE ASIA BERHARD |{{ strtoupper($page) }}
+            {{ get_setting('site_name') }} |{{ strtoupper($page) }}
         @else
             @yield('title')
         @endif

@@ -5,14 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="
-    https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="description" content="" />
     <meta name="theme-color" content="#264e77" />
 
     <meta name="generator" content="Hugo 0.104.2" />
     <link rel="icon" href="{{ uploaded_asset(get_setting('site_icon')) }}">
-    <title>ACE INOVATE ASIA BERHARD</title>
+    <title>{{ get_setting('site_name') }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/" />
 
