@@ -205,7 +205,7 @@
                           <img  src="{{ static_asset('aceweb') }}/assets/img/acecapital1.png" alt="" />
 
                         </div>
-                        <p style="font-size: 12px;" class="name-company">ACE Capital Growth Sdn Bhd(ACE Capital)</p>
+                        <p style="font-size: 12px;" class="name-company">Go Capital Growth Sdn Bhd</p>
                     </div>
 
 
@@ -215,7 +215,7 @@
                           <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/aceikhlas1.png" alt="" />
 
                         </div>
-                        <p style="font-size: 12px;" class="name-company">ACE Ikhlas Gold Sdn Bhd (ACE Ikhlas)</p>
+                        <p style="font-size: 12px;" class="name-company">Go Ikhlas Gold Sdn Bhd</p>
                     </div>
 
 
@@ -225,7 +225,7 @@
                           <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceeasy1.png" alt="" />
 
                       </div>
-                      <p style="font-size: 12px;" class="name-company">ACE Assay (M) Sdn Bhd (ACE Assay) </p>
+                      <p style="font-size: 12px;" class="name-company">Go Assay Sdn Bhd</p>
                       </div>
                       <div data-aos="zoom-in-down"
                       data-aos-delay="3000" class="wrap-card-company" id="aceihsan">
@@ -233,7 +233,7 @@
                               <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceihsan1.png" alt="" />
 
                             </div>
-                            <p style="font-size: 12px;" class="name-company">ACE Ihsan Gold Sdn Bhd (ACE Ihsan) </p>
+                            <p style="font-size: 12px;" class="name-company">Go Ihsan Gold Sdn Bhd</p>
                       </div>
 
 

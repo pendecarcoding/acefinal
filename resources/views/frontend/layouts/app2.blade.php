@@ -156,7 +156,7 @@
 
 
         <!-- Header -->
-        <a href="{{ route('home') }}"><img id="acetopbar" class="acetopbar" src="{{ uploaded_asset(get_setting('site_icon')) }}" /></a>
+        <a href="{{ route('home') }}"><img id="acetopbar" class="acetopbar" src="{{ uploaded_asset(get_setting('system_logo_white')) }}" /></a>
         @include('acewebfront.header')
 
         @yield('content')
