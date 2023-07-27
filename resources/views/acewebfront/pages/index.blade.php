@@ -3,7 +3,7 @@
     <main>
         <section class="home-section">
             <div class="card card-home">
-                <center><img style="height: 100px" src="{{ asset('public/aceweb/assets/img/logo AIAB-02-02 1.png') }}">
+                <center><img style="height: 130px" src="{{ asset('public/aceweb/assets/img/Go-logo.png') }}">
                 </center>
 
                 <center>

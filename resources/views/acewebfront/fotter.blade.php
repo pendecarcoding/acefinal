@@ -13,7 +13,7 @@
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-3">
                     <!-- Content -->
                     <h6 class="text-uppercase fw-bold mb-4">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/ace.png" alt="">
+                        <img src="{{ uploaded_asset(get_setting('system_logo_white')) }}" alt="">
                     </h6>
                     <p>
                         <b style="font-weight:bold;color:black">Address</b><br>
@@ -23,7 +23,8 @@
                         +603 – 8081 7198
 
                         <br><b style="font-weight:bold;color:black">Email</b><br>
-                        enquiry@ace2u.com
+                        enquiry@goinno2u.com
+
 
                     </p>
                 </div>
@@ -106,7 +107,7 @@
         <div class="wrap-content">
             <div class="row" style="display: flex;">
                 <div class="col-md-6 col-sm-12 col-lg-6">© Copyright 2023
-                    <a class="text-reset fw-bold" href="#">@ Ace Innovate Asia Berhad</a>
+                    <a class="text-reset fw-bold" href="#">@ {{ get_setting('site_name') }}</a>
                 </div>
                 <div class="col-md-6 col-sm-12 col-lg-6">
                     <div style="float:right"> <a href="{{ url('view_pdf/Terms & Condition') }}" target="_blank"

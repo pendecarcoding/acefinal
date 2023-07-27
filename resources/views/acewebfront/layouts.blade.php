@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#264e77" />
 
     <meta name="generator" content="Hugo 0.104.2" />
-    <link rel="icon" href="{{ uploaded_asset(get_setting('site_icon')) }}">
+    <link rel="icon" href="{{ uploaded_asset(get_setting('system_logo_white')) }}">
     <title>
         @if (!empty($page))
             ACE INOVATE ASIA BERHARD |{{ strtoupper($page) }}
@@ -109,7 +109,7 @@
 </div>-->
     <!--div id="divbody" data-aos="fade-up" class="divbody">-->
     <a href="{{ route('home') }}"><img id="acetopbar" class="acetopbar"
-            src="{{ uploaded_asset(get_setting('site_icon')) }}" /></a>
+            src="{{ uploaded_asset(get_setting('system_logo_white')) }}" /></a>
 
     @include('acewebfront.header')
 
