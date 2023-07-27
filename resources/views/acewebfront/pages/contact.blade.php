@@ -40,7 +40,7 @@
                              <div class="col-md-6">
                                  <div class="contact-wrap">
                                      <div class="list-contact">
-                                         <h5 class="title-corporate">ACE INNOVATE ASIA BERHAD</h5>
+                                         <h5 class="title-corporate">Go Innovate Asia Berhad</h5>
                                          <br>
                                          <p style="font-weight: bold">Address</p>
 
@@ -55,7 +55,7 @@
                                          <br>
                                          <p style="font-weight: bold">Email</p>
 
-                                         <p>enquiry@ace2u.com</p>
+                                         <p>enquiry@goinno2u.com</p>
                                      </div>
                                  </div>
                              </div>
@@ -66,7 +66,7 @@
                                      <img class="img-responsive"
                                          src="{{ asset('public/aceweb') }}/assets/img/ACECapital.jpg" alt="" />
                                      <div class="list-contact">
-                                         <h5 class="title-corporate">ACE Capital Growth Sdn Bhd</h5>
+                                         <h5 class="title-corporate">Go Capital Growth Sdn. Bhd.</h5>
                                          <br>
                                          <p style="font-weight: bold">Address</p>
 
@@ -81,7 +81,7 @@
                                          <br>
                                          <p style="font-weight: bold">Email</p>
 
-                                         <p>enquiry@ace2u.com</p>
+                                         <p>enquiry@goinno2u.com</p>
                                      </div>
                                  </div>
                              </div>
@@ -90,7 +90,7 @@
                                      <img class="img-responsive" src="{{ asset('public/aceweb') }}/assets/img/ACEAssay.jpg"
                                          alt="" />
                                      <div class="list-contact">
-                                         <h5 class="title-corporate">ACE Assay (M) Sdn Bhd</h5>
+                                         <h5 class="title-corporate">Go Assay Sdn. Bhd.</h5>
                                          <br>
                                          <p style="font-weight: bold">Address</p>
 
@@ -113,7 +113,7 @@
                                      <img class="img-responsive"
                                          src="{{ asset('public/aceweb') }}/assets/img/ace-ikhlas.png" alt="" />
                                      <div class="list-contact">
-                                         <h5 class="title-corporate">ACE Ikhlas Gold Sdn Bhd</h5>
+                                         <h5 class="title-corporate">Go Ikhlas Sdn. Bhd.</h5>
                                          <br>
                                          <p style="font-weight: bold">Address</p>
 
@@ -133,7 +133,7 @@
                                      <img class="img-responsive"
                                          src="{{ asset('public/aceweb') }}/assets/img/ACE IHSAN (2) 1.png" alt="" />
                                      <div class="list-contact">
-                                         <h5 class="title-corporate">ACE Ihsan Gold Sdn Bhd</h5>
+                                         <h5 class="title-corporate">Go Ihsan Sdn. Bhd.</h5>
                                          <br>
                                          <p style="font-weight: bold">Address</p>
 
