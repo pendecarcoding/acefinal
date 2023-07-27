@@ -72,7 +72,7 @@
                                     <thead>
                                         <tr>
                                             <th colspan="3" class="center">
-                                                <h4>ACE Gold Price 999.9</h4>
+                                                <h4>Gold Price 999.9</h4>
                                             </th>
                                         </tr>
                                     </thead>
@@ -192,7 +192,7 @@
                                         <tr>
                                             <td colspan="3">
                                                 <p class="ace-personal-powered">
-                                                    Powered by ACE Capital Growth Please call <span><br>+603-8081-7198 for
+                                                    Powered by GO Capital Growth Please call <span><br>+603-8081-7198 for
                                                         our Gold Trading Platform access.</span>
                                                 </p>
                                             </td>
