@@ -2450,11 +2450,11 @@ footer img {
 
 .ace-card-company {
     position: relative;
-    padding-top: 0px;
+    padding: 6px;
     border-radius: 100px;
     width: 100px;
     height: 100px;
-    margin: 20px;
+    margin: 15px 20px;
     /* margin-left: 55px; */
     border: none;
     box-shadow: 1px 1px 1px rgb(221 218 218);
