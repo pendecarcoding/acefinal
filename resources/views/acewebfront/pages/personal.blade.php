@@ -246,7 +246,7 @@
 
                         </div>
                         <div class="poweredby-ace">
-                            <center>Powered by ACE Capital Growth Please call +603-8081-7198 for our Gold Trading Platform
+                            <center>Powered by GO Capital Growth Please call +603-8081-7198 for our Gold Trading Platform
                                 access.
                         </div>
                         <center>
