@@ -15,14 +15,14 @@
                     <div class="card-corporate">
                         <a href="{{ url('ourcompany') }}">
                             <center><img class="img-icon-corporate"
-                                    src="{{ asset('public/aceweb/assets/img/corporate.png') }}"></center>
+                                    src="{{ asset('public/aceweb/assets/img/corporate2.png') }}"></center>
                             <!-- <b>CORPORATE</b> -->
                         </a>
                     </div>
                     <div class="card-personal">
                         <a href="{{ url('forcorporate') }}">
                             <center><img class="img-icon-personal"
-                                    src="{{ asset('public/aceweb/assets/img/personal.png') }}"></center>
+                                    src="{{ asset('public/aceweb/assets/img/personal2.png') }}"></center>
                             <!-- <b>PERSONAL</b> -->
                         </a>
                     </div>
