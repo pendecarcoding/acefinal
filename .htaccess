@@ -1,13 +1,14 @@
-<IfModule mod_negotiation.c>
-    Options -MultiViews -Indexes
-</IfModule>
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+    <Files .env>
+        Order allow,deny
+        Deny from all
+    </Files>
+    RewriteEngine On
 
-<Files .env>
-    Order allow,deny
-    Deny from all
-</Files>
-
-RewriteEngine On
+    RewriteEngine On
 
 # Handle Authorization Header
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -29,3 +30,5 @@ RewriteRule ^ %1 [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L]
+
+</IfModule>
