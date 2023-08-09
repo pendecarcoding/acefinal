@@ -127,7 +127,7 @@
                     padding: 50px;
                 ">
                         <div class="mb-5 text-center">
-                            <img src="{{ uploaded_asset(get_setting('site_icon')) }}" class="mw-100 mb-4"
+                            <img src="{{ uploaded_asset(get_setting('system_logo_white')) }}" class="mw-100 mb-4"
                                 height="100">
                             <h1 style="color: #6d6d6d;font-size: 20px;" class="h3  mb-0">Staff Login</h1>
 

@@ -36,16 +36,16 @@
                 <div class="text-left">
                     <div class="card-body">
                         <div class="mb-5 text-center">
-                            <img src="{{ uploaded_asset(get_setting('site_icon')) }}" class="mw-100 mb-4"
+                            <img src="{{ uploaded_asset(get_setting('system_logo_white')) }}" class="mw-100 mb-4"
                                 height="100">
                             <h1 class="h3 mb-0" style="color:#1D5189;font-weight: bold;">Forgot Password</h1>
                             @include('acewebfront.pages.alert')
                         </div>
-                        <form class="pad-hor" method="POST" role="form" action="{{route('staff.resetconfir')}}">
-                            {{csrf_field()}}
+                        <form class="pad-hor" method="POST" role="form" action="{{ route('staff.resetconfir') }}">
+                            {{ csrf_field() }}
 
                             <div class="input-group mb-3">
-                                <input type="hidden" name="reset_code" value={{$code}}>
+                                <input type="hidden" name="reset_code" value={{ $code }}>
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-lock-o"
                                             aria-hidden="true"></i></span>
