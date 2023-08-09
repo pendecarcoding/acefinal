@@ -311,7 +311,7 @@ class StuffController extends Controller
                 }
 
             }else{
-                return back()->with('dangger','Account not found');
+                return back()->with('dangger','username or password wrong');
             }
         } catch (\Throwable $th) {
             print $th->getmessage();

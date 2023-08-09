@@ -191,7 +191,23 @@
 
     @include('acewebfront.fotter')
     <!--</div>-->
+    @if (Session::has('dangger'))
+        <script>
+            // Define a function to be executed when the page finishes loading
+            function pageLoaded() {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Info Login',
+                    text: '{{ Session::get('dangger') }}', // Corrected line
+                });
 
+                // You can add your code here that should run after the page loads
+            }
+
+            // Attach the 'pageLoaded' function to the onload event of the 'window' object
+            window.onload = pageLoaded;
+        </script>
+    @endif
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         const canvas = document.getElementById("hero-lightpass");
