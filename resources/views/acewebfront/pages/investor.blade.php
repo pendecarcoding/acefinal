@@ -303,7 +303,7 @@
                       <div>
                         <img
                           class="img-responsive-news rounded"
-                          src="{{ static_asset('aceweb') }}/assets/img/r1.png"
+                          src="{{ getimage($ceo->image) }}"
                           alt=""
                         />
                         <p class="p-title-news">Message from the CEO</p>

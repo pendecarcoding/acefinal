@@ -585,10 +585,11 @@ class AceController extends Controller
                 $shareholder =  Blog::join('blog_categories','blog_categories.id','blogs.category_id')
                         ->where('category_name','shareholder')
                         ->first();
+                $ceo             = Messageceo::limit(1)->first();
                 $announcement    = Announcement::orderby('created_at','DESC')->where('type','PUBLIC')->get();
                 $announcementnew = Announcement::orderby('created_at','DESC')->where('type','PUBLIC')->first();
                 $download     = Download::orderby('date','DESC')->get();
-                return view('acewebfront.pages.investor',compact('irkey','announcement','download','shareholder','page','announcementnew'));
+                return view('acewebfront.pages.investor',compact('ceo','irkey','announcement','download','shareholder','page','announcementnew'));
                 break;
             case 'our_products':
                 $data = Product::where('published','1')->orderby('shortby','ASC')->paginate(6);
