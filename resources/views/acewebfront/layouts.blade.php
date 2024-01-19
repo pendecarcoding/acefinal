@@ -19,7 +19,7 @@
         @endif
     </title>
     @yield('meta')
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/" />
+    <link rel="canonical" href="{{ url()->current() }}" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="{{ static_asset('aceweb') }}/assets/vendor/aos/aos.css" rel="stylesheet" />
