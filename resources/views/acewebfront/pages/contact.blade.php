@@ -44,10 +44,9 @@
                                          <br>
                                          <p style="font-weight: bold">Address</p>
 
-                                         <p>
-                                             No. 19-1, Jalan USJ 10/1D, 47620 Subang Jaya, Selangor,
-                                             Malaysia
-                                         </p>
+                                         <p><a style="color:#999999" href="https://waze.com/ul/hw281rehc5">
+                                            3A-D, Jalan USJ 10/1a, Taipan Business Centre, 47610 Subang Jaya, Selangor, Malaysia
+                                          </a>
                                          <br>
                                          <p style="font-weight: bold">Tel</p>
 
@@ -56,6 +55,8 @@
                                          <p style="font-weight: bold">Email</p>
 
                                          <p>enquiry@goinno2u.com</p>
+                                         <br>
+                                         <a href="https://waze.com/ul/hw281rehc5" class="btn btn-primary"><i class="fa fa-marker"></i> Visit Location</a>
                                      </div>
                                  </div>
                              </div>
