@@ -17,7 +17,7 @@
                     </h6>
                     <p>
                         <b style="font-weight:bold;color:black">Address</b><br>
-                        No. 19-1, Jalan USJ 10/1D, 47620, Subang Jaya, Selangor, Malaysia
+                        3A-D, Jalan USJ 10/1a, Taipan Business Centre, 47610 Subang Jaya, Selangor, Malaysia
 
                         <br><b style="font-weight:bold;color:black">Tel</b><br>
                         +603 – 8081 7198
