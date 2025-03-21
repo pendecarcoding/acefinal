@@ -78,7 +78,7 @@
               <table data-aos="fade-up" data-aos-delay="300" class="stock-price-investor">
                 <thead>
                   <tr>
-                    <th class="text-center"><div class="title-price-investor">Stock Price (Real Time)</div></center></th>
+                    <th class="text-center"><div class="title-price-investor">Stock Price</div></center></th>
                   </tr>
                 </thead>
                 <tbody>
