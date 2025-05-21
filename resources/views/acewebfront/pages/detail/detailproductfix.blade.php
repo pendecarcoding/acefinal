@@ -53,7 +53,7 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
           </div>
         </div>
       </section>
-       <a href="{{ url('our_products/view/cart') }}" style="color:white" class="btn  floating-button"> <div id="countcart" style="font-weight: bold;"  class="btn btn-danger btn-sm"> {{ $totalcart }}</div> <i class="la la-shopping-cart"></i> Checkout Your Order</a>
+      <!-- <a href="{{ url('our_products/view/cart') }}" style="color:white" class="btn  floating-button"> <div id="countcart" style="font-weight: bold;"  class="btn btn-danger btn-sm"> {{ $totalcart }}</div> <i class="la la-shopping-cart"></i> Checkout Your Order</a>-->
     <section class="ace-detailproduct">
 
         <div class="content-ace">
@@ -436,14 +436,14 @@ $totalcart = ($tmp_user != null) ? \App\Models\Cart::where('temp_user_id',$tmp_u
                                         <i class="la la-share"></i> {{ translate($detailedProduct->external_link_btn) }}
                                     </a>
                                 @else
-                                    <button type="button" class="btn btn-soft-primary mr-2 add-to-cart fw-600"
+                                    <!--<button type="button" class="btn btn-soft-primary mr-2 add-to-cart fw-600"
                                         onclick="addToCart()">
                                         <i class="las la-shopping-bag"></i>
                                         <span class="d-none d-md-inline-block"> {{ translate('Add to cart') }}</span>
                                     </button>
                                     <button type="button" class="btn btn-primary buy-now fw-600" onclick="buyNow()">
                                         <i class="la la-shopping-cart"></i> {{ translate('Buy Now') }}
-                                    </button>
+                                    </button>-->
                                 @endif
                                 <button type="button" class="btn btn-secondary out-of-stock fw-600 d-none" disabled>
                                     <i class="la la-cart-arrow-down"></i> {{ translate('Out of Stock') }}

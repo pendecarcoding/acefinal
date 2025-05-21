@@ -164,7 +164,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/terms', 'terms')->name('terms');
     Route::get('/privacy-policy', 'privacypolicy')->name('privacypolicy');
 
-    
+
 });
 
 // Language Switch
@@ -265,20 +265,20 @@ Route::group(['middleware' => ['user', 'verified', 'unbanned']], function() {
 
  Route::group(['prefix' => 'our_products'], function() {
         Route::controller(CheckoutController::class)->group(function () {
-            Route::get('/view/shiping_info', 'get_shipping_info')->name('checkout.shipping_info');
-            Route::post('/add_address', 'add_address')->name('checkout.add_address');
-            Route::any('/view/delivery_info', 'store_shipping_info')->name('checkout.store_shipping_infostore');
-            Route::any('/view/payment_select', 'store_delivery_info')->name('checkout.store_delivery_info');
-            Route::get('/view/order-confirmed', 'order_confirmed')->name('order_confirmed');
-            Route::get('/view/order-confirmed_other', 'order_confirmed_other')->name('order_confirmed_other');
-            Route::post('/payment', 'checkout')->name('payment.checkout');
-            Route::post('/get_pick_up_points', 'get_pick_up_points')->name('shipping_info.get_pick_up_points');
-            Route::get('/payment-select', 'get_payment_info')->name('checkout.payment_info');
-            Route::post('/apply_coupon_code', 'apply_coupon_code')->name('checkout.apply_coupon_code');
-            Route::post('/remove_coupon_code', 'remove_coupon_code')->name('checkout.remove_coupon_code');
-            //Club point
-            Route::post('/apply-club-point', 'apply_club_point')->name('checkout.apply_club_point');
-            Route::post('/remove-club-point', 'remove_club_point')->name('checkout.remove_club_point');
+            // Route::get('/view/shiping_info', 'get_shipping_info')->name('checkout.shipping_info');
+            // Route::post('/add_address', 'add_address')->name('checkout.add_address');
+            // Route::any('/view/delivery_info', 'store_shipping_info')->name('checkout.store_shipping_infostore');
+            // Route::any('/view/payment_select', 'store_delivery_info')->name('checkout.store_delivery_info');
+            // Route::get('/view/order-confirmed', 'order_confirmed')->name('order_confirmed');
+            // Route::get('/view/order-confirmed_other', 'order_confirmed_other')->name('order_confirmed_other');
+            // Route::post('/payment', 'checkout')->name('payment.checkout');
+            // Route::post('/get_pick_up_points', 'get_pick_up_points')->name('shipping_info.get_pick_up_points');
+            // Route::get('/payment-select', 'get_payment_info')->name('checkout.payment_info');
+            // Route::post('/apply_coupon_code', 'apply_coupon_code')->name('checkout.apply_coupon_code');
+            // Route::post('/remove_coupon_code', 'remove_coupon_code')->name('checkout.remove_coupon_code');
+            // //Club point
+            // Route::post('/apply-club-point', 'apply_club_point')->name('checkout.apply_club_point');
+            // Route::post('/remove-club-point', 'remove_club_point')->name('checkout.remove_club_point');
         });
     });
 
