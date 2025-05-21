@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade modaldiscount" id="discountbanner" tabindex="-1">
+            <!-- <div class="modal fade modaldiscount" id="discountbanner" tabindex="-1">
                 <div class="modal-dialog modal-md">
                     <div style="background-color: transparent;border:none;" class="modal-content">
 
@@ -118,7 +118,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
         </section>
