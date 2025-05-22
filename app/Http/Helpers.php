@@ -422,7 +422,7 @@ function fpxOnCancelled($email,$no){
             }
             Mail::to($email)->queue(new InvoiceEmailManager($array));
             //session()->remove('temp_user_id');
-            return redirect()->route('order_confirmed');
+            return redirect()->route('order_confirmed_other');
         } catch (\Exception $e) {
 
         }
@@ -451,7 +451,7 @@ function fpxOnRollBack($email,$no){
             }
             Mail::to($email)->queue(new InvoiceEmailManager($array));
             //session()->remove('temp_user_id');
-            return redirect()->route('order_confirmed');
+            return redirect()->route('order_confirmed_other');
         } catch (\Exception $e) {
 
         }
@@ -480,7 +480,7 @@ function fpxOnFailed($email,$no){
             }
             Mail::to($email)->queue(new InvoiceEmailManager($array));
             //session()->remove('temp_user_id');
-            return redirect()->route('order_confirmed');
+            return redirect()->route('order_confirmed_other');
         } catch (\Exception $e) {
 
         }
