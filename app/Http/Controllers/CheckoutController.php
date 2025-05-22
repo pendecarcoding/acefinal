@@ -34,7 +34,7 @@ class CheckoutController extends Controller
             $subtotal = 0;
             foreach (Cart::where('temp_user_id', $request->session()->get('temp_user_id'))->get() as $key => $cartItem){
                 $product = Product::find($cartItem['product_id']);
-                $subtotal += cart_product_price($cartItem, $product, false, false) * $cartItem['quantity'];
+                $subtotal += (cart_product_price($cartItem, $product, false, false) * $cartItem['quantity']) + 1.20;
             }
             if ($subtotal < get_setting('minimum_order_amount')) {
                 flash(translate('You order amount is less then the minimum order amount'))->warning();
@@ -63,7 +63,7 @@ class CheckoutController extends Controller
                     $combined_order = CombinedOrder::findOrFail($request->session()->get('combined_order_id'));
                     $manual_payment_data = array(
                         'name'   => $request->payment_option,
-                        'amount' => $combined_order->grand_total,
+                        'amount' => $combined_order->grand_total + env('FPX_FEE'),
                         'trx_id' => $request->trx_id,
                         'photo'  => $request->photo
                     );
