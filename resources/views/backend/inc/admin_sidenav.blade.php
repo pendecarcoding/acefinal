@@ -749,6 +749,15 @@
                                     </a>
                                 </li>
                             @endcan
+
+                            @can('view_contact')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('contact.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['contact.create', 'contact.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Contact Us') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
                             <!-- @can('view_blogs')
                                                         <li class="aiz-side-nav-item">
                                                             <a href="{{ route('blog.index') }}"

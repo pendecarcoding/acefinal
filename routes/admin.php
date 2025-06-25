@@ -58,6 +58,7 @@ use App\Http\Controllers\RequestPatner;
 use App\Http\Controllers\PersonalPageset;
 use App\Http\Controllers\InvestorController;
 use App\Http\Controllers\FileStaffController;
+use App\Http\Controllers\ace\ContactController;
 
 
 /*
@@ -626,6 +627,24 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
         Route::post('/bulk-uploaded-files-delete', 'bulk_uploaded_files_delete')->name('bulk-uploaded-files-delete');
         Route::get('/all-file', 'all_file');
     });
+
+
+    /**
+     * Contact
+     */
+
+    Route::resource('contact', ContactController::class);
+    Route::controller(ContactController::class)->group(function () {
+        Route::get('/contact', 'index')->name('contact.index');
+        Route::get('/contact/create', 'create')->name('contact.create');
+        Route::post('/contact/store', 'store')->name('contact.store');
+        Route::get('/contact/destroy/{id}', 'destroy')->name('contact.destroy');
+        Route::get('/contact/edit/{id}', 'edit')->name('contact.edit');
+        Route::post('/contact/update/{id}', 'update')->name('contact.update');
+    });
+
+
+
 
     Route::get('/all-notification', [NotificationController::class, 'index'])->name('admin.all-notification');
 
