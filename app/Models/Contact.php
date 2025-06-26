@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Upload;
 
 class Contact extends Model
 {
@@ -11,6 +13,8 @@ class Contact extends Model
         'id_image',
         'address',
         'telp',
+        'link',
+        'orderto',
         'email',
     ];
 
@@ -22,5 +26,15 @@ class Contact extends Model
     public function getUpdatedAtAttribute($value)
     {
         return \Carbon\Carbon::parse($value)->format('d M Y');
+    }
+
+    /**
+     * Get the user that owns the Contact
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function getImage(): BelongsTo
+    {
+        return $this->belongsTo(Upload::class, 'id_image', 'id');
     }
 }
