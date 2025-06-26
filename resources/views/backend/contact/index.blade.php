@@ -27,6 +27,7 @@
             <thead>
                 <tr>
                     <th data-breakpoints="lg" width="10%">#</th>
+                    <th>{{translate('Company Image')}}</th>
                     <th>{{translate('Name')}}</th>
                     <th>{{translate('Address')}}</th>
                     <th data-breakpoints="lg">{{translate('Email')}}</th>
@@ -39,6 +40,7 @@
                 @foreach ($contacts as $i => $contact)
                 <tr>
                     <td>{{ $i + 1 }}</td>
+                    <td><img style="width:30%" src="{{ asset('public/' .$contact->getImage->file_name) }}"></td>
                     <td>{{ $contact->name }}</td>
                     <td>{{ $contact->address }}</td>
                     <td>{{ $contact->email }}</td>

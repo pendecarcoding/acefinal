@@ -14,13 +14,13 @@
 <div class="card">
     <div class="card-header">
         <h5 class="mb-0 h6">{{translate('Contact')}}</h5>
-        @can('add_contact')
+
             <div class="col-md-6 text-md-right">
-                <a href="{{ route('contact.create') }}" class="btn btn-circle btn-info">
-                    <span>{{translate('Add Contact')}}</span>
+                <a href="{{ route('contact.index') }}" class="btn btn-circle btn-danger">
+                    <li class="las la-times"></li>
                 </a>
             </div>
-        @endcan
+
     </div>
     <div class="card-body">
         <form class="form-horizontal" action="{{ route('contact.update',$contact->id) }}" method="POST">
@@ -51,6 +51,12 @@
             </div>
             <div class="form-group">
                 <input type="text" class="form-control" name="telp" value="{{$contact->telp}}" placeholder="{{ translate('Telp') }}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="link" value="{{$contact->link}}" placeholder="{{ translate('Link (google maps or Waze)') }}">
+            </div>
+             <div class="form-group">
+                <input type="number" class="form-control" name="orderto" value="{{$contact->orderto}}" placeholder="{{ translate('Order to') }}">
             </div>
             <button type="submit" class="btn btn-primary">{{ translate('Save') }}</button>
 
