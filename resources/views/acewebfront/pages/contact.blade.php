@@ -1,6 +1,6 @@
  @extends('acewebfront.layouts')
  @section('meta')
-     <meta property="og:image" content="{{ uploaded_asset(get_setting('site_icon')) }}" />
+      <meta property="og:image" content="{{ uploaded_asset(get_setting('system_logo_white')) }}" />
  @endsection
  @section('content')
      <main>
@@ -29,7 +29,7 @@
                              <h1>We’d love to hear from you</h1>
                          </div>
 
-
+                         @if($hQContact != null)
                          <div style="margin-top: 50px" class="row">
                              <div class="col-md-6">
                                  <div class="contact-wrap">
@@ -40,7 +40,7 @@
                              <div class="col-md-6">
                                  <div class="contact-wrap">
                                      <div class="list-contact">
-                                         <h5 class="title-corporate">Go Innovate Asia Berhad</h5>
+                                         <h5 class="title-corporate">{{$hQContact->name}}</h5>
                                          <br>
                                          <p style="font-weight: bold">Address</p>
 
@@ -61,96 +61,37 @@
                                  </div>
                              </div>
                          </div>
+                         @endif
                          <div class="row">
+                            @foreach ($contacts as $i => $contact)
                              <div class="col-md-6">
                                  <div class="contact-wrap">
                                      <img class="img-responsive"
-                                         src="{{ asset('public/aceweb') }}/assets/img/ACECapital.jpg" alt="" />
+                                         src="{{ asset('public/' .$contact->getImage->file_name) }}" alt="" />
                                      <div class="list-contact">
-                                         <h5 class="title-corporate">Go Capital Growth Sdn. Bhd.</h5>
+                                         <h5 class="title-corporate">{{$contact->name}}</h5>
                                          <br>
                                          <p style="font-weight: bold">Address</p>
 
-                                         <p><a style="color:#999999" href="https://waze.com/ul/hw281rehc5">
-                                            3A-D, Jalan USJ 10/1a, Taipan Business Centre, 47610 Subang Jaya, Selangor, Malaysia
+                                         <p><a style="color:#999999" href="{{$contact->link}}">
+                                            {{$contact->address}}
                                           </a>
                                         </p>
                                          <br>
                                          <p style="font-weight: bold">Tel</p>
 
-                                         <p>+603 – 8081 7198</p>
+                                         <p>{{$contact->telp}}</p>
                                          <br>
                                          <p style="font-weight: bold">Email</p>
 
-                                         <p>enquiry@goinno2u.com</p>
+                                         <p><a href="mailto:{{$contact->email}}">{{$contact->email}}</a></p>
                                         <br>
-                                         <a href="https://waze.com/ul/hw281rehc5" class="btn btn-primary"><i class="fa fa-marker"></i> Visit Location</a>
+                                         <a href="{{$contact->link}}" class="btn btn-primary"><i class="fa fa-marker"></i> Visit Location</a>
                                      </div>
                                  </div>
                              </div>
-                             <div class="col-md-6">
-                                 <div class="contact-wrap">
-                                     <img class="img-responsive" src="{{ asset('public/aceweb') }}/assets/img/ACEAssay.jpg"
-                                         alt="" />
-                                     <div class="list-contact">
-                                         <h5 class="title-corporate">Go Assay Sdn. Bhd.</h5>
-                                         <br>
-                                         <p style="font-weight: bold">Address</p>
+                             @endforeach
 
-                                         <p>
-                                             No. 19, Jalan 2/131A, Project Jaya Industrial Estate,
-                                             Batu 6, Jalan Klang Lama, 58200 Kuala Lumpur
-                                         </p>
-                                         <br>
-                                         <p style="font-weight: bold">Tel</p>
-
-                                         <p>+603 – 7772 0164</p>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-
-                         <div class="row">
-                             <div class="col-md-6">
-                                 <div class="contact-wrap">
-                                     <img class="img-responsive"
-                                         src="{{ asset('public/aceweb') }}/assets/img/ace-ikhlas.png" alt="" />
-                                     <div class="list-contact">
-                                         <h5 class="title-corporate">Go Ikhlas Sdn. Bhd.</h5>
-                                         <br>
-                                         <p style="font-weight: bold">Address</p>
-
-                                         <p>
-                                             No. 11A-2, Jalan USJ 10/1D, 47620 Subang Jaya, Selangor
-                                             Malaysia
-                                         </p>
-                                         <br>
-                                         <p style="font-weight: bold">Tel</p>
-
-                                         <p>+603 – 8081 7205</p>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-md-6">
-                                 <div class="contact-wrap">
-                                     <img class="img-responsive"
-                                         src="{{ asset('public/aceweb') }}/assets/img/ACE IHSAN (2) 1.png" alt="" />
-                                     <div class="list-contact">
-                                         <h5 class="title-corporate">Go Ihsan Sdn. Bhd.</h5>
-                                         <br>
-                                         <p style="font-weight: bold">Address</p>
-
-                                         <p>
-                                             No. 11A-2, Jalan USJ 10/1D, 47620 Subang Jaya, Selangor
-                                             Malaysia
-                                         </p>
-                                         <br>
-                                         <p style="font-weight: bold">Tel</p>
-
-                                         <p>+603 – 8081 7205</p>
-                                     </div>
-                                 </div>
-                             </div>
                          </div>
                      </div>
                  </div>

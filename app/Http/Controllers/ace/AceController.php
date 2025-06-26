@@ -45,6 +45,7 @@ use DB;
 use App\Models\Currency;
 use App\Models\Language;
 use Config;
+use App\Models\Contact;
 
 
 class AceController extends Controller
@@ -606,7 +607,9 @@ class AceController extends Controller
                 return view('acewebfront.pages.newsroom',compact('data','page'));
                 break;
             case 'contact':
-                return view('acewebfront.pages.contact',compact('page'));
+                $hQContact = Contact::where('orderto',1)->first();
+                $contacts  = Contact::where('orderto','!=',1)->orderBy('orderto','asc')->get();
+                return view('acewebfront.pages.contact',compact('page','hQContact','contacts'));
                 break;
             default:
                 return redirect()->route('home');
