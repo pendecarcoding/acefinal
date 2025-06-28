@@ -44,19 +44,23 @@
                                          <br>
                                          <p style="font-weight: bold">Address</p>
 
-                                         <p><a style="color:#999999" href="https://waze.com/ul/hw281rehc5">
-                                            3A-D, Jalan USJ 10/1a, Taipan Business Centre, 47610 Subang Jaya, Selangor, Malaysia
+                                         <p><a style="color:#999999" href="{{$hQContact->link}}">
+                                            {{$hQContact->address}}
                                           </a>
                                          <br>
+                                         @if($hQContact->telp != null)
                                          <p style="font-weight: bold">Tel</p>
 
-                                         <p>+603 – 8081 7198</p>
+                                         <p>{{$hQContact->telp}}</p>
+                                         @endif
                                          <br>
+                                         @if($hQContact->email != null)
                                          <p style="font-weight: bold">Email</p>
 
-                                         <p>enquiry@goinno2u.com</p>
+                                         <p>{{$hQContact->email}}</p>
+                                         @endif
                                          <br>
-                                         <a href="https://waze.com/ul/hw281rehc5" class="btn btn-primary"><i class="fa fa-marker"></i> Visit Location</a>
+                                         <a href="{{$hQContact->link}}" class="btn btn-primary"><i class="fa fa-marker"></i> Visit Location</a>
                                      </div>
                                  </div>
                              </div>
@@ -78,13 +82,18 @@
                                           </a>
                                         </p>
                                          <br>
+                                         @if($contact->telp != null)
                                          <p style="font-weight: bold">Tel</p>
 
                                          <p>{{$contact->telp}}</p>
+                                         @endif
                                          <br>
+                                         @if($contact->email != null)
                                          <p style="font-weight: bold">Email</p>
 
+
                                          <p><a href="mailto:{{$contact->email}}">{{$contact->email}}</a></p>
+                                          @endif
                                         <br>
                                          <a href="{{$contact->link}}" class="btn btn-primary"><i class="fa fa-marker"></i> Visit Location</a>
                                      </div>
