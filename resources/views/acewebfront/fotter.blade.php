@@ -17,10 +17,10 @@
                     </h6>
                     <p>
                         <b style="font-weight:bold;color:black">Address</b><br>
-                        3A-D, Jalan USJ 10/1a, Taipan Business Centre, 47610 Subang Jaya, Selangor, Malaysia
+                        5F-1A, 5th Floor Tower 1 @ PFCC, Jalan Puteri 1/2 Bandar Puteri Puchong, 47100 Puchong, Selangor Darul Ehsan, Malaysia
 
                         <br><b style="font-weight:bold;color:black">Tel</b><br>
-                        +603 – 8081 7198
+                        +60380518972
 
                         <br><b style="font-weight:bold;color:black">Email</b><br>
                         enquiry@goinno2u.com
