@@ -192,8 +192,7 @@
                                     <tr>
                                         <td colspan="3">
                                             <p class="ace-personal-powered">
-                                                Powered by GO Capital Growth Please call <span><br>+603-8081-7198 for
-                                                    our Gold Trading Platform access.</span>
+                                                Prices above are for indicative purpose only. <span><br>Please call +603-80518972 for our Gold Trading Platform access.</span>
                                             </p>
                                         </td>
                                     </tr>
@@ -246,8 +245,7 @@
 
                     </div>
                     <div class="poweredby-ace">
-                        <center>Powered by GO Capital Growth Please call +603-8081-7198 for our Gold Trading Platform
-                            access.
+                        <center>Prices above are for indicative purpose only. Please call +603-80518972 for our Gold Trading Platform access.
                     </div>
                     <center>
                 </div>
