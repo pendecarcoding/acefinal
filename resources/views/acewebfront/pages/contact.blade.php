@@ -33,7 +33,7 @@
                          <div style="margin-top: 50px" class="row">
                              <div class="col-md-6">
                                  <div class="contact-wrap">
-                                     <img class="img-responsive" src="{{ asset('public/' .$contact->getImage->file_name) }}"
+                                     <img class="img-responsive" src="{{ asset('public/' .$hQContact->getImage->file_name) }}"
                                          alt="" />
                                  </div>
                              </div>
