@@ -1,109 +1,110 @@
 @extends('acewebfront.layouts')
 @section('meta')
- <meta property="og:image" content="{{ uploaded_asset(get_setting('system_logo_white')) }}" />
+<meta property="og:image" content="{{ uploaded_asset(get_setting('system_logo_white')) }}" />
 @endsection
 @section('content')
-    <main>
-        <section class="ace-investor">
+<main>
+    <section class="ace-investor">
 
-            <div class="col-md-12">
-                <div class="banner-static">
-                    <img class="img-responsive-banner" src="/public/aceweb/assets/img/product-banner.png"
-                        alt="ACE-BANNER-PRODUCT" />
-                </div>
+        <div class="col-md-12">
+            <div class="banner-static">
+                <img class="img-responsive-banner" src="/public/aceweb/assets/img/product-banner.png"
+                    alt="ACE-BANNER-PRODUCT" />
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="gtp-anouncements">
-            <div class="content-ace">
-                <div class="wrap-content">
+    <section class="gtp-anouncements">
+        <div class="content-ace">
+            <div class="wrap-content">
 
-                    <div style="padding-top: 0px" class="ace-isi about">
-                        <div class="col-md-12" style="margin-top: 5%">
-                            <div data-aos="fade-up" class="title-ace">
-                                OUR PRODUCTS
-                                <span class="h-dash" style="font-weight: bold">—</span>
-                            </div>
+                <div style="padding-top: 0px" class="ace-isi about">
+                    <div class="col-md-12" style="margin-top: 5%">
+                        <div data-aos="fade-up" class="title-ace">
+                            OUR PRODUCTS
+                            <span class="h-dash" style="font-weight: bold">—</span>
                         </div>
-                        <div data-aos="fade-up" class="col-md-12 col-sm-12">
-                            <h1>Live retail pricing</h1>
-                        </div>
+                    </div>
+                    <div data-aos="fade-up" class="col-md-12 col-sm-12">
+                        <h1>Live retail pricing</h1>
+                    </div>
 
-                        <div style="margin-top: 50px" class="row-personals">
-                            <div class="col-md-9">
-                                For 100 grams and above or bulk order please DM us with the info quantity
-                                <br>You're welcome to be our reseller/dealer with free registration
-                                <br><a href="https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar"
-                                    target="_blank">For more
-                                    enquiries please contact us at +011-28613355</a>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="row-personals">
-                                    <div style="margin: auto">Sort by:</div>
-                                    <div style="margin-left: 20px">
-                                        <select class="form-control">
-                                            <option value="">Price: Low to Height</option>
-                                            <option value="">Price: Heigh to Low</option>
-                                        </select>
-                                    </div>
+                    <div style="margin-top: 50px" class="row-personals">
+                        <div class="col-md-9">
+                            For 100 grams and above or bulk order please DM us with the info quantity
+                            <br>You're welcome to be our reseller/dealer with free registration
+                            <br><a href="https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar"
+                                target="_blank">For more
+                                enquiries please contact us at +011-28613355</a>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row-personals">
+                                <div style="margin: auto">Sort by:</div>
+                                <div style="margin-left: 20px">
+                                    <select class="form-control">
+                                        <option value="">Price: Low to Height</option>
+                                        <option value="">Price: Heigh to Low</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="row"
-                            style="
+                    </div>
+                    <div class="row"
+                        style="
               margin-top: 80px;
               margin-bottom: 80px;
           ">
-                            @foreach ($data as $i => $v)
-                                <div class="col-md-4 col-sm-4">
+                        @foreach ($data as $i => $v)
+                        <div class="col-md-4 col-sm-4">
 
-                                    <div data-aos="fade-up" class="cards"
-                                        style="position: relative;
+                            <div data-aos="fade-up" class="cards"
+                                style="position: relative;
                                     overflow: hidden;">
-                                        @if (home_price($v) != home_discounted_price($v))
-                                            <span class="discount">PROMO</span>
-                                        @endif
-                                        <!-- <a href="#"> -->
-                                        <a href="{{ url('our_products/' . $v->slug) }}">
-                                            <center><img class="img-responsive-product"
-                                                    src="{{ getimage($v->thumbnail_img) }}" alt="" /></center>
-                                            <p>{{ $v->name }}</p>
-                                            <div style="display:none" class="gram">{{ $v->weight }}</div>
+                                @if (home_price($v) != home_discounted_price($v))
+                                <span class="discount">PROMO</span>
+                                @endif
+                                <!-- <a href="#"> -->
+                                <a href="{{ url('our_products/' . $v->slug) }}">
 
-                                            @if (home_price($v) != home_discounted_price($v))
-                                                <div style="display: flex;"></div>
-                                                <h5 class="price"> {{ home_discounted_price($v) }}</h5>
-                                                <h5 class="price">
-                                                    <del style="color:#bec0c2">
+                                    <center><img class="img-responsive-product"
+                                            src="{{ getimage($v->thumbnail_img) }}" alt="" /></center>
+                                    <p>{{ $v->name }}</p>
+                                    <div style="display:none" class="gram">{{ $v->weight }}</div>
+
+                                    @if (home_price($v) != home_discounted_price($v))
+                                    <div style="display: flex;"></div>
+                                    <h5 class="price"> {{ home_discounted_price($v) }}</h5>
+                                    <h5 class="price">
+                                        <!-- <del style="color:#bec0c2">
                                                         {{ home_price($v) }}
-                                                    </del>
-                                                </h5>
-                                            @else
-                                                <h5 class="price">{{ format_price($v->unit_price) }}</h5>
-                                            @endif
+                                                    </del> -->
+                                    </h5>
+                                    @else
+                                    <!-- <h5 class="price">{{ format_price($v->unit_price) }}</h5> -->
+                                    @endif
 
-                                        </a>
-                                    </div>
-                                </div>
-                            @endforeach
-
+                                </a>
+                            </div>
                         </div>
-                        <div style="margin-top: 20px;" class="row">
-                            <div class="container">
-                                <div class="col-md-12">
+                        @endforeach
 
-                                    <div class="d-flex justify-content-center">
-                                        {!! $data->links() !!}
-                                    </div>
+                    </div>
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="container">
+                            <div class="col-md-12">
+
+                                <div class="d-flex justify-content-center">
+                                    {!! $data->links() !!}
                                 </div>
                             </div>
-
                         </div>
 
                     </div>
+
                 </div>
             </div>
-            <!-- <div class="modal fade modaldiscount" id="discountbanner" tabindex="-1">
+        </div>
+        <!-- <div class="modal fade modaldiscount" id="discountbanner" tabindex="-1">
                 <div class="modal-dialog modal-md">
                     <div style="background-color: transparent;border:none;" class="modal-content">
 
@@ -121,25 +122,25 @@
             </div> -->
 
 
-        </section>
-        <div class="wa-floating-button" onclick="openWhatsApp()">
-            <span class="whatsapp-icon"><i class="fa fa-phone"></i></span>
-        </div>
+    </section>
+    <div class="wa-floating-button" onclick="openWhatsApp()">
+        <span class="whatsapp-icon"><i class="fa fa-phone"></i></span>
+    </div>
 
-    </main>
+</main>
 
 
 
-    <script type="text/javascript">
-        $(window).on('load', function() {
-            $('#discountbanner').modal('show');
-        });
-    </script>
-    <script>
-        function openWhatsApp() {
-            window.open("https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar", "_blank");
-        }
-    </script>
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#discountbanner').modal('show');
+    });
+</script>
+<script>
+    function openWhatsApp() {
+        window.open("https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar", "_blank");
+    }
+</script>
 
-    {{-- <script src="{{ static_asset('aceweb') }}/assets/ace/realprice.js"></script> --}}
+{{-- <script src="{{ static_asset('aceweb') }}/assets/ace/realprice.js"></script> --}}
 @endsection
