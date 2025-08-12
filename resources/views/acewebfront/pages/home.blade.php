@@ -143,37 +143,28 @@
           </div>
         </div>
       </section>
-      <section class="company-ace">
+<section class="company-ace">
  <div class="content-ace">
           <div class="wrap-content">
             <div class="ace-isi about">
-              <div data-aos="fade-up" data-aos-delay="100" class="col-md-12">
+              <div data-aos="fade-up" data-aos-delay="100" class="col-md-12 aos-init aos-animate">
                 <div class="title-ace">
                   OUR WELL-ESTABLISHED EMPIRE
                   <span class="h-dash" style="font-weight: bold">—</span>
                 </div>
               </div>
 
-              <div
-                data-aos="fade-up"
-                data-aos-delay="200"
-                class="col-md-12 col-sm-12"
-              >
+              <div data-aos="fade-up" data-aos-delay="200" class="col-md-12 col-sm-12 aos-init aos-animate">
                 <h1>Company structure</h1>
               </div>
-              <div id="structur-desktop" class="row img-strc">
+              <div class="row" style="
+    width: 100%;
+    padding: 20px;
+">
                 <div class="row">
                     <div class="col-md-5 col-sm-12">
-                            <div
-                                data-aos="zoom-in-down"
-                                data-aos-delay="300"
-                                class="img-structure"
-                            >
-                            <center> <img
-                                class="img-responsive circle-img-ace "
-                                src="{{ static_asset('aceweb') }}/assets/img/circle2.png"
-                                alt=""
-                                />
+                            <div data-aos="zoom-in-down" data-aos-delay="300" class="img-structure aos-init aos-animate">
+                            <center> <img class="img-responsive circle-img-ace " src="{{ static_asset('aceweb') }}/assets/img/circle2.png" alt="">
                                 </center>
                             </div>
 
@@ -181,57 +172,52 @@
                     <div class="col-md-7 col-sm-12">
 
                     <div style="display: flex;justify-content: center;">
-                   <div data-aos="zoom-in-down"
-                   data-aos-delay="1500" class="wrap-card-company" id="acecapital">
-                        <div  class="card ace-card-company">
-                          <img  src="{{ static_asset('aceweb') }}/assets/img/acecapital2.png" alt="" />
+                          <div data-aos="zoom-in-down" data-aos-delay="2000" class="wrap-card-company aos-init aos-animate">
+                        <div class="card ace-card-company">
+                          <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/GOMEX.png" alt="">
+
+                        </div>
+                        <p style="font-size: 12px;" class="name-company">Go Mex Growth Sdn Bhd (GO Mex Growth)</p>
+                    </div>
+                   <div data-aos="zoom-in-down" data-aos-delay="1500" class="wrap-card-company aos-init aos-animate">
+                        <div class="card ace-card-company">
+                          <img src="{{ static_asset('aceweb') }}/assets/img/acecapital2.png" alt="">
 
                         </div>
                         <p style="font-size: 12px;" class="name-company">GO Capital Growth Sdn Bhd (GO Capital)</p>
                     </div>
 
 
-                    <div data-aos="zoom-in-down"
-                    data-aos-delay="2000" class="wrap-card-company" id="aceikhlas">
-                        <div  class="card ace-card-company">
-                          <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/GOMEX.png" alt="" />
 
-                        </div>
-                        <p style="font-size: 12px;" class="name-company">Go Mex Growth Sdn Bhd (GO Mex GROWTH)</p>
-                    </div>
 
 
 
 
 
                     </div>
-                    <br>
-                <div class="row">
+         <div style="display: flex;justify-content: center;">
 
 
 
-                    <div data-aos="zoom-in-down"
-                    data-aos-delay="2000" class="wrap-card-company" id="aceikhlas">
-                        <div  class="card ace-card-company">
-                          <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/aceikhlas2.png" alt="" />
+                    <div data-aos="zoom-in-down" data-aos-delay="2000" class="wrap-card-company aos-init aos-animate">
+                        <div class="card ace-card-company">
+                          <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/aceikhlas2.png" alt="">
 
                         </div>
                         <p style="font-size: 12px;" class="name-company">GO Ikhlas Gold Sdn Bhd (GO Ikhlas)</p>
                     </div>
 
 
-                    <div data-aos="zoom-in-down"
-                    data-aos-delay="2500" class="wrap-card-company" id="aceassay">
-                        <div  class="card ace-card-company">
-                          <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceeasy2.png" alt="" />
+                    <div data-aos="zoom-in-down" data-aos-delay="2500" class="wrap-card-company aos-init aos-animate">
+                        <div class="card ace-card-company">
+                          <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceeasy2.png" alt="">
 
                       </div>
                       <p style="font-size: 12px;" class="name-company">Go Assay Sdn Bhd   <br>(GO Assay)</p>
                       </div>
-                      <div data-aos="zoom-in-down"
-                      data-aos-delay="3000" class="wrap-card-company" id="aceihsan">
-                        <div  class="card ace-card-company">
-                              <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceihsan2.png" alt="" />
+                      <div data-aos="zoom-in-down" data-aos-delay="3000" class="wrap-card-company aos-init aos-animate">
+                        <div class="card ace-card-company">
+                              <img class="img-responsive " src="{{ static_asset('aceweb') }}/assets/img/aceihsan2.png" alt="">
 
                             </div>
                             <p style="font-size: 12px;" class="name-company">GO Ihsan Gold Sdn Bhd (GO Ihsan)</p>

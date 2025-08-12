@@ -2443,9 +2443,7 @@ footer img {
     width: 170px;
     height: 200px;
     position: relative;
-
-    /* height: auto;
-    /* align-items: center; */
+    margin: 15px;
 }
 
 .ace-card-company {
