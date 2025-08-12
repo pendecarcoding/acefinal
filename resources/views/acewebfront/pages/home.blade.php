@@ -144,7 +144,7 @@
         </div>
       </section>
       <section class="company-ace">
-        <div class="content-ace">
+ <div class="content-ace">
           <div class="wrap-content">
             <div class="ace-isi about">
               <div data-aos="fade-up" data-aos-delay="100" class="col-md-12">
@@ -162,43 +162,25 @@
                 <h1>Company structure</h1>
               </div>
               <div id="structur-desktop" class="row img-strc">
-                <div class="col-md-5 col-sm-12">
-                  <div
-                    data-aos="zoom-in-down"
-                    data-aos-delay="300"
-                    class="img-structure"
-                  >
-                   <center> <img
-                      class="img-responsive circle-img-ace "
-                      src="{{ static_asset('aceweb') }}/assets/img/circle2.png"
-                      alt=""
-                    />
-                    </center>
-                  </div>
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                            <div
+                                data-aos="zoom-in-down"
+                                data-aos-delay="300"
+                                class="img-structure"
+                            >
+                            <center> <img
+                                class="img-responsive circle-img-ace "
+                                src="{{ static_asset('aceweb') }}/assets/img/circle2.png"
+                                alt=""
+                                />
+                                </center>
+                            </div>
 
-                </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12">
 
-                <div class="col-md-7 col-sm-7">
-                    <!-- <div class="line-container">
-                        <div class="horizontal-line"></div>
-                        <div class="vertical-line"></div>
-                        <div class="vertical-line"></div>
-                        <div class="vertical-line"></div>
-                        <div class="vertical-line"></div>
-                      </div> -->
-                    <!-- <div class="line-str"></div> -->
-                  <div class="line-structure">
-                    <img
-                      class="img-line-structure"
-                      data-aos="zoom-in-down"
-                      data-aos-delay="400"
-
-                      src="{{ static_asset('aceweb') }}/assets/img/line.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="child-company">
-                    <div class="row">
+                    <div style="display: flex;justify-content: center;">
                    <div data-aos="zoom-in-down"
                    data-aos-delay="1500" class="wrap-card-company" id="acecapital">
                         <div  class="card ace-card-company">
@@ -207,6 +189,25 @@
                         </div>
                         <p style="font-size: 12px;" class="name-company">GO Capital Growth Sdn Bhd (GO Capital)</p>
                     </div>
+
+
+                    <div data-aos="zoom-in-down"
+                    data-aos-delay="2000" class="wrap-card-company" id="aceikhlas">
+                        <div  class="card ace-card-company">
+                          <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/GOMEX.png" alt="" />
+
+                        </div>
+                        <p style="font-size: 12px;" class="name-company">Go Mex Growth Sdn Bhd (GO Mex GROWTH)</p>
+                    </div>
+
+
+
+
+
+                    </div>
+                    <br>
+                <div class="row">
+
 
 
                     <div data-aos="zoom-in-down"
@@ -238,74 +239,20 @@
 
 
                     </div>
-                  </div>
+                    </div>
                 </div>
+
+
+
               </div>
 
-              <div id="structur-ipad" class="row img-strc">
-                <img style="width:100%" src="{{ static_asset('aceweb') }}/assets/img/structure2.png" alt="">
-              </div>
 
-              <div style="margin-top:20px" class="row img-structure-mobile">
-                <div class="col-sm-12">
-                  <center>
-                    <div class="col-sm-12">
-                    <center>
-                      <div data-aos="flip-up" class="card ace-card-company aos-init aos-animate">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/acecapital2.png" alt="">
-
-                      </div>
-                      <p>GO Capital Growth Sdn Bhd(GO Capital)</p>
-                    </center>
-                    </div>
-                  </center>
-                  <center>
-                    <div class="col-sm-12">
-                    <center>
-                      <div data-aos="flip-up" class="card ace-card-company aos-init aos-animate">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/aceikhlas2.png" alt="">
-
-                      </div>
-                      <p>GO Ikhlas Gold Sdn Bhd
-                        (GO Ikhlas)</p>
-                    </center>
-                    </div>
-                  </center>
-
-                  <center>
-                    <div class="col-sm-12">
-                    <center>
-                      <div data-aos="flip-up" class="card ace-card-company aos-init aos-animate">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/aceeasy2.png" alt="">
-
-                      </div>
-                      <p>GO Assay (M) Sdn Bhd
-                        (GO Assay)</p>
-                    </center>
-                    </div>
-                  </center>
-
-                  <center>
-                    <div class="col-sm-12">
-                    <center>
-                      <div data-aos="flip-up" class="card ace-card-company aos-init aos-animate">
-                        <img src="{{ static_asset('aceweb') }}/assets/img/aceihsan2.png" alt="">
-
-                      </div>
-                      <p>GO Ihsan Gold Sdn Bhd
-                        (GO Ihsan)</p>
-                    </center>
-                    </div>
-                  </center>
-
-                </div>
-              </div>
 
 
               </div>
             </div>
           </div>
-        </div>
+
       </section>
       <section id="nonmansory2" class="gtp-solution">
         <div class="content-ace">
