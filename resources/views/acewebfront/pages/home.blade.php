@@ -163,7 +163,7 @@
 ">
                 <div class="row">
                     <div class="col-md-5 col-sm-12">
-                            <div data-aos="zoom-in-down" data-aos-delay="300" class="img-structure aos-init aos-animate">
+                            <div  style="padding-top: 7%;" data-aos="zoom-in-down" data-aos-delay="300" class="img-structure aos-init aos-animate">
                             <center> <img class="img-responsive circle-img-ace " src="{{ static_asset('aceweb') }}/assets/img/circle2.png" alt="">
                                 </center>
                             </div>

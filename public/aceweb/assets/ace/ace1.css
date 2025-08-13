@@ -9654,6 +9654,11 @@ footer img {
         top: 16%;
     }
 
+    .circle-img-ace {
+        padding-top: 1%;
+        width: 85%;
+    }
+
     .table-price-sell {
         margin-top: 0%;
         margin-bottom: 0%;
@@ -9813,11 +9818,15 @@ footer img {
 
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width:1024px) and (max-width:1365px) {
     .banner-static {
         height: 40vh;
         overflow: hidden;
         position: relative;
+    }
+    .circle-img-ace {
+        padding-top: 5%;
+        width: 100%;
     }
 
 }
@@ -9849,6 +9858,10 @@ footer img {
         padding-bottom: 20%;
         background-color: #fff;
     }
+    .circle-img-ace {
+    padding-top: 1%;
+    width: 85%;
+    }
 }
 
 
@@ -9856,6 +9869,10 @@ footer img {
     .card-home {
         top: 32%;
     }
+   .circle-img-ace {
+    padding-top: 1%;
+    width: 85%;
+}
 
 }
 
