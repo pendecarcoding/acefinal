@@ -29,7 +29,7 @@ class ProductRequest extends FormRequest
             'unit'          => 'required',
             'min_qty'       => 'required|numeric',
             'unit_price'    => 'required|numeric',
-            'discount'      => 'required|numeric|lt:unit_price',
+            // 'discount'      => 'required|numeric|lt:unit_price',
             'current_stock' => 'required|numeric',
         ];
     }
