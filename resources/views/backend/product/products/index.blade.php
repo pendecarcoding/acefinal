@@ -7,7 +7,7 @@
     //CoreComponentRepository::initializeCache();
 @endphp
 
-<!-- <div class="aiz-titlebar text-left mt-2 mb-3">
+<div class="aiz-titlebar text-left mt-2 mb-3">
     <div class="row align-items-center">
         <div class="col-auto">
             <h1 class="h3">{{translate('All products')}}</h1>
@@ -20,7 +20,7 @@
             </div>
         @endif
     </div>
-</div> -->
+</div>
 <br>
 
 <div class="card">
@@ -211,11 +211,11 @@
                                     <i class="las la-copy"></i>
                                 </a>
                             @endcan -->
-                            <!-- @can('product_delete')
+                            @can('product_delete')
                                 <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{route('products.destroy', $product->id)}}" title="{{ translate('Delete') }}">
                                     <i class="las la-trash"></i>
                                 </a>
-                            @endcan -->
+                            @endcan
                         </td>
                     </tr>
                     @endforeach

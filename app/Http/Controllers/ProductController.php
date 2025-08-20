@@ -46,23 +46,26 @@ class ProductController extends Controller
         $this->middleware(['permission:show_all_products'])->only('all_products');
         $this->middleware(['permission:show_in_house_products'])->only('admin_products');
         $this->middleware(['permission:show_seller_products'])->only('seller_products');
-        $this->middleware(['permission:product_edit'])->only('admin_product_edit','seller_product_edit');
+        $this->middleware(['permission:product_edit'])->only('admin_product_edit', 'seller_product_edit');
         $this->middleware(['permission:product_duplicate'])->only('duplicate');
         $this->middleware(['permission:product_delete'])->only('destroy');
     }
 
-    public function marginset(){
-        $data = Product::join('marginprice','products.id','marginprice.id_product')->orderby('denominations','ASC')->get();
-        return view('backend.product.pricefeed.margin',compact('data'));
+    public function marginset()
+    {
+        $data = Product::join('marginprice', 'products.id', 'marginprice.id_product')->orderby('denominations', 'ASC')->get();
+        return view('backend.product.pricefeed.margin', compact('data'));
     }
 
-    public function all_discount(){
-        $data = Product::join('marginprice','products.id','marginprice.id_product')->orderby('denominations','ASC')->get();
-        return view('backend.product.discount.index',compact('data'));
+    public function all_discount()
+    {
+        $data = Product::join('marginprice', 'products.id', 'marginprice.id_product')->orderby('denominations', 'ASC')->get();
+        return view('backend.product.discount.index', compact('data'));
     }
 
 
-    public function discountextra(Request $request){
+    public function discountextra(Request $request)
+    {
         try {
             foreach ($request->types as $key => $type) {
                 overWriteEnvFile($type, $request[$type]);
@@ -71,53 +74,53 @@ class ProductController extends Controller
             Artisan::call('cache:clear');
             flash(translate('Extra Discount has been updated successfully'))->success();
             return back();
-           } catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             print $th->getmessage();
             // flash(translate('Slider has been updated successfully'))->success();
             // return redirect()->route('about.index');
-           }
+        }
     }
-    public function marginupdate(Request $r){
-        $data=[
-            'margin'=>$r->margin
+    public function marginupdate(Request $r)
+    {
+        $data = [
+            'margin' => $r->margin
         ];
         try {
-            DB::table('marginprice')->where('id',$r->id)->update($data);
-                $margin    = DB::table('marginprice')->where('id',$r->id)->first();
-                $product   = Product::where('id',$margin->id_product)->first();
-                $unitprice = (getlastprice()+$r->margin)*$product->weight;
+            DB::table('marginprice')->where('id', $r->id)->update($data);
+            $margin    = DB::table('marginprice')->where('id', $r->id)->first();
+            $product   = Product::where('id', $margin->id_product)->first();
+            $unitprice = (getlastprice() + $r->margin) * $product->weight;
+            $update = [
+                'unit_price' => $unitprice,
+            ];
+            Product::where('id', $product->id)->update($update);
+
+            $overrideprice = getlastprice();
+            $denomination  = $product->weight;
+            if ($product->discount_start_date != null && $product->discount_end_date && $product->promo_price != null) {
+                $unitprice = ($overrideprice + $r->margin) * $denomination;
+                $discount  = ($overrideprice + $product->promo_price) * $denomination;
+                $discount  = $unitprice - $discount;
                 $update = [
-                    'unit_price'=>$unitprice,
+                    'unit_price' => $unitprice,
+                    'discount' => $discount
                 ];
-                Product::where('id',$product->id)->update($update);
-
-                    $overrideprice = getlastprice();
-                    $denomination  = $product->weight;
-                    if($product->discount_start_date != null && $product->discount_end_date && $product->promo_price != null){
-                        $unitprice = ($overrideprice+$r->margin)*$denomination;
-                        $discount  = ($overrideprice+$product->promo_price)*$denomination;
-                        $discount  = $unitprice-$discount;
-                        $update = [
-                            'unit_price'=>$unitprice,
-                            'discount'=>$discount
-                        ];
-                        Product::where('id',$product->id)->update($update);
-                        $p = [
-                            'price'=>$unitprice
-                        ];
-                        DB::table('product_stocks')->where('product_id',$product->id)->update($p);
-                    }else{
-                        $unitprice = ($overrideprice+$r->margin)*$product->weight;
-                        $update = [
-                            'unit_price'=>$unitprice,
-                        ];
-                        Product::where('id',$product->id)->update($update);
-                        $p = [
-                            'price'=>$unitprice
-                        ];
-                        DB::table('product_stocks')->where('product_id',$product->id)->update($p);
-
-                    }
+                Product::where('id', $product->id)->update($update);
+                $p = [
+                    'price' => $unitprice
+                ];
+                DB::table('product_stocks')->where('product_id', $product->id)->update($p);
+            } else {
+                $unitprice = ($overrideprice + $r->margin) * $product->weight;
+                $update = [
+                    'unit_price' => $unitprice,
+                ];
+                Product::where('id', $product->id)->update($update);
+                $p = [
+                    'price' => $unitprice
+                ];
+                DB::table('product_stocks')->where('product_id', $product->id)->update($p);
+            }
 
 
 
@@ -128,7 +131,6 @@ class ProductController extends Controller
             flash(translate($th->getMessage()))->warning();
             return back();
         }
-
     }
 
 
@@ -240,59 +242,56 @@ class ProductController extends Controller
 
     public function pricefeed()
     {
-        $data = Pricefeed::orderby('id','desc')->take(20);
+        $data = Pricefeed::orderby('id', 'desc')->take(20);
         $last = Pricefeed::latest()->first();
-        return view('backend.product.pricefeed.index',compact('data','last'));
+        return view('backend.product.pricefeed.index', compact('data', 'last'));
     }
 
     public function pricefeedjson()
     {
-        $data = Pricefeed::select('updateby','name','systemprice','overrideprice','created_at')->whereDate('created_at',date('Y-m-d'))->take(20)->orderby('id','desc')->get();
+        $data = Pricefeed::select('updateby', 'name', 'systemprice', 'overrideprice', 'created_at')->whereDate('created_at', date('Y-m-d'))->take(20)->orderby('id', 'desc')->get();
         header("Content-Type: application/json");
         echo json_encode($data);
     }
 
-    public function pricefeedupdate(Request $r){
+    public function pricefeedupdate(Request $r)
+    {
         $ip        = $_SERVER['REMOTE_ADDR'];
-        $data =[
-            'updateby'=>'AdminACE',
-            'name'=>'Admin',
-            'systemprice'=>$r->pricecurrent,
-            'overrideprice'=>$r->override,
-            'ip'=>$ip
+        $data = [
+            'updateby' => 'AdminACE',
+            'name' => 'Admin',
+            'systemprice' => $r->pricecurrent,
+            'overrideprice' => $r->override,
+            'ip' => $ip
         ];
         Pricefeed::insert($data);
-            $datas = Product::all();
-            foreach ($datas as $key => $v) {
-                $margin = DB::table('marginprice')->where('denominations',$v->weight)->first();
-                $formula = ($r->override+$margin->margin)*$v->weight;
-                if($v->discount_start_date != null && $v->discount_end_date != null && $v->promo_price != null){
-                    $discount  = ($r->override+$v->promo_price)*$v->weight;
-                    $discount  = $formula-$discount;
-                    $u = [
-                        'unit_price'=>$formula,
-                        'discount'=>$discount
-                    ];
-                    $act = Product::where('id',$v->id)->update($u);
-                    $p = [
-                        'price'=>$formula
-                    ];
-                    $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
-                }else{
-                    $u = [
-                        'unit_price'=>$formula
-                    ];
-                    $act = Product::where('id',$v->id)->update($u);
-                    $p = [
-                        'price'=>$formula
-                    ];
-                    $act = DB::table('product_stocks')->where('product_id',$v->id)->update($p);
-
-                }
-
+        $datas = Product::all();
+        foreach ($datas as $key => $v) {
+            $margin = DB::table('marginprice')->where('denominations', $v->weight)->first();
+            $formula = ($r->override + $margin->margin) * $v->weight;
+            if ($v->discount_start_date != null && $v->discount_end_date != null && $v->promo_price != null) {
+                $discount  = ($r->override + $v->promo_price) * $v->weight;
+                $discount  = $formula - $discount;
+                $u = [
+                    'unit_price' => $formula,
+                    'discount' => $discount
+                ];
+                $act = Product::where('id', $v->id)->update($u);
+                $p = [
+                    'price' => $formula
+                ];
+                $act = DB::table('product_stocks')->where('product_id', $v->id)->update($p);
+            } else {
+                $u = [
+                    'unit_price' => $formula
+                ];
+                $act = Product::where('id', $v->id)->update($u);
+                $p = [
+                    'price' => $formula
+                ];
+                $act = DB::table('product_stocks')->where('product_id', $v->id)->update($p);
             }
-
-
+        }
     }
 
 
@@ -335,31 +334,52 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $product = $this->productService->store($request->except([
-            '_token', 'sku', 'choice', 'tax_id', 'tax', 'tax_type', 'flash_deal_id', 'flash_discount', 'flash_discount_type'
+            '_token',
+            'sku',
+            'choice',
+            'tax_id',
+            'tax',
+            'tax_type',
+            'flash_deal_id',
+            'flash_discount',
+            'flash_discount_type'
         ]));
         $request->merge(['product_id' => $product->id]);
 
         //VAT & Tax
-        if($request->tax_id) {
+        if ($request->tax_id) {
             $this->productTaxService->store($request->only([
-                'tax_id', 'tax', 'tax_type', 'product_id'
+                'tax_id',
+                'tax',
+                'tax_type',
+                'product_id'
             ]));
         }
 
         //Flash Deal
-        $this->productFlashDealService->store($request->only([
-            'flash_deal_id', 'flash_discount', 'flash_discount_type'
-        ]), $product);
+        // $this->productFlashDealService->store($request->only([
+        //     'flash_deal_id', 'flash_discount', 'flash_discount_type'
+        // ]), $product);
 
         //Product Stock
         $this->productStockService->store($request->only([
-            'colors_active', 'colors', 'choice_no', 'unit_price', 'sku', 'current_stock', 'product_id'
+            'colors_active',
+            'colors',
+            'choice_no',
+            'unit_price',
+            'sku',
+            'current_stock',
+            'product_id'
         ]), $product);
 
         // Product Translations
         $request->merge(['lang' => env('DEFAULT_LANGUAGE')]);
         ProductTranslation::create($request->only([
-            'lang', 'name', 'unit', 'description', 'product_id'
+            'lang',
+            'name',
+            'unit',
+            'description',
+            'product_id'
         ]));
 
         flash(translate('Product has been inserted successfully'))->success();
@@ -456,7 +476,14 @@ class ProductController extends Controller
     {
         //Product
         $product = $this->productService->update($request->except([
-            '_token', 'sku', 'choice', 'tax_id', 'tax', 'tax_type', 'flash_discount', 'flash_discount_type'
+            '_token',
+            'sku',
+            'choice',
+            'tax_id',
+            'tax',
+            'tax_type',
+            'flash_discount',
+            'flash_discount_type'
         ]), $product);
 
         //Product Stock
@@ -466,7 +493,13 @@ class ProductController extends Controller
 
         $request->merge(['product_id' => $product->id]);
         $this->productStockService->store($request->only([
-            'colors_active', 'colors', 'choice_no', 'unit_price', 'sku', 'current_stock', 'product_id'
+            'colors_active',
+            'colors',
+            'choice_no',
+            'unit_price',
+            'sku',
+            'current_stock',
+            'product_id'
         ]), $product);
 
         //Flash Deal
@@ -478,17 +511,23 @@ class ProductController extends Controller
         if ($request->tax_id) {
             ProductTax::where('product_id', $product->id)->delete();
             $this->productTaxService->store($request->only([
-                'tax_id', 'tax', 'tax_type', 'product_id'
+                'tax_id',
+                'tax',
+                'tax_type',
+                'product_id'
             ]));
         }
 
         // Product Translations
         ProductTranslation::updateOrCreate(
             $request->only([
-                'lang', 'product_id'
+                'lang',
+                'product_id'
             ]),
             $request->only([
-                'name', 'unit', 'description'
+                'name',
+                'unit',
+                'description'
             ])
         );
 
