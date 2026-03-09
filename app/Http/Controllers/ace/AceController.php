@@ -148,366 +148,49 @@ class AceController extends Controller
                 if(isset($_GET['transactionId'])){
                     $id = $_GET['transactionId'];
                     if (get_setting('m1_sandbox') == 1) {
-                        $url    = 'https://keycloak.m1pay.com.my/auth/realms/master/protocol/openid-connect/token';
-                        $token  = gettokenm1payment($url)->access_token;
-                        if (get_setting('m1_sandbox') == 1) {
-                            $url    = 'https://gateway-uat.m1pay.com.my/m1paywall/api/m-1-pay-transactions/'.$id;
-                        }
-                        else {
-                            $url    = 'https://gateway.m1pay.com.my/wall/api/m-1-pay-transactions/'.$id;
-                        }
-                        $body = [
-                            'transactionId'=>$id
-                        ];
-                         try {
-                            $maxAttempts = 3000; // Maximum number of attempts
-                            $attempt = 0;
-                            do {
-                                // Set cURL options
-                                $crl = curl_init();
-                                curl_setopt($crl, CURLOPT_URL, $url);
-                                curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-                                curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
-                                curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
-                                curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
-
-
-                                $response = curl_exec($crl);
-                                // Check for cURL errors
-                                if ($response === false) {
-                                    $attempt++;
-                                    curl_close($crl);
-                                    if ($attempt >= $maxAttempts) {
-                                        echo "Maximum attempts reached. Exiting loop.";
-                                        break;
-                                    }
-                                } else {
-                                    // If the response is successful, exit the loop
-                                    break;
-                                }
-                            } while (true);
-                                // Close the cURL resource
-                                curl_close($crl);
-                                // Process the response or handle it in your desired way
-                                $data = json_decode($response);
-                                $status = $data->transactionStatus;
-                                if($status=='APPROVED'){
-                                    $merchantno = $data->merchantOrderNo;
-                                    $email      = $data->emailAddress;
-                                    $merchantno = $data->merchantOrderNo;
-                                    $email      = $data->emailAddress;
-                                    try{
-                                        $d = [
-                                        "transactionId"=> $data->transactionId,
-                                        "transactionStatus"=> $data->transactionStatus,
-                                        "productDescription"=> $data->productDescription,
-                                        "transactionAmount"=> $data->transactionAmount,
-                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
-                                        "channel"=> $data->channel,
-                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
-                                        "merchantOrderNo"=> $data->merchantOrderNo,
-                                        "transactionCurrency"=> $data->transactionCurrency,
-                                        "createdDate"=> $data->createdDate,
-                                        "modifiedDate"=> (property_exists($data, 'modifiedDate')) ? $data->modifiedDate : "Null",
-                                        "merchantId"=> $data->merchantId,
-                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
-                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
-                                        "phoneNumber"=> $data->phoneNumber,
-                                        "emailAddress"=> $data->emailAddress,
-                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
-                                        "skipConfirmation"=>$data->skipConfirmation
-                                    ];
-                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
-                                    if($cfpx > 0){
-                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
-                                    }else{
-                                        DB::table('fpxcalback')->insert($d);
-                                    }
-                                    return updateorderm1($merchantno,$email);
-                                    }catch (\Throwable $th) {
-                                        print $th->getMessage();
-                                    }
-                                }elseif($status=='REQUEST'){
-                                    try{
-                                        $d = [
-                                        "transactionId"=> $data->transactionId,
-                                        "transactionStatus"=> $data->transactionStatus,
-                                        "productDescription"=> $data->productDescription,
-                                        "transactionAmount"=> $data->transactionAmount,
-                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
-                                        "channel"=> $data->channel,
-                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
-                                        "merchantOrderNo"=> $data->merchantOrderNo,
-                                        "transactionCurrency"=> $data->transactionCurrency,
-                                        "createdDate"=> $data->createdDate,
-                                        "modifiedDate"=> (property_exists($data, 'modifiedDate')) ? $data->modifiedDate : "Null",
-                                        "merchantId"=> $data->merchantId,
-                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
-                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
-                                        "phoneNumber"=> $data->phoneNumber,
-                                        "emailAddress"=> $data->emailAddress,
-                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
-                                        "skipConfirmation"=>$data->skipConfirmation
-                                    ];
-                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
-                                    if($cfpx > 0){
-                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
-                                    }else{
-                                        DB::table('fpxcalback')->insert($d);
-                                        $payment =[
-                                            'payment_status'=>$data->transactionStatus
-                                        ];
-                                        $act = Order::where('code',$data->merchantOrderNo)->update($payment);
-                                        $order = Order::where('code',$data->merchantOrderNo)->first();
-                                    }
-
-                                    return redirect('/our_products/view/payment_select');
-
-                                    }catch (\Throwable $th) {
-                                        print $th->getMessage();
-                                    }
-                                }
-                                else{
-                                    try{
-                                        $d = [
-                                        "transactionId"=> $data->transactionId,
-                                        "transactionStatus"=> $data->transactionStatus,
-                                        "productDescription"=> $data->productDescription,
-                                        "transactionAmount"=> $data->transactionAmount,
-                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
-                                        "channel"=> $data->channel,
-                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
-                                        "merchantOrderNo"=> $data->merchantOrderNo,
-                                        "transactionCurrency"=> $data->transactionCurrency,
-                                        "createdDate"=> $data->createdDate,
-                                        "modifiedDate"=> (property_exists($data, 'modifiedDate')) ? $data->modifiedDate : "Null",
-                                        "merchantId"=> $data->merchantId,
-                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
-                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
-                                        "phoneNumber"=> $data->phoneNumber,
-                                        "emailAddress"=> $data->emailAddress,
-                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
-                                        "skipConfirmation"=>$data->skipConfirmation
-                                    ];
-                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
-                                    if($cfpx > 0){
-                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
-                                    }else{
-                                        DB::table('fpxcalback')->insert($d);
-                                        $payment =[
-                                            'payment_status'=>$data->transactionStatus
-                                        ];
-                                        $act = Order::where('code',$data->merchantOrderNo)->update($payment);
-                                        $order = Order::where('code',$data->merchantOrderNo)->first();
-                                    }
-
-                                    return redirect()->route('order_confirmed_other');
-
-                                    }catch (\Throwable $th) {
-                                        print $th->getMessage();
-                                    }
-                                }
-
-                            } catch (\Throwable $th) {
-                                // print "have some mistake need to reload";
-                                return redirect('fpx?transactionId='.$_GET['transactionId']);
-                            }
-
-
-
+                        $getstatusUrl = env('FPX_URL_STATUS_DEMO').'/'.$id;
+                        $url    = env('FPX_URL_TOKEN_DEMO');
+                        $token  =  gettokenm1payment($url);
+                        // print "UAT";
                     }
                     else {
-                        $url    = 'https://keycloak.m1pay.com.my/auth/realms/m1pay-users/protocol/openid-connect/token';
-                        $token  = gettokenm1payment($url)->access_token;
-                        $url    = 'https://gateway.m1pay.com.my/wall/api/m-1-pay-transactions/'.$id;
-                        $body = [
-                            'transactionId'=>$id
-                        ];
-                         try {
-                            $maxAttempts = 3000; // Maximum number of attempts
-                            $attempt = 0;
-                            do {
-                                // Set cURL options
+                        $getstatusUrl = env('FPX_URL_STATUS_PROD').'/'.$id;
+                        $url    = env('FPX_URL_TOKEN_PROD');
+                        $token  = gettokenm1payment($url);
+                        // print "LIVE";
+                    }
+                    if(is_object($token)){
+                        $token = "Bearer ".$token->access_token;
+
+                       try {
+                            $response = null;
+
                                 $crl = curl_init();
-                                curl_setopt($crl, CURLOPT_URL, $url);
+                                curl_setopt($crl, CURLOPT_URL, $getstatusUrl);
                                 curl_setopt($crl, CURLOPT_RETURNTRANSFER, true);
-                                curl_setopt( $crl, CURLOPT_CUSTOMREQUEST, 'GET' );
-                                curl_setopt( $crl, CURLOPT_POSTFIELDS, $body );
-                                curl_setopt($crl, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , 'Authorization: Bearer'.$token ));
+                                curl_setopt($crl, CURLOPT_CUSTOMREQUEST, 'GET');
+                                //curl_setopt($crl, CURLOPT_POSTFIELDS, $body);
+                                curl_setopt($crl, CURLOPT_HTTPHEADER, [
+                                    'Content-Type: application/json',
+                                    'Authorization:'. $token
+                                ]);
+
+                            $response = curl_exec($crl);
+                            curl_close($crl);
+                            $data = json_decode($response);
+                            $status = $data->transactionStatus;
+                            $merchantno = $data->merchantOrderNo;
+                            $email      = $data->emailAddress;
+                            return updateorderm1($merchantno,$email,$status);
 
 
-                                $response = curl_exec($crl);
-                                // Check for cURL errors
-                                if ($response === false) {
-                                    $attempt++;
-                                    curl_close($crl);
-                                    if ($attempt >= $maxAttempts) {
-                                        echo "Maximum attempts reached. Exiting loop.";
-                                        break;
-                                    }
-                                } else {
-                                    // If the response is successful, exit the loop
-                                    break;
-                                }
-                            } while (true);
-                                // Close the cURL resource
-                                curl_close($crl);
-                                // Process the response or handle it in your desired way
-                                $data = json_decode($response);
-                                $status = $data->transactionStatus;
-                                if($status=='APPROVED'){
-                                    $merchantno = $data->merchantOrderNo;
-                                    $email      = $data->emailAddress;
-                                    try{
-                                        $d = [
-                                        "transactionId"=> $data->transactionId,
-                                        "transactionStatus"=> $data->transactionStatus,
-                                        "productDescription"=> $data->productDescription,
-                                        "transactionAmount"=> $data->transactionAmount,
-                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
-                                        "channel"=> $data->channel,
-                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
-                                        "merchantOrderNo"=> $data->merchantOrderNo,
-                                        "transactionCurrency"=> $data->transactionCurrency,
-                                        "createdDate"=> $data->createdDate,
-                                        "modifiedDate"=> (property_exists($data, 'modifiedDate')) ? $data->modifiedDate : "Null",
-                                        "merchantId"=> $data->merchantId,
-                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
-                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
-                                        "phoneNumber"=> $data->phoneNumber,
-                                        "emailAddress"=> $data->emailAddress,
-                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
-                                        "skipConfirmation"=>$data->skipConfirmation
-                                    ];
-                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
-                                    if($cfpx > 0){
-                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
-                                    }else{
-                                        DB::table('fpxcalback')->insert($d);
-                                    }
-                                    return updateorderm1($merchantno,$email);
-                                    }catch (\Throwable $th) {
-                                        print $th->getMessage();
-                                    }
-
-                                }elseif($status=='REQUEST'){
-                                    try{
-                                        $d = [
-                                        "transactionId"=> $data->transactionId,
-                                        "transactionStatus"=> $data->transactionStatus,
-                                        "productDescription"=> $data->productDescription,
-                                        "transactionAmount"=> $data->transactionAmount,
-                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
-                                        "channel"=> $data->channel,
-                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
-                                        "merchantOrderNo"=> $data->merchantOrderNo,
-                                        "transactionCurrency"=> $data->transactionCurrency,
-                                        "createdDate"=> $data->createdDate,
-                                        "modifiedDate"=> (property_exists($data, 'modifiedDate')) ? $data->modifiedDate : "Null",
-                                        "merchantId"=> $data->merchantId,
-                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
-                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
-                                        "phoneNumber"=> $data->phoneNumber,
-                                        "emailAddress"=> $data->emailAddress,
-                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
-                                        "skipConfirmation"=>$data->skipConfirmation
-                                    ];
-                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
-                                    if($cfpx > 0){
-                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
-                                    }else{
-                                        DB::table('fpxcalback')->insert($d);
-                                        $payment =[
-                                            'payment_status'=>$data->transactionStatus
-                                        ];
-                                        $act = Order::where('code',$data->merchantOrderNo)->update($payment);
-                                        $order = Order::where('code',$data->merchantOrderNo)->first();
-                                    }
-
-                                    return redirect('/our_products/view/payment_select');
-
-                                    }catch (\Throwable $th) {
-                                        print $th->getMessage();
-                                    }
-                                }else{
-                                    try{
-                                        $d = [
-                                        "transactionId"=> $data->transactionId,
-                                        "transactionStatus"=> $data->transactionStatus,
-                                        "productDescription"=> $data->productDescription,
-                                        "transactionAmount"=> $data->transactionAmount,
-                                        "transactionAmountConverted"=> $data->transactionAmountConverted,
-                                        "channel"=> $data->channel,
-                                        "exchangeOrderNo"=> $data->exchangeOrderNo,
-                                        "merchantOrderNo"=> $data->merchantOrderNo,
-                                        "transactionCurrency"=> $data->transactionCurrency,
-                                        "createdDate"=> $data->createdDate,
-                                        "modifiedDate"=> (property_exists($data, 'modifiedDate')) ? $data->modifiedDate : "Null",
-                                        "merchantId"=> $data->merchantId,
-                                        "merchantCallBackUrl"=> $data->merchantCallBackUrl,
-                                        "merchantRedirectUrl"=> $data->merchantRedirectUrl,
-                                        "phoneNumber"=> $data->phoneNumber,
-                                        "emailAddress"=> $data->emailAddress,
-                                        "authorisedChannels"=> implode(' ',$data->authorisedChannels),
-                                        "skipConfirmation"=>$data->skipConfirmation
-                                    ];
-                                    $cfpx = DB::table('fpxcalback')->where('transactionId',$data->transactionId)->count();
-                                    if($cfpx > 0){
-                                        DB::table('fpxcalback')->where('transactionId',$data->transactionId)->update($d);
-                                    }else{
-                                        DB::table('fpxcalback')->insert($d);
-                                        $payment =[
-                                            'payment_status'=>$data->transactionStatus
-                                        ];
-                                        $act = Order::where('code',$data->merchantOrderNo)->update($payment);
-                                        $order = Order::where('code',$data->merchantOrderNo)->first();
-                                    }
-
-                                    return redirect()->route('order_confirmed_other');
-
-                                    }catch (\Throwable $th) {
-                                        print $th->getMessage();
-                                    }
-
-
-                                }
-
-                            } catch (\Throwable $th) {
-                                // print "have some mistake need to reload";
-                                return redirect('fpx?transactionId='.$_GET['transactionId']);
-                            }
+                        } catch (\Throwable $th) {
+                            print $th->getMessage();
+                        }
                     }
 
-
-                }else{
-                   if($_POST['transactionAmount']!=null){
-                    $d = [
-                        "transactionId"=> $_POST['transactionId'],
-                        "transactionStatus"=> $_POST['transactionStatus'],
-                        "productDescription"=> $_POST['productDescription'],
-                        "transactionAmount"=> $_POST['transactionAmount'],
-                        "transactionAmountConverted"=> $_POST['transactionAmountConverted'],
-                        "channel"=> $_POST['channel'],
-                        "exchangeOrderNo"=> $_POST['exchangeOrderNo'],
-                        "merchantOrderNo"=> $_POST['merchantOrderNo'],
-                        "transactionCurrency"=> $_POST['transactionCurrency'],
-                        "createdDate"=> $_POST['createdDate'],
-                        "modifiedDate"=> $_POST['modifiedDate'],
-                        "merchantId"=> $_POST['merchantId'],
-                        "merchantCallBackUrl"=> $_POST['merchantCallBackUrl'],
-                        "merchantRedirectUrl"=> $_POST['merchantRedirectUrl'],
-                        "phoneNumber"=> $_POST['phoneNumber'],
-                        "emailAddress"=> $_POST['emailAddress'],
-                        "authorisedChannels"=> implode(' ',$_POST['authorisedChannels']),
-                        "skipConfirmation"=>$_POST['skipConfirmation']
-                    ];
-                    DB::table('fpxcalback')->insert($d);
-                    $payment =[
-                        'payment_status'=>$data->transactionStatus
-                    ];
-                    $act = Order::where('code',$_POST['merchantOrderNo'])->update($payment);
-                    }
                 }
+
                  break;
             case 'callfpx':
                 if(isset($_POST['transactionAmount'])){
