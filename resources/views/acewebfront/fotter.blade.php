@@ -110,9 +110,12 @@
                     <a class="text-reset fw-bold" href="#">@ {{ get_setting('site_name') }}</a>
                 </div>
                 <div class="col-md-6 col-sm-12 col-lg-6">
-                    <div style="float:right"> <a href="{{ url('view_pdf/Terms & Condition') }}" target="_blank"
+                    <div style="float:right">
+                        <a href="#" target="_blank"
+                        <!-- <a href="{{ url('view_pdf/Terms & Condition') }}" target="_blank" -->
                             class="text-reset fw-bold">Terms & Condition | </a> <a
-                            href="{{ url('view_pdf/Product Disclosure') }}" target="_blank" class="text-reset fw-bold">
+                            href="#" target="_blank" class="text-reset fw-bold">
+                            <!-- href="{{ url('view_pdf/Product Disclosure') }}" target="_blank" class="text-reset fw-bold"> -->
                             Product Disclosure</a></div>
                 </div>
             </div>
