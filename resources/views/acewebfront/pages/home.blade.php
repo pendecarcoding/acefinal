@@ -149,27 +149,26 @@
             <div class="ace-isi about">
               <div data-aos="fade-up" data-aos-delay="100" class="col-md-12 aos-init aos-animate">
                 <div class="title-ace">
+<section class="company-ace">
+ <div class="content-ace">
+          <div class="wrap-content">
+            <div class="ace-isi about">
+              <div data-aos="fade-up" data-aos-delay="100" class="col-md-12 aos-init aos-animate">
+                <div class="title-ace">
                   OUR WELL-ESTABLISHED EMPIRE
                   <span class="h-dash" style="font-weight: bold">—</span>
                 </div>
               </div>
 
               <div data-aos="fade-up" data-aos-delay="200" class="col-md-12 col-sm-12 aos-init aos-animate">
-                <h1>Company structure</h1>
+                <h1 style="color:black">Company structure</h1>
               </div>
               <div class="row" style="
     width: 100%;
     padding: 20px;
 ">
                 <div class="row">
-                    <div class="col-md-5 col-sm-12">
-                            <div  style="padding-top: 7%;" data-aos="zoom-in-down" data-aos-delay="300" class="img-structure aos-init aos-animate">
-                            <center> <img class="img-responsive circle-img-ace " src="{{ static_asset('aceweb') }}/assets/img/circle2.png" alt="">
-                                </center>
-                            </div>
-
-                    </div>
-                    <div class="col-md-7 col-sm-12">
+                    <div class="col-md-12 col-sm-12">
 
                     <div style="display: flex;justify-content: center;">
                           <div data-aos="zoom-in-down" data-aos-delay="2000" class="wrap-card-company aos-init aos-animate">
@@ -187,15 +186,21 @@
                         <p style="font-size: 12px;" class="name-company">GO Capital Growth Sdn Bhd (GO Capital)</p>
                     </div>
 
+                    <div data-aos="zoom-in-down" data-aos-delay="1800" class="wrap-card-company aos-init aos-animate">
+                        <div class="card ace-card-company">
+                          <img class="img-responsive" src="{{ static_asset('aceweb') }}/assets/img/gogroup.png" alt="">
 
-
-
-
-
-
-
+                        </div>
+                        <p style="font-size: 12px;" class="name-company">ACE Group</p>
                     </div>
-         <div style="display: flex;justify-content: center;">
+
+
+
+
+
+
+
+
 
 
 
