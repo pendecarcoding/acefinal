@@ -243,7 +243,9 @@
                             <section id="nonmansory2" class="gtp-solution">
                                 <div class="content-ace">
                                     <div class="wrap-content">
-                                        <div class="ace-isi about">
+                                       <div class="ace-isi about" style="
+    margin-top: 6%;
+">
                                             <div class="col-md-12">
                                                 <div data-aos="fade-up" data-aos-delay="100" class="title-ace">
                                                     GOLD TRADING MADE EASY
