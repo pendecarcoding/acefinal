@@ -238,7 +238,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+</section>
                             </section>
                             <section id="nonmansory2" class="gtp-solution">
                                 <div class="content-ace">
