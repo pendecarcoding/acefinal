@@ -86,6 +86,12 @@
                                 <small class="text-muted">{{translate('This is used for search. Input those words by which cutomer can find this product.')}}</small>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-from-label">Short By</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="shortby" placeholder="Short By" required>
+                            </div>
+                        </div>
 
                         @if (addon_is_activated('pos_system'))
                         <div class="form-group row">

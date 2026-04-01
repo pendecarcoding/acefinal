@@ -118,6 +118,13 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                            <label class="col-md-3 col-from-label">Short By</label>
+                            <div class="col-md-8">
+                                <input type="text"  value="{{ $product->shortby }}" class="form-control" name="shortby" placeholder="Short By" required>
+                            </div>
+                        </div>
+
                             @if (addon_is_activated('pos_system'))
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-from-label">{{ translate('Barcode') }}</label>
