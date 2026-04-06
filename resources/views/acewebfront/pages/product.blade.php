@@ -88,17 +88,17 @@
                         @endforeach
 
                     </div>
-                    <div style="margin-top: 20px;" class="row">
+                    <!-- <div style="margin-top: 20px;" class="row">
                         <div class="container">
                             <div class="col-md-12">
 
                                 <div class="d-flex justify-content-center">
-                                    {!! $data->links() !!}
+
                                 </div>
                             </div>
                         </div>
 
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
