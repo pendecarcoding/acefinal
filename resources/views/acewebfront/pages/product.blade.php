@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div data-aos="fade-up" class="col-md-12 col-sm-12">
-                        <h1>Live retail pricing</h1>
+                        <!-- <h1>Live retail pricing</h1> -->
                     </div>
 
                     <div style="margin-top: 50px" class="row-personals">
