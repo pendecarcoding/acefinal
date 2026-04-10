@@ -33,9 +33,9 @@
                         <div class="col-md-9">
                             For 100 grams and above or bulk order please DM us with the info quantity
                             <br>You're welcome to be our reseller/dealer with free registration
-                            <br><a href="https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar"
+                            <br><a href="https://api.whatsapp.com/send?phone=60330991959&text=Hi, I'd like to know more about your products"
                                 target="_blank">For more
-                                enquiries please contact us at +011-28613355</a>
+                                enquiries please contact us at +603-3099 1959, ext 312/313/315</a>
                         </div>
                         <div class="col-md-3">
                             <div class="row-personals">
