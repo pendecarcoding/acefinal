@@ -35,7 +35,7 @@
                             <br>You're welcome to be our reseller/dealer with free registration
                             <br><a href="https://api.whatsapp.com/send?phone=60330991959&text=Hi, I'd like to know more about your products"
                                 target="_blank">For more
-                                enquiries please contact us at +603-3099 1959, ext 312/313/315</a>
+                                enquiries please contact us at +603-3099 1959, ext 312/313/314/315</a>
                         </div>
                         <div class="col-md-3">
                             <div class="row-personals">
